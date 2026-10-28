@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/05/19</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年05月19日（星期二）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">公衛／疫情</span>
+        <h3 class="card-title">郵輪漢他病毒疫情持續擴散，MV Hondius 抵達鹿特丹，加拿大確認新增病例</h3>
+        <p class="card-summary">荷蘭籍郵輪 MV Hondius 於 5 月 18 日抵達鹿特丹，船上仍有 27 名船員，當局正分批下船並進行清消作業。截至 5 月 18 日，全球共通報 12 例（含 9 例確診），死亡 3 人，病死率約 38%。加拿大確認一名乘客感染安地斯漢他病毒，其配偶亦出現輕微症狀，兩人均已隔離住院。患者分布於澳洲、加拿大、法國、德國、荷蘭、南非、新加坡、西班牙、瑞士、土耳其等多國，歐洲疾病管制中心（ECDC）已更新風險評估報告。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/18–19</span>
+          <div class="card-sources">
+            <a href="https://www.ecdc.europa.eu/en/infectious-disease-topics/hantavirus-infection/surveillance-and-updates/andes-hantavirus-outbreak" target="_blank">ECDC</a>
+            <a href="https://www.nbcnews.com/health/health-news/canadian-hondius-cruise-passenger-positive-hantavirus-rcna345478" target="_blank">NBC News</a>
+            <a href="https://www.foxnews.com/world/canada-confirms-hantavirus-case-linked-cruise-ship-outbreak-killed-three-passengers" target="_blank">Fox News</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">以色列持續空襲黎巴嫩南部多個城鎮，停火協議名存實亡</h3>
+        <p class="card-summary">2026 年 5 月 19 日，以色列戰機空襲黎巴嫩南部馬傑雍區 Touline 鎮，並對 Zawtar al-Gharbiya 及 Kafrdounine 等地發動多波攻擊。儘管以色列－黎巴嫩停火協議已於 5 月 15 日延長 45 天，雙方持續相互指控違規，停火以來已有數百人死亡。自以黎衝突以來，黎巴嫩境內遭以色列空襲死亡人數已逾 2,800 人，逾百萬人流離失所。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/5/9/israeli-attacks-across-lebanon-kill-at-least-19" target="_blank">Al Jazeera</a>
+            <a href="https://www.nbcnews.com/world/lebanon/israel-strikes-southern-lebanon-kill-10-people-hezbollah-drone-wounds-rcna343170" target="_blank">NBC News</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">加薩停火協議岌岌可危，停火後以色列已造成逾 850 人死亡</h3>
+        <p class="card-summary">自美國斡旋的加薩停火協議生效以來，以色列幾乎每日持續在加薩開火，加薩衛生部統計停火後死亡人數已超過 850 人。以色列本月（5 月 16 日）擊殺哈馬斯武裝翼領導人 Izz al-Din al-Haddad，進一步動搖停火根基。哈馬斯武裝解除問題至今懸而未決，局勢持續高度緊張。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19 最新情勢</span>
+          <div class="card-sources">
+            <a href="https://www.npr.org/2026/05/16/g-s1-122453/gaza-airstrike-hamas-military-leader" target="_blank">NPR</a>
+            <a href="https://www.aljazeera.com/news/2026/5/16/hamas-confirms-killing-of-top-hamas-leader-in-israeli-attack" target="_blank">Al Jazeera</a>
+            <a href="https://www.pbs.org/newshour/world/israel-says-it-killed-a-top-hamas-leader" target="_blank">PBS NewsHour</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">憲政首例！總統彈劾案立院表決未通過，同意票 56：不同意票 50</h3>
+        <p class="card-summary">立法院於 2026 年 5 月 19 日針對總統賴清德彈劾案進行記名投票，最終以同意 56 票、不同意 50 票，未達法定門檻三分之二（76 票）而不通過，為中華民國憲政史上首度由立法院啟動並付諸表決的總統彈劾案。立法院長韓國瑜、副院長江啟臣及其餘 5 名立委共 7 人未領票，引發各方關注。賴清德政府表示將持續施政，在野黨則批評此舉為憲政倒退。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19 上午</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/story/6656/9511614" target="_blank">聯合新聞網</a>
+            <a href="https://www.ettoday.net/news/20260519/3168265.htm" target="_blank">ETtoday</a>
+            <a href="https://www.cna.com.tw/news/aipl/202605195002.aspx" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">台灣參與 WHA 提案遭否決，逾 50 國表態支持</h3>
+        <p class="card-summary">第 79 屆世界衛生大會（WHA）於 5 月 18 日在瑞士日內瓦開幕，友邦帛琉與巴拉圭為台灣發聲，要求將邀請台灣以觀察員身分出席列入補充議程，但遭中國與巴基斯坦否決。外交部長林佳龍在 WHA 開幕前親赴日內瓦，創外長出席 WHA 活動首例。外交部指出，已有逾 50 國行政或立法機構公開表態支持台灣參與 WHA 及國際組織。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://www.ntdtv.com.tw/b5/20260519/video/409000.html" target="_blank">新唐人亞太</a>
+            <a href="https://www.ettoday.net/news/20260519/3168344.htm" target="_blank">ETtoday</a>
+            <a href="https://www.cna.com.tw/news/aipl/202605170111.aspx" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">川習會後涉台發言引爭議，普亭 19 日訪中、台灣議題備受矚目</h3>
+        <p class="card-summary">美國總統川普結束北京川習會後，表示「不希望看到有人走向獨立」，言論在台灣引發廣泛討論；賴清德總統重申台灣主體立場，強調兩岸互不隸屬。俄羅斯總統普亭於 5 月 19 至 20 日訪問北京，外界預料台灣議題將成習普會討論重點。川普另表示將於近日決定是否繼續推進對台 140 億美元軍售案。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://news.ltn.com.tw/news/politics/breakingnews/5440493" target="_blank">自由時報</a>
+            <a href="https://www.cnbc.com/2026/05/16/trumps-meeting-with-chinas-xi-steers-the-us-away-from-taiwan-again.html" target="_blank">CNBC</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">台灣 2026 年經濟成長率預估 7.6%，對中投資降至歷史新低</h3>
+        <p class="card-summary">經濟部於 5 月 19 日公布，台灣 2026 年經濟成長率預估達 7.6%，高於中國（4.6%）及鄰近國家。台商對中投資比重從 2010 年的 83.8% 大幅降至 2025 年的 4.69%，已降至歷史新低。北京四波「惠台措施」效果持續退縮，「以商干政」手段已難奏效，未來台灣將持續深化與美、日、韓、澳等主要經濟體的合作。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://www.moea.gov.tw/MNS/populace/news/News.aspx?kind=1&menu_id=40&news_id=122441" target="_blank">經濟部</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">股市</span>
+        <h3 class="card-title">台股電源管理 IC 及功率元件族群強勢，台半、德微攻漲停</h3>
+        <p class="card-summary">5 月 19 日台股市場中，電源管理 IC 與功率半導體元件族群表現強勢，台半、德微等個股攻上漲停板。此波行情與全球 AI 伺服器用電需求持續擴大、供電管理需求提升密切相關。記憶體族群近期亦維持強勢格局，整體台股指數在高檔整理。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19 盤中</span>
+          <div class="card-sources">
+            <a href="https://newtalk.tw/news/view/2026-05-19/1035988" target="_blank">Newtalk新聞</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">民生</span>
+        <h3 class="card-title">苗栗白沙屯童綜合醫院動工，補海線醫療資源缺口</h3>
+        <p class="card-summary">總統賴清德於 5 月 19 日赴苗栗縣通霄鎮白沙屯，出席童綜合醫院動工典禮。該醫院將設立急診、兒科、婦產科等科別，旨在改善苗栗海線通霄、後龍、苑裡等地區長年醫療資源不足的問題，預計約 3 年後啟用，未來可大幅縮短當地居民就醫距離。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://news.ltn.com.tw/list/breakingnews" target="_blank">自由時報</a>
+            <a href="https://udn.com/news/story/7324/8324726" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">立法院長韓國瑜訪英，創台立法院長與英下議院議長會面首例</h3>
+        <p class="card-summary">立法院長韓國瑜率團訪英後返抵台灣，此行與英國下議院議長林賽・霍伊爾（Lindsay Hoyle）舉行會談，是台灣立法院長與英國下議院議長的首次正式會面，具高度外交意義。此行有助強化台英國會交流，也被視為台灣拓展歐洲議會外交的重要進展。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/18 後</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/" target="_blank">Focus Taiwan / CNA</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">產品發布</span>
+          <h3 class="card-title">Google I/O 2026 登場：Gemini 新模型與 Android XR 眼鏡為焦點</h3>
+          <p class="card-summary">Google I/O 2026 主題演講於 5 月 19 日上午 10 時（太平洋時間）正式開幕，全場主軸圍繞 AI。預計發布全新 Gemini 旗艦模型（Gemini 4.0）、深度整合 Gemini Intelligence 的 Android 17、搭載 Gemini 2.5 Pro 的 Android XR 智慧眼鏡，以及結合 Android 與 ChromeOS 的新筆電平台。本屆大會被視為 Google 回應 OpenAI GPT-5.5 的重大戰略出擊，活動持續至 5 月 20 日並同步 YouTube 直播。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/05/19 上午</span>
+            <div class="card-sources">
+              <a href="https://www.androidcentral.com/phones/live/google-i-o-2026-live-blog-android-17-android-xr-glasses-and-all-the-gemini-ai-news" target="_blank">Android Central</a>
+              <a href="https://gizmodo.com/live-updates-from-google-io-2026-2000757469" target="_blank">Gizmodo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">產品發布</span>
+          <h3 class="card-title">Google Health Coach 正式上線：$9.99/月 Gemini AI 健康教練訂閱服務開放</h3>
+          <p class="card-summary">Google 於 5 月 19 日正式推出 Google Health Premium 訂閱服務（每月 $9.99 或每年 $99），核心功能為由 Gemini AI 驅動的個人化健康教練。同步將 Fitbit 應用程式更名為「Google Health」，整合健身、睡眠、營養、女性健康週期追蹤及美國醫療紀錄等多維度資料。Google AI Pro 及 Ultra 訂閱用戶可免費享有此功能，目前優先支援 Fitbit 及 Pixel Watch 裝置。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/05/19</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/05/07/googles-9-99-per-month-ai-health-coach-launches-may-19/" target="_blank">TechCrunch</a>
+              <a href="https://blog.google/products-and-platforms/products/google-health/google-health-coach/" target="_blank">Google Blog</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">產業動態</span>
+          <h3 class="card-title">Anthropic 祭出二級市場股份交易禁令，相關基金股價重挫</h3>
+          <p class="card-summary">Anthropic 於 5 月 18 日在官方網站發出警告，禁止透過特殊目的載體（SPV）等方式買賣其股份，並點名八家機構的相關交易將被視為無效，令標榜持有 Anthropic 曝險的基金股價應聲重挫。此措施被市場解讀為公司在準備估值達 9,000 億美元、規模 300 億美元融資輪之際，強力管控股權結構的信號。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/05/18</span>
+            <div class="card-sources">
+              <a href="https://www.bloomberg.com/news/articles/2026-05-18/anthropic-sends-jolt-through-the-market-for-buying-shares-in-the-hottest-pre-ipo-startups" target="_blank">Bloomberg</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">政策更新</span>
+          <h3 class="card-title">Anthropic 開放 Mythos 網路安全模型合作夥伴共享威脅情資</h3>
+          <p class="card-summary">Anthropic 於 5 月 19 日宣布修改 Mythos 網路安全 AI 模型的資訊共享政策，允許合作夥伴在遵循負責任揭露原則下，向其他可能面臨相同威脅的組織分享網路威脅情資、最佳實務、工具或程式碼。可分享對象涵蓋其他企業安全團隊、產業組織、監管機構、政府單位及媒體，標誌著 Anthropic 從封閉式安全研究轉向更開放的協作防禦生態。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/05/19</span>
+            <div class="card-sources">
+              <a href="https://news.cgtn.com/news/2026-05-19/Anthropic-to-let-partners-share-Mythos-cybersecurity-findings-1NgAOkf6UaQ/p.html" target="_blank">CGTN News</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,383</div>
+        <div class="index-change down">▼ -0.27%</div>
+        <div class="index-date">5/19 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">49,686</div>
+        <div class="index-change up">▲ +0.32%</div>
+        <div class="index-date">5/19 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">26,090.73</div>
+        <div class="index-change down">▼ -0.51%</div>
+        <div class="index-date">5/19 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">40,718.13</div>
+        <div class="index-change down">▼ -0.43%</div>
+        <div class="index-date">5/19 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$107.35</div>
+        <div class="index-change up">▲ +1.72%</div>
+        <div class="index-date">5/19 最新</div>
+      </div>
+
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">科技股</span>
+        <h3 class="card-title">Seagate CEO 示警產能不足、美光重挫逾 6%，費半指數單日跌 5%</h3>
+        <p class="card-summary">Seagate Technology 執行長 Dave Mosley 在摩根大通論壇表示，新建晶圓廠「曠日費時」，可能難以跟上 AI 驅動的快速需求，引發市場對記憶體供應瓶頸的擔憂。消息拖累美光科技（Micron）下跌近 6%，費城半導體指數單日重挫 5%，半導體板塊全面承壓，市場對 AI 基礎建設相關股票的供應端風險展開重新評估。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/18</span>
+          <div class="card-sources">
+            <a href="https://www.cnbc.com/2026/05/18/seagate-memory-chip-stocks-ai.html" target="_blank">CNBC</a>
+            <a href="https://invezz.com/news/2026/05/18/seagate-stock-slides-7-as-ai-demand-sparks-capacity-fears/" target="_blank">Invezz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">台積電跌 20 元、台股收跌 173 點，記憶體族群連累電子權值股</h3>
+        <p class="card-summary">受美股半導體族群前一交易日大跌影響，台股 19 日開盤走軟，台積電收 2,220 元、下跌 20 元（跌幅 0.89%）。加權指數下跌約 173 點至 40,718 點，記憶體相關族群成為主要拖累，電子權值股承壓。整體成交量有所萎縮，市場等待隔日（5/20）輝達（Nvidia）財報揭曉。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://finance.ettoday.net/news/3168158" target="_blank">ETtoday財經雲</a>
+            <a href="https://www.chinatimes.com/realtimenews/20260519001258-260410" target="_blank">中時新聞網</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">財報焦點</span>
+        <h3 class="card-title">輝達（Nvidia）5/20 財報成最大催化劑，市場預期 EPS 年增 120%</h3>
+        <p class="card-summary">輝達將於 5 月 20 日美股盤後公布 Q1 財報，分析師預估 EPS 達 1.78 美元（年增 120%），營收預估約 792 億美元（年增近 80%）。由於輝達已成為 AI 基礎建設的核心指標股，本次財報結果及 Q2 展望將直接左右半導體與 AI 題材族群的後市走向，部分分析師認為若指引超預期，有機會帶動台股相關供應鏈反彈。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/18</span>
+          <div class="card-sources">
+            <a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-reports-earnings-may-20-171200265.html" target="_blank">Yahoo Finance</a>
+            <a href="https://www.fool.com/investing/2026/05/18/prediction-nvidias-stock-will-soar-after-may-20/" target="_blank">Motley Fool</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">能源市場</span>
+        <h3 class="card-title">美伊核談判傳積極信號，WTI 仍維持每桶 107 美元高位</h3>
+        <p class="card-summary">川普表示卡達、沙烏地阿拉伯與阿聯酋已告知美方，與伊朗的核談判正積極進行，伊朗可能承諾暫停鈾濃縮以換取制裁鬆綁。儘管消息帶來短暫樂觀情緒，WTI 原油仍維持每桶 107 美元高位，布蘭特原油更收在 112 美元上方。IEA 警告，全球石油庫存正以創紀錄速度消耗，霍爾木茲持續受阻恐引發更大價格波動。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/18</span>
+          <div class="card-sources">
+            <a href="https://www.cnbc.com/2026/05/18/oil-today-brent-wti-iran-trump-hormuz-iea-supply-crude-.html" target="_blank">CNBC</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">總體經濟</span>
+        <h3 class="card-title">Fed 面臨油價通膨兩難，市場幾乎排除 2026 年降息可能</h3>
+        <p class="card-summary">聯準會最新金融穩定報告指出，中東衝突與油價飆升已成金融體系最大風險，兩年期通膨損益兩平點從 2.8% 攀升至 3.2%。利率期貨顯示市場已幾乎排除今年降息機率，甚至有升息預期升溫。Fed 需在壓抑通膨與避免經濟硬著陸之間艱難取捨，此為近四十年來最棘手的雙重授權衝突情境。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://news.cnyes.com/news/id/6452004" target="_blank">鉅亨網</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">5/19（二）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">32°</span> / <span class="temp-low">23°</span>
+          </div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">梅雨季，有陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/20（三）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">34°</span> / <span class="temp-low">25°</span>
+          </div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">梅雨季，有陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/21（四）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">35°</span> / <span class="temp-low">25°</span>
+          </div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note">梅雨季，有陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/22（五）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps">
+            <span class="temp-high">32°</span> / <span class="temp-low">25°</span>
+          </div>
+          <div class="weather-rain">🌧 80%</div>
+          <div class="weather-note">雷陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/23（六）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">27°</span> / <span class="temp-low">24°</span>
+          </div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">多雲，雨勢趨緩</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/24（日）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">30°</span> / <span class="temp-low">24°</span>
+          </div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">估計值，請以官方為準</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/25（一）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">31°</span> / <span class="temp-low">24°</span>
+          </div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">估計值，請以官方為準</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖）— 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">5/19（二）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">24°</span> / <span class="temp-low">19°</span>
+          </div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">東北風 3–4 級，能見度偏低</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/20（三）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">25°</span> / <span class="temp-low">19°</span>
+          </div>
+          <div class="weather-rain">🌧 65%</div>
+          <div class="weather-note">東北風 3–4 級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/21（四）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">25°</span> / <span class="temp-low">20°</span>
+          </div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">東北風 2–3 級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/22（五）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">26°</span> / <span class="temp-low">20°</span>
+          </div>
+          <div class="weather-rain">🌧 35%</div>
+          <div class="weather-note">東北風 2–3 級，雨勢趨緩</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/23（六）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">27°</span> / <span class="temp-low">20°</span>
+          </div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">估計值，請以官方為準</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/24（日）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">27°</span> / <span class="temp-low">21°</span>
+          </div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">估計值，請以官方為準</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">5/25（一）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">26°</span> / <span class="temp-low">20°</span>
+          </div>
+          <div class="weather-rain">🌧 45%</div>
+          <div class="weather-note">估計值，請以官方為準</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+      台北預報：<a href="https://www.cwa.gov.tw/V8/C/W/County/County.html?CID=63" target="_blank">台北市頁面</a>｜
+      馬祖預報：<a href="https://www.cwa.gov.tw/V8/C/W/County/County.html?CID=09007" target="_blank">連江縣頁面</a>
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">Forza Horizon 6 正式上市，以日本東京為舞台</h3>
+        <p class="card-summary">由 Playground Games 開發的《Forza Horizon 6》於 5 月 19 日在 Xbox Series X/S 與 PC 平台正式上市（Premium 版玩家可提前至 5/15 遊玩）。遊戲以日本東京為核心場景，地圖設計被業界譽為「系列史上最佳」。首日加入 Xbox Game Pass Ultimate 及 PC Game Pass，PS5 版本預計稍後推出。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://forza.net/news/forza-horizon-6-coming-may-2026" target="_blank">Forza.net</a>
+            <a href="https://en.wikipedia.org/wiki/Forza_Horizon_6" target="_blank">Wikipedia</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">重大更新</span>
+        <h3 class="card-title">PS Plus Extra／Premium 5 月新作上線，含《荒野大鏢客 2》與《星際大戰：流氓》</h3>
+        <p class="card-summary">PlayStation Plus Extra 與 Premium 訂閱用戶於 5 月 19 日迎來 8 款新遊戲，亮點為《Red Dead Redemption 2》與《Star Wars Outlaws》；Premium 會員額外獲得 PS1 經典作《Time Crisis》。同日亦有 8 款遊戲下架，包含《Control: Ultimate Edition》、《Mortal Shell》、《Sand Land》及《The Dark Pictures Anthology》系列兩部作品等，訂閱用戶建議在截止前完成遊玩。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://www.playstationlifestyle.net/2026/05/18/ps-plus-extra-premium-may-2026-games-out-now/" target="_blank">PlayStation LifeStyle</a>
+            <a href="https://gamerant.com/ps-plus-games-may-2026-extra-premium-coming-soon-leaving/" target="_blank">GameRant</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">重大更新</span>
+        <h3 class="card-title">Rainbow Six Siege「Operation System Override」公開，Ranked 3.0 大改版</h3>
+        <p class="card-summary">Ubisoft 於 5 月 17–18 日揭露《Rainbow Six Siege》Year 11 第二賽季「Operation System Override」完整內容。最大亮點為「Ranked 3.0」大改版，是競技模式自創立以來規模最大的翻新，同時新增競技地圖 Calypso Casino，並對 Dokkaebi 特工進行重製，另帶回系列經典地圖。完整內容將於 2026 年 6 月 2 日上線。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/18</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/rainbow-six-siege-operation-system-override-reveal/" target="_blank">Insider Gaming</a>
+            <a href="https://www.savingcontent.com/2026/05/18/year-11-season-2-content-revealed-for-rainbow-six-siege-with-operation-system-override/" target="_blank">Saving Content</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">重大更新</span>
+        <h3 class="card-title">Marvel Cosmic Invasion 新 DLC 上線，加入 Cyclops 與 The Thing</h3>
+        <p class="card-summary">《Marvel Cosmic Invasion》發布新角色 DLC，帶來 X 戰警的 Cyclops（獨眼龍）與驚奇四超人的 The Thing（石頭人）兩名可玩角色，售價 4 美元。Cyclops 由 X-Men '97 聲優 Ray Chase 配音，The Thing 由 Dave Boat 擔綱。官方同時預告 2026 年秋季將推出第二彈 DLC，屆時加入新模式與更多英雄角色。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://bleedingcool.com/games/marvel-cosmic-invasion-adds-cyclops-and-the-thing/" target="_blank">Bleeding Cool</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">產業動態</span>
+        <h3 class="card-title">GTA 6 發售日確認動向：Take-Two 財報電話將提供最新信號</h3>
+        <p class="card-summary">Take-Two Interactive 預計於 5 月舉行財報電話會議，業界高度關注《GTA 6》是否維持 11 月 19 日的發售日期，這將是官方迄今最明確的時程說明機會。目前 GTA 6 仍是全球遊戲市場最受矚目的作品，發售日若確認不變，將對整個遊戲產業 Q4 業績產生重大影響。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19（報導）</span>
+          <div class="card-sources">
+            <a href="https://www.gameshub.com/news/article/gta-6-official-release-date-update-may-2026-2867205/" target="_blank">Games Hub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">平台授權</span>
+        <h3 class="card-title">Crunchyroll Manga 正式上架 24 部 Kodansha 授權作品，含《進擊的巨人》《東京復仇者》</h3>
+        <p class="card-summary">Crunchyroll Manga 於 5 月 18 日起正式新增 23 部 Kodansha USA Publishing 授權漫畫，加上 1 部集英社新作《Dricam!!》，共計 24 部新作上線。收錄作品包含《進擊的巨人》《炎炎消防隊》《東京復仇者》《你的謊言》《七大罪》《化物語》《花牌情緣》等人氣作品，Crunchyroll Manga 的漫畫庫存規模因此突破 400 部。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/18</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/press-release/2026-05-14/crunchyroll-manga-turns-a-new-page-with-kodansha-usa-publishing-titles-joining-robust-manga-catalog-/.237346" target="_blank">Anime News Network</a>
+            <a href="https://www.cbr.com/crunchyroll-major-release-update-may-2026/" target="_blank">CBR</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">平台授權</span>
+        <h3 class="card-title">HIDIVE 上架《Di Gi Charat》全 21 集，90 年代經典電玩少女動畫回歸串流</h3>
+        <p class="card-summary">HIDIVE 於 5 月 19 日起開放《Di Gi Charat》全 16 集主線劇情及 5 集特別篇串流，共 21 集。本作為 1990 年代人氣 IP，講述外星少女為追求明星夢潛入地球的故事，多年未獲串流授權，此次上架讓老牌動畫作品重新觸及新生代觀眾。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/05/19</span>
+          <div class="card-sources">
+            <a href="https://news.hidive.com/2026/5/1/heres-the-anime-coming-to-and-leaving-hidive-in-may-2026" target="_blank">HIDIVE News</a>
+            <a href="https://comicbook.com/anime/list/6-anime-coming-to-hidive-in-may-2026/" target="_blank">ComicBook.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年05月19日 13:58 · 蒐集範圍：近 24 小時（截止時間：2026/05/18 13:58）</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/07/27</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年07月27日（星期一）· 蒐集範圍：近 3 天</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">美伊軍事行動暫緩兩晚 川普稱願給談判「多一點空間」</h3>
+        <p class="card-summary">美軍近兩週來持續空襲伊朗，但截至7月26日（週日）已連續兩晚未發動新攻擊，五角大廈消息稱行動「暫緩」。阿曼代表團赴德黑蘭斡旋被形容「有成效」，雙方就荷莫茲海峽航運安全交換意見；川普總統上週五也在白宮與幕僚閉門商討是否進一步擴大軍事行動。伊朗則指控烏克蘭攻擊其裏海船隻，造成一死一傷。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26</span>
+          <div class="card-sources">
+            <a href="https://edition.cnn.com/2026/07/26/world/live-news/iran-war-trump" target="_blank">CNN</a>
+            <a href="https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-hormuz-middle-east/" target="_blank">CBS News</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">人道危機</span>
+        <h3 class="card-title">加薩停火下死亡人數破1200人 以色列同意國際穩定部隊進駐</h3>
+        <p class="card-summary">加薩衛生部指出，自去年10月停火協議簽署以來，以色列攻擊已造成1200名巴勒斯坦人死亡、3888人受傷，其中過去24小時內即有7人喪生、2人傷重不治。同日（7月26日），以色列安全內閣批准讓川普中東和平計畫中的「國際穩定部隊」（ISF）進駐加薩，稱該部隊將與以軍「全面協調」行動。以軍當天並在代爾巴拉對一輛汽車發動空襲，擊斃兩名哈瑪斯安全官員。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/7/26/israeli-government-nods-to-international-stabilisation-force-in-gaza" target="_blank">Al Jazeera</a>
+            <a href="https://www.aljazeera.com/news/2026/7/26/israeli-air-strike-on-a-vehicle-in-gaza-kills-two-hamas-security-officials" target="_blank">Al Jazeera</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">外交安全</span>
+        <h3 class="card-title">俄無人機三度侵犯領空 羅馬尼亞擊落並召見俄大使抗議</h3>
+        <p class="card-summary">羅馬尼亞F-16戰機於7月26日（週日）在黑海上空擊落一架俄製「見證者」型攻擊無人機，是三天內第三起、開戰以來第33起俄機闖入羅國領空事件。羅馬尼亞總統丹恩痛批俄國行徑「不可接受且不可容忍」，並已召見俄羅斯大使提出抗議。同一天烏克蘭也遭俄軍以彈道飛彈與逾百架攻擊無人機發動大規模夜襲。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/7/26/romania-summons-russian-envoy-as-it-shoots-down-third-intruding-drone" target="_blank">Al Jazeera</a>
+            <a href="https://www.washingtonpost.com/world/2026/07/26/romania-drone-nato-jets/3a49327c-8910-11f1-8912-d71e69d679d7_story.html" target="_blank">Washington Post</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">經濟貿易</span>
+        <h3 class="card-title">川普對60國新關稅生效 上路即遭法律訴訟挑戰</h3>
+        <p class="card-summary">美國以「強迫勞動」為由，依貿易法301條款對60個貿易夥伴（占美國進口總量99.4%）課徵10%至12.5%新關稅，已於7月24日生效，取代原先到期的暫時性關稅。彭博社7月26日報導，這項新關稅上路後隨即遭遇法律訴訟挑戰，外界批評政府濫用貿易法規、損及美國企業與消費者權益。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26</span>
+          <div class="card-sources">
+            <a href="https://www.bloomberg.com/news/articles/2026-07-26/trump-s-section-301-tariffs-how-they-re-being-challenged-in-court" target="_blank">Bloomberg</a>
+            <a href="https://www.npr.org/2026/07/24/nx-s1-5905783/trump-tariff-trade-global-canada" target="_blank">NPR</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">社會抗爭</span>
+        <h3 class="card-title">印度教育部長因洩題風波請辭 「蟑螂運動」抗爭畫下句點</h3>
+        <p class="card-summary">印度教育部長普拉丹在數萬名學生因醫學入學考試（NEET）洩題醜聞持續上街施壓後，於7月25日（週六）宣布請辭。青年主導的「蟑螂正義黨」（Cockroach Janta Party）隨即宣布立即終止全國抗爭，稱政府已回應其訴求；此役被視為對莫迪政府的一次重大民間勝利，也延續了社運人士旺楚克稍早結束26天絕食所引發的青年運動聲量。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/25</span>
+          <div class="card-sources">
+            <a href="https://www.cnn.com/2026/07/25/india/india-education-minister-resignation-intl" target="_blank">CNN</a>
+            <a href="https://www.aljazeera.com/news/2026/7/25/indias-education-minister-resigns-after-weeks-of-cockroach-protests" target="_blank">Al Jazeera</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">意外事故</span>
+        <h3 class="card-title">越南貨輪南海沉沒62人 中越菲三國聯合搜救</h3>
+        <p class="card-summary">越南貨輪「Khoi Nguyen 18」號載有62人，於7月25日深夜因惡劣天候在南海永暑礁附近沉沒。截至7月26日，已有45人獲救，仍有17人下落不明；越南、菲律賓與中國三方已派出船艦及直升機，展開跨國聯合搜救行動。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26</span>
+          <div class="card-sources">
+            <a href="https://www.washingtonpost.com/world/2026/07/26/vietnam-cargo-ship-sinks-missing-search/f23bb3b2-8912-11f1-8912-d71e69d679d7_story.html" target="_blank">Washington Post</a>
+            <a href="https://www.scmp.com/news/china/diplomacy/article/3361901/search-survivors-continues-45-rescued-after-cargo-ship-sinks-south-china-sea" target="_blank">South China Morning Post</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">社會</span>
+        <h3 class="card-title">「反毒油」凱道遊行登場 主辦稱破20萬人 藍白政治人物齊聲援</h3>
+        <p class="card-summary">因應中聯油品致癌物超標事件延燒逾一個月，台北市長蔣萬安號召「我是人、我反毒台」集會，25日晚間在凱達格蘭大道登場。主辦單位宣布現場人潮一度突破20萬人，國民黨主席鄭麗文、台中市長盧秀燕、前高雄市長韓國瑜等人到場聲援，群眾高喊訴求政府為食安問題負責。活動於晚間8時和平落幕，全程未傳出衝突。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/25 晚間</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/story/124948/9650898" target="_blank">聯合新聞網</a>
+            <a href="https://www.chinatimes.com/realtimenews/20260725002505-260407" target="_blank">中時新聞網</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">反毒油宣傳片遭爆用AI偽造賴清德聲音 小編被檢舉惹藍白護航爭議</h3>
+        <p class="card-summary">一支為反毒油遊行製作、名為「油不得你」的宣傳影片，因疑似使用AI合成總統賴清德的聲音替影片旁白配音，遭民眾檢舉並引來警方關切。國民黨、民眾黨陣營批評政府「查水表」政治追殺，但法律專家指出，聲音屬個人資料，未經同意合成恐涉偽造文書等罪責，最重可能面臨7年徒刑，事件延燒成朝野攻防焦點。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/27 上午</span>
+          <div class="card-sources">
+            <a href="https://news.ltn.com.tw/news/politics/breakingnews/5518646" target="_blank">自由時報</a>
+            <a href="https://www.ettoday.net/news/20260727/3208051.htm" target="_blank">ETtoday新聞雲</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">傳賴清德將視導漢光實彈射擊 顧立雄否認：本島無計畫實彈演習</h3>
+        <p class="card-summary">有媒體報導漢光42號演習（8月5日至14日登場）將安排總統賴清德視導實彈反登陸射擊，遭質疑是為總統作秀而規劃演訓。國防部長顧立雄27日出面澄清，強調國軍沒有計畫在台灣本島實施實彈演習，總統視導行程也不會影響部隊演練規畫。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/27 上午</span>
+          <div class="card-sources">
+            <a href="https://www.ettoday.net/news/20260727/3208127.htm" target="_blank">ETtoday新聞雲</a>
+            <a href="https://udn.com/news/story/10930/9652398" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">民生</span>
+        <h3 class="card-title">雲林首見羊肉戴奧辛超標 飼主涉冒用牧場證明交保候傳</h3>
+        <p class="card-summary">雲林縣一名李姓非專業飼主所養羊隻，經食藥署複驗確認戴奧辛超標近2倍，為雲林首見羊肉戴奧辛超標案例，所幸問題羊肉並未流入市面。雲林地檢署25日訊後依涉嫌偽造牧場屠宰證明將李男依3萬元交保，同批下游嘉南羊乳相關產品也預防性下架約4公噸。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/25</span>
+          <div class="card-sources">
+            <a href="https://www.chinatimes.com/realtimenews/20260725002633-260402" target="_blank">中時新聞網</a>
+            <a href="https://udn.com/news/story/7321/9650789" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">今年第13號颱風「白海豚」估今生成 「大而強」但對台無威脅</h3>
+        <p class="card-summary">氣象專家吳德榮表示，中太平洋熱帶擾動跨越換日線後增強為熱帶低壓，中央氣象署路徑潛勢預測顯示，最快27日將發展為今年第13號颱風「白海豚」。由於生成位置鄰近超級聖嬰高海溫區，有利持續增強成為典型「大而強」颱風，但各國模式模擬路徑均顯示對台灣無直接威脅，下週可能轉向影響日本。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/27 上午</span>
+          <div class="card-sources">
+            <a href="https://www.ettoday.net/news/20260727/3208048.htm" target="_blank">ETtoday新聞雲</a>
+            <a href="https://udn.com/news/story/7266/9652626" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">新北雙溪規模5.6地震17縣市有感 隔日台南再傳規模4.8地震</h3>
+        <p class="card-summary">新北市雙溪區26日晚間8時36分發生規模5.6地震，深度95.7公里，全台17縣市有感，最大震度3級；氣象署指出，此震與菲律賓海板塊隱沒至宜蘭下方有關，與去年當地規模7.0強震同屬隱沒帶活動，未來一週不排除規模4.5至5餘震。隔天27日上午10時14分，台南市楠西區再發生規模4.8極淺層地震，最大震度4級。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26 晚間</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/story/7266/9652225" target="_blank">聯合新聞網</a>
+            <a href="https://news.ltn.com.tw/news/Taipei/breakingnews/5518543" target="_blank">自由時報</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">金管會資安監理升級 勒索軟體、供應鏈攻擊納重大事件30分鐘內須通報</h3>
+        <p class="card-summary">有鑑於國內外資安事件頻傳、金融服務高度仰賴資訊系統，金管會已要求銀行公會強化資安規定，將勒索軟體攻擊與供應鏈攻擊兩大新型態攻擊手法正式納入「重大資安事件」範疇。銀行業者未來一旦確認發生上述事件，須於30分鐘內先以電話向金管會銀行局通報，後續再以網路申報系統補件。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/27 上午</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/story/7239/9652902" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">開源模型</span>
+          <h3 class="card-title">月之暗面Kimi K3開源權重釋出，創史上最大開源模型紀錄</h3>
+          <p class="card-summary">中國AI新創月之暗面（Moonshot AI）旗下2.8兆參數模型Kimi K3，已於UTC時間7月27日凌晨0時（台灣時間上午8時）釋出完整開源權重，檔案採MXFP4量化後仍達約1.4TB，為史上規模最大的開源權重模型。K3在多項前端與程式編寫基準測試中表現亮眼，但因體積龐大，自行部署需約18張H100等級GPU，多數團隊預期將透過Together AI、Fireworks AI等雲端服務商使用。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/27 上午（UTC 0時）</span>
+            <div class="card-sources">
+              <a href="https://www.techtimes.com/articles/321499/20260724/kimi-k3-open-weights-drop-july-27-near-frontier-coding-undisclosed-hallucination-risk.htm" target="_blank">TechTimes</a>
+              <a href="https://www.techi.com/kimi-k3-open-weights-inference-economics/" target="_blank">TECHi</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">產業合作</span>
+          <h3 class="card-title">NVIDIA攜手南韓SK集團，簽署逾5000億美元AI基建協議</h3>
+          <p class="card-summary">NVIDIA與南韓SK集團於7月25日宣布擴大策略合作，將建置一座2GW規模的「Vera Rubin」AI資料中心工廠，由SK電訊負責興建，SK海力士則提供長期HBM高頻寬記憶體供應，首座工廠預計2027年啟用。此協議總規模上看5000億美元，是鞏固南韓在全球AI硬體與記憶體供應鏈地位的重要一步。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/25</span>
+            <div class="card-sources">
+              <a href="https://www.globenewswire.com/news-release/2026/07/25/3333161/0/en/SK-Group-and-NVIDIA-Expand-Strategic-Partnership-Across-AI-Factories-and-Next-Generation-Memory.html" target="_blank">GlobeNewswire</a>
+              <a href="https://nvidianews.nvidia.com/news/sk-group-and-nvidia-expand-strategic-partnership-across-ai-factories-and-next-generation-memory" target="_blank">NVIDIA Newsroom</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">政策倡議</span>
+          <h3 class="card-title">黃仁勳首發X貼文，偕25家企業籲美國勿限制開源AI模型</h3>
+          <p class="card-summary">NVIDIA執行長黃仁勳於美東時間7月24日下午（台灣時間7月25日凌晨）首次發布X貼文，分享一封由NVIDIA、微軟、Meta、Hugging Face、Perplexity等25家公司連署的公開信，主張開源權重模型有助強化資安、加速創新並保障國家自主性，呼籲華府勿倉促限制開源AI發展。此舉正值美國政府調查中國月之暗面Kimi K3是否透過「蒸餾」技術複製美國模型之際，黃仁勳的開源立場也與OpenAI、Anthropic對中國開源模型較保留的態度形成對比。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/25 凌晨（美東時間7/24下午）</span>
+            <div class="card-sources">
+              <a href="https://fortune.com/2026/07/24/jensen-huang-open-source-letter-nvidia-kimi/" target="_blank">Fortune</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">供應鏈</span>
+          <h3 class="card-title">三星、SK海力士敲定合計9500億美元對美AI晶片協議</h3>
+          <p class="card-summary">南韓總統府顧問金瑢範於週末簡報證實，三星電子與SK海力士已與美國科技大廠簽下總額約9500億美元的記憶體晶片合作協議。SK海力士協議規模約7500億美元，包括與NVIDIA的多年期供貨合約及與微軟的AI伺服器記憶體合作；三星則與博通（Broadcom）簽下2000億美元協議，涵蓋2奈米晶圓代工與先進封裝技術，顯示雙方正從年度合約轉向多年期承諾。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/27</span>
+            <div class="card-sources">
+              <a href="https://www.sammyfans.com/2026/07/27/samsung-and-sk-hynix-secure-950-billion-in-us-chip-deals/" target="_blank">Sammy Fans</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">模型發布</span>
+          <h3 class="card-title">Anthropic推出Claude Opus 5，效能逼近旗艦Fable 5、價格減半</h3>
+          <p class="card-summary">Anthropic於美西時間7月24日上午10時（台灣時間7月25日凌晨）發布新旗艦模型Claude Opus 5，是繼Mythos 5、Fable 5、Sonnet 5後，兩個月內推出的第四款Claude 5系列模型。Opus 5支援100萬token上下文，新增低／中／高「努力程度」切換功能，定價維持每百萬token輸入5美元／輸出25美元（與前代Opus 4.8相同），現已成為Claude Max訂閱方案的預設模型。在FrontierBench v0.1測試中，Opus 5以43.3%的成績超越GPT-5.6 Sol（37.5%），並同步於API、AWS Bedrock、Google Vertex AI、Microsoft Foundry及GitHub Copilot全平台上線。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/25 凌晨（美西時間7/24上午10時發布）</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/07/24/anthropic-launches-opus-5/" target="_blank">TechCrunch</a>
+              <a href="https://www.anthropic.com/news/claude-opus-5" target="_blank">Anthropic</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">企業合作</span>
+          <h3 class="card-title">三星SDS與Anthropic簽署策略夥伴協議，Claude深入三星集團20家關係企業</h3>
+          <p class="card-summary">三星SDS與Anthropic於7月24日在舊金山AI高峰會上簽署策略夥伴協議（SPA），由三星SDS執行長李俊熙與Anthropic執行長Dario Amodei簽署，南韓總統李在明與三星電子會長李在鎔皆出席見證。雙方合作涵蓋聯合行銷推廣、培育「應用型AI工程師」的訓練計畫，以及擴大Claude在三星集團的導入，目前Claude Enterprise已於三星集團20家關係企業、約7萬名員工中部署使用。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/25（簽署於7/24舊金山峰會）</span>
+            <div class="card-sources">
+              <a href="https://www.sammyfans.com/2026/07/25/samsung-makes-anthropic-claude-central-to-ai-ambitions/" target="_blank">Sammy Fans</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">高層觀點</span>
+          <h3 class="card-title">Amodei重申警告：AI恐衝擊半數初階白領工作機會</h3>
+          <p class="card-summary">Anthropic執行長Dario Amodei近日於專訪中重申警告，認為AI技術未來恐導致多達一半的初階白領職缺消失，並形容這是「一整個世代賴以起步的第一階」。他強調身為AI技術的「生產者」，業界有責任誠實面對即將到來的衝擊，但評論也指出其論述僅止於「誠實揭露」，並未提出任何實際減速或因應勞動市場衝擊的具體作為。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/26</span>
+            <div class="card-sources">
+              <a href="https://www.martincid.com/technology-sv/tech-ai/dario-amodei-duty-honest-about-what-is-coming/" target="_blank">Martin Cid Magazine</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7411.98</div>
+        <div class="index-change up">▲ +0.05%</div>
+        <div class="index-date">7/24 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">51947.25</div>
+        <div class="index-change up">▲ +0.46%</div>
+        <div class="index-date">7/24 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">24975.82</div>
+        <div class="index-change down">▼ -0.64%</div>
+        <div class="index-date">7/24 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">43634.19</div>
+        <div class="index-change down">▼ -0.05%</div>
+        <div class="index-date">7/27 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$83.46</div>
+        <div class="index-change down">▼ -7.74%</div>
+        <div class="index-date">7/27 收盤</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">台股大盤</span>
+        <h3 class="card-title">台股早盤重挫逾680點 尾盤金融、記憶體股撐盤終場僅跌20點</h3>
+        <p class="card-summary">台股今（27日）開低走低，盤中一度下殺超過680點、摜破43,000點關卡，台積電、聯發科、台達電等權值股同步走弱；隨後金融股與記憶體族群逆勢走揚，加上台積電盤中翻紅助攻，終場大盤收斂跌勢，僅下跌20.65點，收在43,634.19點，全天高低震盪達716點。法人研判本周指數將在42,000至45,000點區間整理。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/27 13:41</span>
+          <div class="card-sources">
+            <a href="https://www.chinatimes.com/realtimenews/20260727002315-260410" target="_blank">中時新聞網</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">國際情勢</span>
+        <h3 class="card-title">美伊周末停火 國際油價開盤重挫逾7% 美股期指同步走揚</h3>
+        <p class="card-summary">美國自上週五深夜起暫停對伊朗空襲、伊朗也表示停止反擊行動，市場對中東能源供應中斷的疑慮降溫，國際油價27日開盤後重挫，西德州中級原油9月期貨盤中一度暴跌近7%至每桶84.67美元，布蘭特原油也一度跌破每桶90美元。油價回落激勵美股期指走高，那斯達克100期指漲幅一度擴大超過1%。本周市場將聚焦Meta、微軟、蘋果、亞馬遜財報，以及週四凌晨公布的聯準會利率決議。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/27 07:22</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/story/6811/9652627" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">國巨股價一個月腰斬 盤中破600元終場收625元跌2.65%</h3>
+        <p class="card-summary">被動元件大廠國巨股價自7月1日的1,200元起一路重挫，27日早盤一度下殺逾7%、跌破600元大關至590元低點，終場在低檔買盤進場下收斂跌幅，收在625元、跌2.65%。國巨6月合併營收年增38.9%、第二季營收創單季新高，基本面雖穩健，但外資調降目標價與大股東股票解質押傳言，使投資人信心轉趨保守，網路上也掀起套牢股民相關討論。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/27 12:29</span>
+          <div class="card-sources">
+            <a href="https://news.tvbs.com.tw/money/3268690" target="_blank">TVBS新聞網</a>
+            <a href="https://www.chinatimes.com/realtimenews/20260727002315-260410" target="_blank">中時新聞網</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">半導體</span>
+        <h3 class="card-title">NAND記憶體股漲勢動搖 鎧俠、SanDisk飆股迅速回落</h3>
+        <p class="card-summary">受惠AI資料中心熱潮，NAND快閃記憶體相關個股先前漲幅驚人、股價漲幅動輒超過三位數，但隨著NAND現貨價格轉跌，這波多頭交易開始出現鬆動跡象。在記憶體業者持續加碼資本支出之際，市場也重新評估其他AI零組件廠商是否面臨類似的景氣循環風險。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/27 12:07</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/story/6811/9653270" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">7/27（一）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 65%</div>
+          <div class="weather-note"></div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">7/28（二）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note"></div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">7/29（三）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 45%</div>
+          <div class="weather-note"></div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">7/30（四）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">35°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note"></div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">7/31（五）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 45%</div>
+          <div class="weather-note">趨勢預估</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/1（六）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">趨勢預估，留意熱帶系統動態</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/2（日）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">趨勢預估</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖） — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">7/27（一）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">30°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">西南風6級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">7/28（二）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">30°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 10%</div>
+          <div class="weather-note">西南風6級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">7/29（三）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">西南風5級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">7/30（四）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">28°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note">轉東南風3級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">7/31（五）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">27°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">東北風4級，趨勢預估</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/1（六）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">28°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">東北風5級，趨勢預估</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/2（日）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 10%</div>
+          <div class="weather-note">東北風5級，趨勢預估</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">《戰神：勞菲》確定2027年2月登陸PS5，克拉托斯新作同步曝光</h3>
+        <p class="card-summary">Sony Santa Monica工作室於聖地牙哥動漫展2026公布《God of War Laufey（戰神：勞菲）》將於2027年2月16日在PS5推出，由克拉托斯亡妻Faye擔任主角，故事與北歐篇章平行並延續發展。工作室創意總監Cory Barlog同時證實，新一款以克拉托斯為主角的《戰神》遊戲已在開發中，劇情將直接銜接本作結局。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/25 上午</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/sony-reveals-god-of-war-laufey-release-date/" target="_blank">Insider Gaming</a>
+            <a href="https://www.gamespot.com/articles/surprise-god-of-war-laufey-has-a-release-date-and-its-kratos-led-sequel-has-been-announced/" target="_blank">GameSpot</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">展覽活動</span>
+        <h3 class="card-title">Atari與環球影業簽約，10款經典街機遊戲將改編電影</h3>
+        <p class="card-summary">Atari攜手Entertainment 360，於聖地牙哥動漫展宣布與環球影業（Universal Pictures）簽署協議，取得將《小行星》《乒乓》《飛彈指揮官》等10款經典街機遊戲改編為電影的開發權。據Deadline報導，環球已買下首部劇本、由Matt Reilly與Carl Hampe負責編劇製作，但官方也坦言並非所有作品都會真正開拍。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24 晚上</span>
+          <div class="card-sources">
+            <a href="https://www.gamespot.com/articles/atari-announces-10-movie-deal-with-universal-but-dont-expect-them-all-to-get-made/" target="_blank">GameSpot</a>
+            <a href="https://deadline.com/2026/07/atari-universal-deal-10-game-ip-script-matt-reilly-carl-hampe-entertainment-360-1237001656/" target="_blank">Deadline</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">PlayStation Network發生全球性斷線，數千玩家受影響</h3>
+        <p class="card-summary">7月24日，PlayStation Network出現大規模全球斷線，玩家無法登入帳號、開啟已下載遊戲、使用PS Store或連線功能。官方狀態頁面當時未顯示異常，但Down Detector等平台湧入大量回報，再度掀起玩家對全數位化遊戲時代的疑慮，尤其正值Sony稍早宣布2028年起停止實體光碟生產之際。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24 晚上</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/playstation-network-outage-hits-gamers-worldwide/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">重大更新</span>
+        <h3 class="card-title">《007 First Light》推出上市以來最大更新「Behind Enemy Lines」</h3>
+        <p class="card-summary">開發商IO Interactive為《007 First Light》釋出代號「Behind Enemy Lines」的1.1.0版更新，新增兩項TacSim特殊任務、三把新武器與可解鎖服裝「Diamond in the Rough」，並修復超過200項社群回報的問題，包含多起當機錯誤與成就異常，是遊戲上市以來規模最大的一次更新。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26 凌晨</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/details-of-first-major-patch-for-007-first-light/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">獨立恐龍動作遊戲《Dinoblade》上市24小時熱賣3.6萬套</h3>
+        <p class="card-summary">由《對馬戰鬼》資深動畫師Jean Nguyen獨立開發的動作RPG《Dinoblade》正式於Steam上市，玩家操控棘龍持劍戰鬥。遊戲上市首日即售出逾3.6萬套，尖峰同時在線人數達2,204人，願望清單熱度全站排名第8，開發者在社群媒體上分享了這趟意外爆紅的心路歷程。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26 凌晨</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/dinoblade-sells-36000-copies-on-steam-in-just-24-hours/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">Rockstar共同創辦人Dan Houser：玩家仍應保有實體遊戲選擇</h3>
+        <p class="card-summary">《GTA》系列締造者、Rockstar Games共同創辦人Dan Houser在聖地牙哥動漫展接受IGN訪問時表示，雖然自己並不特別在意實體或數位版本的差異，但認為只要玩家有需求，遊戲公司就應持續提供實體媒體選項，同時也肯定數位發行能持續為遊戲進行更新與修復的優點。此言論正值Sony稍早宣布2028年終止PlayStation光碟生產、引發實體媒體存廢爭論之際。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26 凌晨</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/rockstar-games-co-founder-feels-players-should-still-have-physical-game-options/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">Amazon高層：次世代主機漲價恐讓雲端遊戲更具吸引力</h3>
+        <p class="card-summary">Amazon Games遊戲事業總經理Jeffrey Gattis在專訪中表示，隨著次世代主機及Steam Machine等硬體售價逼近甚至超過千美元，雲端遊戲平台如Amazon Luna有機會吸引更多玩家轉向訂閱式體驗。他強調Luna的目標並非取代主機或個人電腦，而是擴大整體玩家市場規模。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/25 上午</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/cloud-gaming-could-benefit-from-1000-consoles-says-amazon/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">新番首播</span>
+        <h3 class="card-title">BLEACH 死神：千年血戰篇－禍進譚－ 首集正式開播</h3>
+        <p class="card-summary">「死神」系列最終章《千年血戰篇－禍進譚－》第1集於7月25日（週六）晚間11點在日本東京電視台首播，同步在Hulu、Disney+上架。本季為系列最終季，共13集，改編原作漫畫第664至686話，描繪一護與虛夜宮之間的最終決戰高潮，壓軸集數更預計推出加長版特別篇。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/25 晚間11:00（日本時間）</span>
+          <div class="card-sources">
+            <a href="https://animecorner.me/bleach-tybw-part-4-the-calamity-episode-1-review-solid-start-to-part-4/" target="_blank">Anime Corner</a>
+            <a href="https://forum.gamer.com.tw/C.php?bsn=7731&amp;snA=19511" target="_blank">巴哈姆特動畫瘋 討論版</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新企劃公告</span>
+        <h3 class="card-title">《銀河鐵道999》睽違近30年 東映動畫宣布全新劇場版動畫</h3>
+        <p class="card-summary">東映動畫於7月25日（週六）宣布，將根據松本零士經典作品《銀河鐵道999》製作全新劇場版動畫，原作故事由曾執導1979年電影版、《再見銀河鐵道999》及《埃梅拉爾達斯》特別篇的資深導演林太郎（りんたろう）擔綱原案。這是該系列自1998年《永遠的星空》劇場版之後、時隔近30年的最新企劃，詳細上映時間與製作陣容尚未公布。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/25</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-07-25/new-galaxy-express-999-theatrical-anime-announced-with-story-by-rintaro/.239959" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">續作公告</span>
+        <h3 class="card-title">《為美好的世界獻上祝福！》公開第4季新視覺圖 確定2027年播出、更換動畫公司</h3>
+        <p class="card-summary">KonoSuba系列於7月26日（週日）的10週年紀念活動上，正式公開電視動畫第4季消息，釋出全新主視覺圖並確認2027年播出。動畫製作公司將更換為ENGI，由金崎貴臣擔任總導演、栗原学執導，系列作曲家上江洲誠、角色設計菊田幸一等原班人馬則持續留任。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26</span>
+          <div class="card-sources">
+            <a href="https://animecorner.me/konosuba-season-4-reveals-key-visual-studio-change-2027-release/" target="_blank">Anime Corner</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">續作公告</span>
+        <h3 class="card-title">《亂馬1/2》新版動畫第3季公開視覺圖與新聲優 10月3日開播</h3>
+        <p class="card-summary">高橋留美子經典作品《亂馬1/2》新版動畫於7月26日（週日）的粉絲見面會活動上公開第3季最新消息，釋出以亂馬、天道茜、良牙為主視覺的新圖，並確定將於10月3日深夜24:55（即10月4日凌晨0:55）在日本電視台（NTV）首播，播畢後隨即於Netflix獨家上線。新增聲優包括野澤雅子、福山潤、田中美奈美等人，MAPPA工作室與導演鵜田公介等原班人馬回歸製作。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/26</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-07-26/new-ranma-1-2-anime-season-3-reveals-more-cast-members-october-3-debut/.239978" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">電影預告</span>
+        <h3 class="card-title">原創動畫電影《我們是外星人》公開正式預告 追加聲優與主題曲</h3>
+        <p class="card-summary">門脇宏行執導、NOTHING NEW製作的原創動畫電影《我們是外星人》官方網站於7月27日（週一）公開完整預告片與新視覺圖，追加宣布櫻坂46成員山崎天等新聲優加入卡司，同時公布由音樂人adieu演唱的主題曲《Sasakure》。電影描述兩名兒時玩伴長大後重逢、直面過去心結的故事，預計9月25日於日本上映，並已售出台灣（Hooray Films）、新加坡、香港、泰國等地發行版權。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/27</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-07-27/we-are-aliens-anime-film-trailer-reveals-2-cast-members-theme-song/.239997" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年07月27日 · 蒐集範圍：近 3 天</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

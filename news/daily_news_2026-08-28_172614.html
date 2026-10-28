@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/08/28</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年08月28日（星期五）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">天災人道</span>
+        <h3 class="card-title">尼泊爾—西藏邊境洪災死亡人數攀升至逾490人 逾1400人失蹤</h3>
+        <p class="card-summary">尼泊爾與中國西藏交界地區的冰川崩塌引發致命洪災，最新統計顯示尼泊爾方面死亡人數已升至489人，加上西藏5人，兩地合計至少494人罹難；另有逾1400人失蹤，其中644人為外國人，包括約90名美國人及39名澳洲人。當局並警告堰塞湖有潰堤風險，恐引發二次洪災。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 上午</span>
+          <div class="card-sources">
+            <a href="https://www.abc.net.au/news/2026-08-28/nepal-tibet-floods-live-updates/107086974" target="_blank">ABC News</a>
+            <a href="https://www.aljazeera.com/news/2026/8/28/death-toll-from-nepal-tibet-flood-passes-470-as-barrier-lake-threatens" target="_blank">Al Jazeera</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">俄羅斯無人機大規模空襲基輔、敖德薩與哈爾科夫</h3>
+        <p class="card-summary">俄軍於8月27日對烏克蘭9座城市發動大規模無人機攻擊，基輔多區遭擊中長達數小時，哈爾科夫一處購物中心遭無人機擊中造成1死4傷，敖德薩地區遭受長達7小時以上攻擊，一棟16層住宅大樓及穀物儲存設施受損。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/27 深夜</span>
+          <div class="card-sources">
+            <a href="https://www.euronews.com/my-europe/2026/08/27/russia-attacks-kyiv-with-drones-and-wounds-a-dozen-across-ukraine-officials-say" target="_blank">Euronews</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">川普加薩停火計畫負責人罕見批評以色列持續攻擊</h3>
+        <p class="card-summary">負責推動美國總統川普加薩停火計畫的「和平委員會」高級代表姆拉德諾夫向聯合國安理會表示，以色列自去年10月停火以來仍持續空襲，導致加薩民眾難以感受到戰爭真正結束；他警告若停火計畫失敗，下一步將是新一輪戰爭。他並指出哈瑪斯已同意解除武裝並將加薩交由文人治理。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/27 晚間</span>
+          <div class="card-sources">
+            <a href="https://www.npr.org/2026/08/27/g-s1-140400/israel-gaza-ceasefire" target="_blank">NPR</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">卡達總理訪問德黑蘭 斡旋美伊局勢並推動荷姆茲海峽聯合護航</h3>
+        <p class="card-summary">卡達總理兼外交大臣穆罕默德親王於8月27日至28日訪問德黑蘭，與伊朗外長阿拉格齊及伊朗總統佩澤希齊揚會晤，討論建立臨時荷姆茲海峽聯合護航通道及聯合清除水雷計畫，作為緩解美伊緊張的過渡方案，此行也被視為為美伊重啟對話鋪路。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 凌晨</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/8/27/iran-qatar-hold-hormuz-talks-amid-intl-hopes-dialogue-with-us-will-resume" target="_blank">Al Jazeera</a>
+            <a href="https://www.aninews.in/news/world/middle-east/ongoing-efforts-to-de-escalate-tensions-qatar-pm-meets-iran-president-pezeshkian-in-tehran20260828045210/" target="_blank">ANI News</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">輝達財報亮眼 單日市值暴增逾4400億美元創史上第二大漲幅</h3>
+        <p class="card-summary">輝達（Nvidia）8月27日公布第二季財報優於預期，季營收達962.2億美元、年增106%，資料中心業務貢獻890億美元；公司並釋出明年營收將加速成長約70%的驚人展望，帶動股價單日大漲近8.7%至9%，市值一舉增加逾4400億美元，總市值重返約5.5兆美元，並帶動博通、英特爾等晶片股同步上漲。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/27 美股收盤後</span>
+          <div class="card-sources">
+            <a href="https://www.cnbc.com/2026/08/27/nvidia-nvda-q2-earnings.html" target="_blank">CNBC</a>
+            <a href="https://www.bloomberg.com/news/articles/2026-08-27/nvidia-adds-442-billion-in-second-biggest-ever-stock-surge" target="_blank">Bloomberg</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">輝達財報激勵 台股大漲356點收復46000點</h3>
+        <p class="card-summary">輝達財報與財測優於預期，帶動28日台股大漲近600點，盤中最高衝上46574點創新高，終場收在46331.45點，站上46000點大關，成交值再度突破新台幣1兆元。台積電、聯發科、台達電齊揚，大立光股價續創新天價，被動元件族群也大漲。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 下午2時01分</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/afe/202608280140.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">颱風沙德爾解除海警 氣象署示警未來一週天氣不穩定、慎防大雨</h3>
+        <p class="card-summary">中央氣象署28日下午2時30分解除沙德爾海上颱風警報，沙德爾登陸中國後將減弱；氣象署科長劉宇其表示，菲律賓東方海面另有低壓發展，預計8月31日至9月1日接近台灣，未來一週各地時晴時雨，29日南部須慎防局部大雨，中部以北午後恐有大雷雨，預報不確定性仍高。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 下午4時25分</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/ahel/202608280195.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">韓國瑜批政院「不副署武器化」 民進黨團反批應辦憲法讀書會</h3>
+        <p class="card-summary">立法院長韓國瑜27日在本會期最後一次院會指控行政院將「不副署權」武器化、曲解憲政規範、架空覆議制度，深感憂心遺憾。民進黨立法院黨團書記長范雲28日回應表示，副署權是憲法賦予行政院為暴衝立法院踩剎車的權力，反諷韓國瑜應組憲法讀書會、找專家學者討論；行政院並提出數據強調卓榮泰任內僅3.8%法案未副署，屬被動防衛。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 下午2時23分</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/aipl/202608280148.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治／選舉</span>
+        <h3 class="card-title">竹北藍白合破局 鄭麗文、黃國昌各自表態</h3>
+        <p class="card-summary">年底竹北市長選戰，國民黨推吳旭智、民眾黨推邱臣遠，因人選整合未果，藍白合作出現裂痕。民眾黨主席黃國昌上午受訪表示非常遺憾，宣布支持邱臣遠選到底；國民黨主席鄭麗文則於28日回應稱竹北選情具高度特殊性，雙方對人選安排確有不同評估，但合作初衷不變。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 下午1時44分</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/aipl/202608280134.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">經濟／民生</span>
+        <h3 class="card-title">國發會最新人口推估：50年後總人口恐腰斬僅剩1215萬人</h3>
+        <p class="card-summary">國發會28日公布2026至2075年人口推估，因少子化與高齡化加劇，總生育率已降至0.695人，預估20年後（2045年）總人口跌破2000萬人，50年後（2075年）僅剩1215萬人，較2026年大減48%；且自2037年起，過半數工作年齡人口將由45至64歲中高齡族群組成，勞動供給面臨嚴峻緊縮。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 下午3時34分</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/afe/202608280176.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">社會／民生</span>
+        <h3 class="card-title">台大急診等床12天身故引發爭議 醫院宣布成立內外整合病房</h3>
+        <p class="card-summary">台大醫院一名85歲女性患者因急診壅塞等床12天後過世，引發社會關注。院方28日說明患者具肺炎、尿路感染等多重共病、跨科別收治困難，家屬也表達不願插管進加護病房；台大院長已指示成立「內外整合病房」，預計先開20床、未來擴增至60床，並提高協調收治會議頻率。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 下午3時27分</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/ahel/202608280173.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">重大收購</span>
+          <h3 class="card-title">Nvidia同意以129億美元收購開源AI平台Hugging Face</h3>
+          <p class="card-summary">據《The Information》報導，Nvidia已同意以約129億美元收購開源AI模型託管平台Hugging Face，此舉將擴大Nvidia在開源AI生態系的影響力，並抵禦OpenAI、Google、Amazon等公司自研晶片帶來的競爭壓力。交易目前尚未正式簽署協議，仍有可能生變。Hugging Face上次融資為2023年的45億美元估值，年營收約1.5億美元，正邁向獲利。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/27 晚間</span>
+            <div class="card-sources">
+              <a href="https://fortune.com/2026/08/27/nvidia-hugging-face-billion-dollar-deal-open-source-ai/" target="_blank">Fortune</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">產業倡議</span>
+          <h3 class="card-title">OpenAI、Anthropic、Google等逾百家企業聯合呼籲強化網路安全防禦</h3>
+          <p class="card-summary">OpenAI、Anthropic、Google、微軟等逾100家科技與金融企業27日聯署公開信，警告AI驅動的網路攻擊未來數月將大幅增加、更加精密，呼籲公私部門展開「防禦性衝刺」。信中特別點名醫院、水處理設施與網際網路基礎建設等關鍵系統面臨風險，並倡議前沿AI公司讓經審核的防禦方提早取得先進模型。信函未設定具體期限或資金承諾。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/28 凌晨</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/08/27/openai-anthropic-google-and-100-other-companies-call-for-action-to-defend-against-rogue-ai/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">研究預覽</span>
+          <h3 class="card-title">Anthropic預覽「模型硬體標準」(MHS)，讓Claude操作實驗室與工廠設備</h3>
+          <p class="card-summary">Anthropic於27日宣布開放「模型硬體標準」(Model Hardware Standard)研究預覽，使AI代理能安全操作顯微鏡、液體處理機、機械手臂等物理設備，應用涵蓋藥物開發到量子電腦雷射校準等任務，並可全天候運作、部分情況下能自行排除硬體錯誤。首批合作夥伴包括AWS、Tecan、Universal Robots、Hugging Face LeRobot、QIAGEN與Raspberry Pi，Anthropic計劃未來將此標準開源。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/28 上午</span>
+            <div class="card-sources">
+              <a href="https://www.anthropic.com/news/model-hardware-standard-research-preview" target="_blank">Anthropic</a>
+              <a href="https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-previews-standard-for-ai-control-of-physical-devices/" target="_blank">PYMNTS</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">生態擴展</span>
+          <h3 class="card-title">Anthropic開放一萬個科學家免費／優惠Claude訂閱名額</h3>
+          <p class="card-summary">Anthropic於27日宣布擴大科學支援計畫，為全球一萬名科學家提供為期一年的免費或優惠Claude訂閱，標準席位免費，進階席位（5倍用量）每月15美元，申請者須為學術或非營利研究機構的主要研究者（PI）。同時將「AI for Science」資助範圍從生物科學擴大至其他科學領域，符合資格的研究計畫最高可申請5萬美元運算額度。Anthropic表示未來數月將把名額擴展至一萬人以上。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/28 上午</span>
+            <div class="card-sources">
+              <a href="https://www.anthropic.com/news/expanding-support-for-scientists" target="_blank">Anthropic</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,730.99</div>
+        <div class="index-change up">▲ +0.7%</div>
+        <div class="index-date">8/27 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">53,569.44</div>
+        <div class="index-change up">▲ +0.2%</div>
+        <div class="index-date">8/27 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">26,541.35</div>
+        <div class="index-change up">▲ +1.6%</div>
+        <div class="index-date">8/27 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">46,331.45</div>
+        <div class="index-change up">▲ +0.77%</div>
+        <div class="index-date">8/28 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$82.86</div>
+        <div class="index-change down">▼ -0.08%</div>
+        <div class="index-date">8/27 收盤</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">輝達財報超預期激勵科技股 台股收復46000點大關</h3>
+        <p class="card-summary">輝達公布優於預期的第二財季財報，營收年增106%達962.2億美元，並預測下年度營收成長70%，遠高於分析師估計的44%，股價單日飆漲8.74%，市值單日增加逾4400億美元，為美股史上第二大單日市值增幅。此利多帶動費半及台積電ADR齊揚，激勵今日台股開高走高，加權指數終場上漲356.23點，收在46,331.45點，漲幅0.77%，成交量突破1兆元，為8月18日以來再度破兆。台積電上漲10元收2420元，聯發科、台達電等權值股同步走強。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 下午</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/afe/202608280140.aspx" target="_blank">中央社 CNA</a>
+            <a href="https://finance.ettoday.net/news/3227386" target="_blank">ETtoday財經雲</a>
+            <a href="https://www.cnbc.com/2026/08/27/nvidia-nvda-q2-earnings.html" target="_blank">CNBC</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">美股那斯達克指數勁揚1.6% 輝達領軍晶片股全面走高</h3>
+        <p class="card-summary">美股8月27日在輝達財報激勵下全面收高，那斯達克綜合指數上漲411.16點（+1.6%）收26,541.35點，標普500上漲55.29點（+0.7%）收7,730.99點，道瓊工業指數上漲105.56點（+0.2%）收53,569.44點。輝達執行長黃仁勳表示，實際需求遠高於70%的成長預測，但受限於產能供應；博通、英特爾等晶片股同步跟漲。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/28 上午</span>
+            <div class="card-sources">
+              <a href="https://www.cnbc.com/2026/08/27/nvidia-nvda-q2-earnings.html" target="_blank">CNBC</a>
+              <a href="https://www.bloomberg.com/news/articles/2026-08-27/nvidia-adds-442-billion-in-second-biggest-ever-stock-surge" target="_blank">Bloomberg</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">8/28（五）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 21%</div>
+          <div class="weather-note">多雲，颱風外圍環流影響，紫外線爆表</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/29（六）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">35°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 75%</div>
+          <div class="weather-note">局部短暫陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/30（日）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 75%</div>
+          <div class="weather-note">局部短暫陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/31（一）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 82%</div>
+          <div class="weather-note">午後雷陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/1（二）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">30°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 95%</div>
+          <div class="weather-note">陣雨，有時較大雨勢</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/2（三）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 95%</div>
+          <div class="weather-note">間歇性降雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/3（四）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 68%</div>
+          <div class="weather-note">局部強陣雨</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖）— 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">8/28（五）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 96%</div>
+          <div class="weather-note">南風4-5級，颱風外圍環流影響，注意陣風</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/29（六）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">西南風4級，局部雷暴</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/30（日）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">30°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 62%</div>
+          <div class="weather-note">西南風3-4級，短暫陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/31（一）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">30°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">轉北風5-6級，慎防強陣風及雷暴</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/1（二）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">28°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 99%</div>
+          <div class="weather-note">東北風4級，間歇性降雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/2（三）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">28°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 98%</div>
+          <div class="weather-note">東北風3-4級，強雷暴</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/3（四）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 59%</div>
+          <div class="weather-note">東北風3級，局部雷暴</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">重大預告</span>
+        <h3 class="card-title">GTA6《俠盜獵車手6》Netflix獨家26分鐘實機影片首播</h3>
+        <p class="card-summary">Rockstar Games於Netflix首播長達26分鐘的GTA6實機遊玩與過場影片，全程以PS5錄製，展示Vice City與Leonida地區，並跟隨主角Jason與Lucia進行任務、搶劫與一場混亂的高樓槍戰。該影片美東時間8/27下午3點在Netflix首播，晚間9點於YouTube公開，是Rockstar迄今對GTA6最完整的官方展示，遊戲預計11月19日正式發售。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 上午</span>
+          <div class="card-sources">
+            <a href="https://techbriefly.com/2026/08/28/gta-6-extended-look-26-minutes-new-gameplay/" target="_blank">TechBriefly</a>
+            <a href="https://www.gamesradar.com/news/live/gta-6-extended-look-showcase-live-coverage-2026-everything-announced/" target="_blank">GamesRadar+</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">《艾爾登法環：褪色者版》Switch 2版正式上市，媒體評分出爐</h3>
+        <p class="card-summary">FromSoftware推出的《艾爾登法環：褪色者版》於8月28日正式在Nintendo Switch 2平台發售，同時附贈《黃金樹之影》資料片與全新的「褪色者組合包」武器與坐騎裝飾。首波媒體評測陸續公布，Metacritic平均分達91分、OpenCritic為88分，多家媒體盛讚其掌機與底座模式表現幾乎與PS5版不相上下，堪稱該平台第三方移植作品的新標竿。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 上午</span>
+          <div class="card-sources">
+            <a href="https://www.nintendolife.com/news/2026/08/round-up-the-reviews-for-elden-ring-tarnished-edition-on-switch-2-are-in" target="_blank">Nintendo Life</a>
+            <a href="https://www.techradar.com/gaming/elden-ring-tarnished-edition-switch-2-review" target="_blank">TechRadar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">劇場版上映</span>
+        <h3 class="card-title">《魔法少女小圓：瓦爾普吉斯迴天》睽違13年上映 粉絲讚嘆劇情磅礴</h3>
+        <p class="card-summary">歷經三度延期的《魔法少女小圓》劇場版新作《瓦爾普吉斯迴天》於2026年8月28日凌晨在日本各大戲院正式上映，為2013年《叛逆的物語》後續篇章，由新房昭之執導、虛淵玄編劇，並首度推出系列IMAX版本。上映首日已有觀眾分享心得，稱讚故事主軸不偏移、影像美學與心理描寫細膩，直呼「感動的一句話說不完」。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28 凌晨</span>
+          <div class="card-sources">
+            <a href="https://news.yahoo.co.jp/articles/3b6ba544a0eae05beb53a0e04f8b869bf81f0dd8" target="_blank">Yahoo!ニュース</a>
+            <a href="https://www.madoka-magica.com/wr/" target="_blank">劇場版官方網站</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">平台授權</span>
+        <h3 class="card-title">Cineverse旗下RetroCrush取得VIZ Media經典動畫串流版權</h3>
+        <p class="card-summary">美國懷舊動畫串流平台RetroCrush（Cineverse旗下）宣布與VIZ Media達成授權協議，首度引進《BLEACH》《獵人》《美少女戰士》《火影忍者》等劇場版，以及《棋靈王》《加速世界》《足球小將翼》《吸血鬼騎士》等電視動畫作品。這是RetroCrush首次取得上述大型IP的串流權，相關作品將陸續於其SVOD訂閱方案上線。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/28</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/press-release/2026-08-28/cineverse-retrocrush-acquires-streaming-rights-to-classic-anime-series-and-films-from-viz-media/.241064" target="_blank">Anime News Network</a>
+            <a href="https://www.c21media.net/news/cineverses-anime-streamer-retrocrush-licenses-package-of-shows-movies-from-viz/" target="_blank">C21Media</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">動畫化決定</span>
+        <h3 class="card-title">《Gamers!》作者葵關奈新作《我喜歡的人喜歡的人》宣布動畫化</h3>
+        <p class="card-summary">漫畫家葵關奈原作、都村弐郎作畫的漫畫《我喜歡的人喜歡的人（僕の好きな人が好きな人）》宣布改編電視動畫，同步公開由都村弐郎繪製的紀念插圖。作品目前於白泉社《Young Animal ZERO》連載中，描述男主角秋月空向不双芙羽告白遭拒，因而加入神秘社團追查對方心意，卻意外牽扯出一連串單戀鎖鏈的青春喜劇。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/27 深夜</span>
+          <div class="card-sources">
+            <a href="https://animecorner.me/gamers-creator-sekina-aois-my-crushs-crush-manga-gets-tv-anime/" target="_blank">Anime Corner</a>
+            <a href="https://www.animenewsnetwork.com/news/2026-08-27/my-crush-crush-manga-gets-tv-anime/.241053" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年08月28日 · 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

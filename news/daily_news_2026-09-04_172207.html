@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/09/04</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年09月04日（星期五）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">經濟制裁</span>
+        <h3 class="card-title">歐盟正式加入美國對伊朗「經濟棄民行動」制裁陣營</h3>
+        <p class="card-summary">美國財政部長貝森特宣布，歐盟已「正式加入」美國主導的對伊朗「經濟棄民行動（Operation Economic Outcast）」，讚許歐盟展現強硬且及早的立場。歐盟則表示將持續向伊朗施壓，要求其停止核武與飛彈計畫、停止支援俄羅斯侵烏戰爭，並強調仍須透過外交手段化解區域緊張、確保荷姆茲海峽航行自由。此舉是在美伊近日再度爆發軍事衝突之際，西方陣營對德黑蘭升高經濟施壓的最新進展。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04 上午</span>
+          <div class="card-sources">
+            <a href="https://aninews.in/news/world/us/treasury-secy-bessent-says-eu-officially-joins-us-led-operation-economic-outcast-against-iran20260904065728/" target="_blank">ANI News</a>
+            <a href="https://www.cnbc.com/2026/09/04/us-iran-war-trump-hormuz-operation-economic-outcast-sanctions-campaign.html" target="_blank">CNBC</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">軍事外交</span>
+        <h3 class="card-title">南韓評估派兵至荷姆茲海峽 尚未做出最終決定</h3>
+        <p class="card-summary">南韓總統府4日表示，是否派兵前往荷姆茲海峽的計畫仍在審議中，目前尚未做出最終決定，但強調在不損及既有戰備前提下，南韓可能對當地局勢做出貢獻。南韓媒體報導，軍方正籌備派遣包含海上巡邏機、爆裂物處理小組及海軍後勤支援艦在內的部隊，最快本月可能將同意案送交國會審議。此舉被認為與美國川普總統持續向首爾施壓、要求協助應對美伊衝突有關，也代表南韓過去「戰事結束後才考慮派兵」立場的轉變。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04 下午</span>
+          <div class="card-sources">
+            <a href="https://english.news.cn/asiapacific/20260904/5b9b1aa1fe48479f94a996fe306d37cc/c.html" target="_blank">新華網 Xinhua</a>
+            <a href="https://www.koreaherald.com/article/10862906" target="_blank">The Korea Herald</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">人道危機</span>
+        <h3 class="card-title">蘇丹西科爾多凡霍亂疫情惡化 至少10人死亡</h3>
+        <p class="card-summary">根據科爾多凡人權觀察組織通報，蘇丹西科爾多凡邦艾伊代地區至少已有10人死於霍亂、逾40人感染，世界衛生組織將該地列為「最新疫情熱點」。當地因蘇丹軍方與快速支援部隊（RSF）交戰而近乎與外界隔絕，靜脈輸液等急救藥品幾近斷絕，人道組織呼籲交戰雙方開放安全人道走廊，避免以糧食與藥品作為戰爭工具。世衛已展開針對西達爾富爾與西科爾多凡逾92.8萬人的疫苗接種行動。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04 中午</span>
+          <div class="card-sources">
+            <a href="https://allafrica.com/stories/202609040010.html" target="_blank">allAfrica / Dabanga</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">氣象/社會</span>
+        <h3 class="card-title">北北基豪雨特報 基隆多處淹水</h3>
+        <p class="card-summary">中央氣象署9月4日對基隆、新北北海岸及台北北半部發布超大豪雨特報，其餘北台灣地區發布豪雨特報。基隆市大武崙、西定路等地上午遭大雷雨襲擊，多處道路積淹水，市長謝國樑率隊勘災，並比照過往標準發放1萬至3萬元慰助金。氣象專家表示北台灣至週日仍有間歇性降雨，下週一起天氣才會逐漸好轉。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04 上午11:11起（持續更新）</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/society/202609040005" target="_blank">Focus Taiwan（中央社）</a>
+            <a href="https://news.ltn.com.tw/news/Keelung/breakingnews/5563212" target="_blank">自由時報</a>
+            <a href="https://www.ettoday.net/news/20260904/3231345.htm" target="_blank">ETtoday</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">九合一選舉登記今截止 雙北壓軸登場</h3>
+        <p class="card-summary">2026年九合一選舉候選人登記作業於9月4日截止，距11月28日投票僅剩85天。台北市長候選人蔣萬安委託他人代辦登記，並勾選願意參與辯論；新北市長候選人李四川則由現任市長侯友宜陪同，率跨黨派議員候選人一同完成登記，為登記期最後壓軸。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/society/202609040004" target="_blank">Focus Taiwan（中央社）</a>
+            <a href="https://news.ltn.com.tw/news/politics/breakingnews/5562799" target="_blank">自由時報</a>
+            <a href="https://news.tvbs.com.tw/politics/4015784" target="_blank">TVBS</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">社會</span>
+        <h3 class="card-title">運匠衝撞北檢遭裁定羈押</h3>
+        <p class="card-summary">9月3日凌晨駕駛計程車衝撞台北地檢署大門的邵姓運將，經檢方複訊後諭知10萬元交保，但邵男無力繳納保證金，檢方遂聲請羈押，台北地方法院於9月4日裁准羈押。警方指出邵男近期因多起訴訟結果不如預期，情緒失控後犯案，事件未造成人員受傷。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04 中午12:08</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/society/202609040006" target="_blank">Focus Taiwan（中央社）</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">財經</span>
+        <h3 class="card-title">台股收盤上漲1.51%</h3>
+        <p class="card-summary">台股9月4日終場上漲693.47點，漲幅1.51%，收在46,551.13點，成交量達新台幣8,256.3億元。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04 下午1:52</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/business/202609040008" target="_blank">Focus Taiwan（中央社）</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">合作收購</span>
+          <h3 class="card-title">輝達確認以近129億美元收購開源AI平台Hugging Face</h3>
+          <p class="card-summary">輝達執行長黃仁勳於9月3日證實，公司已同意以約129.3億美元收購開源AI社群平台Hugging Face，該平台目前託管超過300萬個模型、100萬個應用程式，並有逾1800萬名開發者使用。黃仁勳強調Hugging Face將維持開放平台定位，開發者仍可自由選擇模型、框架與運算平台，輝達運算資源並非必要條件。此案預計於2027上半年完成交割，尚待監管審查。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/09/03 晚上</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/" target="_blank">TechCrunch</a>
+              <a href="https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/" target="_blank">NVIDIA Blog</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">模型發布</span>
+          <h3 class="card-title">OpenAI發布GPT-6 Astra，總裁稱可能標誌AGI時代來臨</h3>
+          <p class="card-summary">OpenAI於9月3日晚間（美西時間）正式發布新旗艦模型GPT-6 Astra，總裁Greg Brockman稱其為「世代級躍進」，並表示這可能是AGI（通用人工智慧）到來的時刻。Astra以逾10萬顆GPU於Stargate德州場址完成史上最大規模訓練，並首度大量運用其他模型參與監督訓練過程。該模型將先開放給Daybreak Access計畫的部分機構，未來數日內陸續開放ChatGPT Plus、Pro、Business、Enterprise用戶及API開發者使用；OpenAI同時將其列為首個達到「關鍵」網路安全風險門檻的模型，將謹慎控管相關能力的開放範圍。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/09/04 凌晨</span>
+            <div class="card-sources">
+              <a href="https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman" target="_blank">Axios</a>
+              <a href="https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html" target="_blank">CNBC</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">服務事件</span>
+          <h3 class="card-title">Claude多款模型9月3日晚間發生大規模服務中斷</h3>
+          <p class="card-summary">Anthropic於9月3日（美東時間上午約9時40分，約為台灣時間晚間9時40分）證實Claude發生服務中斷，影響Mythos 5.1、Fable 5.1、Opus 5等多款模型，使用者透過網頁與API皆出現大量錯誤與請求失敗。Anthropic表示已鎖定部分成因並持續調查其餘問題，服務已於台灣時間9月4日凌晨左右恢復正常，影響範圍涵蓋開發者、企業與一般用戶的程式撰寫、研究與創作等應用。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/09/03 晚上</span>
+            <div class="card-sources">
+              <a href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-confirms-claude-is-down-multiple-models-affected/" target="_blank">BleepingComputer</a>
+              <a href="https://www.androidauthority.com/claude-sept-3-outage-3706962/" target="_blank">Android Authority</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,747.71</div>
+        <div class="index-change up">▲ +1.06%</div>
+        <div class="index-date">9/03 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">53,686.11</div>
+        <div class="index-change up">▲ +1.18%</div>
+        <div class="index-date">9/03 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">26,584.06</div>
+        <div class="index-change up">▲ +1.40%</div>
+        <div class="index-date">9/03 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">46,551.13</div>
+        <div class="index-change up">▲ +1.51%</div>
+        <div class="index-date">9/04 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$91.80</div>
+        <div class="index-change up">▲ +0.87%</div>
+        <div class="index-date">9/03 收盤</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">輝達130億美元收購AI開源平台Hugging Face</h3>
+        <p class="card-summary">輝達（Nvidia）宣布以約129.3億美元收購開源AI模型平台Hugging Face，執行長黃仁勳表示此舉旨在加速開放模型的普及，讓新創、企業與研究機構無需從零訓練模型即可運用先進AI能力。消息帶動輝達股價上漲，也激勵台積電等AI供應鏈個股走強。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/03 晚間（美東9/3上午）</span>
+          <div class="card-sources">
+            <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-03-2026" target="_blank">TheStreet</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">台積電盤中衝上2,415元 帶動台股反彈逾700點</h3>
+        <p class="card-summary">受美股四大指數全面收紅及輝達收購Hugging Face激勵，台積電（2330）今日開盤上漲25元、報2,415元，盤中一度衝高，終場上漲20元收在2,410元，漲幅0.84%。台股大盤也在權值股回神下終場上漲693.47點，收46,551.13點。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04 上午至終場</span>
+          <div class="card-sources">
+            <a href="https://news.nextapple.com/finance/20260904/91B759B3CF03FC044EC326664CA25103" target="_blank">壹蘋新聞網</a>
+            <a href="https://taronews.tw/2026/09/04/1207841/" target="_blank">芋傳媒 TaroNews</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">被動元件股全面噴出 國巨領軍鎖漲停</h3>
+        <p class="card-summary">台股被動元件族群今日表現強勢，國巨尾盤亮燈漲停鎖住，大毅、華新科、禾伸堂、金山電同步收漲停，立隆電、日電貿、信昌電、鈺邦等漲幅逾8%；散熱股奇鋐大漲逾8%、雙鴻亦收漲停，AI伺服器供應鏈買氣熱絡。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04 終場</span>
+          <div class="card-sources">
+            <a href="https://taronews.tw/2026/09/04/1207841/" target="_blank">芋傳媒 TaroNews</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">大宗商品</span>
+        <h3 class="card-title">美伊軍事衝突升溫 國際油價走高</h3>
+        <p class="card-summary">美國與伊朗軍事衝突持續升級，伊朗對美方在中東的多國目標發動飛彈與無人機攻擊，市場擔憂荷姆茲海峽原油運輸受阻。WTI原油9月3日收在91.80美元／桶、漲0.87%，布蘭特原油同步走高，地緣政治風險溢價明顯回升，為通膨前景增添變數。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/03 美股交易時段</span>
+          <div class="card-sources">
+            <a href="https://www.investing.com/commodities/crude-oil-historical-data" target="_blank">Investing.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">9/5（六）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 71%</div>
+          <div class="weather-note">午後雷陣雨,紫外線指數過量</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/6（日）</div>
+          <div class="weather-icon">🌧</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 100%</div>
+          <div class="weather-note">整日有雨,請攜帶雨具</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/7（一）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 71%</div>
+          <div class="weather-note">午後雷陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/8（二）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">22°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">局部雷陣雨,炎熱</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/9（三）</div>
+          <div class="weather-icon">🌧</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">整日有雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/10（四）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 73%</div>
+          <div class="weather-note">午後雷陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/11（五）</div>
+          <div class="weather-icon">🌧</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">局部降雨</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖） — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">9/5（六）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 6%</div>
+          <div class="weather-note">陸上強風特報至傍晚,平均風6級以上/陣風8級以上</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/6（日）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 67%</div>
+          <div class="weather-note">轉雷陣雨型態</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/7（一）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 12%</div>
+          <div class="weather-note">大致晴朗</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/8（二）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 6%</div>
+          <div class="weather-note">晴轉局部多雲</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/9（三）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps"><span class="temp-high">30°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 2%</div>
+          <div class="weather-note">刮風,注意海象</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/10（四）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 71%</div>
+          <div class="weather-note">陣雨雷暴,局部多雲</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/11（五）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">22°</span></div>
+          <div class="weather-rain">🌧 17%</div>
+          <div class="weather-note">大風特報,外出注意強風</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊（綜合 AccuWeather 及蕃薯藤氣象資料整理），精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">展覽活動/新作發表</span>
+        <h3 class="card-title">PlayStation State of Play 9月場登場，公布《Final Fantasy VII Revelation》發售日等多項新作情報</h3>
+        <p class="card-summary">Sony於美西時間9月3日清晨（台北時間9月3日晚間9點起）一連舉辦兩場State of Play直播，包含常規場次與聚焦亞洲開發商的State of Play Japan。壓軸公開《Final Fantasy VII Revelation》確定發售日，並釋出戰鬥與探索深度介紹影片；同場亦公布《Marvel's Wolverine》上市預告、《Until Dawn 2》、《Metro 2039》最新畫面，以及全新作品《Rhapsody in Scarlet》與《Maneater 2》。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/03 晚間</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/sony-state-of-play-september-2026-showcase-everything-announced/" target="_blank">Insider Gaming</a>
+            <a href="https://dotesports.com/general/news/state-of-play-september-3-trailers" target="_blank">Dot Esports</a>
+            <a href="https://www.gamespot.com/articles/playstation-state-of-play-september-2026-all-the-biggest-announcements-games-and-trailers/" target="_blank">GameSpot</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">《鬼武者：斬》（Onimusha: Way of the Sword）時隔20年正式上市</h3>
+        <p class="card-summary">Capcom推出《鬼武者》系列睽違20年的全新正統續作《鬼武者：斬》，於9月4日在PS5、Xbox Series X/S、PC及Switch 2同步發售。故事設定於江戶時代初期、遭「瘴氣」侵蝕的京都，玩家將以持鬼手套的武士身分對抗幻魔威脅，主打紮實戰鬥手感與奇幻怪物設計。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04</span>
+          <div class="card-sources">
+            <a href="https://www.gamespot.com/articles/the-biggest-new-game-releases-of-september-2026/" target="_blank">GameSpot</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">《NBA 2K27》全平台正式發售，導入DLSS 5神經渲染技術</h3>
+        <p class="card-summary">運動遊戲大作《NBA 2K27》於9月4日在PC、PS5、Xbox Series及Switch 2同步推出。新作導入NVIDIA DLSS 5 3D引導式神經渲染技術，並透過ProPLAY技術收錄超過7,000組動作捕捉動畫，帶來更擬真的球場體驗，遊戲已於8月26日開放搶先體驗。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04</span>
+          <div class="card-sources">
+            <a href="https://blogs.nvidia.com/blog/geforce-now-thursday-september-2026-games-list/" target="_blank">NVIDIA Blog</a>
+            <a href="https://www.gamespot.com/articles/the-biggest-new-game-releases-of-september-2026/" target="_blank">GameSpot</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">新番</span>
+        <h3 class="card-title">TV動畫《菌與鐵》公開第2彈概念視覺圖，元永慶太郎監督談製作理念</h3>
+        <p class="card-summary">講談社原作漫畫《菌與鐵》改編TV動畫於9月3日晚間公開第2彈概念視覺圖，畫面描繪主角丹特挺身對抗巨大敵人的背影。原作漫畫將於9月9日發售的《別冊少年Magazine》10月號迎來完結，最終單行本第10集也將於10月8日發售。動畫由曾執手《毀滅王國》等作品的元永慶太郎監督執導，橫濱Animation Lab負責製作。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/03 下午6點</span>
+          <div class="card-sources">
+            <a href="https://animeanime.jp/article/2026/09/03/102633.html" target="_blank">アニメ！アニメ！</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">紀念活動/新番預告</span>
+        <h3 class="card-title">《烏龍派出所》連載50週年紀念，全1965話限時50小時免費公開</h3>
+        <p class="card-summary">集英社為紀念秋本治《烏龍派出所（こち亀）》連載50週年，9月4日起在「少年Jump+」與「Zebrack」限時50小時（至9月6日13:59）免費公開全1965話，內容涵蓋展覽會展出過的篇章。官方同時預告，換角重製的新版動畫《新烏龍派出所》正在製作中，新聲優陣容將於9月內公布。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/04 下午1點15分</span>
+          <div class="card-sources">
+            <a href="https://news.denfaminicogamer.jp/news/260904r" target="_blank">電ファミニコゲーマー</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年09月04日 · 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

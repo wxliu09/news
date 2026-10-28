@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/06/17</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年06月17日（星期三）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">外交・軍事衝突</span>
+        <h3 class="card-title">美伊達成初步協議：停戰延長 60 天、荷姆茲海峽重開</h3>
+        <p class="card-summary">美國與伊朗於 2026 年 6 月 15 日宣布達成諒解備忘錄，將現行停火期延長 60 天，並承諾立即重開荷姆茲海峽、恢復戰前航運秩序。協議同時凍結約 240 億美元伊朗資產的解凍機制，並要求伊朗重申不發展核武的《不擴散核武器條約》義務。然而伊朗高濃縮鈾存量及核計畫處置問題仍懸而未決，雙方僅設定 60 天談判窗口。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/15–16</span>
+          <div class="card-sources">
+            <a href="https://www.npr.org/2026/06/15/nx-s1-5858590/us-iran-deal-updates" target="_blank">NPR</a>
+            <a href="https://www.nbcnews.com/news/us-news/deal-reached-united-states-iran-war-rcna350039" target="_blank">NBC News</a>
+            <a href="https://www.pbs.org/newshour/world/iran-and-u-s-reach-an-initial-deal-to-extend-the-ceasefire-and-open-the-strait-of-hormuz-but-challenges-remain" target="_blank">PBS NewsHour</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交・多邊峰會</span>
+        <h3 class="card-title">G7 埃維昂峰會閉幕：同意加強對俄制裁、力挺烏克蘭防空</h3>
+        <p class="card-summary">第 52 屆 G7 峰會於 2026 年 6 月 15 至 17 日在法國埃維昂舉行，會議聚焦烏克蘭戰事與對俄壓力。G7 領導人同意加強對俄油氣制裁，特朗普暗示美國將可能重新祭出俄羅斯石油制裁。加拿大總理卡尼與澤連斯基會面後宣布對俄新制裁，涉及 162 人、實體及船隻。G7 也同意提供烏克蘭更多愛國者防空系統，並討論授權生產以提高供應量。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16–17</span>
+          <div class="card-sources">
+            <a href="https://www.npr.org/2026/06/16/g-s1-128325/g7-leaders-summit" target="_blank">NPR</a>
+            <a href="https://www.cbc.ca/news/politics/carney-zelenskyy-sanctions-meeting-9.7236829" target="_blank">CBC News</a>
+            <a href="https://www.consilium.europa.eu/en/meetings/international-summit/2026/06/15-17/" target="_blank">EU Council</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">軍事衝突・海上事件</span>
+        <h3 class="card-title">俄羅斯軍艦在英吉利海峽向英國遊艇鳴槍示警</h3>
+        <p class="card-summary">俄羅斯海軍護衛艦「格里戈羅維奇海軍上將號」於 2026 年 6 月 16 日在英吉利海峽向英國籍遊艇「Bright Future」鳴槍示警。俄方稱遊艇危險靠近至 150 公尺距離且對通訊無回應，英國國防部表示正調查此事件。槍聲未造成人員傷亡，但此事發生於英國扣押疑似俄羅斯「影子船隊」油輪後不久，加劇英俄緊張關係。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16</span>
+          <div class="card-sources">
+            <a href="https://www.itv.com/news/2026-06-16/russian-warship-fired-warning-shot-at-yacht-in-english-channel" target="_blank">ITV News</a>
+            <a href="https://www.euronews.com/my-europe/2026/06/16/russian-warship-fires-shots-at-vessel-in-english-channel-uk-media-say" target="_blank">Euronews</a>
+            <a href="https://www.nbcnews.com/world/united-kingdom/uk-investigating-reports-russian-warship-fired-warning-shots-yacht-eng-rcna350310" target="_blank">NBC News</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">中東局勢</span>
+        <h3 class="card-title">以色列朝野憤怒：對美伊協議強烈反彈，矛頭指向尼坦雅胡</h3>
+        <p class="card-summary">美伊達成停戰暨荷姆茲海峽重開協議後，以色列各政治派系普遍表達強烈不滿，認為協議允許伊朗保留低濃度核濃縮能力，形同對以色列安全的威脅。跨黨派批評聲浪直指總理尼坦雅胡未能阻止這項被形容為「以色列災難」的協議。此局面凸顯美以同盟關係在特朗普第二任期的新裂痕。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16</span>
+          <div class="card-sources">
+            <a href="https://www.cnn.com/2026/06/16/world/live-news/iran-war-g7-summit" target="_blank">CNN</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">人道・皇室</span>
+        <h3 class="card-title">挪威王儲哈康削減公務，陪伴病危妻子等待肺臟移植</h3>
+        <p class="card-summary">挪威王儲哈康宣布大幅縮減王室公務，以陪伴被告知肺臟已「急劇惡化」、需等待肺臟移植的妻子梅特-瑪麗王儲妃。王儲妃梅特-瑪麗（52 歲）自 2018 年確診慢性肺纖維化，醫師於 2026 年 6 月 5 日將她列入肺臟移植等待名單，意味其預期餘命不足兩年。此消息引發挪威社會廣泛關注。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16</span>
+          <div class="card-sources">
+            <a href="https://www.thelocal.no/20260616/norways-crown-prince-cuts-workload-to-be-with-gravely-ill-wife" target="_blank">The Local Norway</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交・能源</span>
+        <h3 class="card-title">荷姆茲海峽危機背景：美伊框架協議的國際影響與後續挑戰</h3>
+        <p class="card-summary">2026 年荷姆茲海峽危機起因於美伊軍事衝突導致全球石油主要出口通道受阻，引發國際能源市場震盪。此次美伊框架協議承諾在 30 天內恢復戰前航運秩序，並解凍 120 億美元伊朗資產（總額的一半）作為正式談判前的啟動條件。聯合國安理會預計以具約束力決議形式確認協議，但核計畫問題仍是最大不確定因素。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/15–16</span>
+          <div class="card-sources">
+            <a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis" target="_blank">Wikipedia – 2026 Hormuz Crisis</a>
+            <a href="https://www.pbs.org/newshour/world/iran-and-u-s-reach-an-initial-deal-to-extend-the-ceasefire-and-open-the-strait-of-hormuz-but-challenges-remain" target="_blank">PBS NewsHour</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">社會</span>
+        <h3 class="card-title">南港 LaLaport 威秀影城傳火警，觀眾緊急疏散</h3>
+        <p class="card-summary">台北新地標南港 LaLaport 內的威秀影城於 6 月 17 日發生火警，疑似爆米花機或保溫箱起火。影廳內觀眾已被緊急疏散，消防人員到場處理。事件引發外界對新型大型商場消防安全的關注。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17</span>
+          <div class="card-sources">
+            <a href="https://tw.news.yahoo.com/" target="_blank">Yahoo 奇摩新聞</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">教育</span>
+        <h3 class="card-title">國中教育會考英語科登場，首度出現 4 名說話者聽力題</h3>
+        <p class="card-summary">115 年國中教育會考英語科於 6 月 17 日舉行，試題維持難易適中原則，重視真實語言使用情境。聽力第 21 題首度出現 4 名說話者，為歷屆考題一大創新。全台考生同步應試，本屆命題走向將成為各界解析焦點。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17</span>
+          <div class="card-sources">
+            <a href="https://news.pts.org.tw/" target="_blank">公視新聞</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">軍事</span>
+        <h3 class="card-title">賴總統親赴岡山，頒褒揚令慰問殉職飛官家屬</h3>
+        <p class="card-summary">賴清德總統今日搭乘總統專機降落空軍岡山機場，親自頒發褒揚令並慰問 T-34 教練機失事殉職飛官的家屬。此舉展現國家對犧牲奉獻飛官的最高敬意，並表達政府對軍事訓練安全的重視。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17 上午</span>
+          <div class="card-sources">
+            <a href="https://news.ltn.com.tw/news/life/breakingnews/5474568" target="_blank">自由時報</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">國防</span>
+        <h3 class="card-title">台灣採購 F-16C/D Block 70 首架現蹤德州，網友目擊</h3>
+        <p class="card-summary">我國向美採購的 66 架 F-16C/D Block 70 戰機中，首架出場的「6831」號雙座機日前被網友目擊飛抵德州沃斯堡機場。這批新型戰機將大幅提升台灣空軍戰力，預計陸續完成交機作業，是台美軍售合作的重要里程碑。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17</span>
+          <div class="card-sources">
+            <a href="https://news.ltn.com.tw/" target="_blank">自由時報</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">台美商會發布 2026 白皮書，ART 貿易協定落實列首要議題</h3>
+        <p class="card-summary">台灣美國商會發布「2026 台灣白皮書」，將「確保 ART 台美對等貿易協定順利落實」列為首要議題。白皮書同時關注能源供應穩定性，呼籲台灣政府儘速制定能源路線圖，以因應企業運營需求與淨零轉型目標。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/" target="_blank">Focus Taiwan（中央社）</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">能源</span>
+        <h3 class="card-title">台電鉅額虧損，中華郵政擬挹注 3000 億元紓困</h3>
+        <p class="card-summary">台電因電費政策持續承受龐大財務壓力，中華郵政正研議以 3000 億元資金支援台電渡過難關。此案引發外界對公股資源調配及電費補貼政策的廣泛討論，立院亦持續關注後續進展，能源政策走向備受矚目。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/" target="_blank">Focus Taiwan（中央社）</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">司法</span>
+        <h3 class="card-title">台美情資合作查扣大批毒品，281 公斤海洛因及 353 公斤愷他命遭緝獲</h3>
+        <p class="card-summary">調查局在台美情資合作下，查獲「添發財卅八號」漁船走私大批毒品，包括 281 公斤海洛因磚及 353 公斤愷他命，規模龐大。此案為近期重大跨國毒品緝獲行動，顯示台美執法合作成效卓著。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17</span>
+          <div class="card-sources">
+            <a href="https://news.ltn.com.tw/" target="_blank">自由時報</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">法律</span>
+        <h3 class="card-title">立法院三讀通過廢棄物清理法修正案，加重非法棄置工業廢棄物刑責</h3>
+        <p class="card-summary">立法院今日三讀通過廢棄物清理法修正案，大幅提高非法棄置工業廢棄物的罰則，並對於在環境敏感區域傾倒廢棄物者加重刑責。修法旨在遏制屢見不鮮的非法棄廢行為，保護生態環境，業者違規成本將顯著提升。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/" target="_blank">Focus Taiwan（中央社）</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">產業衝擊</span>
+          <h3 class="card-title">科技業裁員每日逾千人：企業以 AI 為由，但研究顯示獲利無改善</h3>
+          <p class="card-summary">截至 2026 年 6 月 14 日，科技、金融、醫療業共 247 起裁員事件影響近 18.4 萬名員工，平均每個工作日裁員 1,115 人，幾乎是 2025 年速率的兩倍。Meta、Oracle、Block 等企業公開以 AI 為裁員理由，但 Gartner 5 月調查 350 家企業後發現，裁最多員的公司財務回報與裁最少的幾乎相同，顯示「AI 洗白」現象普遍。加州州長 Newsom 於 5 月 21 日簽署行政命令，要求勞工機構提出應對 AI 引發失業的政策建議。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/06/16</span>
+            <div class="card-sources">
+              <a href="https://www.techtimes.com/articles/318466/20260616/tech-layoffs-hit-1115-day-2026-companies-cite-ai-cuts-fail-boost-returns.htm" target="_blank">Tech Times</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <!-- 近 24 小時截止時間範圍內無符合條件的 Claude 專欄新消息 -->
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,511.35</div>
+        <div class="index-change down">▼ -0.57%</div>
+        <div class="index-date">6/16 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">51,999.67</div>
+        <div class="index-change up">▲ +0.64%</div>
+        <div class="index-date">6/16 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">26,376.34</div>
+        <div class="index-change down">▼ -1.15%</div>
+        <div class="index-date">6/16 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">45,608.34</div>
+        <div class="index-change down">▼ -0.44%</div>
+        <div class="index-date">6/17 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$75.47</div>
+        <div class="index-change down">▼ -6.33%</div>
+        <div class="index-date">6/17 最新</div>
+      </div>
+
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">道瓊創歷史新高，那斯達克與標普受半導體賣壓下跌，市場靜待聯準會首次 Warsh 會議</h3>
+        <p class="card-summary">6 月 16 日美股三大指數走勢分歧，道瓊工業指數漲 0.64% 收 51,999 點創歷史新高，那斯達克跌 1.15%、標普 500 跌 0.57%。費城半導體指數重挫 5.71%，英特爾跌 8.45%、AMD 跌 7.3%、英偉達跌 2.37%。市場瀰漫觀望氣氛，等待新任聯準會主席 Warsh 主持的首次 FOMC 會議（6 月 17 日）決議，目前利率預期維持 3.50–3.75% 不變，金融與工業股逆勢走強。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16 收盤後</span>
+          <div class="card-sources">
+            <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/261971325-nasdaq-dowjones-sp500-us-stock-spacex-chip-intel-apple-ai-tradingkey" target="_blank">TradingKey</a>
+            <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-16-2026" target="_blank">TheStreet</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">企業動態</span>
+        <h3 class="card-title">SpaceX 上市第二日以 600 億美元收購 Cursor，市值一度超越 Amazon</h3>
+        <p class="card-summary">SpaceX（SPCX）於上市第二個交易日宣布以 600 億美元全股票收購 AI 程式碼工具 Cursor 的開發商 Anysphere，股價盤中最高觸及 $225.64 歷史新高，最終收漲 4.77% 至 $201.68，IPO 以來累漲近 50%。Cursor 年度經常性收入已達 40 億美元，交易預計於 2026 年第三季完成，SpaceX 市值一度暫居全球第五大股。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16</span>
+          <div class="card-sources">
+            <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/261971325-nasdaq-dowjones-sp500-us-stock-spacex-chip-intel-apple-ai-tradingkey" target="_blank">TradingKey</a>
+            <a href="https://www.alainguillot.com/stock-market-recep-tuesday-june-16-2026/" target="_blank">Alain Guillot</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">台股 6 月 17 日受費半重挫拖累，加權指數收跌 0.44% 至 45,608 點</h3>
+        <p class="card-summary">台股 6 月 17 日受前一日美股費半指數重挫 5.71% 影響，開盤走低，盤中最低下探 45,159 點。隨後跌幅收斂，加權指數終場收 45,608.34 點，跌 200.85 點（-0.44%），回吐前日部分漲幅。台積電盤中最低跌至 2,350 元，散戶積極承接跌勢，量縮整理格局。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17 盤後</span>
+          <div class="card-sources">
+            <a href="https://statementdog.com/taiex" target="_blank">財報狗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">原物料</span>
+        <h3 class="card-title">美伊停火備忘錄簽署、荷姆茲解除封鎖，WTI 原油跌破 76 美元</h3>
+        <p class="card-summary">美伊兩國正式簽署停火備忘錄，協議允許伊朗立即恢復石油出口，荷姆茲海峽解除封鎖使供應憂慮消散。WTI 原油 6 月 17 日交投於 $75.47 附近，較上週高點 $95–98 已下跌逾 20%。油價下滑被視為強力通膨降溫訊號，市場預期若油價維持低位，美國 6 月 CPI 數據可能大幅回落。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17</span>
+          <div class="card-sources">
+            <a href="https://fxdailyreport.com/wti-crude-oil-price-analysis-for-june-17-2026/" target="_blank">FX Daily Report</a>
+            <a href="https://www.alainguillot.com/stock-market-recep-tuesday-june-16-2026/" target="_blank">Alain Guillot</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+
+        <div class="weather-card">
+          <div class="weather-date">6/17（三）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">34°</span> / <span class="temp-low">24°</span>
+          </div>
+          <div class="weather-rain">🌧 90%</div>
+          <div class="weather-note">幾場陣雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/18（四）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">34°</span> / <span class="temp-low">25°</span>
+          </div>
+          <div class="weather-rain">🌧 25%</div>
+          <div class="weather-note">多雲</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/19（五）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">36°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 63%</div>
+          <div class="weather-note">少量降雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/20（六）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">36°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 13%</div>
+          <div class="weather-note">多雲間晴</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/21（日）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps">
+            <span class="temp-high">38°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 6%</div>
+          <div class="weather-note">酷熱，紫外線極強</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/22（一）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">36°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 4%</div>
+          <div class="weather-note">多雲間晴</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/23（二）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">34°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 1%</div>
+          <div class="weather-note">多雲間晴</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖） — 未來 7 天預報</div>
+      <div class="weather-grid">
+
+        <div class="weather-card">
+          <div class="weather-date">6/17（三）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">29°</span> / <span class="temp-low">23°</span>
+          </div>
+          <div class="weather-rain">🌧 98%</div>
+          <div class="weather-note">大風，西南偏南風強</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/18（四）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">28°</span> / <span class="temp-low">24°</span>
+          </div>
+          <div class="weather-rain">🌧 25%</div>
+          <div class="weather-note">大風</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/19（五）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">29°</span> / <span class="temp-low">25°</span>
+          </div>
+          <div class="weather-rain">🌧 25%</div>
+          <div class="weather-note">大風</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/20（六）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">31°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 9%</div>
+          <div class="weather-note">大風趨緩</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/21（日）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">32°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 19%</div>
+          <div class="weather-note">偏南風</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/22（一）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps">
+            <span class="temp-high">35°</span> / <span class="temp-low">25°</span>
+          </div>
+          <div class="weather-rain">🌧 7%</div>
+          <div class="weather-note">大風，氣溫偏高</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">6/23（二）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">33°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">少量降雨，偏南風</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+      資料來源：<a href="https://www.accuweather.com/zh/tw/taipei-city/315078/daily-weather-forecast/315078" target="_blank">AccuWeather 台北</a>、
+      <a href="https://www.accuweather.com/zh/tw/mazu-village/1715845/weather-forecast/1715845" target="_blank">AccuWeather 馬祖</a>
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">重大更新</span>
+        <h3 class="card-title">《黎明死線》10 週年：傑森沃荷斯終於加入，長達十年的版權糾紛畫下句點</h3>
+        <p class="card-summary">Behaviour Interactive 於 2026 年 6 月 16 日（遊戲 10 週年紀念日）正式推出第 40 章「傑森（The Slasher）」，玩家終可在 PC、PlayStation、Xbox 及 Nintendo Switch 上操控恐怖殺手傑森。章節售價 4.99 美元或 500 Auric Cells，包含傑森本體及三款外觀。Behaviour Interactive 同場宣布《黎明死線》電影正式開發，由 Blumhouse 及 James Wan 的 Atomic Monster 聯合製作，預計 2027 年開始拍攝。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16 深夜</span>
+          <div class="card-sources">
+            <a href="https://www.techtimes.com/articles/318508/20260616/jason-voorhees-arrives-dead-daylight-today-decade-long-wait-ends.htm" target="_blank">Tech Times</a>
+            <a href="https://bloody-disgusting.com/video-games/3956328/jason-voorhees-now-stalks-dead-by-daylight-trailer/" target="_blank">Bloody Disgusting</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">Steam Machine 售價洩漏達 1,500 美元，價格公布日預計 6 月 23 日</h3>
+        <p class="card-summary">多份洩漏消息指出，Valve Steam Machine 正式價格將於 6 月 23 日上午 10 點（PT）公布，預購則於 6 月 30 日開放，洩漏售價已攀升至 1,500 美元，遠超索尼 PS5 Pro（約 700 美元）。價格大幅上漲的主因是 AI 資料中心帶動的 DRAM 全球短缺，記憶體合約價年增超過 170%。此外，Steam Machine 仍有超過 680 款熱門遊戲存在核心反作弊軟體相容性問題。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17 清晨</span>
+          <div class="card-sources">
+            <a href="https://www.techtimes.com/articles/318520/20260616/steam-machine-price-hits-1500-leaks-valves-anti-cheat-gap-narrows-market.htm" target="_blank">Tech Times</a>
+            <a href="https://screenrant.com/steam-machine-price-pre-order-date-june-2026-leaks/" target="_blank">Screen Rant</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">合作偵探恐怖遊戲《Shift At Midnight》今日正式上線，同步加入 Xbox Game Pass</h3>
+        <p class="card-summary">由澳洲獨立開發者 Bun Muen 製作、Kwalee 發行的合作恐怖遊戲《Shift At Midnight》於 6 月 17 日在 PC（Steam、itch.io）及 Xbox Series 正式推出，並同步加入 Xbox Game Pass。遊戲支援最多 3 人連線合作，玩家在加油站隨機生成的夜班中需辨識並消滅偽裝成人類的雙面怪物，若判斷錯誤遭放走的怪物將稍後回頭攻擊玩家。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/17</span>
+          <div class="card-sources">
+            <a href="https://bloody-disgusting.com/video-games/3953787/co-op-detective-horror-game-shift-at-midnight-launches-june-17-trailer/" target="_blank">Bloody Disgusting</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新作公告</span>
+        <h3 class="card-title">芬蘭民俗恐怖謎題遊戲《The Polar Darkness》公開首支預告，靈感來自 Gabriel Knight</h3>
+        <p class="card-summary">獨立工作室 Horsefly Games 於 6 月 16 日發布《The Polar Darkness》的首支預告片，遊戲背景設定在 1980 年代北芬蘭的極夜，玩家扮演記者調查一場神秘的邪教集會，隨著暴風雪切斷對外聯繫、孩童離奇失蹤，謎題愈陷愈深。遊戲結合 2D 真人攝影角色與 3D 環境、時間流動機制及芬蘭民謠原聲帶，預計 2027 年登上 Steam。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16 深夜</span>
+          <div class="card-sources">
+            <a href="https://bloody-disgusting.com/video-games/3956262/immerse-yourself-in-mystery-with-narrative-driven-folk-horror-title-the-polar-darkness-trailer/" target="_blank">Bloody Disgusting</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">新番預告</span>
+        <h3 class="card-title">《十年孤軍成傳說》公開主 PV 及主題曲，確定 7 月 6 日首播</h3>
+        <p class="card-summary">改編自輕小說《I Became a Legend After My 10 Year-Long Last Stand》的動畫公開正式主宣傳影像，同步揭露片頭曲「Soredemo Donten wo Koeteyuku」（sajou no hana 演唱）與片尾曲「Lucky in the Ordinary」（MEISHOHIKOKAI 演唱）。動畫由 Studio GEKKOU 製作、Hiroyuki Kanbe 擔任導演，確定 2026 年 7 月 6 日首播，主角由梶原岳人配音。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16 下午（台灣時間 16:30）</span>
+          <div class="card-sources">
+            <a href="https://animecorner.me/i-became-a-legend-after-my-10-year-long-last-stand-reveals-main-pv-theme-songs-july-6-premiere/" target="_blank">Anime Corner</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">當季播出</span>
+        <h3 class="card-title">《Re:ZERO 第四季》第 11 集（喪失篇終章）預告公開，6 月 17 日播出</h3>
+        <p class="card-summary">《Re:ZERO -Starting Life in Another World- Season 4》公開第 11 集正式預告，此集為「喪失篇」的最終回，預定 2026 年 6 月 17 日播出。預告顯示 Subaru 因被懷疑是偽冒者而遭 Ram 以風魔法擊暈，醒來後卻發現自己身在冰牢之外。第四季共 19 集分兩部分播出，第二部分「奪回篇」8 集將於 2026 年 8 月 12 日接續。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16 下午（台灣時間 16:59）</span>
+          <div class="card-sources">
+            <a href="https://animecorner.me/rezero-season-4-episode-11-part-1-finale-preview/" target="_blank">Anime Corner</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">重大公告</span>
+        <h3 class="card-title">MAPPA 15 週年紀念主視覺第一彈公開，以《電鋸人：蕾澤篇》為主角</h3>
+        <p class="card-summary">動畫製作公司 MAPPA 公開 15 週年紀念活動（6 月 19 日舉行）的第一張紀念主視覺，以劇場版《電鋸人 The Movie: Reze Arc》的蕾澤（Reze）為主角。6 月 19 日的活動預計揭露《電鋸人》國際暗殺篇、《呪術廻戰》第四季、《進擊的巨人》最終季、《多羅羅第二期》及《忘卻電池》第二季等多部作品最新情報，並預告將公布全新原創企劃。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/06/16 下午（台灣時間 17:17）</span>
+          <div class="card-sources">
+            <a href="https://animecorner.me/chainsaw-man-reze-arc-movie-featured-on-first-mappa-15th-anniversary-key-visual/" target="_blank">Anime Corner</a>
+            <a href="https://www.mappa.co.jp/15th/" target="_blank">MAPPA 官方網站</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年06月17日 14:02 · 蒐集範圍：近 24 小時（截止：2026-06-16 13:57）</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

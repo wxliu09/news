@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/10/13</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年10月13日（星期二）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">中東衝突</span>
+        <h3 class="card-title">胡塞武裝連續第三天以飛彈攻擊沙烏地首都利雅德</h3>
+        <p class="card-summary">沙烏地聯軍表示已攔截一枚射向利雅德及兩枚射向南部哈米斯穆謝特的彈道飛彈。胡塞武裝稱週六攻擊哈立德國王國際機場，造成至少13人死亡、300多人受傷，利雅德機場將關閉至週六，多家航空公司取消或延後航班。川普批評胡塞武裝，但未表態介入。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/12/houthi-missile-attack-targets-saudi-capital-riyadh-for-third-day-in-a-row" target="_blank">Al Jazeera</a><a href="https://www.aljazeera.com/news/liveblog/2026/10/13/iran-war-live-trump-says-houthis-misbehaving-as-riyadh-flights-halted" target="_blank">Al Jazeera 直播</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">俄烏戰爭</span>
+        <h3 class="card-title">川普稱能源設施停火仍有效，烏克蘭指俄軍再度發動攻擊</h3>
+        <p class="card-summary">川普表示俄烏同意停止攻擊對方能源基礎設施，但澤倫斯基稱週一俄軍至少襲擊六處烏克蘭能源設施，造成33人受傷。俄羅斯外長拉夫羅夫拒絕任何停火。歐盟同時通過2022年入侵以來最大規模的對俄制裁，涉及約1,569個個人與實體。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/economy/2026/10/13/trump-insists-energy-ceasefire-holds-as-ukraine-reports-new-russian-strikes" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">外交安全</span>
+        <h3 class="card-title">英國指伊朗策劃攻擊費爾福德空軍基地，制裁兩名伊朗人</h3>
+        <p class="card-summary">英國首相伯納姆表示，針對美軍使用的皇家空軍費爾福德基地的疑似陰謀「幾乎肯定」由伊朗革命衛隊主導。英國制裁兩名伊朗人並召見伊朗大使，伊朗否認涉入。包括英美在內的29國同日聯合聲明，譴責伊朗的暴力攻擊、縱火、破壞與網路攻擊。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 凌晨</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/12/uk-blames-iran-for-airbase-plot-sanctions-two-iranian-nationals" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">網路安全</span>
+        <h3 class="card-title">法國數百家超市遭「史無前例」網路攻擊，冷藏設備被竄改</h3>
+        <p class="card-summary">駭客攻擊冷藏系統，使冰箱溫度升至最高50°C，導致食品腐壞，部分門市起火。受影響包括Intermarché、Netto、家樂福與Monoprix等。Intermarché執行長估計單日損失達數千萬歐元，法國國家網路安全局調查指與丹佛斯（Danfoss）軟體漏洞有關，西班牙、德國等國亦受影響。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/13/unprecedented-cyberattack-hits-french-supermarkets-causing-food-losses" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">人道危機</span>
+        <h3 class="card-title">蘇丹達佛與科爾多凡地區饑荒風險上升</h3>
+        <p class="card-summary">IPC警告，衝突與厄爾尼諾引發的乾旱使饑荒風險升高，乾旱影響約半數蘇丹國土。南達佛兩處流離失所營地的急性營養不良率已超過饑荒門檻。蘇丹戰爭自2023年4月爆發，至少15萬人死亡，約1,300萬人流離失所。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 凌晨</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/12/conflict-drought-increasing-risk-of-famine-in-sudan-monitor" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">加拿大政治</span>
+        <h3 class="card-title">亞伯達省公投在即，卡尼呼籲國家團結</h3>
+        <p class="card-summary">加拿大總理卡尼在感恩節談話中呼籲團結，亞伯達省將於10月19日就非約束性問題投票，若通過將啟動未來脫離加拿大的法律程序。民調顯示多數亞伯達人反對獨立。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 凌晨</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/12/canadas-carney-calls-for-unity-as-alberta-prepares-for-secession-vote" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">非洲衝突</span>
+        <h3 class="card-title">衣索比亞軍隊進入提格雷戰略重鎮阿杜瓦</h3>
+        <p class="card-summary">據目擊者表示，衣索比亞部隊未遭抵抗即進入提格雷戰略城鎮阿杜瓦。詳細傷亡與政治影響尚待更多報導確認。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 凌晨</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/12/ethiopian-troops-capture-adwa-without-a-fight-witnesses-say" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">財經</span>
+        <h3 class="card-title">台股重挫960點收48,341點，外資狂賣</h3>
+        <p class="card-summary">台股13日收跌960.65點，收在48,341.31點，盤中最多重挫逾1,200點。中央社指出，原因包括中東局勢緊張、市場對AI投資熱潮的疑慮再起，以及外資擴大匯出資金。費城半導體指數週一下跌2.67%，已連跌4日。三大法人合計賣超約1,984億元。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 下午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202610130147.aspx" target="_blank">中央社</a><a href="https://money.udn.com/money/story/5607/9811708" target="_blank">經濟日報</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">匯市</span>
+        <h3 class="card-title">新台幣盤中貶破32元，創2個月新低</h3>
+        <p class="card-summary">股匯雙殺之下，新台幣兌美元盤中最低觸及32.237元，跌破32元整數關卡，為2個月來盤中新低。午盤重貶1.9角，暫收32.085元。熱錢撤離與美元高檔強勢為主因。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 下午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202610130187.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">卓榮泰：修反滲透法，對中國跨境鎮壓追究罪責</h3>
+        <p class="card-summary">行政院長卓榮泰在立法院施政總質詢中表示，將在反滲透法中加強規範，對接受境外敵對勢力指示、委託或資助從事跟監、騷擾、威脅等跨國鎮壓行為者追究罪責，並希望修法後立法院盡速通過。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 下午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aipl/202610130186.aspx" target="_blank">中央社</a><a href="https://udn.com/news/story/6656/9811946" target="_blank">聯合新聞網</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">軍警消待遇修法：卓榮泰主張視釋憲結果再提案</h3>
+        <p class="card-summary">卓榮泰表示，軍警消待遇調整應顧及衡平性，不應齊頭式加薪，希望待釋憲結果出來或各界有共識後再提出修法。民眾黨立委陳清龍質疑行政院只提書面報告，卓榮泰否認失信於立法院。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 下午</span>
+          <div class="card-sources"><a href="https://money.udn.com/money/story/7307/9812071" target="_blank">經濟日報</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">選舉</span>
+        <h3 class="card-title">黃世杰造勢場地爭議，藍白質疑占用國有地</h3>
+        <p class="card-summary">國民黨團與民眾黨團質疑，民進黨桃園市長參選人黃世杰在中壢的造勢場地使用農田水利署土地，涉及占用國有地及行政中立。黃世杰回應是依法申請，下一場大型造勢將於17日在桃園朝陽公園舉行。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 下午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aipl/202610130182.aspx" target="_blank">中央社</a><a href="https://news.ltn.com.tw/news/politics/breakingnews/5604764" target="_blank">自由時報</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">早晚溫差大，熱帶擾動最快15日後成颱「薔琵」</h3>
+        <p class="card-summary">氣象署表示，13日清晨局部地區低溫下探16至17度，白天回暖至約30度。關島附近熱帶擾動96W最快15日以後成颱，命名「薔琵」，多數模式認為後期北轉，但位置仍有分歧。東北季風14至15日增強，16日起減弱。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://www.ettoday.net/news/20261013/3253487.htm" target="_blank">ETtoday</a><a href="https://news.tvbs.com.tw/life/4035250" target="_blank">TVBS</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">AI 基礎設施</span>
+          <h3 class="card-title">Nvidia 於 OCP 高峰會開放 Vera Rubin 機櫃設計</h3>
+          <p class="card-summary">Nvidia 在 OCP Global Summit 上透過 MGX 1.2 規格貢獻 Vera Rubin 機櫃與運算托盤設計，加入液冷、更高功率匯流排，並支援最高 250kW 機櫃。Nvidia 也與 AMD、Google、Meta 共同發布 Open Data Center Specification v0.7。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/10/12 深夜</span>
+            <div class="card-sources"><a href="https://blogs.nvidia.com/blog/ocp-global-summit-vera-rubin-scale-ai-factories/" target="_blank">NVIDIA Blog</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">模型發布</span>
+          <h3 class="card-title">Meta 發表 Muse Wonder 系列模型</h3>
+          <p class="card-summary">Meta 推出 Muse Wonder 與 Muse Wonder Full，定位為個人與專業代理任務的最強模型，具備「Active Memory」與「Active Focus」功能。Artificial Analysis 智慧指數評分 Full 為 56、Wonder 為 52，基準成績為 Meta 自行公布。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/10/12 深夜</span>
+            <div class="card-sources"><a href="https://research.meta.ai/blog/muse-wonder" target="_blank">Meta Research</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">晶片市場</span>
+          <h3 class="card-title">IDC：Nvidia 中國 AI 晶片份額降至 34%，華為升至 28%</h3>
+          <p class="card-summary">IDC 數據顯示，Nvidia 2026 上半年在中國出貨 67.8 萬顆 AI 加速器，年減 44%；華為出貨 57.2 萬顆，與 Nvidia 差距明顯縮小。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/10/13 上午</span>
+            <div class="card-sources"><a href="https://www.thestandard.com.hk/innovation/article/345296/Nvidias-China-AI-chip-share-falls-as-Huawei-closes-gap-report-finds" target="_blank">The Standard</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">產業動態</span>
+          <h3 class="card-title">Character.AI 聲請破產保護，迪士尼出價 2,000 萬美元競標資產</h3>
+          <p class="card-summary">Character.AI 於 10 月 12 日聲請 Chapter 11。迪士尼為詢價基準出價人，標的為非獨家永久 IP 授權與過渡服務，交易預計在 11 月底至 12 月初完成。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/10/13 上午</span>
+            <div class="card-sources"><a href="https://aiweekly.co/alerts/characterai-files-chapter-11-disney-bids-20m-for-ip-license" target="_blank">AI Weekly</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">AI 晶片</span>
+          <h3 class="card-title">微軟發表 Maia 300 推論晶片，2027 年於 Azure 擴大部署</h3>
+          <p class="card-summary">微軟第三代自研加速器搭載八組 HBM4，單晶片 288GB 記憶體，計畫自 2027 年起進行數個 GW 等級的部署。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/10/13 上午</span>
+            <div class="card-sources"><a href="https://aiweekly.co/alerts/microsoft-maia-300-packs-288-gb-hbm4-7x-maia-200-throughput" target="_blank">AI Weekly</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">Anthropic 安全</span>
+        <h3 class="card-title">Anthropic：新防禦使蒸餾者可竊取的推理資料減少約 90-99%</h3>
+        <p class="card-summary">Anthropic 表示新防禦措施讓蒸餾者可從 Claude 擷取的推理資料減少約 90 至 99%，包括限制推理內容流向與誤判率低於 0.1% 的兩階段分類器，並已封鎖數萬個相關帳號，呼籲其他業者跟進。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://www.anthropic.com/research/distillation-defenses" target="_blank">Anthropic</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">Anthropic 研究</span>
+        <h3 class="card-title">Anthropic 紅隊：小型模型可能數月內具備 IoT 裝置自我複製能力</h3>
+        <p class="card-summary">Frontier Red Team 指出，小型開源模型可能在數月內於廉價 IoT 裝置上自我複製，9B 模型在 9 種硬體中成功完成 8 種的推論部署。作者估計小模型可能在 2026 年底達到端到端複製能力，並建議以網路流量監控與 ISP 隔離防禦。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://www.anthropic.com/research/self-replicating-ai" target="_blank">Anthropic</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">基礎建設</span>
+        <h3 class="card-title">日經：NTT 洽談為 Anthropic 興建日本首座專屬資料中心</h3>
+        <p class="card-summary">據日經亞洲報導，NTT Data 進入最後階段談判，擬在大阪為 Anthropic 興建約 63 億美元、500MW 的資料中心，部分營運目標為 2028 年，雙方力求在 3 月 31 日前簽約。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://asia.nikkei.com/business/technology/artificial-intelligence/ntt-to-build-first-data-center-for-anthropic-in-japan" target="_blank">Nikkei Asia</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">Claude Code</span>
+        <h3 class="card-title">Linus Torvalds 推送與 Claude Code 共同撰寫的核心分支</h3>
+        <p class="card-summary">Torvalds 推送重寫 page cache 的核心分支，在他的基準測試中小檔讀取吞吐量近三倍，並表示 Claude Code 完成了大部分工作。該分支尚未合併。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://hwbusters.com/news/linus-torvalds-uses-claude-code-to-rework-the-linux-page-cache-tripling-small-read-throughput/" target="_blank">HWBusters</a></div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&P 500</div>
+        <div class="index-value">7,807.24</div>
+        <div class="index-change down">▼ -0.06%</div>
+        <div class="index-date">10/12 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">51,850.55</div>
+        <div class="index-change up">▲ +0.38%</div>
+        <div class="index-date">10/12 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">27,246</div>
+        <div class="index-change down">▼ -0.44%</div>
+        <div class="index-date">10/12 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">48,341.31</div>
+        <div class="index-change down">▼ -1.95%</div>
+        <div class="index-date">10/13 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$92.89</div>
+        <div class="index-change up">▲ +1.13%</div>
+        <div class="index-date">10/12 盤中價</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">台股</span>
+        <h3 class="card-title">台股重挫近千點跌破 49,000，外資賣超 1,653 億</h3>
+        <p class="card-summary">加權指數 10/13 收 48,341.31 點，下跌 960.65 點（-1.95%），盤中低點 48,066.36 點，成交金額約 1.13 兆元。外資及陸資賣超 1,653.42 億元，已連續 5 個交易日賣超，三大法人合計賣超 1,984.46 億元。上漲 427 檔、下跌 1,365 檔。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 下午</span>
+          <div class="card-sources"><a href="https://newtalk.tw/news/view/2026-10-13/1065255" target="_blank">Newtalk 新頭殼</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">台股權值股</span>
+        <h3 class="card-title">台積電、聯發科、台達電齊跌，電子權值股走弱</h3>
+        <p class="card-summary">台積電收 2,490 元（-1.97%），聯發科收 4,525 元（-2.16%），台達電收 1,775 元（-6.58%），鴻海收 240 元（-1.84%）。AI 供應鏈普遍走弱，南亞（+5.3%）與台塑化（漲停）是少數支撐，新台幣一度貶破 32 元，出現股匯雙殺。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 下午</span>
+          <div class="card-sources"><a href="https://newtalk.tw/news/view/2026-10-13/1065255" target="_blank">Newtalk 新頭殼</a><a href="https://finance.ettoday.net/news/3253574" target="_blank">ETtoday</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美股</span>
+        <h3 class="card-title">美股道瓊小漲、納指收跌，記憶體與晶片股拖累科技</h3>
+        <p class="card-summary">10/12 道瓊上漲 0.38% 至 51,850.55 點，標普 500 下跌 0.06% 至 7,807.24 點，那斯達克下跌 0.44% 至 27,246 點。能源類股領漲，科技股落後；Sandisk 因記憶體競爭疑慮重挫逾 6%，Lumentum 跌近 10%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/12 美東盤後</span>
+          <div class="card-sources"><a href="https://finance.yahoo.com/markets/stocks/articles/stock-market-today-oct-12-212311190.html" target="_blank">Yahoo Finance</a><a href="https://www.thestreet.com/stock-market-today/stock-market-today-oct-12-2026-dow-futures-climb-as-wall-street-gears-up-for-busy-week" target="_blank">TheStreet</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">大宗商品</span>
+        <h3 class="card-title">中東局勢升溫推升油價，WTI 逼近 93 美元</h3>
+        <p class="card-summary">WTI 原油 10/12 盤中上漲 1.13% 至每桶 92.89 美元，布蘭特上漲 1.17% 至 106 美元。胡塞武裝攻擊利雅德機場、兩起油輪遭攻擊，加上美方擬進口俄羅斯柴油，推升油價。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/12</span>
+          <div class="card-sources"><a href="https://www.thestreet.com/stock-market-today/stock-market-today-oct-12-2026-dow-futures-climb-as-wall-street-gears-up-for-busy-week" target="_blank">TheStreet</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">財報與總經</span>
+        <h3 class="card-title">大型銀行本週財報登場，CPI、PPI 數據在即</h3>
+        <p class="card-summary">摩根大通、高盛、花旗將於 10/13 公布財報，分析師預期本季每股盈餘成長約 30%。美國 9 月 CPI 將於週三公布，PPI 於週四公布。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/12</span>
+          <div class="card-sources"><a href="https://www.thestreet.com/stock-market-today/stock-market-today-oct-12-2026-dow-futures-climb-as-wall-street-gears-up-for-busy-week" target="_blank">TheStreet</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+        <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">10/13（二）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">27°</span> / <span class="temp-low">22°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">趨勢估計，以中央氣象署為準</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/14（三）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">26°</span> / <span class="temp-low">21°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">東北季風影響，偶有短暫雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/15（四）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">轉涼有雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/16（五）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">氣溫偏涼，早晚帶薄外套</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/17（六）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">多雲</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/18（日）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">26°</span> / <span class="temp-low">21°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">多雲時晴</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/19（一）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">27°</span> / <span class="temp-low">21°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">回暖</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖） — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">10/13（二）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">21°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">東北風6-7級、陣風9級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/14（三）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">23°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">東北風6-7級、陣風9級，海面風浪大</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/15（四）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">22°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">東北風6-8級、陣風10級，留意航班船班</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/16（五）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">22°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">東北風6-7級、陣風9級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/17（六）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">23°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">東北風5-6級、陣風8級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/18（日）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">東北風5-6級、陣風8級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/19（一）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">東北風5級、陣風7級</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">Switch 2</span>
+        <h3 class="card-title">《蠟筆小新》兩款作品宣布推出 Switch 2 版，2027 年 3 月 4 日全球發售</h3>
+        <p class="card-summary">Neos 宣布《蠟筆小新 我與博士的暑假 無盡的七日之旅》與《蠟筆小新 小白與煤炭鎮》將於 2027 年 3 月 4 日登上 Switch 2，全球同步發售。Switch 2 版支援滑鼠控制器操作、60fps 與更高解析度。實體版為雙作合收卡帶，日圓 9,900 元，已持有 Switch 版的玩家可用優惠價購買。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://www.gematsu.com/2026/10/shin-chan-me-and-the-professor-on-summer-vacation-the-endless-seven-day-journey-and-shin-chan-shiro-and-the-coal-town-coming-to-switch-2-on-march-4-2027" target="_blank">Gematsu</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">新作動畫</span>
+        <h3 class="card-title">《NARUTO-火影忍者-×NINKŪ-忍空-》全新動畫製作決定，岸本齊史將執筆新作漫畫</h3>
+        <p class="card-summary">在紐約動漫展 NARUTO 舞台活動上宣布，將製作與《忍空》聯動的全新動畫（據報 4 集），公開預告片與視覺圖。岸本齊史也將繪製新的 NARUTO 漫畫，並公布多年計畫「PROJECT RASENGAN」，更多情報預定在 2027 年 12 月的 Jump Festa 公開。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://animeanime.jp/article/2026/10/13/103753.html" target="_blank">Anime! Anime!</a><a href="https://natalie.mu/comic/news/693295" target="_blank">Comic Natalie</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">周邊企劃</span>
+        <h3 class="card-title">《進擊的巨人》音樂劇將於明年四月在新加坡展開世界巡演</h3>
+        <p class="card-summary">Anime News Network 於 10 月 13 日報導，《進擊的巨人》音樂劇將於明年 4 月從新加坡啟動世界巡演。（細節以原報導為準）</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/13 上午</span>
+          <div class="card-sources"><a href="https://www.animenewsnetwork.com/news/2026-10-13/attack-on-titan-musical-starts-world-tour-in-singapore-next-april/.242763" target="_blank">Anime News Network</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年10月13日 · 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

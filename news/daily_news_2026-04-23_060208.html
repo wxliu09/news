@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/04/23</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年04月23日（星期四）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">川普延長美伊停火期限，伊朗同日扣押霍爾木茲海峽船隻</h3>
+        <p class="card-summary">美國總統川普於4月22日宣布延長美伊停火，直至德黑蘭提出統一提案為止，但同時維持對伊朗港口的海上封鎖。就在停火宣布後數小時，伊朗海軍宣稱在霍爾木茲海峽扣押兩艘貨櫃船，並攻擊至少三艘商船。伊朗總統佩澤希齊安表示，美國的封鎖是談判的主要障礙；五角大廈則警告，戰後清除海峽水雷最長可能需要六個月。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.cnn.com/2026/04/22/world/live-news/iran-war-us-trump-blockade-ceasefire" target="_blank">CNN</a>
+            <a href="https://www.npr.org/2026/04/22/nx-s1-5795405/iran-middle-east-updates" target="_blank">NPR</a>
+            <a href="https://www.cnbc.com/2026/04/22/strait-of-hormuz-ships-attacked-iran-war.html" target="_blank">CNBC</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">真主黨向以色列北部發射火箭彈與無人機，以黎停火協議瀕臨破裂</h3>
+        <p class="card-summary">真主黨於4月22日首次在十天停火期間向以色列北部發射火箭彈與無人機，聲稱是回應以色列軍隊違反停火超過200次。以色列國防軍稱此舉為明目張膽的違約行為，並摧毀了發射裝置。美國斡旋的停火談判仍在繼續，但局勢持續緊繃。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.democracynow.org/2026/4/22/headlines/israel_lebanon_ceasefire_frays_as_hezbollah_fires_on_israeli_forces" target="_blank">Democracy Now!</a>
+            <a href="https://www.timesofisrael.com/idf-says-hezbollah-breached-truce-launching-rockets-at-troops-drone-at-israel/" target="_blank">Times of Israel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">德國因中東戰爭能源衝擊，將2026年經濟成長預測腰斬至0.5%</h3>
+        <p class="card-summary">德國政府於4月22日宣布，將2026年GDP成長預測從1.0%下調至0.5%，並將通膨預測上調至2.7%。中東戰爭引發的能源價格飆升，對鋼鐵、化工等重工業造成沉重打擊，同時疊加出口需求疲軟與中國競爭加劇等壓力。政府同時將2027年成長預測下修至0.9%，並承諾加快推動改革。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.bloomberg.com/news/articles/2026-04-22/germany-halves-growth-forecast-for-2026-after-hit-from-iran-war" target="_blank">Bloomberg</a>
+            <a href="https://www.investing.com/news/economy-news/german-economic-council-cuts-growth-forecast-for-2026-4351307" target="_blank">Reuters/Investing.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">伊朗拒絕認可川普聲稱德黑蘭應其要求取消死刑執行</h3>
+        <p class="card-summary">伊朗官員於4月22日公開駁斥川普的說法，否認德黑蘭是應川普要求而暫停執行若干死刑判決。伊朗議長賈利巴夫重申，美國的封鎖行動損害停火誠意，並稱這是談判的根本障礙。此一外交摩擦顯示雙方在和談互信基礎上仍存在嚴重分歧。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.timesofisrael.com/liveblog-april-22-2026/" target="_blank">Times of Israel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">古巴確認已與美國官員在島內舉行會談，能源封鎖緊張局勢持續</h3>
+        <p class="card-summary">古巴政府於近日確認，雙方官員已在古巴島上進行直接會談，但美國對古巴的能源封鎖仍未解除，雙邊關係依然高度緊張。此次會談被視為打破僵局的初步接觸，惟具體成果尚未披露。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.democracynow.org/2026/4/22/headlines" target="_blank">Democracy Now!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">中東戰爭衝擊延燒全球，歐洲通膨壓力上升、企業與家庭前景黯淡</h3>
+        <p class="card-summary">霍爾木茲海峽封鎖持續引發全球能源市場動盪，油氣價格高漲導致歐洲各國通膨預期上修，企業成本與家庭生計同步受壓。分析師警告，若封鎖狀態延續，全球供應鏈與能源安全將面臨更長期的結構性衝擊。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://blog.greeden.me/en/2026/04/22/global-major-news-feature-for-april-22-2026-a-day-when-prolonged-blockade-fears-and-renewed-inflation-darkened-the-outlook-for-businesses-and-households/" target="_blank">Greeden Blog</a>
+            <a href="https://www.riotimesonline.com/global-economy-briefing-zew-collapse-retail-beat-ceasefire/" target="_blank">Rio Times Online</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">賴清德出訪史瓦帝尼遭中國打壓暫緩，美國批中濫用民航系統</h3>
+        <p class="card-summary">賴清德總統原訂4月22日率團出訪非洲友邦史瓦帝尼，因途經的塞席爾、模里西斯、馬達加斯加三國無預警取消飛航許可，出訪行程被迫暫緩。美國國務院表示，相關國家係在中國指示下行事，此舉是對國際民航系統的濫用，威脅國際和平；巴拉圭、義大利等友邦及美國眾院外委會亦相繼發聲譴責中國霸凌行為。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22–23</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/story/124844/9458677" target="_blank">聯合新聞網</a>
+            <a href="https://newtalk.tw/news/view/2026-04-23/1031292" target="_blank">Newtalk新聞</a>
+            <a href="https://www.epochtimes.com/b5/26/4/22/n14747161.htm" target="_blank">大紀元</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">台股衝破38,000點、台積電飆至2,135元雙創歷史新高</h3>
+        <p class="card-summary">4月23日台灣加權股價指數盤中一度衝高至38,921點，大漲逾1,000點，由台積電領軍創下38,000點紀錄；台積電股價盤中最高達2,135元，市值突破55兆元，雙雙寫下歷史新高。惟大盤指數創高後出現賣壓，盤中翻黑震盪，分析師提示需嚴設停損，五月可能迎來修正。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/23 上午</span>
+          <div class="card-sources">
+            <a href="https://finance.ettoday.net/news/3153988" target="_blank">ETtoday財經雲</a>
+            <a href="https://udn.com/news/story/7251/9459328" target="_blank">聯合新聞網</a>
+            <a href="https://money.udn.com/money/story/5607/9459090" target="_blank">經濟日報</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">科技</span>
+        <h3 class="card-title">台積電北美技術論壇發表A13製程，宣示AI與高效能運算領先地位</h3>
+        <p class="card-summary">台積電於美國當地時間4月22日舉辦2026年北美技術論壇，正式發表最新A13製程技術，接續去年A14之後再度升級，實現更精簡高效設計，主攻下一代人工智慧、高效能運算及行動應用市場。消息帶動台積電股價大漲，美系分析機構同步喊出「強力買進」評等。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/23 上午</span>
+          <div class="card-sources">
+            <a href="https://money.udn.com/money/story/5607/9459090" target="_blank">經濟日報</a>
+            <a href="https://www.chinatimes.com/realtimenews/20260423000005-260410" target="_blank">中時新聞網</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">資安</span>
+        <h3 class="card-title">大陸高德地圖在台爆紅引資安疑慮，數位部研議是否禁用</h3>
+        <p class="card-summary">大陸高德地圖近期在台使用人數急增，更新增紅綠燈倒數計時功能，引發立委質疑有國家安全疑慮。數位發展部長林宜敬於4月22日表示，高德所用地圖資料係向荷蘭廠商購買而非直接在台蒐集，但後續將持續觀察是否存在國安風險，不排除禁止政府機關使用。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://wantrich.chinatimes.com/news/20260422900422-420201" target="_blank">旺得富（中時）</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">兩岸</span>
+        <h3 class="card-title">鄭習會後北京輿論操作升溫，民調顯示台灣民眾對兩岸前景看法分歧</h3>
+        <p class="card-summary">國民黨主席鄭麗文4月初訪中並與習近平會面後，ETtoday於4月22日公布最新民調，顯示即便藍白陣營支持者中亦有相當比例不認同鄭習會成果，輿論分歧明顯。國安人士警告，北京正藉鄭習會對外宣傳「台灣反日美、反軍購」，操作輿論戰意圖明顯。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.ettoday.net/news/20260422/3153562.htm" target="_blank">ETtoday新聞雲</a>
+            <a href="https://udn.com/news/story/124802/9446474" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">鋒面來襲全台轉雨，中部以北23日起防局部豪雨及雷擊</h3>
+        <p class="card-summary">中央氣象署預報，鋒面於4月23日下午起影響台灣，中部以北率先轉為局部陣雨或雷雨，並有瞬間大雨、雷擊、強陣風等劇烈天氣發生機率。氣溫隨之明顯下降，提醒民眾外出攜帶雨具並注意防雷安全；南部及離島地區影響相對較小，但仍需留意短暫陣雨。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/23</span>
+          <div class="card-sources">
+            <a href="https://www.storm.mg/lifestyle/11123266" target="_blank">風傳媒</a>
+            <a href="https://www.cwa.gov.tw/V8/C/W/County/" target="_blank">中央氣象署</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">產品更新</span>
+          <h3 class="card-title">OpenAI 大幅擴展 Codex 功能：超越程式碼，邁向全面電腦自動化</h3>
+          <p class="card-summary">OpenAI 於 4 月 22 日宣布 Codex 重大更新，功能範圍大幅擴展至電腦操作、網頁工作流程、圖片生成、記憶功能與自動化任務，不再僅限於程式碼輔助。Codex 可在使用者旁邊操控電腦，並整合日常使用的工具與應用程式。對開發者而言，新版還支援 PR 審查、多檔案終端機、SSH 遠端開發環境，以及內建瀏覽器，以加速前端設計與應用程式迭代開發。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/04/22</span>
+            <div class="card-sources">
+              <a href="https://9to5mac.com/2026/04/21/openai-teases-next-ai-announcement-coming-today-heres-what-to-expect/" target="_blank">9to5Mac</a>
+              <a href="https://releasebot.io/updates/openai" target="_blank">releasebot.io</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">產業動態</span>
+          <h3 class="card-title">Google Cloud Next 2026 登場：AI 代理系統與企業 Vertex AI 成焦點</h3>
+          <p class="card-summary">Google Cloud Next 2026 大會於 4 月 22 日至 24 日在拉斯維加斯 Mandalay Bay 盛大舉行，是本年度 AI 基礎設施與企業應用的重要聚會。Google 重點展示 Vertex AI、Gemini API 的最新能力，並宣布多項針對企業工作流程的 AI 代理系統進展。LangChain 等重要 AI 框架廠商亦到場，展示在 Google Cloud 上的整合與應用，吸引大量開發者與企業決策者關注。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/04/22</span>
+            <div class="card-sources">
+              <a href="https://llm-stats.com/ai-news" target="_blank">LLM Stats</a>
+              <a href="https://medium.com/@sanjeevpatel3007/april-2026-ai-models-every-major-release-reviewed-6ea03d7bc0b7" target="_blank">Medium AI Review</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">服務異常</span>
+          <h3 class="card-title">Grok AI 因高流量出現間歇性服務中斷，用戶反映連線錯誤</h3>
+          <p class="card-summary">xAI 旗下 Grok 聊天機器人於 4 月 22 日深夜至 4 月 23 日間陸續出現連線問題，部分用戶在網頁版、iOS/Android 應用程式及 X 平台整合介面中遭遇回應延遲或錯誤訊息。24 小時內累計超過 813 份使用者故障回報。xAI 官方狀態頁面顯示服務「大致正常運作」，目前判斷成因為高流量需求而非大規模基礎設施故障。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/04/23 上午</span>
+            <div class="card-sources">
+              <a href="https://www.ibtimes.com.au/grok-down-now-grok-ai-experiences-intermittent-outages-amid-high-demand-april-23-2026-1867290" target="_blank">IBTimes AU</a>
+              <a href="https://piunikaweb.com/2026/04/22/grok-high-demand-heavy-usage-error/" target="_blank">Piunika Web</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">定價爭議</span>
+          <h3 class="card-title">Anthropic 測試將 Claude Code 從 $20 Pro 方案移除，引發用戶反彈</h3>
+          <p class="card-summary">4 月 21 日下午起，Anthropic 悄悄將 Claude Code 從 $20/月 Pro 方案的功能列表中移除，定價頁面上原先的勾選符號改為「X」。Anthropic 成長主管 Amol Avasare 隨後說明，此舉屬於「針對約 2% 新訂閱用戶的小規模測試」，現有 Pro 及 Max 訂閱用戶不受影響。The Register 於 4 月 22 日報導此事，引起開發者社群廣泛討論。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/04/22</span>
+            <div class="card-sources">
+              <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/" target="_blank">The Register</a>
+              <a href="https://www.wheresyoured.at/news-anthropic-removes-pro-cc/" target="_blank">Where's Your Ed At</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">合作擴展</span>
+          <h3 class="card-title">Anthropic 擴大與 Google、Broadcom TPU 算力協議，年營收突破 300 億美元</h3>
+          <p class="card-summary">Anthropic 於 4 月 22 日宣布與 Google 及 Broadcom 擴大算力合作，新協議將提供預計自 2027 年起上線的 3.5 吉瓦次世代 TPU 運算容量，以支撐 Claude 模型的訓練與部署需求。同步揭露的財務數據顯示，Anthropic 的年化營收已突破 300 億美元，相較 2025 年底的 90 億美元大幅成長。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/04/22</span>
+            <div class="card-sources">
+              <a href="https://www.anthropic.com/news/google-broadcom-partnership-compute" target="_blank">Anthropic Blog</a>
+              <a href="https://www.fool.com/investing/2026/04/22/anthropic-just-announced-huge-news-for-alphabet-an/" target="_blank">The Motley Fool</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,137.90</div>
+        <div class="index-change up">▲ +1.05%</div>
+        <div class="index-date">4/22 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">49,490.03</div>
+        <div class="index-change up">▲ +0.69%</div>
+        <div class="index-date">4/22 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">24,657.57</div>
+        <div class="index-change up">▲ +1.64%</div>
+        <div class="index-date">4/22 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">37,878.47</div>
+        <div class="index-change up">▲ +0.23%</div>
+        <div class="index-date">4/22 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$93.09</div>
+        <div class="index-change">— 最新報價</div>
+        <div class="index-date">4/23 最新</div>
+      </div>
+
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">S&amp;P 500 與那斯達克雙雙改寫收盤新高，美伊停火無限期延長提振市場信心</h3>
+        <p class="card-summary">美國總統川普宣布無限期延長美伊停火協議，帶動美股4月22日全面走揚。S&amp;P 500 收漲1.05%至7,137.90點，那斯達克大漲1.64%至24,657.57點，兩者均創歷史收盤新高。道瓊工業指數亦上漲0.69%至49,490點，科技板塊領漲，S&amp;P 500 科技類股單日漲幅逾2.25%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://finance.yahoo.com/markets/stocks/live/stock-market-today-wednesday-april-22-dow-sp-500-nasdaq-trump-us-iran-ceasefire-230429476.html" target="_blank">Yahoo Finance</a>
+            <a href="https://www.thestreet.com/latest-news/stock-market-today-apr-22-2026-updates" target="_blank">The Street</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">企業財報</span>
+        <h3 class="card-title">Tesla Q1 2026 EPS 小幅超預期，毛利率回升至21.1%，盤後股價先漲後回落</h3>
+        <p class="card-summary">特斯拉於4月22日美股收盤後公布2026年第一季財報，調整後每股盈餘0.41美元，高於市場預期的0.37美元，毛利率回升至21.1%。然而，管理層宣布今年資本支出上調逾50億美元至超過250億美元，盤後股價由漲轉跌。分析師也指出部分財務指標改善源自一次性項目。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.cnbc.com/2026/04/22/tesla-tsla-q1-2026-earnings-report.html" target="_blank">CNBC</a>
+            <a href="https://electrek.co/2026/04/22/tesla-tsla-q1-2026-financial-results/" target="_blank">Electrek</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">企業財報</span>
+        <h3 class="card-title">GE Vernova Q1 財報強勁，訂單量激增71%，股價單日飆漲12%</h3>
+        <p class="card-summary">能源設備商GE Vernova（GEV）4月22日公布第一季財報，營收93.4億美元超越預期，新增訂單年增71%達183億美元，公司同步上調2026年全年營收展望。受財報激勵，GEV股價單日大漲約12%，成為當日美股最大漲幅個股之一。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://sundayguardianlive.com/business/us-stock-market-today-22-april-2026-nasdaq-hits-all-time-high-as-trump-extends-iran-ceasefire-ge-vernova-soars-12-check-us-indices-top-movers-what-investors-should-watch-185862/" target="_blank">Sunday Guardian Live</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">伊朗扣押貨輪、油價攀升至93美元，中東情勢仍存變數</h3>
+        <p class="card-summary">儘管美伊停火協議獲延長，伊朗海軍4月22日仍在霍爾木茲海峽扣押兩艘貨輪，顯示地緣緊張並未完全消除。WTI原油現報每桶約93美元，盤中高點一度達97美元以上，供應風險持續支撐油價高位。市場雖歡迎停火延長，但中東局勢仍是左右能源市場的最大不確定因素。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/23</span>
+          <div class="card-sources">
+            <a href="https://www.cnbc.com/2026/04/23/cnbc-daily-open-iran-ceasefire-oil-markets-tesla-earnings.html" target="_blank">CNBC Daily Open</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">4/23（四）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">鋒面接近，傍晚起有陣雨或雷雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/24（五）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">鋒面過境，北台灣有雨及雷雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/25（六）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">21°</span></div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note">鋒後東北風增強，氣溫下滑</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/26（日）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">21°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">天氣逐漸好轉，偶有短暫陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/27（一）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">22°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">推估值，回暖，多雲偶晴</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/28（二）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 10%</div>
+          <div class="weather-note">推估值，晴到多雲</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/29（三）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 10%</div>
+          <div class="weather-note">推估值，晴天，氣溫持續回升</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖）— 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">4/23（四）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">23°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">多雲，偏北風</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/24（五）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">21°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">鋒面影響，有雨，偏北風3-4級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/25（六）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">20°</span> / <span class="temp-low">16°</span></div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">持續降雨，氣溫偏低</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/26（日）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">21°</span> / <span class="temp-low">16°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">推估值，天氣稍轉好，仍有短暫雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/27（一）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">23°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">推估值，多雲，氣溫回升</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/28（二）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 10%</div>
+          <div class="weather-note">推估值，晴到多雲</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">4/29（三）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">18°</span></div>
+          <div class="weather-rain">🌧 10%</div>
+          <div class="weather-note">推估值，晴天</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">展覽活動</span>
+        <h3 class="card-title">ID@Xbox 獨立遊戲展示會於 4 月 23 日登場，揭露多款新作</h3>
+        <p class="card-summary">微軟於台灣時間 2026 年 4 月 24 日凌晨舉辦 ID@Xbox 獨立遊戲發表會，與 IGN 合作播出，節目長約 50 分鐘。預先公布的參展作品包括《Solo Leveling: ARISE OVERDRIVE》、《Mistfall Hunter》、《There Are No Ghosts at the Grand》及《Aphelion》，其餘作品於活動現場才正式揭曉。此次展示會預計有多款 Day One 加入 Game Pass 的獨立遊戲宣布。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/23</span>
+          <div class="card-sources">
+            <a href="https://www.gematsu.com/2026/04/idxbox-showcase-set-for-april-23" target="_blank">Gematsu</a>
+            <a href="https://www.purexbox.com/news/2026/04/xbox-to-highlight-tons-of-games-in-idatxbox-showcase-later-this-week" target="_blank">Pure Xbox</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">陶藝派對格鬥遊戲《Kiln》正式上線，Day One 加入 Xbox Game Pass</h3>
+        <p class="card-summary">由 Double Fine Productions 開發的線上多人遊戲《Kiln》於 2026 年 4 月 23 日正式發售，登陸 Xbox Series X|S、PC、雲端串流、PS5 及 Steam。玩家在陶輪上捏製陶器，再組隊破壞對方的窯爐，融合創作與破壞樂趣。遊戲 Day One 即加入 Xbox Game Pass Ultimate，標準版售價 $19.99，豪華版 $29.99。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/23</span>
+          <div class="card-sources">
+            <a href="https://news.xbox.com/en-us/2026/04/22/kiln-spring-2026-roadmap-revealed/" target="_blank">Xbox Wire</a>
+            <a href="https://screenrant.com/kiln-2026-xbox-game-pass-multiplayer-interview/" target="_blank">Screen Rant</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">大型戰略遊戲《Sudden Strike 5》於 4 月 23 日發售，帶來二戰即時戰術體驗</h3>
+        <p class="card-summary">《Sudden Strike 5》為知名二戰即時戰術系列的最新續作，於 2026 年 4 月 23 日在 PC 及主機平台正式上線。本作主打大規模戰場指揮，玩家需靈活運用步兵、裝甲車輛及空中支援執行戰術任務，是本週最受矚目的戰略類大作之一。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/23</span>
+          <div class="card-sources">
+            <a href="https://www.dlcompare.com/gaming-news/this-week-s-video-game-releases-april-2026-week-17" target="_blank">DLCompare</a>
+            <a href="https://www.gamespot.com/gallery/the-biggest-new-game-releases-of-april-2026/2900-7623/" target="_blank">GameSpot</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新作延期</span>
+        <h3 class="card-title">備受期待的休閒探索遊戲《Outbound》宣布延期，從 4 月 23 日推遲至 5 月 14 日</h3>
+        <p class="card-summary">原定於 2026 年 4 月 23 日上架的露營車探索遊戲《Outbound》，開發商 Silver Lining Interactive 宣布臨時延期至 5 月 14 日。《Outbound》是一款以打造夢想露營車為核心的開放世界休閒生存遊戲，Steam 上已累積逾 120 萬筆願望清單，是今年最受期待的獨立作品之一。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/23</span>
+          <div class="card-sources">
+            <a href="https://nintendoeverything.com/outbound-gains-nintendo-switch-2-release-date/" target="_blank">Nintendo Everything</a>
+            <a href="https://www.gamespress.com/Outbound-Hits-the-Road-April-23-2026" target="_blank">Games Press</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">票房報告</span>
+        <h3 class="card-title">《名偵探柯南：高速公路的墜落天使》連續第二週蟬聯日本票房冠軍</h3>
+        <p class="card-summary">《名偵探柯南》劇場版第29作《高速公路的墜落天使》在上映第二週繼續稱霸日本票房，排名第一。據 Anime News Network 於2026年4月22日報導，本作第二週售出約114.7萬張票，累計票房已達約63.4億日圓（約3,983萬美元），打破系列票房紀錄。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-04-22/detective-conan-fallen-angel-of-the-highway-anime-film-stays-at-no.1-2026-doraemon-film-drops-to-/.236630" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">平台授權</span>
+        <h3 class="card-title">《五等分的花嫁》特別篇正式上架 Crunchyroll 串流</h3>
+        <p class="card-summary">Crunchyroll 於2026年4月22日宣布，《五等分的花嫁》動畫特別篇現已正式在平台上架供訂閱用戶收看。本系列由 Bibury Animation Studios 製作，特別篇延續2022年劇場版劇情，跟隨上杉風太郎與中野五姊妹展開蜜月旅程，故事由原作者春場葱監修。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.crunchyroll.com/news/announcements/2026/4/22/the-quintessential-quintuplets-anime-specials-stream-crunchyroll" target="_blank">Crunchyroll News</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">遊戲改編</span>
+        <h3 class="card-title">《最強職業其實不是勇者也不是賢者》動漫改編遊戲4月23日正式發售，含繁體中文支援</h3>
+        <p class="card-summary">改編自同名動畫的遊戲於2026年4月23日在 PS5、PS4、Nintendo Switch 及 Steam 正式上線，售價為23.99美元。遊戲介面及字幕支援日文、英文、簡體中文及繁體中文，為亞洲玩家提供在地化體驗。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/23</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-04-03/the-strongest-job-is-apparently-not-a-hero-or-a-sage-anime-gets-game-on-april-23-with-english-/.236071" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年04月23日 06:02 · 蒐集範圍：近 24 小時（2026-04-22 05:57 以後）</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

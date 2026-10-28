@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/10/21</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年10月21日（星期三）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+    </div>
+    <div class="no-result" style="display:block">近 24 小時內無可確認的重大更新（搜尋未取得可驗證發布時間的主要通訊社報導）。</div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">民眾黨：中央補助長者健保費，健保收入一塊都不會少</h3>
+        <p class="card-summary">立法院修正老人福利法第22條，65歲以上、免申報或稅率未達20%且年所得不超過133萬元的長者，健保費由中央全額補助。衛福部長石崇良19日曾表示約83%長者符合資格，並警告以稅率作為標準可能衝擊健保財務。民眾黨主席黃國昌回應，健保收入不會減少，並要求行政院提出具體預算數字。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 下午</span>
+          <div class="card-sources"><a href="https://cna.com.tw/news/aipl/202610210203.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">國防</span>
+        <h3 class="card-title">無人機闖台中機場，顧立雄：反制系統月底前可發揮功能</h3>
+        <p class="card-summary">9月8日清泉崗機場附近出現無人機，軍民航機起降一度中斷約32分鐘。國防部長顧立雄表示，機場反制無人機系統已通過驗收，預計10月底前全面發揮功能。審計部報告指出耗資35億元的系統未涵蓋陸製商用無人機常用的5.17GHz頻段，顧立雄回應該頻段今年內會以配置調整方式納入。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/20 下午 17:26</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aipl/202610200249.aspx" target="_blank">中央社</a><a href="https://money.udn.com/money/story/7307/9826727?from=edn_newestlist_rank" target="_blank">經濟日報</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">財經</span>
+        <h3 class="card-title">外資單日賣超台股795億元，台積電連10日遭賣</h3>
+        <p class="card-summary">外資10月20日賣超台股約795.4億元，連續第10個交易日賣超，賣壓以ETF為主，並持續減碼台積電。三大法人合計賣超約968億元，其中自營商賣超355.8億元，投信買超183.2億元。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/20 下午 17:13</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202610200242.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">財經</span>
+        <h3 class="card-title">9月外銷訂單創高，新台幣收32.617</h3>
+        <p class="card-summary">經濟部公布9月外銷訂單達1142億美元，創單月歷史新高，年增62.4%。新台幣兌美元20日下跌1.72分，收32.617元。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/20 下午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202610200208.aspx" target="_blank">中央社</a><a href="https://www.cna.com.tw/news/afe/202610200205.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">開源模型</span>
+        <h3 class="card-title">DeepSeek 開源推論框架 DeepInfer</h3>
+        <p class="card-summary">DeepSeek 在 GitHub 以 Apache 2.0 授權釋出推論框架 DeepInfer，據稱支撐其大規模線上服務。針對 DeepSeek-V4.1-Flash，支援 Nvidia SM100 GPU 與華為 Ascend 950 NPU。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/20（時間未標示）</span>
+          <div class="card-sources"><a href="https://aiweekly.co/ai-news-today/edition/2026-10-20" target="_blank">AI Weekly 彙整</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">融資</span>
+        <h3 class="card-title">Otter.ai 獲 3.2 億美元非稀釋性融資</h3>
+        <p class="card-summary">TechCrunch 報導，Otter.ai 從 General Catalyst 的 Customer Value Fund 取得 3.2 億美元。公司表示年經常性收入達 1 億美元、用戶 4,000 萬，資金將用於企業銷售與國際擴張。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/20（時間未標示）</span>
+          <div class="card-sources"><a href="https://aiweekly.co/ai-news-today/edition/2026-10-20" target="_blank">AI Weekly 彙整</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">研究</span>
+        <h3 class="card-title">Stanford 發表 Halcyon 文字生圖模型系列</h3>
+        <p class="card-summary">研究者發表從零訓練、不依賴語言預訓練的文字生圖模型。據論文自述，Halcyon-0.52B 以少 18.2 倍預訓練算力勝過 LlamaGen-XL/8。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/20（時間未標示）</span>
+          <div class="card-sources"><a href="https://aiweekly.co/ai-news-today/edition/2026-10-20" target="_blank">AI Weekly 彙整</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">研究</span>
+        <h3 class="card-title">MemT-1.0 記憶原生 LLM 發表</h3>
+        <p class="card-summary">論文宣稱將記憶內建於模型，128K token 歷史的持久儲存量可降低約 66 倍，釋出 Nano 與 Flash 兩款模型。以上為作者自述。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/20（時間未標示）</span>
+          <div class="card-sources"><a href="https://aiweekly.co/ai-news-today/edition/2026-10-20" target="_blank">AI Weekly 彙整</a></div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        
+      <div class="card">
+        <span class="card-tag">生態應用</span>
+        <h3 class="card-title">開發者用 Claude Code 移除智慧電視廣告</h3>
+        <p class="card-summary">TechCrunch 報導，GitHub 專案 cleanyourtv 由 Claude Code 驅動，可移除智慧電視的廣告、追蹤程式與預載軟體。這是第三方使用案例，並非 Anthropic 官方發布。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/20（時間未標示）</span>
+          <div class="card-sources"><a href="https://aiweekly.co/ai-news-today/edition/2026-10-20" target="_blank">AI Weekly 彙整</a></div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&P 500</div>
+        <div class="index-value">7,712.57</div>
+        <div class="index-change up">▲ +0.30%</div>
+        <div class="index-date">10/20 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">52,494.88</div>
+        <div class="index-change up">▲ +1.02%</div>
+        <div class="index-date">10/20 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">26,424.82</div>
+        <div class="index-change down">▼ -0.02%</div>
+        <div class="index-date">10/20 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">46,887.77</div>
+        <div class="index-change up">▲ +1.28%（+594.84點）</div>
+        <div class="index-date">10/21 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$101.79</div>
+        <div class="index-change down">▼ -1.80%</div>
+        <div class="index-date">10/20 結算</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">台股</span>
+        <h3 class="card-title">台股收漲594點、47K未站穩，期指結算日尾盤收斂</h3>
+        <p class="card-summary">加權指數10/21收46,887.77點，上漲594.84點，盤中一度大漲962點、高見47,254點，尾盤因台指期結算漲幅收斂。台積電收2,420元（+15元），被動元件與PCB族群漲停潮，外資終止連10賣。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 下午</span>
+          <div class="card-sources"><a href="https://www.storm.mg/lifestyle/11174434" target="_blank">風傳媒</a><a href="https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=c96a568e-5734-46c2-b655-8541efed66a5" target="_blank">MoneyDJ</a><a href="https://www.mirrormedia.mg/external/mnews_20261021nm001" target="_blank">鏡週刊</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美股個股</span>
+        <h3 class="card-title">SpaceX與Tesla傳討論合併，SpaceX Q3營收年增161%</h3>
+        <p class="card-summary">SpaceX公布Q3營收145.8億美元、年增161%、淨利44億美元。馬斯克表示雙方董事會已成立特別委員會討論可能合併，尚未定案且需股東批准。Tesla將於美股收盤後公布財報。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 凌晨</span>
+          <div class="card-sources"><a href="https://www.techflowpost.com/en-US/article/34739" target="_blank">TechFlow</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美股個股</span>
+        <h3 class="card-title">美超微上調Q1預估，盤後大漲約11%</h3>
+        <p class="card-summary">美超微預估FY2027 Q1營收185-195億美元，高於先前145-155億美元指引；毛利率預估12-12.5%。數字未經審計，正式財報將於11/3公布。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 凌晨</span>
+          <div class="card-sources"><a href="https://www.techflowpost.com/en-US/article/34739" target="_blank">TechFlow</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美股個股</span>
+        <h3 class="card-title">Netflix財報EPS優於預期，Q4指引不如預期，盤後跌逾5%</h3>
+        <p class="card-summary">Netflix Q3營收128.7億美元、EPS 0.87美元（預期0.82），但Q4營收指引約134億美元低於市場預期的135.1億美元，並下修全年廣告營收預期。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 凌晨</span>
+          <div class="card-sources"><a href="https://www.atfxcapital.com/en/analysis/market-news/netflix-plot-twist-shares-sink" target="_blank">ATFX</a><a href="https://www.techflowpost.com/en-US/article/34739" target="_blank">TechFlow</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美股</span>
+        <h3 class="card-title">財報帶動道瓊漲逾1%，3M大漲5.8%、GM重挫近7%</h3>
+        <p class="card-summary">10/20美股漲跌互見，道瓊漲約1%，標普漲0.3%，那斯達克微跌0.02%。3M上修全年財測漲5.8%；通用汽車宣布200億美元回購仍跌近7%。VIX降6.1%至17.31。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 凌晨</span>
+          <div class="card-sources"><a href="https://finance.yahoo.com/markets/stocks/articles/stock-market-news-oct-21-065700416.html" target="_blank">Yahoo Finance</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">總經／原油</span>
+        <h3 class="card-title">美國房市數據疲弱，油價受美伊傳聞擾動</h3>
+        <p class="card-summary">9月新屋開工122.1萬戶，低於預期130.8萬戶；成屋待完成銷售月減7.3%。WTI下跌1.8%至101.79美元，布蘭特跌0.7%至108.79美元；美伊協議傳聞後來被外交人士稱不準確。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 凌晨</span>
+          <div class="card-sources"><a href="https://finance.yahoo.com/markets/stocks/articles/stock-market-news-oct-21-065700416.html" target="_blank">Yahoo Finance</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+        <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報（趨勢估計）</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">10/21（三）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">26°</span> / <span class="temp-low">21°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/22（四）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">東北季風影響</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/23（五）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">23°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">轉濕涼</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/24（六）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">23°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note"></div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/25（日）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note"></div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/26（一）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note"></div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/27（二）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">26°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note"></div>
+        </div>
+      </div>
+    </div>
+    <div class="weather-section">
+      <div class="weather-city-title">🌊 連江縣（馬祖） — 未來 7 天預報（趨勢估計）</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">10/21（三）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">22°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">東北風6級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/22（四）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">21°</span> / <span class="temp-low">18°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">東北風6至7級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/23（五）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">20°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">東北風7級，風浪較大</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/24（六）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">20°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">東北風6至7級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/25（日）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">21°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">東北風6級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/26（一）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">22°</span> / <span class="temp-low">18°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">東北風5至6級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/27（二）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">22°</span> / <span class="temp-low">18°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">東北風5級</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，本日預報為依季節與東北季風趨勢之估計，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">傳 Xbox 次世代掌機 2027 年推出、主機 2028 年上市</h3>
+        <p class="card-summary">Insider Gaming 引述 Fortune 報導與匿名消息，稱微軟計畫 2027 年假期推出 Xbox 掌機、2028 年推出次世代主機，內部預估主機售價約 1,200 至 1,800 美元。以上皆為傳聞，微軟尚未證實。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 凌晨</span>
+          <div class="card-sources"><a href="https://insider-gaming.com/xbox-next-gen-handheld-planned-for-2027-and-console-in-2028-its-claimed/" target="_blank">Insider Gaming</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">GTA 6 預購營收已逾 6 億美元</h3>
+        <p class="card-summary">依 Sensor Tower 數據，GTA 6 約 645 萬份預購帶來約 6.3 億美元營收，約四分之三來自 PS5。預載將於 11 月 12 日開始，比發售日早一週。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/20 深夜</span>
+          <div class="card-sources"><a href="https://insider-gaming.com/gta-6-600-million-pre-order-sales/" target="_blank">Insider Gaming</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">EA Sports 宣布《Fight Night》拳擊系列回歸</h3>
+        <p class="card-summary">EA Sports 宣布沉寂已久的拳擊系列《Fight Night》將回歸，尚未公布細節與發售時程。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 凌晨</span>
+          <div class="card-sources"><a href="https://insider-gaming.com/ea-sports-announces-fight-night-return/" target="_blank">Insider Gaming</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">訂閱服務</span>
+        <h3 class="card-title">Xbox Game Pass 十月第二波遊戲公開</h3>
+        <p class="card-summary">十月第二波共 8 款遊戲加入 Game Pass，主打《Final Fantasy VII Remake Intergrade》，其中 2 款首日上線。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 凌晨</span>
+          <div class="card-sources"><a href="https://insider-gaming.com/xbox-game-pass-october-wave-2-games-revealed/" target="_blank">Insider Gaming</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">重大更新</span>
+        <h3 class="card-title">《英雄聯盟》26.21 版本更新：調整 25 位英雄、回放改為限流</h3>
+        <p class="card-summary">Riot 釋出 Worlds 2026 後首個更新 26.21，調整 25 位英雄。Riot 撤回將回放設為私人的計畫，改為每小時限制下載 10 次。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/21 凌晨</span>
+          <div class="card-sources"><a href="https://insider-gaming.com/lol-patch-2621-fixes-replays-and-rebalances-25-champions/" target="_blank">Insider Gaming</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+    </div>
+    <div class="no-result" style="display:block">近 24 小時內無可確認發布時間的重大更新。</div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年10月21日 · 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

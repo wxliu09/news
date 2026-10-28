@@ -1,0 +1,898 @@
+/* ============================================================
+ * 每日情報儀表板 — Dashboard Stylesheet
+ * ------------------------------------------------------------
+ * 此檔案為所有日報 HTML 共用的樣式表。
+ * 修改這支檔案會同步影響所有已產出與未來產出的日報。
+ *
+ * 目錄：
+ *   01. CSS Variables — 主題色彩變數（深色 / 淺色）
+ *   02. Base Reset    — 全域 Reset 與排版基礎
+ *   03. Header        — 頂部標題列、搜尋、工具按鈕
+ *   04. Tabs          — 頁籤列與徽章
+ *   05. Stats Bar     — 統計資訊列
+ *   06. Main Layout   — 主要內容容器
+ *   07. News Cards    — 新聞卡片
+ *   08. Stock Index   — 股票指數卡片
+ *   09. Weather Cards — 天氣預報卡片
+ *   10. Bookmark      — 收藏按鈕
+ *   11. Modes         — 緊湊模式、字級、搜尋高亮
+ *   12. Back To Top   — 回到頂端按鈕
+ *   13. Footer        — 頁尾
+ *   14. Responsive    — 響應式斷點
+ *   15. Print         — 列印樣式
+ * ============================================================ */
+
+
+/* ------------------------------------------------------------
+ * 01. CSS Variables
+ * ---------------------------------------------------------- */
+
+:root {
+    /* 背景與面板 */
+    --color-bg:            #0f1117;
+    --color-surface:       #161b26;
+    --color-card:          #1a1d2e;
+    --color-card-hover:    #222640;
+    --color-border:        #2d3154;
+
+    /* 文字 */
+    --color-text:          #e2e8f0;
+    --color-text-muted:    #94a3b8;
+
+    /* 主題色 */
+    --color-accent:        #6c8cff;
+    --color-accent-alt:    #38bdf8;
+
+    /* 狀態色 */
+    --color-up:            #4ade80;
+    --color-down:          #f87171;
+    --color-warn:          #fb923c;
+    --color-info:          #22d3ee;
+    --color-highlight:     #facc15;
+
+    /* 元件色 */
+    --color-tag-bg:        #222640;
+    --color-input-bg:      #161b26;
+
+    /* 陰影與漸層 */
+    --shadow-card:         0 8px 24px rgba(108, 140, 255, 0.12);
+    --gradient-header:     linear-gradient(135deg, #0f1117 0%, #1a1d2e 100%);
+}
+
+[data-theme="light"] {
+    --color-bg:            #f5f7fb;
+    --color-surface:       #ffffff;
+    --color-card:          #ffffff;
+    --color-card-hover:    #f0f4ff;
+    --color-border:        #dbe2ef;
+
+    --color-text:          #1a1d2e;
+    --color-text-muted:    #64748b;
+
+    --color-accent:        #4f6bed;
+    --color-accent-alt:    #0891b2;
+
+    --color-up:            #16a34a;
+    --color-down:          #dc2626;
+    --color-warn:          #ea580c;
+    --color-info:          #0e7490;
+    --color-highlight:     #ca8a04;
+
+    --color-tag-bg:        #eef2ff;
+    --color-input-bg:      #ffffff;
+
+    --shadow-card:         0 4px 16px rgba(79, 107, 237, 0.12);
+    --gradient-header:     linear-gradient(135deg, #ffffff 0%, #eef2ff 100%);
+}
+
+
+/* ------------------------------------------------------------
+ * 02. Base Reset
+ * ---------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+}
+
+
+/* ------------------------------------------------------------
+ * 03. Header
+ * ---------------------------------------------------------- */
+
+header {
+    background: var(--gradient-header);
+    border-bottom: 1px solid var(--color-border);
+    padding: 20px 24px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.header-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+}
+
+.header-subtitle {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap; /* 工具列不折行，整排一起換到第二行 */
+}
+
+/* 工具列按鈕：flex-shrink:0 確保按鈕不縮小、不折行 */
+.icon-btn {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.icon-btn:hover {
+    background: var(--color-card-hover);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-1px);
+}
+
+.icon-btn.active {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* 以 <a> 呈現的工具列按鈕（返回目錄） */
+a.icon-btn {
+    text-decoration: none;
+}
+
+/* 搜尋框：允許收縮，最小寬度設小一點讓按鈕有空間 */
+.search-wrap {
+    position: relative;
+    flex: 1 1 140px;
+    max-width: 360px;
+    min-width: 0;
+}
+
+.search-wrap input {
+    width: 100%;
+    background: var(--color-input-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    padding: 8px 12px 8px 34px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-wrap input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(108, 140, 255, 0.15);
+}
+
+.search-wrap::before {
+    content: '🔍';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+.search-wrap .clear-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 4px;
+    display: none;
+}
+
+.search-wrap .clear-btn.show {
+    display: block;
+}
+
+
+/* ------------------------------------------------------------
+ * 04. Tabs
+ * ---------------------------------------------------------- */
+
+.tab-bar {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-top: 14px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tab-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    color: var(--color-text);
+}
+
+.tab-btn.active {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* 頁籤上的數量徽章 */
+.tab-badge {
+    display: inline-block;
+    background: var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 1px 6px;
+    border-radius: 10px;
+    margin-left: 4px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.tab-btn.active .tab-badge {
+    background: var(--color-accent);
+    color: #fff;
+}
+
+
+/* ------------------------------------------------------------
+ * 05. Stats Bar
+ * ---------------------------------------------------------- */
+
+.stats-bar {
+    max-width: 1200px;
+    margin: 14px auto 0;
+    padding: 0 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+}
+
+.stats-bar .stat-item {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 4px 12px;
+}
+
+.stats-bar .stat-item strong {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+
+/* ------------------------------------------------------------
+ * 06. Main Layout
+ * ---------------------------------------------------------- */
+
+main.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* 搜尋無結果時的空狀態 */
+.tab-panel .no-result {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--color-text-muted);
+}
+
+.tab-panel.empty-filter .no-result {
+    display: block;
+}
+
+.tab-panel.empty-filter .cards-grid {
+    display: none;
+}
+
+/* 區塊小標題（股票指數上方等） */
+.section-title {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+
+/* ------------------------------------------------------------
+ * 07. News Cards
+ * ---------------------------------------------------------- */
+
+.cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 16px;
+    position: relative;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    background: var(--color-card-hover);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+}
+
+.card-tag {
+    display: inline-block;
+    background: var(--color-tag-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-accent-alt);
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.card-summary {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin-bottom: 12px;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.card-time {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-info);
+}
+
+.card-sources {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.card-sources a {
+    font-size: 0.75rem;
+    color: var(--color-accent-alt);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+}
+
+.card-sources a:hover {
+    border-bottom-color: var(--color-accent-alt);
+}
+
+.card.hidden-filter {
+    display: none !important;
+}
+
+
+/* ------------------------------------------------------------
+ * 08. Stock Index Cards
+ * ---------------------------------------------------------- */
+
+.index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.index-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.index-card:hover {
+    background: var(--color-card-hover);
+    transform: translateY(-2px);
+}
+
+.index-name {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+}
+
+.index-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 4px;
+}
+
+.index-change {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.index-change.up      { color: var(--color-up); }
+.index-change.down    { color: var(--color-down); }
+.index-change.neutral { color: var(--color-text-muted); }
+
+.index-date {
+    font-size: 0.68rem;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+}
+
+
+/* ------------------------------------------------------------
+ * 09. Weather Cards
+ * ---------------------------------------------------------- */
+
+.weather-section {
+    margin-bottom: 32px;
+}
+
+.weather-city-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.weather-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 12px 8px;
+    text-align: center;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.weather-card:hover {
+    background: var(--color-card-hover);
+    transform: translateY(-2px);
+}
+
+.weather-date {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+}
+
+.weather-icon {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.weather-temps {
+    font-size: 0.82rem;
+    margin-bottom: 4px;
+}
+
+.temp-high { color: #ff6b6b; font-weight: 600; }
+.temp-low  { color: var(--color-accent-alt); }
+
+.weather-rain {
+    font-size: 0.72rem;
+    color: #74b9ff;
+}
+
+.weather-note {
+    font-size: 0.68rem;
+    color: var(--color-text-muted);
+    line-height: 1.3;
+    margin-top: 4px;
+}
+
+.weather-disclaimer {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.weather-disclaimer a {
+    color: var(--color-accent-alt);
+    text-decoration: none;
+}
+
+.weather-disclaimer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------------------------------------
+ * 09b. Inner Tabs (AI 頁籤內部子頁籤)
+ * ---------------------------------------------------------- */
+
+.inner-tab-bar {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.inner-tab-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.inner-tab-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    padding: 8px 18px;
+    font-size: 0.875rem;
+    font-family: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px; /* overlap parent border */
+    transition: all 0.2s;
+}
+
+.inner-tab-btn:hover {
+    color: var(--color-text);
+    background: var(--color-tag-bg);
+    border-radius: 6px 6px 0 0;
+}
+
+.inner-tab-btn.active {
+    color: var(--color-accent-alt);
+    border-bottom-color: var(--color-accent-alt);
+    font-weight: 600;
+}
+
+/* 子頁籤數量徽章 */
+.inner-tab-badge {
+    display: inline-block;
+    background: var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.62rem;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    min-width: 16px;
+    text-align: center;
+}
+
+.inner-tab-btn.active .inner-tab-badge {
+    background: var(--color-accent-alt);
+    color: #fff;
+}
+
+/* 子頁籤面板 */
+.inner-tab-panel {
+    display: none;
+}
+
+.inner-tab-panel.active {
+    display: block;
+}
+
+/* Claude 專欄看板頂部橫幅 */
+.claude-spotlight {
+    background: linear-gradient(135deg,
+        rgba(108, 71, 255, 0.12) 0%,
+        rgba(168, 85, 247, 0.08) 100%);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+}
+
+.claude-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.claude-logo {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+}
+
+.claude-brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #a855f7;
+    margin-bottom: 3px;
+}
+
+[data-theme="light"] .claude-brand {
+    color: #7c3aed;
+}
+
+.claude-tagline {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+
+/* ------------------------------------------------------------
+ * 10. Bookmark (收藏按鈕)
+ * ---------------------------------------------------------- */
+
+.bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    padding: 4px 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.bookmark-btn:hover {
+    background: var(--color-tag-bg);
+    color: var(--color-highlight);
+}
+
+.bookmark-btn.active {
+    color: var(--color-highlight);
+}
+
+
+/* ------------------------------------------------------------
+ * 11. Modes (緊湊 / 字級 / 搜尋高亮)
+ * ---------------------------------------------------------- */
+
+/* 緊湊模式：卡片縮小且摘要只顯示 2 行 */
+body.compact .card {
+    padding: 12px 14px;
+}
+
+body.compact .card-title {
+    font-size: 0.95rem;
+}
+
+body.compact .card-summary {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 大字體模式 */
+body.font-lg              { font-size: 17px; }
+body.font-lg .card-title  { font-size: 1.08rem; }
+body.font-lg .card-summary { font-size: 0.95rem; }
+
+/* 搜尋關鍵字高亮 */
+mark.search-hl {
+    background: var(--color-highlight);
+    color: #000;
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+
+/* ------------------------------------------------------------
+ * 12. Back To Top
+ * ---------------------------------------------------------- */
+
+.back-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 44px;
+    height: 44px;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(108, 140, 255, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    z-index: 200;
+}
+
+.back-top.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-top:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+
+/* ------------------------------------------------------------
+ * 13. Footer
+ * ---------------------------------------------------------- */
+
+footer {
+    border-top: 1px solid var(--color-border);
+    padding: 20px 24px;
+    margin-top: 32px;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    line-height: 1.8;
+}
+
+footer a {
+    color: var(--color-accent-alt);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------------------------------------
+ * 14. Responsive
+ * ---------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .weather-grid {
+        grid-template-columns: repeat(4, minmax(90px, 1fr));
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-title {
+        font-size: 1.1rem;
+    }
+    .index-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .weather-grid {
+        grid-template-columns: repeat(3, minmax(90px, 1fr));
+    }
+}
+
+
+/* ------------------------------------------------------------
+ * 15. Print
+ * ---------------------------------------------------------- */
+
+@media print {
+    header,
+    .back-top,
+    .bookmark-btn,
+    .header-actions,
+    .stats-bar {
+        display: none !important;
+    }
+    .tab-panel {
+        display: block !important;
+        page-break-before: always;
+    }
+    .card {
+        break-inside: avoid;
+    }
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}

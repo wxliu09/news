@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/04/22</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年04月22日（星期三）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">戰爭衝突 / 外交</span>
+        <h3 class="card-title">川普宣布無限期延長美伊停火，談判仍陷僵局</h3>
+        <p class="card-summary">川普於4月21日宣布延長與伊朗的停火協議，理由是伊朗政府「嚴重分裂」，無法形成統一立場。停火原訂於4月22日到期，但伊朗尚未確認派代表團赴巴基斯坦伊斯蘭瑪巴德進行第二輪談判。副總統萬斯預計率美方談判小組前往，但伊方公開態度仍強硬，指美國持續封鎖伊朗港口是「戰爭行為」。Al Jazeera 4月22日持續直播最新進展。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 持續更新</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/liveblog/2026/4/22/iran-war-live-trump-says-ceasefire-extended-as-talks-with-tehran-in-limbo" target="_blank">Al Jazeera</a>
+            <a href="https://www.cbsnews.com/live-updates/us-iran-war-trump-ceasefire-pakistan-peace-talks-ultimatum/" target="_blank">CBS News</a>
+            <a href="https://www.nbcnews.com/world/iran/live-blog/live-updates-iran-war-trump-peace-talks-vance-ceasefire-ship-hormuz-rcna341149" target="_blank">NBC News</a>
+            <a href="https://www.axios.com/2026/04/21/trump-iran-war-ceasefire-extension" target="_blank">Axios</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">戰爭衝突 / 航運危機</span>
+        <h3 class="card-title">美軍扣押伊朗貨船「Touska」，霍爾木茲海峽緊張持續升溫</h3>
+        <p class="card-summary">美國海軍於4月19日在霍爾木茲海峽附近擊傷並強行登上伊朗籍貨船「Touska」，伊朗隨即譴責此舉為「海盜行為」並誓言報復。伊朗指封鎖港口已構成違反停火，拒絕確認是否出席和談。油價因此大漲，全球航運保費持續飆升，歐洲航空公司面臨燃油成本劇增壓力。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/21 上午（後續持續發展）</span>
+          <div class="card-sources">
+            <a href="https://www.npr.org/2026/04/19/nx-s1-5790378/iran-us-hormuz-closed-impossible" target="_blank">NPR</a>
+            <a href="https://www.aljazeera.com/news/2026/4/20/us-captures-iranian-ship-touska-amid-mediation-efforts-all-we-know" target="_blank">Al Jazeera</a>
+            <a href="https://www.cnn.com/2026/04/19/world/live-news/iran-war-us-trump-hormuz" target="_blank">CNN</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">歐盟外長盧森堡峰會：議程涵蓋烏克蘭援助、制裁俄羅斯與中東局勢</h3>
+        <p class="card-summary">歐盟各國外長4月21日齊聚盧森堡，討論多項重大議題，包括解除凍結烏克蘭900億歐元貸款、審議對俄羅斯第20輪制裁，以及在對以色列政策上日益分化的立場。會議決定禁止所有曾參與俄烏戰爭的俄羅斯退伍軍人入境歐盟。匈牙利親歐新政府有望終結長期阻撓局面，歐盟行動力料將提升。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/21</span>
+          <div class="card-sources">
+            <a href="https://www.euronews.com/my-europe/2026/04/21/europe-today-eu-foreign-ministers-set-to-discuss-ukraine-loan-ties-with-israel" target="_blank">Euronews</a>
+            <a href="https://www.consilium.europa.eu/en/meetings/fac/2026/04/21/" target="_blank">EU Council</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">中國外長王毅偕防長董軍出訪東南亞，啟動中柬「2+2」戰略對話</h3>
+        <p class="card-summary">中國外長王毅與防長董軍自4月22日起訪問柬埔寨、泰國與緬甸，展開為期五天的東南亞外交之旅。此行重頭戲為出席首屆中柬外交與國防部長「2+2」戰略對話，標誌著中柬安全合作機制正式升級。此行被視為中國積極強化在東南亞影響力的戰略布局，時值美伊戰爭重塑全球地緣格局之際。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.fmprc.gov.cn/mfa_eng/xw/fyrbt/202604/t20260421_11896628.html" target="_blank">中國外交部</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">恐怖主義 / 安全</span>
+        <h3 class="card-title">倫敦猶太場所遭連環縱火，英警方調查是否為伊朗代理人所為</h3>
+        <p class="card-summary">英國警方正調查倫敦西北部猶太場所遭連環縱火攻擊事件，目標包括猶太教堂、猶太慈善救護車及親伊朗反對派媒體機構。最嚴重事件中四輛猶太慈善急救車在 Golders Green 被燒毀。一個自稱「伊斯蘭右伴運動」的組織宣稱負責，以色列政府指其為疑有伊朗代理人背景的新成立組織。荷蘭與比利時亦發生類似攻擊。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/21（最新報導）</span>
+          <div class="card-sources">
+            <a href="https://www.npr.org/2026/04/20/g-s1-118083/police-investigating-london-iranian-proxies" target="_blank">NPR</a>
+            <a href="https://www.washingtonpost.com/world/2026/04/19/uk-arson-attack-jewish-community-london/" target="_blank">Washington Post</a>
+            <a href="https://www.cbsnews.com/news/arson-attack-london-kenton-united-synagogue-antisemitism/" target="_blank">CBS News</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">社會安全</span>
+        <h3 class="card-title">墨西哥太陽金字塔槍擊案：加拿大女遊客身亡，13人受傷</h3>
+        <p class="card-summary">4月20日，27歲墨西哥籍男子爬上特奧蒂瓦坎月亮金字塔頂端，向遊客開槍後自盡，造成一名32歲加拿大女性遊客身亡、另13人受傷（含6名美國人）。警方在現場發現嫌犯攜帶與1999年美國哥倫拜恩校園槍擊案相關的資料。此案引發外界對墨西哥旅遊安全的高度關注，適逢2026年世界盃在墨西哥部分城市舉辦在即。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/21（後續調查報導）</span>
+          <div class="card-sources">
+            <a href="https://www.cnn.com/2026/04/20/americas/mexico-teotihuacan-pyramids-shooting-latam-intl" target="_blank">CNN</a>
+            <a href="https://www.npr.org/2026/04/21/g-s1-118185/gunman-pyramids-mexico" target="_blank">NPR</a>
+            <a href="https://www.cbsnews.com/news/mexico-shooting-teotihuacan-pyramids/" target="_blank">CBS News</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">環境</span>
+        <h3 class="card-title">2026年高曼環境獎史上首次全由女性獲獎，六位草根環保人士獲「綠色諾貝爾」</h3>
+        <p class="card-summary">高曼環境獎2026年六位得主全為女性，為該獎項1989年創立以來首次。得主分別來自奈及利亞、南韓、英國、巴布亞紐幾內亞、美國與哥倫比亞，涵蓋抵抗採礦污染、推動氣候訴訟、阻止油田開發等領域。英國得主 Sarah Finch 成功促成英國最高法院「Finch 裁決」，強制要求油田開發需評估燃燒化石燃料的碳排放影響。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/21</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/4/21/six-women-win-2026-goldman-prize-worlds-top-environmental-award" target="_blank">Al Jazeera</a>
+            <a href="https://www.npr.org/2026/04/20/g-s1-117830/goldman-environmental-prize-papua-new-guinea-mining" target="_blank">NPR</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">賴清德出訪非洲史瓦帝尼遭阻，三國撤銷飛航許可，中方被指主謀</h3>
+        <p class="card-summary">賴清德總統原訂出訪非洲友邦史瓦帝尼，但塞席爾、模里西斯、馬達加斯加三國臨時取消專機飛航許可，總統府隨即宣布行程暫緩。外交部指出，中國以債務威脅、經濟脅迫等手段施壓「一帶一路」債務國，是此次事件的幕後主謀。這是台灣史上首度因北京打壓而被迫取消總統出訪友邦行程。美國多位參眾議員、歐盟及友邦紛紛發聲譴責北京。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 上午</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/aipl/202604220053.aspx" target="_blank">中央社</a>
+            <a href="https://news.ltn.com.tw/news/politics/breakingnews/5411589" target="_blank">自由時報</a>
+            <a href="https://udn.com/news/story/124844/9456420" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">立法院外委會通過臨時提案，譴責中國脅迫非洲三國阻撓總統出訪</h3>
+        <p class="card-summary">立法院外交及國防委員會22日通過臨時提案，強烈譴責中國以經濟脅迫手段施壓非洲國家、干預台灣總統出訪行程的行為。執政黨民進黨亦批評中共「無理打壓孤立中華民國」。此事件引發朝野高度關注，各方呼籲國際社會共同正視北京的威脅性外交手段。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 上午</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/aipl/202604220097.aspx" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">能源 / 經濟</span>
+        <h3 class="card-title">經濟部：原油採購轉向美國已達六成，四月五月各有數艘油輪抵台</h3>
+        <p class="card-summary">經濟部長龔明鑫22日表示，台灣原油採購進度正常，4月預計4艘原油輪抵台，5月規畫4至5艘接力。目前中油原油採購比重大幅轉向美國，占比已達六成，將持續調整結構以降低地緣政治衝擊。此舉被視為台灣因應全球能源供應風險（美伊衝突影響霍爾木茲海峽）的積極調整。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 上午</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/breaknews/1" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">股市</span>
+        <h3 class="card-title">創新服務上櫃掛牌首日暴漲逾160%，抽中投資人單張獲利逾百萬</h3>
+        <p class="card-summary">創新服務（7828）22日以每股628元掛牌上櫃，早盤跳空以1,535元開出，盤中一度衝至1,635元，較承銷價大漲逾160%。抽中承銷股的投資人若當日出脫，可獲利約100.7萬元，成為近期上市櫃中最受矚目的掛牌案。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 上午</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/cate/2/6645" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">科技</span>
+        <h3 class="card-title">新應材受惠台積電2奈米放量，股價盤中創歷史新高衝上1080元</h3>
+        <p class="card-summary">新應材（4749）22日盤中大漲約5%，股價一度衝破1,080元創歷史新高。市場分析，公司受惠台積電2奈米製程開始放量生產，以及深紫外光（DUV）光阻國產化替代商機，法人持續加碼布局。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 上午</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/cate/2/6645" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">國防</span>
+        <h3 class="card-title">台灣駐英代表出席英國會聽證，闡述全社會防衛戰略</h3>
+        <p class="card-summary">台灣駐英代表姚金祥出席英國國會聯合國家安全委員會舉辦的社會韌性聽證會，詳細說明台灣全社會防衛戰略，並重申台灣捍衛自身的堅定決心。美國智庫CSIS主席漢瑞同期讚揚台灣在自我防衛上的重大進展，認為台灣日益提升的備戰能力是對威權勢力的有力嚇阻。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/society/202604220003" target="_blank">Focus Taiwan</a>
+            <a href="https://www.taipeitimes.com/News/taiwan" target="_blank">Taipei Times</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">外交部歡迎捷克參議院議長再度訪台，捷克政府拒絕提供專機引關注</h3>
+        <p class="card-summary">外交部表示歡迎捷克參議院議長維斯特希爾再度訪台，此回應係針對捷克政府拒絕為其訪台行程提供專機的媒體報導。維斯特希爾因過去訪台立場鮮明，與台灣關係密切，此次出訪消息受到各方高度關注。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/society/202604220003" target="_blank">Focus Taiwan</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">資安突破</span>
+          <h3 class="card-title">Claude Mythos AI 協助 Mozilla 在 Firefox 150 中發現 271 個漏洞</h3>
+          <p class="card-summary">Anthropic 的 Claude Mythos Preview 透過 Project Glasswing 計畫，協助 Mozilla 在 Firefox 150 中識別出 271 個安全漏洞，並已完成修補。Mythos Preview 在測試中展現出遠超前代模型的滲透能力，能自主發展可執行的漏洞利用程式。目前模型僅限 AWS、Apple、Google、Microsoft 等少數組織使用。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/04/21</span>
+            <div class="card-sources">
+              <a href="https://www.techtimes.com/articles/316046/20260421/anthropic-claude-mythos-has-helped-mozilla-find-271-vulnerabilities-firefox-150.htm" target="_blank">TechTimes</a>
+              <a href="https://thehackernews.com/2026/04/anthropics-claude-mythos-finds.html" target="_blank">The Hacker News</a>
+              <a href="https://www.anthropic.com/glasswing" target="_blank">Anthropic</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">產業分析</span>
+          <h3 class="card-title">MIT Technology Review 發布「2026 AI 現況 10 大關鍵趨勢」</h3>
+          <p class="card-summary">MIT Technology Review 於 4月21日發布年度 AI 趨勢分析，點出智慧體（Agent）協作、模型從規模競爭轉向實用化、MCP 協議推動 Agentic Workflow 落地等為 2026 年核心走向，標誌 AI 從「炒作期」進入「務實期」。報告指出企業 AI 採用率已超過 60%，但落地效益仍高度集中於少數龍頭企業。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/04/21</span>
+            <div class="card-sources">
+              <a href="https://www.technologyreview.com/2026/04/21/1135643/10-ai-artificial-intelligence-trends-technologies-research-2026/" target="_blank">MIT Technology Review</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">定價政策</span>
+          <h3 class="card-title">Anthropic 測試將 Claude Code 從 Pro 方案移除，約 2% 新用戶受影響</h3>
+          <p class="card-summary">Anthropic 於 4月22日被發現悄悄將 Claude Code 從每月 $20 的 Pro 訂閱方案中移除。官方表示這是針對約 2% 新 prosumer 用戶的 A/B 測試，現有 Pro 及 Max 訂閱用戶不受影響。事件引發社群廣泛討論，官網 claude.com/pricing 頁面隨後恢復顯示 Pro 方案包含 Claude Code 的勾選標記，顯示政策可能已調整或回滾。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/04/22</span>
+            <div class="card-sources">
+              <a href="https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/" target="_blank">The Register</a>
+              <a href="https://aitoolly.com/ai-news/article/2026-04-22-anthropic-reportedly-removes-claude-code-from-20-monthly-pro-subscription-tier" target="_blank">AIToolly</a>
+              <a href="https://www.xda-developers.com/anthropic-cut-claude-code-new-pro-subscriptions/" target="_blank">XDA Developers</a>
+              <a href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" target="_blank">Simon Willison</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,064.01</div>
+        <div class="index-change down">▼ -0.63%</div>
+        <div class="index-date">4/21 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">49,149.38</div>
+        <div class="index-change down">▼ -0.59%</div>
+        <div class="index-date">4/21 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">24,259.96</div>
+        <div class="index-change down">▼ -0.59%</div>
+        <div class="index-date">4/21 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">37,652.05</div>
+        <div class="index-change up">▲ +1.88%</div>
+        <div class="index-date">4/22 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$90.42</div>
+        <div class="index-change up">▲ +2.81%</div>
+        <div class="index-date">4/21 最新</div>
+      </div>
+
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">地緣政治</span>
+        <h3 class="card-title">川普宣布無限期延長美伊停火，股市期貨回升</h3>
+        <p class="card-summary">美伊停火協議原定於4月22日到期，川普於4月21日宣布無限期延長停火，但同時維持對伊朗港口及霍爾木茲海峽的海上封鎖。消息公布後，S&P 500期貨上漲0.52%、那斯達克100期貨上漲0.68%，市場情緒明顯改善。然而，和平談判仍無明確進展，市場對持久和平仍保持謹慎。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 上午</span>
+          <div class="card-sources">
+            <a href="https://www.cnbc.com/2026/04/21/trump-iran-war-ceasefire.html" target="_blank">CNBC</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">企業財報</span>
+        <h3 class="card-title">特斯拉 Q1 2026 財報今日盤後公布，市場高度關注</h3>
+        <p class="card-summary">特斯拉（TSLA）將於4月22日美股收盤後發布2026年第一季財報，市場預期每股非GAAP盈餘約0.33至0.36美元。Q1交付量為358,023輛，略低於市場預期，能源儲存業務亦較Q4 2025驟降38%至8.8 GWh。特斯拉股價年初至今已下跌約20%，本次財報被視為能否扭轉頹勢的關鍵催化劑。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 上午</span>
+          <div class="card-sources">
+            <a href="https://electrek.co/2026/04/21/tesla-tsla-q1-2026-earnings-preview-wall-street-expects-growth/" target="_blank">Electrek</a>
+            <a href="https://www.marketbeat.com/earnings/reports/2026-4-22-tesla-inc-stock/" target="_blank">MarketBeat</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">聯準會動態</span>
+        <h3 class="card-title">聯準會主席被提名人沃什聽證：誓言不當川普「傀儡」，確認前景仍不明朗</h3>
+        <p class="card-summary">聯準會主席被提名人凱文・沃什於4月21日出席參議院聽證，強調不會屈服於川普對降息的壓力。聽證期間市場走弱，主要因市場對其量化寬鬆立場存在不確定性。共和黨參議員蒂利斯表示反對確認，指川普政府正對現任主席鮑爾展開刑事調查，沃什的確認之路障礙重重。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 上午</span>
+          <div class="card-sources">
+            <a href="https://www.cnbc.com/2026/04/21/kevin-warsh-fed-confirmation-hearing-trump-live-updates.html" target="_blank">CNBC</a>
+            <a href="https://www.cnn.com/2026/04/21/business/live-news/kevin-warsh-fed-confirmation-hearing" target="_blank">CNN Business</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">S&amp;P 500 兩週急漲逾10%後出現回檔，估值偏高引發警惕</h3>
+        <p class="card-summary">受美伊停火及霍爾木茲海峽重開利多消息帶動，S&P 500自3月30日低點強彈逾10%，並一舉抹去2026年以來的所有跌幅。然而，前瞻本益比已接近21倍，RSI達73，進入技術性超買區間。分析師提醒，市場短線過熱，若美伊和平談判生變或停火再度破裂，將面臨顯著拉回風險。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 上午</span>
+          <div class="card-sources">
+            <a href="https://247wallst.com/investing/2026/04/21/the-sp-500-erased-all-2026-losses-in-one-week-is-it-time-to-rotate-out-of-crypto-into-the-sp-500/" target="_blank">247 Wall St.</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+
+        <div class="weather-card">
+          <div class="weather-date">4/22（三）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">30°</span> / <span class="temp-low">22°</span>
+          </div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">午後局部短暫陣雨可能</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/23（四）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">29°</span> / <span class="temp-low">22°</span>
+          </div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">多雲，局部午後雷陣雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/24（五）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">27°</span> / <span class="temp-low">21°</span>
+          </div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note">鋒面接近，降雨機率較高</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/25（六）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps">
+            <span class="temp-high">26°</span> / <span class="temp-low">20°</span>
+          </div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">鋒面影響持續，陰雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/26（日）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">28°</span> / <span class="temp-low">21°</span>
+          </div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">鋒後轉多雲，仍有短暫雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/27（一）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">30°</span> / <span class="temp-low">21°</span>
+          </div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">逐漸轉晴，氣溫回升</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/28（二）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps">
+            <span class="temp-high">31°</span> / <span class="temp-low">22°</span>
+          </div>
+          <div class="weather-rain">🌧 10%</div>
+          <div class="weather-note">晴朗，高溫可達31°C</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖）— 未來 7 天預報</div>
+      <div class="weather-grid">
+
+        <div class="weather-card">
+          <div class="weather-date">4/22（三）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps">
+            <span class="temp-high">22°</span> / <span class="temp-low">16°</span>
+          </div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">偏北風3-4級，有霧</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/23（四）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">21°</span> / <span class="temp-low">16°</span>
+          </div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">陰雨，能見度低，偏北風</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/24（五）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">20°</span> / <span class="temp-low">15°</span>
+          </div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">鋒面影響，雨勢較明顯</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/25（六）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">19°</span> / <span class="temp-low">15°</span>
+          </div>
+          <div class="weather-rain">🌧 65%</div>
+          <div class="weather-note">持續陰雨，低能見度，注意航班</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/26（日）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">21°</span> / <span class="temp-low">15°</span>
+          </div>
+          <div class="weather-rain">🌧 35%</div>
+          <div class="weather-note">鋒後轉多雲，偶有短暫雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/27（一）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">22°</span> / <span class="temp-low">16°</span>
+          </div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">轉多雲時晴，風力稍緩</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">4/28（二）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">23°</span> / <span class="temp-low">16°</span>
+          </div>
+          <div class="weather-rain">🌧 25%</div>
+          <div class="weather-note">多雲，偶有短暫陣雨</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性估計資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">《Vampire Crawlers》正式上市，首日加入 Xbox Game Pass</h3>
+        <p class="card-summary">由《Vampire Survivors》原班人馬打造的《Vampire Crawlers》於 4 月 21 日正式推出，同步以首日陣容加入 Xbox Game Pass（Ultimate 及 PC 版）。遊戲將 Survivors 風格玩法轉化為超高速回合制卡牌 Rogue-lite 地下城探索，玩家可組建強力卡組、探索熟悉地城、發動毀天滅地的連鎖技。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/21</span>
+          <div class="card-sources">
+            <a href="https://news.xbox.com/en-us/2026/04/21/vampire-crawlers-genre/" target="_blank">Xbox Wire</a>
+            <a href="https://www.trueachievements.com/news/new-xbox-game-pass-games-april-21-2026" target="_blank">True Achievements</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">Xbox Game Pass 四月第二波更新確認：《Kiln》《Aphelion》等六款遊戲加入陣容</h3>
+        <p class="card-summary">微軟於 4 月 20 日正式公布 Xbox Game Pass 四月 Wave 2 名單，共六款遊戲分批加入，其中多款為首日上線。《Kiln》（4/23）為 Double Fine 出品的陶藝動作派對遊戲；《Aphelion》（4/28）由 Don't Nod 製作，與歐洲太空總署合作打造的科幻冒險；另外《Final Fantasy V》Pixel Remaster 版將於 5 月 5 日加入。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/21</span>
+          <div class="card-sources">
+            <a href="https://news.xbox.com/en-us/2026/04/20/xbox-game-pass-april-2026-wave-2/" target="_blank">Xbox Wire</a>
+            <a href="https://insider-gaming.com/xbox-game-pass-april-2026-wave-2-titles-revealed/" target="_blank">Insider Gaming</a>
+            <a href="https://www.gematsu.com/2026/04/game-pass-adds-kiln-aphelion-final-fantasy-v-and-more-in-late-april-to-early-may" target="_blank">Gematsu</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">展覽活動</span>
+        <h3 class="card-title">《Final Fantasy XIV》北美 Fan Festival 即將登場，下一部資料片擴張將於 4/24 正式公開</h3>
+        <p class="card-summary">Square Enix 的《FFXIV》北美 Fan Festival 將於 4 月 24 至 25 日在加州安納罕舉行。遊戲總監吉田直樹的主題演講長達兩小時十五分鐘，預計揭露 FF14 下一部資料片（8.0 版本）的正式名稱、故事設定與主要內容，有望帶來超出玩家預期的驚喜公開。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22 上午</span>
+          <div class="card-sources">
+            <a href="https://simulationdaily.com/news/final-fantasy-xiv-fanfest-us-schedule/" target="_blank">Simulation Daily</a>
+            <a href="https://www.pcgamesn.com/final-fantasy-14/ff14-fanfest-2026-plans-yoshida" target="_blank">PC Games N</a>
+            <a href="https://fanfest.finalfantasyxiv.com/" target="_blank">FFXIV Fan Festival 官網</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">重大公告</span>
+        <h3 class="card-title">《刺客教條：黑旗》Remake《Resynced》全球揭露直播訂於 4/23 舉行</h3>
+        <p class="card-summary">Ubisoft 正式宣布《Assassin's Creed: Black Flag Resynced》將於 4 月 23 日舉行全球首度揭露直播，官方自稱其為「遊戲界最公開的秘密」。這款 Remake 主打 4K/60fps、原生海陸無縫切換，傳聞將移除線上模式，回歸純單人海盜冒險體驗。根據已流出的消息，本作預計 2026 年 7 月 9 日正式上市。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/21 至 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.gamespot.com/articles/assassins-creed-black-flag-resynced-gamings-worst-kept-secret-is-finally-being-revealed-soon/1100-6539497/" target="_blank">GameSpot</a>
+            <a href="https://www.techradar.com/gaming/we-know-you-know-ubisoft-officially-announces-assassins-creed-black-flag-resynced-which-will-receive-a-dedicated-worldwide-reveal-showcase-this-week" target="_blank">TechRadar</a>
+            <a href="https://www.nme.com/news/gaming-news/assassins-creed-black-flag-remake-resynced-july-release-date-3941325" target="_blank">NME</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">演唱會 / 紀念活動</span>
+        <h3 class="card-title">《我的英雄學院》10周年紀念演唱會宣布美國巡演日程</h3>
+        <p class="card-summary">Toho、GEA Live 與 RoadCo Entertainment 於 4 月 21 日正式公布《My Hero Academia in Concert》美國巡演日程，演出將於 2026 年 9 月 12 日在新墨西哥州拉開序幕，途經洛杉磯、舊金山、布魯克林等城市，至 10 月 25 日結束。現場將由世界級樂團演奏作曲家林雄大的原聲音樂，官方同步宣布將推出全新番外集。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/21</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-04-21/my-hero-academia-concert-world-tour-announces-u.s-tour-dates/.236647" target="_blank">Anime News Network</a>
+            <a href="https://variety.com/2026/music/news/my-hero-academia-in-concert-us-tour-2026-1236726689/" target="_blank">Variety</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新番更新</span>
+        <h3 class="card-title">《Re:ZERO 異世界生活》第四季第 3 集於 4 月 22 日在 Crunchyroll 上線</h3>
+        <p class="card-summary">《Re:ZERO -Starting Life in Another World- Season 4》持續推進「失落篇」劇情，第 3 集已於 2026 年 4 月 22 日在 Crunchyroll 平台正式上線。本季延續 Subaru 在新世界面臨的重重考驗，為春季季番中備受矚目的作品之一。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://www.msn.com/en-us/news/other/rezero-season-4-episode-3-set-for-april-22-release/gm-GM4709E47B" target="_blank">Game Rant / MSN</a>
+            <a href="https://www.crunchyroll.com/news/announcements/2026/4/7/re-zero-season-4-release-date-time-crunchyroll/" target="_blank">Crunchyroll</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新番更新</span>
+        <h3 class="card-title">《菁英學院》第四季第 7 集 4 月 22 日播出</h3>
+        <p class="card-summary">《Classroom of the Elite 第四季》第 7 集於 2026 年 4 月 22 日晚間 9 點 30 分（JST）在日本電視台首播，並同步在 Prime Video 提供海外串流。本集聚焦於綾小路清隆與學院派閥間的新一輪角力，為春季熱門番之一。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/04/22</span>
+          <div class="card-sources">
+            <a href="https://fandomwire.com/classroom-of-the-elite-season-4-episode-7-release-date-time-how-to-watch-more/" target="_blank">FandomWire</a>
+            <a href="https://www.animenewsnetwork.com/preview-guide/2026/spring/classroom-of-the-elite-4th-season-second-year-first-semester/.234691" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年04月22日 14:02 · 蒐集範圍：近 24 小時（cutoff：2026-04-21 13:58）</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據為趨勢估計，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

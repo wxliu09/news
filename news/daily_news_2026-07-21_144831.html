@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/07/21</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年07月21日（星期二）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">美軍對伊朗展開第10次夜間空襲，3名美軍士兵陣亡近百人受傷</h3>
+        <p class="card-summary">美國對伊朗展開連續第10次夜間空襲，目標為伊朗指揮中心與海上作戰能力相關設施。本輪衝突已造成3名美軍士兵死亡、近100人受傷（其中96%已重返崗位），多數傷亡為輕微腦震盪。川普總統警告德黑蘭將為美軍傷亡付出代價，美軍同時增派戰機至中東評估後續行動。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21 上午</span>
+          <div class="card-sources">
+            <a href="https://www.cnn.com/2026/07/21/world/live-news/iran-war-trump" target="_blank">CNN</a>
+            <a href="https://www.cbsnews.com/live-updates/iran-war-trump-us-troops-killed-wounded-jordan-base/" target="_blank">CBS News</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">烏克蘭對莫斯科發動兩年來最大規模無人機攻擊，逾400架UAV齊發</h3>
+        <p class="card-summary">烏克蘭於7月20日夜間至21日清晨向莫斯科地區發射逾430架無人機，為兩年來規模最大的攻擊，成功擊中油庫及後勤設施。俄羅斯稱大多數無人機已被防空系統攔截，仍造成莫斯科地區10人受傷、多棟民用建築受損。此次攻擊係對俄羅斯以彈道飛彈轟炸基輔等城市的反制行動，兩國持續陷入報復循環。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/20 深夜 – 07/21 清晨</span>
+          <div class="card-sources">
+            <a href="https://www.pbs.org/newshour/world/ukraine-fires-400-drones-toward-moscow-as-zelenskyy-grapples-with-protests" target="_blank">PBS NewsHour</a>
+            <a href="https://www.foxnews.com/world/ukraine-unleashes-more-than-400-drones-near-moscow-one-wars-biggest-attacks" target="_blank">Fox News</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">英國新首相安迪·伯納姆就職，成為10年內第7位首相</h3>
+        <p class="card-summary">安迪·伯納姆於7月20日在白金漢宮受查爾斯三世邀請組閣，正式成為英國第59任首相，接替因工黨內部失去支持而辭職的基爾·斯塔默。伯納姆在唐寧街10號發表首次演說，承諾終結政治動盪、解決生活成本危機並消除街頭無家可歸現象。副首相及財政大臣隨後宣布離閣，川普亦發文嘲諷英國為「貧困悲慘的災難」，英美關係走向備受關注。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/20 下午</span>
+          <div class="card-sources">
+            <a href="https://www.cnn.com/2026/07/20/world/live-news/andy-burnham-uk-prime-minister-intl" target="_blank">CNN</a>
+            <a href="https://www.aljazeera.com/news/liveblog/2026/7/20/live-andy-burnham-to-become-uk-pm-deliver-first-speech-at-10-downing" target="_blank">Al Jazeera</a>
+            <a href="https://www.npr.org/2026/07/19/nx-s1-5895993/andy-burnham-prime-minister-keir-starmer" target="_blank">NPR</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">航運危機</span>
+        <h3 class="card-title">伊朗在霍爾木茲海峽再攻擊油輪，船員被迫棄船</h3>
+        <p class="card-summary">伊朗於7月21日清晨再度攻擊霍爾木茲海峽內一艘油輪，迫使船員棄船逃生，此舉與美軍最新一波空襲伊朗同步發生。自2026年2月危機爆發以來，至少17艘商船受損、7艘被棄置、12名船員死亡或失蹤。海峽油輪通行量已驟降約70%，每日約2000萬桶的全球原油供應鏈持續承受嚴峻衝擊。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21 清晨</span>
+          <div class="card-sources">
+            <a href="https://www.washingtonpost.com/business/2026/07/19/iran-us-hormuz-strait-war-july-20-2026/85f64c6e-83ed-11f1-9cec-0fb26676f07e_story.html" target="_blank">Washington Post</a>
+            <a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis" target="_blank">Wikipedia</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">川普宣布對加拿大徵收50%關稅，涵蓋約200億美元商品</h3>
+        <p class="card-summary">川普於7月20日援引1930年《關稅法》第338條，對加拿大部分商品加徵50%關稅，指加拿大在汽車、酒類和乳製品方面存在「歧視性」貿易壁壘，30天後生效，涵蓋葡萄酒、冰球棒及水泥等約200億美元商品。加拿大總理馬克·卡尼強調此舉直接違反《美墨加協定》，並表示準備「加強磋商」以解決爭端。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/20 – 07/21</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/7/21/trump-imposes-50-us-tariffs-on-some-canadian-goods-citing-discrimination" target="_blank">Al Jazeera</a>
+            <a href="https://www.cnn.com/2026/07/20/business/canada-tariffs-50-percent-trump" target="_blank">CNN</a>
+            <a href="https://www.nbcnews.com/business/economy/trump-canada-tariffs-cars-cheese-liquor-rcna588453" target="_blank">NBC News</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">14縣市高溫警戒，台東橙色燈號恐飆38度、焚風來襲，周末颱風威脅浮現</h3>
+        <p class="card-summary">中央氣象署7月21日發布高溫警示，全台14縣市受影響；台東縣列橙色燈號，最高氣溫可能達38度並有焚風發生機率；桃園、花蓮亦為橙色燈號，其餘縣市為黃色燈號（36度以上）。菲律賓東南方熱帶雲系下半週有望發展為熱帶低壓，專家警告周末有颱風逼近台灣的可能性。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21 上午</span>
+          <div class="card-sources">
+            <a href="https://news.ltn.com.tw/news/life/breakingnews/5511978" target="_blank">自由時報</a>
+            <a href="https://www.nownews.com/news/6858566" target="_blank">NOWnews</a>
+            <a href="https://newtalk.tw/news/view/2026-07-21/1048348" target="_blank">Newtalk</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">股市</span>
+        <h3 class="card-title">台股史上最大單日漲點！加權指數暴漲1,783點，收44,232點</h3>
+        <p class="card-summary">台股7月21日開高走高，加權指數終場大漲1,783.17點（+4.20%），以44,232.87點收盤，創台股史上最大單日漲點紀錄。台積電大漲90元收2,410元，聯發科漲停收3,670元，台達電漲130元收1,835元，電子權值股全面領軍。成交量達新台幣8,356億元，分析師認為多頭動能強勁，年底上看5萬點聲音再起。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21 下午</span>
+          <div class="card-sources">
+            <a href="https://finance.ettoday.net/news/3205003" target="_blank">ETtoday財經雲</a>
+            <a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E5%8B%81%E6%8F%9A1783%E9%BB%9E%E5%89%B5%E6%9C%80%E5%A4%A7%E6%BC%B2%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E6%94%B6%E6%BC%B290%E5%85%83-010548895.html" target="_blank">Yahoo股市</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">國安</span>
+        <h3 class="card-title">台積電前副理遭起訴，竊取21份機密文件意圖洩漏中國</h3>
+        <p class="card-summary">台灣檢察官7月21日起訴前台積電副理陳姓男子，指其非法複製21份機密文件，涉嫌意圖協助在中國設立半導體材料分析公司，違反《國家安全法》及《營業秘密法》，為台灣首宗涉及「國家核心關鍵技術」被竊之起訴案。陳嫌違法複製行為遭台積電內部監控系統即時偵測，公司已收回全部文件；起訴書建議判處7年有期徒刑。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21</span>
+          <div class="card-sources">
+            <a href="https://www.taipeitimes.com/News/taiwan/archives/2026/07/21/2003861105" target="_blank">Taipei Times</a>
+            <a href="https://gigazine.net/news/20260721-taiwan-indicts-ex-tsmc-employee/" target="_blank">GIGAZINE</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">國防</span>
+        <h3 class="card-title">漢光演習史上首度納入「行動網路降速」科目，8月北中14縣市實施30分鐘演練</h3>
+        <p class="card-summary">2026年漢光演習暨城鎮韌性演習將於8月7日及8月10至13日舉行，NCC規劃在北部及中部共14縣市進行30分鐘行動通訊降速演練。演練期間行動網路速度將降至正常速度的百分之一，語音通話與簡訊功能不受影響，固網亦不在演練範圍內。此為漢光演習首度納入通訊韌性考驗科目，測試民間通訊在極端情境下的應變能力。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/story/10930/9638499" target="_blank">聯合新聞網</a>
+            <a href="https://focustaiwan.tw/society/202607210003" target="_blank">Focus Taiwan</a>
+            <a href="https://www.storm.mg/lifestyle/11150435" target="_blank">風傳媒</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">英國新首相伯納姆就任，賴清德致電恭賀</h3>
+        <p class="card-summary">台灣總統賴清德7月21日致電恭賀安迪·伯納姆榮任英國新首相，展示台英雙邊關係穩固。此外，台灣12個邦交國中的11國官員正在台北參加為期三天的碳權合作工作坊，旨在強化國際碳市場參與機制。伯納姆就任為英國10年內第7位首相，台灣對其就任表達高度重視。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21 上午</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/news" target="_blank">Focus Taiwan (CNA)</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">政策/監管</span>
+          <h3 class="card-title">Trump 政府 AI 標準機構主任 Chris Fall 任職三個月閃辭</h3>
+          <p class="card-summary">美國 AI 標準及創新中心（CAISI）主任 Chris Fall 於 7 月 20 日確認辭職，距就任僅約三個月。這是 CAISI 在短期內第二位主任離職，前任 Collin Burns 甚至不足一週即去職，凸顯 Trump 政府 AI 治理層的人事不穩定性。業界對政策推進能力產生質疑，美國政府主導 AI 標準制定的能力受到挑戰。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/20</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/07/20/trumps-latest-ai-czar-has-already-resigned/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">產品政策</span>
+          <h3 class="card-title">YouTube 更新政策明定三類 AI 生成「不真實內容」不得獲廣告分潤</h3>
+          <p class="card-summary">YouTube 進一步收緊 AI 生成影片（AI slop）的貨幣化規定，將「不真實內容」細分為三種具體類型，不符規範的影片將喪失廣告收益資格。此舉與近期對不當影片的政策調整同步推出，被視為平台對 AI 內容氾濫問題的直接政策回應。創作者需更仔細審查 AI 生成內容以確保符合貨幣化資格。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/20</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/07/20/youtube-clarifies-policies-around-ai-slop-and-upsetting-videos/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">融資</span>
+          <h3 class="card-title">推論基礎設施新創 Infinity 獲 OpenAI、Anthropic 研究員加持，完成 1,500 萬美元 A 輪</h3>
+          <p class="card-summary">AI 推論基礎設施公司 Infinity 宣布完成 1,500 萬美元融資，估值達 1 億美元，投資方包括 Touring Capital、Principal VC，以及來自 OpenAI 與 Anthropic 的研究人員個人投資。該公司專注於提升推論效率與降低成本，此輪資金將用於加速技術研發與產品部署。兩大 AI 公司研究員的參與被視為對其技術路線的背書。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/20</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/07/20/inference-startup-infinity-raises-15m-from-touring-capital-openai-and-athropic-researchers/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">產業峰會</span>
+          <h3 class="card-title">2026 世界人工智慧大會上海閉幕，29 國共同成立全球 AI 合作組織</h3>
+          <p class="card-summary">為期四天的 2026 世界人工智慧大會（WAIC）於 7 月 20 日在上海閉幕，中國國家主席習近平首度在該峰會發表主旨演說。大會期間正式宣告成立「世界人工智慧合作組織」，巴基斯坦、俄羅斯、哈薩克等 29 個創始國共同加入，旨在打造獨立於美中兩大 AI 陣營之外的第三條路線。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/20</span>
+            <div class="card-sources">
+              <a href="https://aiweekly.co/ai-news-today" target="_blank">AI Weekly</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">模型停用</span>
+          <h3 class="card-title">Claude Mythos Preview 今日正式退役，建議遷移至 Claude Mythos 5</h3>
+          <p class="card-summary">Anthropic 於 2026 年 7 月 21 日正式停用 Claude Mythos Preview（claude-mythos-preview）。Anthropic 已提供遷移指南，建議所有現有用戶切換至 Claude Mythos 5（claude-mythos-5）。此次退役是 Anthropic 將預覽版模型整併至正式版本的計畫之一部分，開發者需在今日前完成遷移以避免服務中斷。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/21</span>
+            <div class="card-sources">
+              <a href="https://platform.claude.com/docs/en/about-claude/model-deprecations" target="_blank">Anthropic Platform Docs</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,443.28</div>
+        <div class="index-change down">▼ -0.19%</div>
+        <div class="index-date">7/20 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">51,839.26</div>
+        <div class="index-change down">▼ -0.59%</div>
+        <div class="index-date">7/20 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">25,508.07</div>
+        <div class="index-change down">▼ -0.05%</div>
+        <div class="index-date">7/20 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">44,232.87</div>
+        <div class="index-change up">▲ +4.20%</div>
+        <div class="index-date">7/21 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$82.43</div>
+        <div class="index-change down">▼ -0.96%</div>
+        <div class="index-date">7/21</div>
+      </div>
+
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">台股史上最大單日漲點！加權指數暴漲1,783點，收44,232點創歷史</h3>
+        <p class="card-summary">台股7月21日開高走高，加權指數終場大漲1,783.17點（+4.20%），以44,232.87點收盤，創台股史上最大單日漲點紀錄。台積電大漲90元收2,410元，聯發科漲停收3,670元，台達電漲130元收1,835元，電子權值股全面領軍。成交量達8,356億元，分析師預期年底上看5萬點。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21 下午</span>
+          <div class="card-sources">
+            <a href="https://finance.ettoday.net/news/3205003" target="_blank">ETtoday財經雲</a>
+            <a href="https://www.setn.com/news/1875688" target="_blank">三立新聞網</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">美股7/20因伊朗緊張局勢收跌，油價攀升，蘋果拖累道瓊</h3>
+        <p class="card-summary">美股周一（7/20）三大指數全面收跌，S&amp;P 500跌0.19%至7,443.28點，道瓊跌307點（-0.59%）至51,839.26點，那斯達克微跌0.05%至25,508.07點。美國對伊朗連續第九天展開軍事打擊，推升WTI原油走高；伊朗外長一度暗示尋求外交解決短暫提振情緒，但蘋果下跌逾2%拖累道瓊。費城半導體指數小漲0.6%，台積電ADR漲0.99%，為翌日台股大漲埋下伏筆。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21 上午（美股7/20收盤報導）</span>
+          <div class="card-sources">
+            <a href="https://gvwire.com/2026/07/20/stocks-fall-as-oil-gains-iran-tensions-earnings-in-focus/" target="_blank">GV Wire</a>
+            <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-20-2026" target="_blank">TheStreet</a>
+            <a href="https://finance.yahoo.com/markets/live/stock-market-today-monday-july-20-dow-sp-500-nasdaq-111429441.html" target="_blank">Yahoo Finance</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">財報動態</span>
+        <h3 class="card-title">科技大廠財報週密集登場，Alphabet、Tesla、Intel、德儀成市場焦點</h3>
+        <p class="card-summary">本週進入美股密集財報週，Alphabet（GOOGL）、Tesla（TSLA）、Intel（INTC）及德州儀器（TXN）均將陸續公布季報，AI晶片需求前景成市場最大關注。費城半導體指數年迄今累漲逾65%，但距六月底歷史高點已回落逾20%，技術上進入熊市修正。市場亦密切追蹤台積電下半年資本支出指引及輝達8月財報，以判斷AI投資動能是否延續。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21 上午</span>
+          <div class="card-sources">
+            <a href="https://finance.yahoo.com/markets/live/stock-market-today-monday-july-20-dow-sp-500-nasdaq-111429441.html" target="_blank">Yahoo Finance</a>
+            <a href="https://247wallst.com/investing/2026/07/13/5-stocks-that-can-win-or-lose-after-taiwan-semiconductor-earnings/" target="_blank">247 Wall St.</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+
+        <div class="weather-card">
+          <div class="weather-date">7/21（二）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps">
+            <span class="temp-high">36°</span> / <span class="temp-low">25°</span>
+          </div>
+          <div class="weather-rain">🌧 90%</div>
+          <div class="weather-note"></div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/22（三）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps">
+            <span class="temp-high">35°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note"></div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/23（四）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">36°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 65%</div>
+          <div class="weather-note"></div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/24（五）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps">
+            <span class="temp-high">37°</span> / <span class="temp-low">28°</span>
+          </div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note"></div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/25（六）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps">
+            <span class="temp-high">34°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note"></div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/26（日）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps">
+            <span class="temp-high">35°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 1%</div>
+          <div class="weather-note"></div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/27（一）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">31°</span> / <span class="temp-low">24°</span>
+          </div>
+          <div class="weather-rain">🌧 64%</div>
+          <div class="weather-note"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖）— 未來 7 天預報</div>
+      <div class="weather-grid">
+
+        <div class="weather-card">
+          <div class="weather-date">7/21（二）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps">
+            <span class="temp-high">28°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 5%</div>
+          <div class="weather-note">偏南偏西風4級・陸上強風特報（黃）</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/22（三）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps">
+            <span class="temp-high">28°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 5%</div>
+          <div class="weather-note">偏南偏西風4級</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/23（四）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps">
+            <span class="temp-high">27°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 5%</div>
+          <div class="weather-note">偏南風3級</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/24（五）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">27°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 10%</div>
+          <div class="weather-note">偏南風3級</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/25（六）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps">
+            <span class="temp-high">27°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">偏南風5級</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/26（日）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps">
+            <span class="temp-high">27°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note">偏南偏西風5-6級・雷陣雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/27（一）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">27°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 35%</div>
+          <div class="weather-note">偏南風4-5級・局部雷陣雨</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+      馬祖今日有陸上強風特報（黃色燈號），有效至今日22:00。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">重大更新</span>
+        <h3 class="card-title">《模擬市民 4》7月21日更新上線：新增自動存檔與記憶體優化功能</h3>
+        <p class="card-summary">EA 於 7 月 21 日推出《模擬市民 4》本月基礎遊戲更新，核心亮點為自動存檔（AutoSave）功能，玩家可設定在換地點、遊玩一段時間或重要里程碑時自動儲存進度。另一項重點是記憶體優化（Memory Boost），預設強制啟用，旨在減少卡頓、縮短讀取時間並降低崩潰風險。此次更新亦修復多項 Bug，包括 Build Mode 中屋頂消失問題。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21</span>
+          <div class="card-sources">
+            <a href="https://gamuters.com/gaming/the-sims/the-sims-4s-july-21-update-brings-autosave-memory-boost-along-with-bug-fixes/" target="_blank">Gamuters</a>
+            <a href="https://simscommunity.info/2026/07/20/sims-4-july-patch-2026-countdown/" target="_blank">Sims Community</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">平台訂閱</span>
+        <h3 class="card-title">Xbox Game Pass 7月21日新增《The Planet Crafter》等多款遊戲</h3>
+        <p class="card-summary">Xbox Game Pass 本月第二波遊戲於 7 月 21 日正式上架，最受矚目的為《The Planet Crafter》，支援 Cloud、Xbox Series X|S 及 PC，可單人或最多 10 人連線合作，任務是在荒蕪星球上建設維生基礎設施、改造星球環境。此外原訂 7 月 21 日上架的《Tony Hawk's Pro Skater 1 + 2》已從名單中撤除，整個第二波共提供超過 11 款遊戲。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21</span>
+          <div class="card-sources">
+            <a href="https://screenrant.com/xbox-game-pass-july-21-releases/" target="_blank">Screen Rant</a>
+            <a href="https://www.purexbox.com/news/2026/07/these-11-games-are-coming-to-xbox-game-pass-july-9-21" target="_blank">Pure Xbox</a>
+            <a href="https://gamerant.com/xbox-game-pass-games-july-2026-list/" target="_blank">Game Rant</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">活動上線</span>
+        <h3 class="card-title">EA《skate.》X Games 聯名活動今日啟動，全新球場與挑戰正式開放</h3>
+        <p class="card-summary">EA 與 Full Circle 開發的《skate.》於 7 月 21 日正式啟動 X Games 聯名活動，持續至 8 月 25 日。活動以極限運動 X Games 為主題，改造遊戲內虛擬球場 San Vansterdam，加入仿新奧爾良場地的街道公園、大型垂直坡道與競技碗池。玩家可完成 X Games 主題挑戰、解鎖限定服裝道具，且無需購買通行證即可免費進入球場。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21</span>
+          <div class="card-sources">
+            <a href="https://massivelyop.com/2026/07/16/skates-x-games-collab-brings-new-challenges-skate-parks-and-cosmetics-on-july-21/" target="_blank">Massively OP</a>
+            <a href="https://www.videogamer.com/news/x-games-skate-season-4-stadium-challenges-rewards/" target="_blank">VideoGamer</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">像素風 Metroidvania《Dewdrop Dynasty》今日於 PC Steam 正式發售</h3>
+        <p class="card-summary">由獨立開發者 Goodgis 歷時六年打造、Firith Studio 發行的《Dewdrop Dynasty》於 7 月 21 日在 PC（Steam）正式上市。遊戲以色彩鮮豔的昆蟲世界為舞台，玩家扮演小蜜蜂 Poe 探索互聯地圖、挑戰 Boss 並解鎖新能力，風格介於《Hollow Knight》與《Slime Rancher》之間。這款作品是獨立遊戲開發社群關注已久的期待之作。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21</span>
+          <div class="card-sources">
+            <a href="https://store.steampowered.com/app/1444080/Dewdrop_Dynasty/" target="_blank">Steam</a>
+            <a href="https://nichegamer.com/dewdrop-dynasty-launches-in-july/" target="_blank">Niche Gamer</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">平台授權</span>
+        <h3 class="card-title">Netflix 發布《LEGO ONE PIECE》兩集特別 ONA 正式預告片與視覺圖</h3>
+        <p class="card-summary">Netflix 於 7 月 21 日釋出 LEGO ONE PIECE 兩集特別 ONA 的首支正式預告片（英、日雙語版）及官方視覺圖，確認將於 2026 年 9 月 29 日獨家上線。故事以烏索普對托尼托尼喬巴述說草帽海賊團橫越東海至偉大航道之旅為主軸，由真人版原班聲優擔綱配音，包括 Iñaki Godoy（魯夫）、Emily Rudd（娜美）、Mackenyu（索隆）等。動畫由 Atomic Cartoons 聯合集英社與 The LEGO Group 共同製作，尾田榮一郎掛名執行製作人。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21 上午</span>
+          <div class="card-sources">
+            <a href="https://animecorner.me/netflix-releases-the-lego-one-piece-specials-visual-and-trailer/" target="_blank">Anime Corner</a>
+            <a href="https://anitrendz.net/news/2026/07/20/lego-one-piece-2-part-animated-special-reveals-teaser-trailer/" target="_blank">AniTrendz</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新番動態</span>
+        <h3 class="card-title">《BanG Dream! YUME∞MITA》釋出第6集預覽，標題「Destiny」</h3>
+        <p class="card-summary">夏季新番《BanG Dream! YUME∞MITA》公開第 6 集預覽畫面與簡介，標題訂為「Destiny」，預定於 2026 年 7 月 23 日（週四）在 Crunchyroll 及 Muse Asia 首播。本集導演為 Miyata Takumi，腳本出自 Midori Goto 之手，劇情描述成員在道歉、沮喪、自認一切毀滅之後，能否再度面對彼此。動畫由 NICHICALINE 製作。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/21 下午</span>
+          <div class="card-sources">
+            <a href="https://animecorner.me/bang-dream-yumemita-releases-episode-6-preview/" target="_blank">Anime Corner</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">續作消息</span>
+        <h3 class="card-title">《Fate/kaleid liner Prisma☆Illya》完結篇確定製作 TV 動畫，2027年播出</h3>
+        <p class="card-summary">《Fate/kaleid liner Prisma☆Illya》系列官方於 7 月 20 日 17:00 JST 宣布，系列完結篇將以 TV 動畫形式呈現，標題為《Fate/kaleid liner Prisma☆Illya Finale》，預定 2027 年播出，亦是整個系列的最終作品。Shin Ōnuma 回歸擔任總導演，SILVER LINK 負責動畫製作，原班聲優全員回歸。發布時機配合伊莉雅、美遊、克蘿三人的生日紀念日。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/20 下午（JST 18:00）</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-07-20/fate-kaleid-liner-prisma-illya-finale-tv-anime-revealed-for-2027/.239754" target="_blank">Anime News Network</a>
+            <a href="https://themagicrain.com/2026/07/fate-kaleid-liner-prisma-illya-finale-announced-as-franchises-final-chapter/" target="_blank">The Magic Rain</a>
+            <a href="https://www.fandompost.com/2026/07/20/fate-kaleid-liner-prisma-illya-sets-anime-finale-with-2027-tv-project/" target="_blank">The Fandom Post</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年07月21日 14:48（UTC+8）· 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

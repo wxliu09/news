@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/08/11</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年08月11日（星期二）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">烏克蘭無人機突襲俄羅斯韃靼斯坦煉油重鎮，13人喪生</h3>
+        <p class="card-summary">烏克蘭8月10日對俄羅斯韃靼斯坦共和國下卡姆斯克市發動大規模無人機攻擊，擊中當地大型煉油廠及民宅，造成至少13人死亡（含1名兒童）、39人受傷。韃靼斯坦當局宣布全境哀悼一日，俄方以「恐怖攻擊」罪名展開刑事調查。同日俄軍砲擊烏克蘭哈爾科夫州布哈伊夫卡村，另造成5名平民死亡。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 晚上</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/8/10/at-least-13-killed-in-ukrainian-drone-attack-on-russias-nizhnekamsk" target="_blank">Al Jazeera</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">外交經濟</span>
+        <h3 class="card-title">川普向伊朗求償「50年損害」，荷姆茲海峽談判添變數</h3>
+        <p class="card-summary">美國總統川普8月10日表示，將向伊朗求償「50年來造成的損害」，回應德黑蘭稍早提出唯有美方支付戰爭賠款並解除制裁，才願重開荷姆茲海峽的條件。伊朗與阿曼就海峽新航道的談判仍在進行，但川普的新要求恐使斡旋更加複雜。美國中央司令部同日表示，已重新導引55艘商船並「癱瘓」至少2艘，海峽航運量週末大幅下滑。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 上午</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/8/11/trump-demands-compensation-from-iran-as-talks-on-strait-of-hormuz-continue" target="_blank">Al Jazeera</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">伊朗任命前革命衛隊司令雷扎伊為最高國家安全委員會秘書</h3>
+        <p class="card-summary">伊朗總統佩澤希齊揚8月10日任命前伊斯蘭革命衛隊（IRGC）司令穆赫森．雷扎伊出任最高國家安全委員會秘書，最高領袖哈梅內伊同日也發布敕令指派雷扎伊為其在該委員會的代表。分析人士認為，此人事案正值荷姆茲海峽談判關鍵期，顯示伊朗在對美博弈中傾向由強硬派主導安全決策。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 晚上</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/8/10/who-is-mohsen-rezaei-and-how-significant-is-his-appointment" target="_blank">Al Jazeera</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">人道危機</span>
+        <h3 class="card-title">以色列拒絕加薩和平方案，當地居民陷入絕望與恐慌</h3>
+        <p class="card-summary">以色列總理納坦雅胡日前拒絕美方支持的15點加薩和平方案，堅持哈瑪斯須「真正解除武裝」後以軍才會撤出，哈瑪斯與加薩政府新聞辦公室隨後相繼發表聲明，指控納坦雅胡出於政治考量逆轉談判進程。加薩居民接受採訪時普遍對停火前景感到悲觀，擔憂以軍將發動更猛烈攻勢並強迫他們再度遷移。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 凌晨</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/features/2026/8/10/we-have-no-one-palestinians-react-to-israels-rejection-of-gaza-plan" target="_blank">Al Jazeera</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">天災人禍</span>
+        <h3 class="card-title">菲律賓風災及西南季風釀19死，227萬人受影響</h3>
+        <p class="card-summary">菲律賓國家減災管理委員會8月11日表示，熱帶氣旋「Luis」、「Maymay」與西南季風共同影響下，已造成至少19人死亡、15人受傷、4人失蹤，超過227萬人受災。本格特省災情最重，光是碧瑤市山崩就奪走9條人命；當局已開設919個收容中心，安置近9萬5千人，基礎設施損失估計達14.56億披索。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 上午</span>
+          <div class="card-sources">
+            <a href="https://www.manilatimes.net/2026/08/11/news/death-toll-up-to-19-and-227m-affected-due-to-storms-southwest-monsoon/2402538" target="_blank">The Manila Times</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">天災人禍</span>
+        <h3 class="card-title">英格蘭近四分之三國土進入乾旱，創史上最乾7月紀錄</h3>
+        <p class="card-summary">英國政府8月10日宣布，英格蘭已有71.3%地區進入乾旱狀態，為近5年內第3次乾旱，目前約4500萬人生活在乾旱地區，逾2700萬人受用水限制、部分地區實施澆水禁令。今年7月是英格蘭有紀錄以來最乾燥的7月，降雨量僅達長期平均一成，且第5波熱浪將至，氣溫恐再飆破攝氏33度。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 凌晨</span>
+          <div class="card-sources">
+            <a href="https://www.euronews.com/my-europe/2026/08/10/drought-declared-in-almost-three-quarters-of-england-uk-government-says" target="_blank">Euronews</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">社會</span>
+        <h3 class="card-title">中配徐春鶯受中方指示助選判刑7年 法院：嚴重危害台灣主權</h3>
+        <p class="card-summary">新北地方法院11日下午對中國籍配偶徐春鶯一審宣判，徐春鶯因接受中共國台辦系統人士指示，分別於台北市長與總統選舉期間為黃珊珊、柯文哲站台助選，並協助中共人士以偽造資料入境台灣，另涉地下匯兌與詐貸。合議庭依反滲透法、銀行法等數罪合併判處有期徒刑7年，認定其行為嚴重破壞憲政秩序、危害國家主權，全案可上訴。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 14:24</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/asoc/202608110159.aspx" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">兩岸</span>
+        <h3 class="card-title">中國藉颱風片面對台海實施交管 美國務院表態反對干擾公海航行自由</h3>
+        <p class="card-summary">中國海事局上週以颱風白海豚為由，片面公告對通過台灣海峽南口北上船舶實施交通管制，我國海巡署與陸委會先前已批評此舉違反國際規範。美國國務院10日晚間透過發言人回應中央社詢問時表示，反對任何干擾台灣海峽適用之公海航行與飛越自由的行為。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 13:14</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/aipl/202608110123.aspx" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">和運租車掛牌上市成首檔租車股 早盤大漲7%衝上45元</h3>
+        <p class="card-summary">和泰集團旗下和運租車（股票代號7855）11日以每股承銷價42元正式在證交所掛牌上市，成為台灣首家掛牌的租車類股，早盤股價最高衝至45元，漲幅達7.14%。公司預期今年營收上看新台幣300億元，董事長劉源森看好無人駕駛與訂閱式租賃趨勢將帶動未來成長。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 09:30</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/afe/202608110030.aspx" target="_blank">中央社</a>
+            <a href="https://news.tvbs.com.tw/money/4005317" target="_blank">TVBS</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">食安</span>
+        <h3 class="card-title">台糖毒油風波延燒 藍營質疑放水前董座欠款、通報延遲</h3>
+        <p class="card-summary">國民黨文傳會主委陳以信11日再度砲轟台糖，指台糖今年5月自主檢驗已發現進口粗油苯駢芘達14.7 ppb、明顯超標，卻未依食安法通報主管機關，讓民眾多吃兩個多月問題油。陳以信另質疑台糖對前董座吳乃仁約1.7億元欠款改採每月僅還5萬元的寬鬆協商方案，要求現任董事長吳明昌儘速公開決策過程並負起究責。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 09:26</span>
+          <div class="card-sources">
+            <a href="https://www.chinatimes.com/realtimenews/20260811001388-260407" target="_blank">中時新聞網</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">國防</span>
+        <h3 class="card-title">中部城鎮韌性演習首度納入「行動網路降速」 模擬戰時通訊中斷</h3>
+        <p class="card-summary">苗栗、台中、南投、彰化、雲林、嘉義市及嘉義縣等中部7縣市10日下午舉行城鎮韌性防空演習，首度納入行動網路降速措施，將下載速度大幅調降並持續30分鐘，模擬大規模災害或戰時通訊資源受限情境，惟語音通話、簡訊及110、119等緊急通報不受影響。行政院強調重要公共服務不會中斷；演習11日將移師金門、連江、澎湖等外離島地區。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 19:56</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/aipl/202608100327.aspx" target="_blank">中央社</a>
+            <a href="https://focustaiwan.tw/society/202608100019" target="_blank">Focus Taiwan</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">上半年實質薪資創6年新高 惟逾7成勞工月薪不到4.9萬元平均值</h3>
+        <p class="card-summary">主計總處10日公布統計，今年上半年實質經常性薪資年增1.16%，創近6年同期最大增幅；名目經常性薪資平均月薪達4萬8981元，續創新高，年增2.88%。不過官方也首度證實，薪資低於平均數的受僱員工比率已突破7成、達70.03%創新高，顯示薪資分布不均（M型化）現象持續存在。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 19:45</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/afe/202608100239.aspx" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">兩岸</span>
+        <h3 class="card-title">中共北戴河密令鎖定台灣選舉 立委批藍白配合形同「在台協力者」</h3>
+        <p class="card-summary">據掌握，中共近期在北戴河會議中密商4大對台策略，包括反對台灣擴大無人機部署、截斷台獨「國際空間」，並將2026年台灣地方選舉列為對台工作成敗關鍵。民進黨立委吳思瑤10日批評，藍白陣營在立法院刪減國防與媒宣預算、國民黨主席鄭麗文宣稱「台灣不是一個國家」等作為與中共策略環環相扣，明擺著就是中共在台協力者。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 16:28</span>
+          <div class="card-sources">
+            <a href="https://news.ltn.com.tw/news/politics/breakingnews/5534866" target="_blank">自由時報</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">重大合作</span>
+          <h3 class="card-title">輝達攜手華爾街六大巨頭，籌措5000億美元AI基礎建設資金</h3>
+          <p class="card-summary">輝達宣布與Apollo、貝萊德、黑石、Brookfield、高盛及KKR六家華爾街機構合作，計劃籌措超過5000億美元第三方資金，以優惠利率協助客戶建置AI運算基礎設施。執行長黃仁勳表示此舉能協助客戶取得稀缺運算資源，並稱晶片正成為「可投資資產類別」，但也可能再度引發市場對AI產業「循環融資」風險的疑慮。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/11 上午</span>
+            <div class="card-sources">
+              <a href="https://www.cnbc.com/2026/08/10/nvidia-wall-street-asset-managers-500-billion-ai-push.html" target="_blank">CNBC</a>
+              <a href="https://www.axios.com/2026/08/10/nvidia-financing-ai-goldman-sachs-blackrock" target="_blank">Axios</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">模型發布</span>
+          <h3 class="card-title">Meta重返開源陣營，發布300億參數新模型Muse Glimmer</h3>
+          <p class="card-summary">Meta於8月10日發布Muse Glimmer，這是該公司睽違一年多再度推出的開放權重模型，採Apache 2.0授權，參數規模300億，經4位元量化後可在單張消費級顯示卡上運行。此模型從尚未開源的旗艦模型Muse Spark蒸餾而來，主打本地端代理運算、程式協作與多模態工具調用，執行長祖克柏重申開源AI承諾。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/11 上午</span>
+            <div class="card-sources">
+              <a href="https://www.theregister.com/ai-and-ml/2026/08/10/zuck-rekindles-open-weights-llama-drama-with-muse-glimmer/5285666" target="_blank">The Register</a>
+              <a href="https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/" target="_blank">TechStartups</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">產品發布</span>
+          <h3 class="card-title">OpenAI推出ChatGPT Business高階方案，月費上看125美元</h3>
+          <p class="card-summary">OpenAI於8月10日宣布推出ChatGPT Business「Premium」座位方案，可與標準方案並用，使用額度為標準版的5倍，且不受進階功能每日5小時的使用限制。Premium座位月費125美元（年繳則為100美元），較標準方案的25美元大幅提高，正值中國開源模型競爭加劇、業界質疑AI投資報酬率之際，被視為一場定價賭注。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/11 上午</span>
+            <div class="card-sources">
+              <a href="https://www.theregister.com/ai-and-ml/2026/08/10/hey-big-spender-openai-has-a-new-sku-just-for-you/5285727" target="_blank">The Register</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">研究突破</span>
+          <h3 class="card-title">阿里雲以AI減少AI用量，客服系統準確率達96.5%</h3>
+          <p class="card-summary">阿里雲在SIGKDD 2026年會上發表研究「DualLane」，以雙路徑架構分流客服工單：高頻常見問題交由僅需少量token的快速通道處理，複雜長尾問題才交給耗費較多token的LLM慢速通道。此系統離線測試準確率達96.5%，延遲表現優於其他任務排程工具，目前已於阿里雲正式上線運作，藉此降低整體LLM調用成本。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/11 上午</span>
+            <div class="card-sources">
+              <a href="https://www.theregister.com/ai-and-ml/2026/08/11/alibaba-cloud-is-using-ai-to-help-it-use-less-ai/5285815" target="_blank">The Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">功能發布</span>
+          <h3 class="card-title">Anthropic宣布為Claude生成內容嵌入浮水印，因應歐盟AI法案</h3>
+          <p class="card-summary">Anthropic於8月10日發布說明文件，宣布將為新版Claude模型生成的文字嵌入不可見的機器可讀浮水印，並為支援的檔案加入符合C2PA標準的來源簽章中繼資料，以遵循歐盟AI法案第50條的內容透明度規範。此標記機制將於全球所有使用Claude的場景生效，涵蓋Claude App、Claude Code、Claude Cowork、Claude Tag及API，並延伸至AWS、Google Cloud、Microsoft Foundry等第三方平台。Anthropic坦言此標記無法作為AI生成內容的確鑿證據，未偵測到標記也不代表內容非AI產出。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/11 上午</span>
+            <div class="card-sources">
+              <a href="https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content" target="_blank">Anthropic Help Center</a>
+              <a href="https://www.theregister.com/ai-and-ml/2026/08/11/anthropic-pledges-to-embed-watermarks-to-help-discern-ai-slop-in-sop-to-eu/5285792" target="_blank">The Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,753</div>
+        <div class="index-change down">▼ -0.06%</div>
+        <div class="index-date">8/10 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">53,976</div>
+        <div class="index-change down">▼ -0.11%</div>
+        <div class="index-date">8/10 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">26,605</div>
+        <div class="index-change down">▼ -0.32%</div>
+        <div class="index-date">8/10 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">45,121</div>
+        <div class="index-change up">▲ +0.43%</div>
+        <div class="index-date">8/11 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$82.44</div>
+        <div class="index-change up">▲ +0.38%</div>
+        <div class="index-date">8/11 收盤</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">大宗商品</span>
+        <h3 class="card-title">伊朗加碼求償條件 荷姆茲海峽復航談判卡關 國際油價走揚</h3>
+        <p class="card-summary">美伊就荷姆茲海峽復航協商陷入僵局，川普對伊朗提出新的求償條件，德黑蘭則重申須美方先解除封鎖才願完全重啟航運，雙方目前並未直接談判。地緣政治風險升溫推升油價，WTI原油站上82美元上方、續漲三個交易日，布蘭特原油同步站穩88美元關口。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 20:54（美東08:54）</span>
+          <div class="card-sources">
+            <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-10-2026" target="_blank">TheStreet</a>
+            <a href="https://tradingeconomics.com/commodity/crude-oil" target="_blank">Trading Economics</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">輝達傳下代AI晶片將減少HBM用量 股價跌逾3%、記憶體概念股承壓</h3>
+        <p class="card-summary">外電報導輝達下一代AI加速器設計可能減少高頻寬記憶體（HBM）用量以控制成本，消息衝擊輝達股價當日下跌逾3%，市值蒸發約1040億美元；SK海力士同步下跌，但美光股價僅小跌0.15%，顯示市場對美光受衝擊程度存疑。同日蘋果亦因零組件成本疑慮下跌逾2%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 00:46（美東8/10 12:46）</span>
+          <div class="card-sources">
+            <a href="https://www.fool.com/investing/2026/08/10/dow-slips-while-the-sp-500-clings-to-fridays-recor/" target="_blank">The Motley Fool</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">英特爾無預警增發150億美元新股 股價重挫近5%</h3>
+        <p class="card-summary">英特爾宣布發行150億美元普通股，並提供承銷商30天內加購22.5億美元股票的選擇權，用以支應AI運算相關需求，消息公布後股價重挫近5%。公司強調客戶對AI運算的需求「強勁且持續」，英特爾股價今年以來已累計上漲175%，過去一年更暴漲414%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 21:10（美東09:10）</span>
+          <div class="card-sources">
+            <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-10-2026" target="_blank">TheStreet</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">收購波音三家子公司跨足空中計程車 Archer Aviation股價狂飆近2成</h3>
+        <p class="card-summary">電動垂直起降飛行器廠Archer Aviation宣布收購波音旗下Wisk Aero、SkyGrid與Insitu三家子公司，波音則取得Archer約19.75%的A股股權及未來4年加碼選擇權。消息激勵Archer股價當日暴漲18.4%，公司執行長稱此為「劃時代的一步」，並於同日盤後公布第二季財報。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 22:03（美東10:03）</span>
+          <div class="card-sources">
+            <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-10-2026" target="_blank">TheStreet</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">台積電傳囤10億美元2奈米半成品 郭明錤親自闢謠</h3>
+        <p class="card-summary">市場傳出台積電為蘋果代工的2奈米處理器半成品，因記憶體供應緊張而囤積約10億美元未封裝晶片。長期觀察蘋果供應鏈的分析師郭明錤澄清，記憶體供應吃緊確實影響蘋果硬體出貨，但依產業調查並未發現台積電大量生產2奈米半成品、等待記憶體到貨後才封裝的情況。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 10:09</span>
+          <div class="card-sources">
+            <a href="https://finance.ettoday.net/news/3217037" target="_blank">ETtoday財經雲</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">被動元件7月營收報喜 國巨大漲8%重返600元、禾伸堂領軍5檔亮燈漲停</h3>
+        <p class="card-summary">被動元件廠受惠AI伺服器與高階電子需求，7月營收表現亮眼，禾伸堂領軍下共5檔觸及漲停。龍頭廠國巨7月合併營收161.31億元、續創單月新高，股價大漲8.38%重返600元；華新科7月營收創近8年新高，董事長更喊出「漲價勢在必行」，股價同步亮燈漲停收復300元大關。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 11:05</span>
+          <div class="card-sources">
+            <a href="https://finance.ettoday.net/news/3217108" target="_blank">ETtoday財經雲</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">輝達Rubin GPU出貨延後至Q3底 本土投顧下修京元電目標價至330元</h3>
+        <p class="card-summary">輝達新一代Rubin GPU因晶片散熱設計調整，出貨時程由原訂第二季底延後至第三季底，衝擊測試需求。本土投顧因此下修京元電第三季營收預估9%至121.1億元、EPS預估下修18%至2.37元，目標價由370元降至330元，但考量第四季Rubin放量及明年ASIC業務成長動能，仍維持「買進」評等。京元電今日股價開低走低，盤中跌幅逾4%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 11:24</span>
+          <div class="card-sources">
+            <a href="https://finance.ettoday.net/news/3217140" target="_blank">ETtoday財經雲</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">8/11（二）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note"></div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/12（三）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">35°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note"></div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/13（四）</div>
+          <div class="weather-icon">🌧</div>
+          <div class="weather-temps"><span class="temp-high">35°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note"></div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/14（五）</div>
+          <div class="weather-icon">🌧</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 65%</div>
+          <div class="weather-note">低壓帶影響</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/15（六）</div>
+          <div class="weather-icon">🌧</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">低壓帶影響</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/16（日）</div>
+          <div class="weather-icon">🌧</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 65%</div>
+          <div class="weather-note">環境不穩定</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/17（一）</div>
+          <div class="weather-icon">🌧</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">預估</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖） — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">8/11（二）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">28°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">西南風4-5級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/12（三）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">28°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">西南風4級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/13（四）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">28°</span></div>
+          <div class="weather-rain">🌧 25%</div>
+          <div class="weather-note">西南風4級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/14（五）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 25%</div>
+          <div class="weather-note">西南風3-4級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/15（六）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">西南風3級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/16（日）</div>
+          <div class="weather-icon">⛈</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">西南風3級</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/17（一）</div>
+          <div class="weather-icon">🌧</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">轉東北風3-4級，預估</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">《雙人成行》傳將於10月推出Nintendo Switch 2版本</h3>
+        <p class="card-summary">中國遊戲代理商流出的文件顯示，EA旗下Hazelight Games開發的《雙人成行》(It Takes Two)預計於2026年10月15日登陸Nintendo Switch 2，將以約12.1GB的Game-Key Card卡帶形式發行。該作2021年首發即獲得年度遊戲大獎，此次移植可望帶來畫質與解析度提升。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 08:43</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/it-takes-two-nintendo-switch-2-release/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">饒舌歌手50 Cent攜手VICE Studios打造《PAYDAY》影視改編</h3>
+        <p class="card-summary">開發商Starbreeze宣布與饒舌歌手50 Cent旗下G-Unit Film &amp; Television及VICE Studios合作，將搶劫題材遊戲系列《PAYDAY》改編為影視作品。該系列自2011年推出以來累積超過5000萬玩家，此次合作被視為推動系列跨媒體發展的重要一步。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 06:53</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/50-cent-vice-studios-payday-adaptation/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">傳《Final Fantasy IX重製版》曾開發到相當後期才遭擱置</h3>
+        <p class="card-summary">據VG247記者透露，《Final Fantasy IX》重製計畫其實是單一遊戲作品，且開發進度「相當深入」，但因故遭到擱置，目前尚無定案。消息指出SQUARE ENIX傾向在完成FF7重製三部曲後專注於全新故事，重製作品報酬遞減也是考量之一。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 22:07</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/final-fantasy-9-remake-was-very-far-along-before-being-stalled-its-claimed/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">恐怖新作《Halloween: The Game》遭澳洲禁售</h3>
+        <p class="card-summary">開發商IllFonic宣布，以麥可邁爾斯為主角的新作《Halloween: The Game》因遊戲內含管制藥物內容，未能通過澳洲分級委員會審查，導致該作無法在澳洲與紐西蘭上市。遊戲原訂9月8日於PS5、Xbox Series X|S與PC平台發售，開發商強調禁售與殺戮內容或角色本身無關。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 22:04</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/halloween-the-game-has-been-banned-in-australia/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">GameStop考慮撤回收購eBay提案，改採合作模式</h3>
+        <p class="card-summary">據彭博社報導，GameStop執行長Ryan Cohen正考慮撤回今年5月提出的約550億美元收購eBay提案，轉而尋求策略合作或合資模式，藉此讓eBay運用GameStop約1600家美國實體門市資源。eBay先前已回絕收購提案，GameStop股價也較高點下跌約27%，最終決定尚未拍板。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 21:48</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/gamestop-might-withdraw-bid-to-buy-ebay/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">SQUARE ENIX第一季財報公布，營業利益大增88%</h3>
+        <p class="card-summary">SQUARE ENIX最新財報顯示，受惠於《Final Fantasy VII 重生》登陸新平台、FF14新資料片消息與手遊業務成長，營業利益年增88.6%，淨銷售額成長32.3%。公司同時公布多款在研作品時程，包括預計2027年春季推出的《Final Fantasy VII 啟示》。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 21:41</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/square-enix-operating-income-rises-by-88-in-latest-earnings/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">更新</span>
+        <h3 class="card-title">《Fortnite》第七章第四季故事活動關鍵美術暗藏《俄羅斯方塊》與《古惑狼》彩蛋</h3>
+        <p class="card-summary">Epic Games釋出《Fortnite》第七章第四季轉場故事活動的關鍵視覺圖，眼尖玩家發現畫面中藏有俄羅斯方塊掉落方塊與古惑狼經典問號箱等元素，暗示這兩大遊戲IP可能加入本季聯動陣容。新賽季預計8月20日開始，相關活動將於本週末登場。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 17:05</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/fortnite-chapter-7-season-4-story-moment-key-art-teases-tetris-crash-bandicoot/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">新番</span>
+        <h3 class="card-title">《我在死守10年後成為傳說》動畫追加聲優小林直紀，飾演聖狼獸加爾夫</h3>
+        <p class="card-summary">電視動畫《我在死守10年後成為傳說》官方公布追加聲優小林直紀，將配音聖狼獸「加爾夫」，該角色已於8月10日播出的第6集中正式登場。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 中午12:04</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-08-11/i-became-a-legend-after-my-10-year-long-last-stand-anime-casts-naoto-kobayashi/.240469" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新番</span>
+        <h3 class="card-title">漫畫《眼鏡，偶爾不良少年》確定改編電視動畫，預定2027年首播</h3>
+        <p class="card-summary">Naruki所著漫畫作品官方網站公開先導宣傳影片與視覺圖，確認改編電視動畫，預定2027年播出。導演由Makoto Hoshino於Studio Flad與Wao World共同擔任，故事描述女主角桃瀬希望遠離不良少年、度過平靜高中生活的校園故事。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 上午08:47</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-08-10/glasses-with-a-chance-of-delinquent-anime-teaser-reveals-staff-2027-tv-debut/.240463" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">續作</span>
+        <h3 class="card-title">《無職轉生》第三季公開「混沌破壞者」篇新預告，追加3名聲優</h3>
+        <p class="card-summary">《無職轉生～到了異世界就拿出真本事～》第三季釋出「混沌破壞者」篇最新宣傳影片，並公布3位新加入聲優，包括飾演佩爾基烏斯・多拉的小山力也。該篇章將自8月16日播出的第8集正式展開，Crunchyroll同步線上串流並提供英語配音版本。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/11 凌晨01:30</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-08-10/mushoku-tensei-jobless-reincarnation-season-3-anime-reveals-trailer-3-cast-members-for-chaos-/.240451" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">續作</span>
+        <h3 class="card-title">《機動警察EZY》公開「File 3」劇場版預告，確定隔年3月5日上映</h3>
+        <p class="card-summary">《機動警察EZY》系列公開第三部作品「File 3」先導預告影片，並公布聲優名塚佳織、屋良拓也加入卡司陣容，該片確定於隔年3月5日在日本上映。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 深夜23:49</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-08-10/patlabor-ezy-anime-trailer-reveals-march-5-opening-cast-for-file-3-movie/.240448" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新番</span>
+        <h3 class="card-title">小說《紅帽偵探物語》確定改編電視動畫，預定2027年播出</h3>
+        <p class="card-summary">小說《紅帽偵探物語》（暫譯，原作者Aito Aoyagi）確定改編電視動畫，官方網站公開先導預告、視覺圖及主要聲優宮本侑芽、関根明良，動畫由Itsurō Kawasaki在Benten Film執導，預定2027年推出。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/10 晚上22:16</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-08-10/aito-aoyagi-red-riding-hood-a-detective-story-novel-gets-tv-anime-in-2027/.240445" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年08月11日 · 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

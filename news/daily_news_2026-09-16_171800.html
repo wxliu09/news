@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/09/16</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年09月16日（星期三）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">軍事衝突</span>
+        <h3 class="card-title">胡塞武裝無人機逼近伊斯蘭聖城麥加 沙國防空系統緊急攔截</h3>
+        <p class="card-summary">葉門胡塞組織一架無人機於9月15日晚間逼近伊斯蘭教聖城麥加南郊禁區上空，遭沙烏地阿拉伯防空系統攔截擊落，未造成人員傷亡。這是胡塞武裝近十年來首度將麥加周邊納入攻擊路徑，沙烏地領導的聯軍稱維護兩大聖地安全是「紅線」，誓言採取必要嚇阻措施；胡塞方面則否認以麥加為目標。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/15 深夜</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/9/16/saudi-led-coalition-intercepts-drone-headed-for-mecca" target="_blank">Al Jazeera</a>
+            <a href="https://kesq.com/news/national-world/cnn-world/2026/09/15/saudi-arabia-says-it-shot-down-a-houthi-drone-near-mecca-islams-holiest-city/" target="_blank">CNN</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">以哈戰爭</span>
+        <h3 class="card-title">以色列國防軍與辛貝特證實擊斃哈瑪斯拉法旅指揮官阿布奧貝德</h3>
+        <p class="card-summary">以色列國防軍（IDF）與國安局（辛貝特）9月16日聯合證實，已於加薩南部一次空襲行動中擊斃哈瑪斯拉法旅指揮官奈爾・阿布・奧貝德。奧貝德同時掌管哈瑪斯行動部門，是今年5月前任旅長沙巴納遭擊斃後接任的核心人物。以色列總理內坦雅胡與國防部長卡茨表示，此舉再度傳達「哈瑪斯武裝人員無一倖免」的訊息。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/16 下午</span>
+          <div class="card-sources">
+            <a href="https://www.jpost.com/israel-news/defense-news/article-908721" target="_blank">The Jerusalem Post</a>
+            <a href="https://www.timesofisrael.com/liveblog_entry/idf-shin-bet-confirm-killing-hamas-rafah-brigade-commander/" target="_blank">The Times of Israel</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">中東供應風險升溫 國際油價衝破108美元 華爾街三大指數收黑</h3>
+        <p class="card-summary">受胡塞武裝襲擊沙烏地阿拉伯及紅海周邊局勢持續升溫影響，市場對中東原油供應中斷疑慮升高，國際油價9月15日一度衝破每桶108美元。美股三大指數當日收黑，道瓊下跌約0.6%、標普500下跌0.5%、那斯達克下跌0.8%，10年期美債殖利率同步攀升至2007年以來新高，市場並密切關注聯準會即將公布的利率決策。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/15（美股收盤，台北時間9/16凌晨）</span>
+          <div class="card-sources">
+            <a href="https://finance.yahoo.com/markets/live/stock-market-today-tuesday-september-15-dow-sp-500-nasdaq-081307838.html" target="_blank">Yahoo Finance</a>
+            <a href="https://www.thestreet.com/stock-market-today/stock-market-today-sept-15-2026-dow-futures-slide-as-oil-prices-surge-and-treasury-yields-hit-2007-highs" target="_blank">TheStreet</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">重大意外／人道</span>
+        <h3 class="card-title">印尼渡輪「維爾戈運輸8號」翻覆事故 6具罹難者遺體確認身分 搜索範圍再擴大</h3>
+        <p class="card-summary">印尼渡輪「維爾戈運輸8號」9月13日在爪哇海因惡劣天候翻覆沉沒，船上原載243人。印尼國家搜救署（Basarnas）9月16日表示，搜索行動進入第四天，搜索範圍已擴大至6,120平方海浬，目前仍有129人下落不明；已尋獲的6具罹難者遺體，經確認分別來自西爪哇與東爪哇。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/16 上午</span>
+          <div class="card-sources">
+            <a href="https://regional.kompas.com/read/2026/09/16/071901278/enam-jenazah-korban-km-virgo-transport-8-teridentifikasi-berasal-dari-jabar" target="_blank">Kompas</a>
+            <a href="https://www.metrotvnews.com/read/KYVCeO62-area-pencarian-korban-km-virgo-transport-8-diperluas-hingga-6-120-mil-laut" target="_blank">MetroTV News</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">賴總統：積極推動AI新十大建設 打造人工智慧島</h3>
+        <p class="card-summary">總統賴清德接見亞洲地區台灣同鄉會訪問團時表示，政府正推動「AI新十大建設」，目標2040年前培養至少50萬名AI應用人才，並協助中小微企業加速智慧轉型。他並提到今年上半年經濟成長率達14.15%，創半世紀新高，全年可望超過11%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/15 19:30</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/aipl/202609150317.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">外資大舉撤退 新台幣重貶1.6角創逾半年最大跌幅</h3>
+        <p class="card-summary">受AI發展疑慮、通膨陰影及主要央行決策前避險情緒升溫影響，外資今日大舉匯出，新台幣兌美元盤中一度貶破31.9元，收盤收在31.848元，重貶1.6角，單日跌幅0.5%，為逾半年最大貶幅；台股同步下跌351.03點，外資連4賣超逾626億元。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/15 18:16</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/afe/202609150288.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">颱風杜鵑估16日生成對台無直接影響 大台北、東半部18日前防雨</h3>
+        <p class="card-summary">中央氣象署表示，18日前水氣偏多，大台北、東半部地區及恆春半島留意局部短暫陣雨；19日起水氣減少、天氣趨穩定。位於關島東方海面的熱帶低壓預估16日增強為颱風「杜鵑」，未來將偏向日本南方海面移動，對台灣沒有直接影響。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/15 17:50</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/ahel/202609150269.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">社會／地方</span>
+        <h3 class="card-title">老翁跌倒遭質疑北捷拆扶手釀禍 蔣萬安要求全面檢討</h3>
+        <p class="card-summary">北捷部分車廂近期移除立柱、扶手因應尖峰人流，14日傳出撐拐杖老翁因站不穩跌倒受傷，引發拆扶手安全疑慮。台北市長蔣萬安受訪表示已要求北捷全面檢視車廂扶握設施並提出改善。北捷晚間另證實15日下午松山新店線亦有旅客跌倒送醫關懷的案例。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/15 21:39</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/aloc/202609150341.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">社會</span>
+        <h3 class="card-title">涉協助高金助理張俊傑逃匿 陳厚彰遭聲押禁見</h3>
+        <p class="card-summary">立委高金素梅助理張俊傑棄保逃匿案持續延燒，北檢凌晨在雲林古坑拘提22歲接應男子陳厚彰到案，檢方以涉犯藏匿人犯罪嫌重大聲請羈押禁見；另兩名協助破壞電子手鐶的同夥也分別遭聲押及交保。檢方已通緝張俊傑並函請外交部註銷其護照，全力追緝中。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/15 23:01</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/asoc/202609150359.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">新創募資</span>
+          <h3 class="card-title">三星領投荷蘭AI晶片新創Euclyd A輪2.31億美元，挑戰Nvidia地位</h3>
+          <p class="card-summary">荷蘭新創Euclyd完成逾2億歐元（約2.31億美元）A輪募資，由三星、Somerset Capital Partners、EQT旗下Scaleup Europe Fund與Innovation Industries共同領投。公司計畫打造有別於GPU架構的AI推論系統，主打降低運算能耗與每個token成本，前ASML執行長Peter Wennink將出任董事長。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/09/15 晚上</span>
+            <div class="card-sources">
+              <a href="https://techstartups.com/2026/09/15/samsung-backs-dutch-ai-chip-startup-euclyd-in-231m-funding-round-to-challenge-nvidia/" target="_blank">Tech Startups</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">產業動態</span>
+          <h3 class="card-title">OpenAI執行長奧特曼：世界對AI感到恐懼是「合理的」</h3>
+          <p class="card-summary">奧特曼週二在Salesforce於舊金山舉辦的活動上表示，外界對AI風險的恐懼「是對的」，但呼籲大眾信任OpenAI等公司會做正確的事，並強調若安全與對齊工作跟不上能力發展，業界應該「放慢腳步或停下來」。此番談話延續近日Anthropic執行長Amodei等人呼籲產業放緩AI能力提升速度的討論。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/09/16 上午</span>
+            <div class="card-sources">
+              <a href="https://www.wionews.com/world/openai-boss-sam-altman-repeats-ai-slow-down-call-says-world-right-to-be-afraid-1789524970459" target="_blank">WION</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">產業合作／政策</span>
+          <h3 class="card-title">OpenAI證實與Anthropic、Google DeepMind已就AI安全議題密談數週</h3>
+          <p class="card-summary">OpenAI全球政策長Chris Lehane週二證實，該公司已與Anthropic、Google DeepMind就AI安全議題私下協商數週，此舉呼應Anthropic執行長Dario Amodei稍早發表呼籲產業「放緩前沿AI」的文章。三方被指正合作研議建立產業標準機構，但川普政府對相關安全疑慮持懷疑態度，強調不應因此讓中國在AI競賽中領先。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/09/15 晚上</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">產品發布</span>
+          <h3 class="card-title">Anthropic推出「Salesforce in Claude」外掛測試版，內建37項銷售技能</h3>
+          <p class="card-summary">Anthropic與Salesforce合作推出的「Salesforce in Claude」外掛進入公開測試，讓業務人員能在Claude中直接存取Salesforce的客戶、商機與銷售管線資料，涵蓋每日簡報、會議準備、商機評分、會後跟進與管線儀表板等37項技能。GitLab、Siemens、Legora等企業已導入，目前約7,000名Salesforce業務人員在使用。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/09/15 晚上</span>
+            <div class="card-sources">
+              <a href="https://claude.com/blog/salesforce-in-claude" target="_blank">Claude Blog（Anthropic）</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,585.73</div>
+        <div class="index-change down">▼ -0.45%</div>
+        <div class="index-date">9/15 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">52,093.11</div>
+        <div class="index-change down">▼ -0.63%</div>
+        <div class="index-date">9/15 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">25,981.57</div>
+        <div class="index-change down">▼ -0.78%</div>
+        <div class="index-date">9/15 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">45,848.90</div>
+        <div class="index-change up">▲ +0.74%</div>
+        <div class="index-date">9/16 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$105.83</div>
+        <div class="index-change up">▲ +4.4%</div>
+        <div class="index-date">9/15 收盤</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">台股</span>
+        <h3 class="card-title">台股甩開連四跌 大漲337點收復45,800點關卡</h3>
+        <p class="card-summary">台股16日開盤45,546.56點，盤中最高一度衝上46,077.82點，終場收在45,848.9點，上漲337.41點、漲幅0.74%，成交量6,438億元，上漲家數826家遠多於下跌221家、且無一檔跌停。台積電除息後收平盤2,380元，南亞科、台達電、聯發科等權值股同步走強，市場解讀為台指期結算與三大法人調節後的資金回補行情。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/16 下午</span>
+          <div class="card-sources">
+            <a href="https://money.udn.com/money/story/12509/9758367" target="_blank">經濟日報</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美股</span>
+        <h3 class="card-title">Fed升息倒數！油價衝破109美元、美債殖利率破5% 美股三大指數全跌</h3>
+        <p class="card-summary">美股15日（台灣時間16日清晨收盤）續跌，道瓊下跌328.09點、跌0.63%收52,093.11點，標普500下跌34.25點、跌0.45%收7,585.73點，那斯達克下跌204.84點、跌0.78%收25,981.57點。受葉門叛軍威脅荷莫茲海峽航運影響，紐約原油期貨大漲4.4%收105.83美元，布蘭特原油逼近109美元；美國10年期公債殖利率升破5%、創2007年來新高，市場預期Fed周三升息1碼機率已達94.5%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/16 上午</span>
+          <div class="card-sources">
+            <a href="https://money.udn.com/money/story/123398/9757196" target="_blank">經濟日報</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">緯穎法說日股價驟殺至跌停 砍單傳言四起</h3>
+        <p class="card-summary">伺服器大廠緯穎（6669）16日召開法說會當天股價劇烈震盪，市場傳出遭客戶砍單、以及美國施壓墨西哥設立AI伺服器產地規範等消息，午盤爆出大量賣單、一度摜殺至跌停價2,085元，尾盤跌幅收斂，終場收2,165元、跌150元、跌幅6.48%。公司對傳言尚未證實，法人解讀主因是連五日遭外資賣超、加上台指期結算與美股「四巫日」前的籌碼調節。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/16 下午</span>
+          <div class="card-sources">
+            <a href="https://money.udn.com/money/story/5648/9758333" target="_blank">經濟日報</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">9/16（三）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">22°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">風勢較強，東北偏東風</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/17（四）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 8%</div>
+          <div class="weather-note">晴轉局部多雲</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/18（五）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 25%</div>
+          <div class="weather-note">多雲時晴，午後有零星降雨機會</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/19（六）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 14%</div>
+          <div class="weather-note">局部晴朗</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/20（日）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 88%</div>
+          <div class="weather-note">有陣雨，防範較大雨勢</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/21（一）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">22°</span></div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note">零星降雨或雷暴</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/22（二）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 1%</div>
+          <div class="weather-note">陽光充足</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖） — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">9/16（三）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 6%</div>
+          <div class="weather-note">東北風約5級（約34km/h）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/17（四）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 3%</div>
+          <div class="weather-note">東北風約4-5級（約27km/h）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/18（五）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">30°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 3%</div>
+          <div class="weather-note">東北風約4級（約23km/h）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/19（六）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 12%</div>
+          <div class="weather-note">東北風約4級（約19km/h）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/20（日）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 13%</div>
+          <div class="weather-note">東北風約4級（約19km/h）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/21（一）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 13%</div>
+          <div class="weather-note">東北偏東風約4-5級（約26km/h）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">9/22（二）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">30°</span> / <span class="temp-low">23°</span></div>
+          <div class="weather-rain">🌧 7%</div>
+          <div class="weather-note">東北風約4級（約19km/h）</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">新作發售／玩家反饋</span>
+        <h3 class="card-title">《Marvel's Wolverine》上線未滿24小時 Insomniac急忙回應玩家批評並推出首日更新</h3>
+        <p class="card-summary">Insomniac Games的《Marvel's Wolverine》於9月15日在PS5正式發售，但作品在Metacritic僅獲得77分左右，成為該工作室近年評價最低的漫威改編遊戲，玩家主要不滿「氣味追蹤路線」過度導引，以及部分過場戰鬥QTE形同虛設。社群與行銷總監James Stevenson在發售不到24小時內公開表示團隊已著手修正，同時推出1.004號首日更新檔，修正部分進度卡關問題與角色鬍鬚造型等細節。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/16 凌晨</span>
+          <div class="card-sources">
+            <a href="https://www.dualshockers.com/less-than-24-hours-marvels-wolverine-already-addressing-major-complaints/" target="_blank">Dualshockers</a>
+            <a href="https://www.pushsquare.com/news/2026/09/weve-been-100percent-listening-insomniac-already-acting-on-marvels-wolverine-criticisms" target="_blank">Push Square</a>
+            <a href="https://www.gamesradar.com/games/action/marvels-wolverine-metacritic-shows-the-worst-reviewed-insomniac-game-in-years-and-not-the-smash-hit-sony-needed-for-the-dire-ps5-exclusive-lineup/" target="_blank">GamesRadar+</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">訂閱服務／新作陣容</span>
+        <h3 class="card-title">Xbox Game Pass公布2026年9月第二波片單 《戰爭機器：E日》《Minecraft地下城2》領軍</h3>
+        <p class="card-summary">微軟正式公布9月Game Pass第二波新增陣容，共14款作品將陸續於9月15日至10月6日間加入服務，其中4款為首發即上架的新作，包括《戰爭機器：E日》與《Minecraft地下城2》。此外，《沙丘：覺醒》將於9月22日推出主機版本並加入服務，《決勝時刻：黑色行動6》也將於9月25日上架；同時有8款作品將於9月30日移出服務，包括《師父》與《小小夢魘2：加強版》。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/16 凌晨</span>
+          <div class="card-sources">
+            <a href="https://news.xbox.com/en-us/2026/09/15/xbox-game-pass-september-2026-wave-2/" target="_blank">Xbox Wire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">平台公告</span>
+        <h3 class="card-title">Crunchyroll公布2026年秋季動畫片單，逾40部作品齊發</h3>
+        <p class="card-summary">Crunchyroll正式公布2026年秋季新番與續作總片單，包含《藥師少女的獨語》第三季、睽違近六年回歸的《黑色四葉草》第二季，以及《Overgeared》、《緋紅面具》等新作。季度將於9月26日起陸續開播，橫跨9月至10月推出逾40部作品。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/09/16 凌晨</span>
+          <div class="card-sources">
+            <a href="https://finalweapon.net/2026/09/15/crunchyroll-fall-2026-anime-season-lineup-release-dates-and-times/" target="_blank">Final Weapon</a>
+            <a href="https://www.animenewsnetwork.com/news/2026-09-15/crunchyroll-announces-release-schedule-for-fall-2026-season/.241811" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年09月16日 · 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

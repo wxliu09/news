@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/08/06</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年08月06日（星期四）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">俄羅斯飛彈無人機齊射基輔地區 造成17死44傷</h3>
+        <p class="card-summary">俄羅斯5日對烏克蘭首都基輔及周邊地區發動長達約兩小時的飛彈與無人機齊射，總統澤倫斯基證實至少17人死亡、44人受傷。因愛國者防空系統攔截彈嚴重短缺，烏軍未能擊落任何一枚彈道飛彈，僅攔截115架無人機中的98架，攻擊目標多為倉儲物流設施。基輔已宣布6日為官方哀悼日。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05 傍晚（後續至08/06凌晨持續更新）</span>
+          <div class="card-sources">
+            <a href="https://www.npr.org/2026/08/05/nx-s1-5921194/russian-missile-drone-barrage" target="_blank">NPR</a>
+            <a href="https://www.cnn.com/2026/08/05/europe/russia-ukraine-kyiv-attack-intl-hnk" target="_blank">CNN</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">黎南爆炸案致2以色列士兵死亡 以軍恢復空襲 羅馬停火談判同步進行</h3>
+        <p class="card-summary">以色列2名預備役士兵5日在黎巴嫩南部馬吉達勒祖恩村一棟遭埋設爆裂物的建築內身亡，另有多人受傷；以軍隨即宣布在黎南恢復「精準打擊」，指控真主黨「公然違反停火協議」，並對al-Mansouri地區居民發出新一輪撤離令。同日以軍對提卜寧鎮一處公墓祈禱廳的空襲另造成1名黎巴嫩平民死亡、12人受傷。以黎第二輪羅馬停火談判5日結束，聚焦以軍分階段撤軍議題，預計6日續談。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05 晚間（以軍於08/06清晨證實士兵死訊）</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/8/5/at-least-one-lebanese-person-two-israeli-soldiers-killed-in-south-lebanon" target="_blank">Al Jazeera</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">川普稱荷莫茲海峽協議最快本週公布 胡塞武裝同日攻擊沙國油輪</h3>
+        <p class="card-summary">美國總統川普5日表示，伊朗與阿曼重新開放荷莫茲海峽的協議「一兩天內就會知道結果」，伊阿雙方談判代表據稱已完成協議草案，正等候伊朗最高領袖批准；消息帶動國際油價走跌、美股走揚。同日葉門胡塞武裝宣稱以彈道飛彈攻擊沙烏地阿拉伯油輪「Wafa」號，是紅海封鎖行動以來第8艘遭鎖定的沙國油輪。聯合國人權事務高級專員圖爾克同日並譴責伊朗自3月以來處決人數激增，至少56人已遭處決、逾百人面臨處決風險。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05 晚間</span>
+          <div class="card-sources">
+            <a href="https://spectrumlocalnews.com/tx/dallas-fort-worth/politics/2026/08/05/trump-says-deal-to-reopen-the-strait-of-hormuz-could-come-as-early-as-wednesday" target="_blank">美聯社 AP</a>
+            <a href="https://www.aljazeera.com/news/2026/8/5/iran-oman-us-close-to-hormuz-deal-what-do-they-all-want" target="_blank">Al Jazeera</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">天然災害</span>
+        <h3 class="card-title">熱帶風暴「Maymay」登陸菲律賓伊羅戈斯蘇省 呂宋島北部豪雨戒備</h3>
+        <p class="card-summary">熱帶風暴Maymay（國際命名Kujira）於6日凌晨2時在菲律賓伊羅戈斯蘇省馬辛薩爾鎮登陸，登陸時最大持續風速達每小時75公里，其後減弱為熱帶低氣壓，於上午8時橫掃阿布拉省。當局預估伊羅戈斯蘇、拉允聯合碧瑤等地雨量將超過200毫米，已對高風險地區居民發布撤離指示，呂宋島北部多地學校與機關同步宣布停課停班。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 凌晨</span>
+          <div class="card-sources">
+            <a href="https://www.rappler.com/philippines/weather/tropical-storm-maymay-southwest-monsoon-update-pagasa-forecast-august-6-2026-2am/" target="_blank">Rappler</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">國防</span>
+        <h3 class="card-title">漢光42號演習首日 賴清德參與衡山指揮所反斬首應變演練</h3>
+        <p class="card-summary">台灣年度漢光42號實兵演習5日展開，動員2萬名後備軍人，台北市後備旅在中正高中進行步槍及迫砲操演。總統府6日證實，總統賴清德5日深夜首度搭乘雲豹甲車、在3路車隊佯動下馳赴大直「國家政軍指揮中心」，參與模擬解放軍斬首攻擊的應變演練，測試緊急狀態下的指揮體系與跨部會協調機制。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 下午（總統府證實；演習於8/5晚間展開）</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/politics/202608060006" target="_blank">Focus Taiwan</a>
+            <a href="https://focustaiwan.tw/politics/202608050017" target="_blank">Focus Taiwan</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">民進黨、國民黨下鄉開中常會 賴清德盧秀燕互批施政</h3>
+        <p class="card-summary">民進黨、國民黨5日分別在台中、新竹縣舉行下鄉中常會，為11月地方選舉輔選造勢。總統賴清德在台中場批評市長盧秀燕任內捷運藍線一再變更路線、預算增加卻遲未動工；盧秀燕則反批賴清德自7月6日後未再公開談食安，「顯得無感民瘼」。國民黨則在新竹縣力挺立委徐欣瑩選情，盼弭平3月初選後黨內裂痕。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05 晚間</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/politics/202608050018" target="_blank">Focus Taiwan</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">兩岸</span>
+        <h3 class="card-title">中國「台青e家」平台涉違規 陸委會將協調封鎖</h3>
+        <p class="card-summary">陸委會主委邱垂正5日在立法院表示，中國「台青e家」網路平台以協助台灣青年赴陸就學就業為名，涉違反兩岸人民關係條例第23、34條，政府將協調相關機關促其下架或封鎖。邱垂正警告青年提交個資恐生風險，並批評北京藉此平台對台進行「統一前治理」及認知作戰。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05 傍晚</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/politics/202608050016" target="_blank">Focus Taiwan</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">食安</span>
+        <h3 class="card-title">中聯毒油案延燒 食安辦證實廠商全程列席關鍵會議</h3>
+        <p class="card-summary">立法院5日邀衛福部、行政院食安辦及台糖，就中聯致癌油案是否「中央蓋牌」進行專題報告。食安辦主任許輔在立委追問下證實，7月4日拍板「未逾20%比例免下架」標準的專家會議，中聯代表「全程在場」，推翻衛福部先前說法，部長石崇良當場允諾公開會議紀錄。6日再有公文曝光，衛福部對審計部稱20%下架標準僅是專家會議的「建議」，決策權責爭議持續延燒。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05 傍晚（後續進展至8/6）</span>
+          <div class="card-sources">
+            <a href="https://news.tvbs.com.tw/politics/4002813" target="_blank">TVBS</a>
+            <a href="https://udn.com/news/story/124948/9673549" target="_blank">聯合新聞網</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">鴻海7月營收創新高 首度單月突破9000億元</h3>
+        <p class="card-summary">鴻海精密5日公告，未經會計師複核的7月合併營收達新台幣9465.12億元，年增54.19％，首度單月突破9000億元，四大產品線全數強勁成長，主要受惠伺服器相關產品需求暢旺。累計前7月營收達5兆5890億元，年增37.89％，公司看好第3季AI伺服器機櫃出貨持續放量。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05 傍晚</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/business/202608050015" target="_blank">Focus Taiwan</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">白海豚颱風逼近 華航星宇取消台沖航班 估週五發布海警</h3>
+        <p class="card-summary">中央氣象署5日下午表示，白海豚颱風持續逼近，最快週五（8/7）下午可能發布海上颱風警報，週六至週一（8/8至8/10）對台影響最明顯，北部山區有機會出現豪雨。華航與星宇航空5日同步宣布，因應颱風取消週四至週六台灣與沖繩間多班航班，並調整部分航班起降時間。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05 下午</span>
+          <div class="card-sources">
+            <a href="https://focustaiwan.tw/society/202608050010" target="_blank">Focus Taiwan</a>
+            <a href="https://focustaiwan.tw/society/202608050011" target="_blank">Focus Taiwan</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">社會</span>
+        <h3 class="card-title">詐騙慈濟採購BNT疫苗10.6億元 律師等17人遭起訴</h3>
+        <p class="card-summary">台中地檢署6日偵結起訴彰化律師公會前理事長陳姓律師等17人，控其於2021年疫情期間佯稱有BNT疫苗採購管道，向慈濟基金會詐取委任報酬美金3000萬元（約新台幣10.6億元）。調查局指出，4、5月間兩波搜索共查扣現金9308萬元、黃金逾158公斤及豪宅、名車等，累計查扣及聲請沒收金額逾10億元。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 上午</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/asoc/202608060072.aspx" target="_blank">中央社 CNA</a>
+            <a href="https://www.cna.com.tw/news/asoc/202608060074.aspx" target="_blank">中央社 CNA</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">重大人事異動</span>
+          <h3 class="card-title">Google AI大地震：DeepMind執行長哈薩比斯轉任董事長，傳奇工程師Jeff Dean出走創辦新公司</h3>
+          <p class="card-summary">Google DeepMind執行長Demis Hassabis宣布卸下執行長職務，轉任董事長並兼任Alphabet首席科學家，日常營運改由現任技術長Koray Kavukcuoglu接手，直接向Sundar Pichai報告。與此同時，任職27年的Google資深院士Jeff Dean偕同Sanjay Ghemawat、Oriol Vinyals、Quoc Le等重量級研究員出走，共同創立新創公司「Discovery Loop」，致力用AI加速科學實驗與研究，Alphabet也將以投資人身分參與。消息公布後Google股價一度下跌逾4%，凸顯公司在AI競賽中面對OpenAI與Anthropic的壓力。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/06 凌晨</span>
+            <div class="card-sources">
+              <a href="https://www.axios.com/2026/08/05/google-deepmind-demis-hassabis-ai" target="_blank">Axios</a>
+              <a href="https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">產品上線</span>
+          <h3 class="card-title">Meta推出程式碼代理人Muse Code，加入AI編碼助手戰局</h3>
+          <p class="card-summary">Meta執行長祖克柏宣布推出全新終端機編碼代理人「Muse Code」，目前為Beta測試版，可處理大型程式碼庫的複雜軟體工程任務，包括規劃變更、撰寫程式與驗證結果，且能同時派生多個子代理人平行作業。該工具由Meta先前發布的程式碼模型Muse Spark提供動力，定價每百萬輸入token 1.25美元、輸出token 4.25美元。此舉被視為Meta加強與OpenAI Codex、Anthropic Claude Code等競品對抗的策略。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/06 清晨</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/" target="_blank">TechCrunch</a>
+              <a href="https://www.cnbc.com/2026/08/05/meta-debuts-muse-code-to-take-on-anthropic-and-openai-.html" target="_blank">CNBC</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">產品上線</span>
+          <h3 class="card-title">AI新創Hark發表瀏覽器操作代理人Handoff</h3>
+          <p class="card-summary">今年5月甫完成7億美元A輪募資的新創公司Hark，發表瀏覽器操作代理人「Hark Handoff」，宣稱能有效瀏覽Target、Walmart、OpenTable、LinkedIn等無官方API的網站，透過解析網頁結構與視覺資訊自動完成點擊、輸入等操作以代辦訂餐、訂票、購物等任務。執行長Brett Adcock展示了依模糊指令訂購花束的示範影片，並宣稱其速度更快、成本低於GPT-5.5與Claude Opus 4.8等競品。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/05 深夜</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/08/05/hark-previews-its-browser-use-agent-for-completing-tasks/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">功能更新</span>
+          <h3 class="card-title">Anthropic推出「推論掛鉤」功能，企業可即時攔截敏感資料進入Claude</h3>
+          <p class="card-summary">Anthropic針對Claude Enterprise客戶推出Beta功能「Inference Hooks（推論掛鉤）」，讓合規團隊能在提示詞與工具呼叫回應送達Claude前，先經企業自有的資安伺服器（相容Netskope、Palo Alto Networks、Zscaler等）進行即時允許或阻擋判定，一次設定即可涵蓋聊天、Claude Code、Cowork及MCP連接工具等所有介面。此功能補足過去僅Claude Code支援用戶端掛鉤的缺口，強化企業防止資料外洩（DLP）的即時控管能力。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/06 凌晨</span>
+            <div class="card-sources">
+              <a href="https://claude.com/blog/claude-enterprise-inference-hooks" target="_blank">Claude Blog</a>
+              <a href="https://thenextweb.com/news/anthropic-inference-hooks-dlp-claude-enterprise" target="_blank">The Next Web</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">公司動態</span>
+          <h3 class="card-title">Anthropic籌組自研AI晶片設計團隊，盼降低對外部供應商依賴</h3>
+          <p class="card-summary">據報導，Anthropic正在組建內部「客製化晶片團隊」，徵求晶片設計工程師，計畫將硬體與Claude模型「共同設計」以提升運算效率與速度。目前Anthropic已與AWS、Google、Nvidia、AMD簽署運算合作協議，但為因應Claude需求持續攀升，正尋求自研晶片能力，此前一個月也傳出與三星洽談代工可能性。此舉跟進OpenAI（委由Broadcom代工Jalapeño晶片）與Meta（自研MTIA加速器）等同業走向自製晶片的路線。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/05 晚上</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">服務狀態</span>
+          <h3 class="card-title">Claude多款模型一度出現服務中斷，Anthropic已展開修復</h3>
+          <p class="card-summary">Anthropic的Claude Mythos 5、Fable 5、Opus 5與Sonnet 5等多款模型自美東時間8月5日凌晨起出現錯誤率升高、服務中斷的狀況。Anthropic於官方狀態頁確認問題，表示已部署修復措施並持續監控恢復進度，其中Opus 5發生錯誤的原因已被鎖定，團隊正加緊處理。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/05 晚上</span>
+            <div class="card-sources">
+              <a href="https://www.androidauthority.com/claude-outage-august-5-2026-3694847/" target="_blank">Android Authority</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,723.55</div>
+        <div class="index-change down">▼ -0.17%</div>
+        <div class="index-date">8/05 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">54,349.12</div>
+        <div class="index-change up">▲ +0.49%</div>
+        <div class="index-date">8/05 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">26,363.44</div>
+        <div class="index-change down">▼ -0.83%</div>
+        <div class="index-date">8/05 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">44,396.70</div>
+        <div class="index-change down">▼ -0.48%</div>
+        <div class="index-date">8/06 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$75.22</div>
+        <div class="index-change down">▼ -0.73%</div>
+        <div class="index-date">8/05 收盤</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">台股</span>
+        <h3 class="card-title">台股收跌214點，台積電失守2400元，記憶體股逆勢漲停</h3>
+        <p class="card-summary">台股6日開低走低，早盤一度下跌近600點，終場收在44396.70點，下跌214.90點，成交量9404億元。權值股台積電下跌40元收2365元，聯發科下跌80元收3920元；記憶體族群逆勢走強，群聯、旺宏亮燈漲停，威剛大漲逾6%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 13:40</span>
+          <div class="card-sources">
+            <a href="https://www.chinatimes.com/realtimenews/20260806002697-260410" target="_blank">中時新聞網</a>
+            <a href="https://www.ftnn.com.tw/news/567689" target="_blank">FTNN新聞網</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">亞股</span>
+        <h3 class="card-title">南韓股市熔斷，三星、SK海力士重挫</h3>
+        <p class="card-summary">受AI晶片類股估值疑慮衝擊，南韓股市6日低開重挫，KOSPI指數一度跌超4%，SK海力士一度跌超8.8%，三星電子一度跌超5.2%，韓國交易所緊急啟動SIDECAR機制，暫停程式化賣單。亞股早盤科技股普遍走低。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 10:15</span>
+          <div class="card-sources">
+            <a href="https://www.wenweipo.com/a/202608/06/AP6a73ee44e4b0c1e50023bcf7.html" target="_blank">香港文匯報</a>
+            <a href="https://news.pchome.com.tw/finance/cna/20260806/index-17859922254553818003.html" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股動態</span>
+        <h3 class="card-title">AMD、SpaceX財報後重挫，輝達獲SpaceX獨家訂單激勵大漲</h3>
+        <p class="card-summary">超微(AMD)第二季財報優於預期，但因財測不如市場最樂觀預期，5日股價下跌7%；SpaceX公布上市以來首份財報，因AI資本支出暴增6倍至184億美元，股價重挫逾13%，市值蒸發逾7兆元。輝達(Nvidia)股價則大漲逾3%，因馬斯克宣布SpaceX未來AI運算基礎設施將只採用輝達處理器；Alphabet因重組AI部門、首席科學家去職消息下跌4%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 08:08</span>
+          <div class="card-sources">
+            <a href="https://news.pchome.com.tw/finance/crwant/20260806/index-78597446306746316003.html" target="_blank">PChome新聞(周刊王CTWANT)</a>
+            <a href="https://news.pchome.com.tw/science/cna_business/20260806/index-17859748901650122005.html" target="_blank">中央商情</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">大宗商品</span>
+        <h3 class="card-title">美伊談判露曙光，WTI原油連日承壓</h3>
+        <p class="card-summary">市場預期美國與伊朗可能就重新開放荷莫茲海峽達成協議，國際油價本週持續受壓。9月交割WTI原油期貨5日下跌0.73%，收每桶75.22美元；作為國際油價基準的10月交割布蘭特原油期貨則微漲0.11%，收79.45美元。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 08:01</span>
+          <div class="card-sources">
+            <a href="https://news.pchome.com.tw/finance/crwant/20260806/index-78597446306746316003.html" target="_blank">PChome新聞(周刊王CTWANT)</a>
+            <a href="https://news.pchome.com.tw/finance/cna/20260806/index-17859661357782718003.html" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美股</span>
+        <h3 class="card-title">道瓊連5日創高，標普終止連4漲，那指走弱</h3>
+        <p class="card-summary">美股5日收盤漲跌互見，道瓊工業指數在亮眼財報及輝達股價上漲帶動下，上漲0.49%收在54349.12點，創歷史收盤新高並連5日收紅；標普500指數自盤中高點回落，下跌0.17%收7723.55點，終結連4天漲勢；那斯達克指數下跌0.83%收26363.44點，費城半導體指數下跌1.40%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 08:01</span>
+          <div class="card-sources">
+            <a href="https://news.pchome.com.tw/finance/crwant/20260806/index-78597446306746316003.html" target="_blank">PChome新聞(周刊王CTWANT)</a>
+            <a href="https://news.pchome.com.tw/finance/cna/20260806/index-17859634306136118003.html" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">8/6（四）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">36°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 87%</div>
+          <div class="weather-note">低壓帶水氣增多，北部局部短暫陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/7（五）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">35°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 63%</div>
+          <div class="weather-note">白海豚颱風外圍雲系接近，西半部降雨增多</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/8（六）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">28°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 100%</div>
+          <div class="weather-note">颱風外圍環流影響，北部山區防大雨，晚間有雷暴</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/9（日）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">28°</span></div>
+          <div class="weather-rain">🌧 98%</div>
+          <div class="weather-note">颱風影響最明顯期間，防大雨，路徑仍有變動</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/10（一）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">36°</span> / <span class="temp-low">28°</span></div>
+          <div class="weather-rain">🌧 68%</div>
+          <div class="weather-note">颱風外圍環流影響持續，慎防雷雨及強陣風</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/11（二）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">36°</span> / <span class="temp-low">28°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">轉西南風，中南部午後雷陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/12（三）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 13%</div>
+          <div class="weather-note">颱風遠離，天氣漸趨穩定，資料為概估</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖） — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">8/6（四）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">28°</span></div>
+          <div class="weather-rain">🌧 18%</div>
+          <div class="weather-note">偏北風3級，晴到多雲</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/7（五）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">35°</span> / <span class="temp-low">28°</span></div>
+          <div class="weather-rain">🌧 5%</div>
+          <div class="weather-note">西南風3級，大致多雲</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/8（六）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">36°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 95%</div>
+          <div class="weather-note">偏北風2-3級，強陣雨，沿海注意長浪</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/9（日）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 97%</div>
+          <div class="weather-note">西北風5-6級，颱風外圍環流影響，風雨明顯增強</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/10（一）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 91%</div>
+          <div class="weather-note">西風5級，颱風外圍環流影響，防強風大雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/11（二）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note">西南風4級，局部雷暴</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/12（三）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">西南風5-6級，風勢仍強，資料為概估</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。白海豚颱風動態可能隨時調整，請留意最新颱風警報。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">EA完成私有化收購，隨即宣布7億美元年度成本削減計畫</h3>
+        <p class="card-summary">電子藝界（EA）由沙烏地阿拉伯公共投資基金（PIF）、Silver Lake與Affinity Partners組成的財團以550億美元收購案已於8月4日正式完成，公司自那斯達克下市轉為私有企業。據彭博社最新報導，EA為償還收購產生的約180億美元債務，計畫每年削減最多7億美元成本，其中1.7億美元來自「組織效率化」，外界解讀恐引發大規模裁員。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 下午</span>
+          <div class="card-sources">
+            <a href="https://gaminghq.eu/2026/08/06/ea-private-700-million-cost-cuts/" target="_blank">GamingHQ</a>
+            <a href="https://www.pcgamer.com/gaming-industry/saudi-acquired-ea-is-reportedly-planning-to-make-massive-cuts-after-taking-usd18-billion-of-debt-and-we-all-know-what-that-means/" target="_blank">PC Gamer</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">《Minecraft》正式公布Switch 2版本，10月27日推出並強化畫質</h3>
+        <p class="card-summary">Mojang官方宣布《Minecraft》將於10月27日推出專為Nintendo Switch 2打造的版本，預設開啟「Vibrant Visuals」畫質模式，提供更佳光影與陰影效果。深受玩家喜愛的「超級瑪利歐聯名包」也將同步升級畫質，原Switch版玩家屆時可透過數位升級途徑取得新版，但升級是否免費尚未公布。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 凌晨</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/minecraft-switch-2-release-date/" target="_blank">Insider Gaming</a>
+            <a href="https://www.minecraft.net/en-us/article/minecraft-for-nintendo-switch-2-release-date" target="_blank">Minecraft.net（官方）</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">更新</span>
+        <h3 class="card-title">Xbox確認將於年內推出類「白金獎盃」成就獎勵</h3>
+        <p class="card-summary">Xbox執行長Asha Sharma證實團隊正在開發類似PlayStation白金獎盃的「全成就達成」獎勵機制，預計於2026年稍後推出，此舉不會取代現行Gamerscore制度。目前官方尚未公布名稱、呈現方式或是否涵蓋DLC成就等細節，消息與Xbox近期釋出的語音擷取、成就瀏覽優化等更新一併公布。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 凌晨</span>
+          <div class="card-sources">
+            <a href="https://insider-gaming.com/xbox-platinum-achievements-are-coming-this-year/" target="_blank">Insider Gaming</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">PlayStation被爆組建廣告部門，玩家憂心索尼加碼廣告營利</h3>
+        <p class="card-summary">據Digiday報導，Sony Interactive Entertainment近期釋出多個廣告相關職缺，其中一則職缺明確提及「新成立的廣告組織」，引發外界揣測PlayStation生態系未來可能導入更多廣告或新營利模式。索尼尚未證實具體計畫，但消息延續先前取消實體光碟等爭議後，玩家社群對平台走向的不安情緒持續發酵。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/06 下午</span>
+          <div class="card-sources">
+            <a href="https://gaminghq.eu/2026/08/06/playstation-ad-monetization-rumors-sony/" target="_blank">GamingHQ</a>
+            <a href="https://gamerant.com/sony-monetize-playstation-ads/" target="_blank">GameRant</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">新番預告</span>
+        <h3 class="card-title">《Re：從零開始的異世界生活》第四季公開「奪回篇」最新預告</h3>
+        <p class="card-summary">《Re：從零開始的異世界生活》第四季製作團隊於8月5日釋出「奪回篇」（The Recapture Arc）最新預告影片，並公開作為該篇章開場首集的第12話（本篇第78話）預告畫面。「奪回篇」將於8月12日開播，本季共19話分兩篇章推出。新角色由藤原夏海（沙拉）、杉田智和（雷德・亞斯特雷亞）等人配音，Crunchyroll同步線上播映。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-08-05/re-zero-season-4-anime-trailer-previews-recapture-arc/.240304" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">衍生新作</span>
+        <h3 class="card-title">《怪獸8號》衍生動畫短篇《成美的平日》公開預告，9月5日起開播</h3>
+        <p class="card-summary">《怪獸8號》全新衍生動畫短篇「成美的平日」官方網站於8月5日公開首支預告影片，確認9月5日首播，每週六晚間8點於TOHO animation頻道播出，全4集，9月26日完結，Crunchyroll同步上架。故事聚焦防衛隊第一師團長、「日本最強對怪獸戰鬥員」成美硯看似威風凜凜、實則翹會摸魚打混的荒謬職場日常，電視動畫原班人馬回歸、Production I.G擔綱製作。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-08-05/new-kaiju-no-8-anime-short-trailer-reveals-4-episode-run-starting-on-september-5/.240303" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新作宣布</span>
+        <h3 class="card-title">中國奇幻漫畫改編動畫《Shōzen》公開首支預告，確定2027年4月開播</h3>
+        <p class="card-summary">改編自江家美子中國奇幻漫畫的電視動畫《Shōzen》，於8月5日公開首支宣傳影片，確認2027年4月起於富士電視台「B8station」等時段開播。故事描述道士「道禪」在旅途中邂逅一名由妖怪撫養長大的少女，收她為徒並將她命名為「Shōzen」，教導她理解人類情感與愛。川崎逸朗於Dangan Pictures與Cannon Code執導並擔任腳本統籌，長田惠理擔任人物設計及總作畫監督。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/news/2026-08-05/shozen-tv-anime-1st-promo-video-reveals-april-2027-debut/.240297" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">平台授權</span>
+        <h3 class="card-title">Crunchyroll Manga 8月新增《孤獨搖滾！》《監獄學園》等16部漫畫作品</h3>
+        <p class="card-summary">Crunchyroll於8月5日宣布，將於8月10日在Crunchyroll Manga數位漫畫平台新增16部作品，包括《孤獨搖滾！》、《Tougen Anki》、《監獄學園》、《在超商後面抽菸的妳》等多部人氣漫畫。Crunchyroll Manga自2025年10月上線以來持續擴充片庫，此次為8月份最新一波新增書單，可透過iOS與Android應用程式閱讀。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/05</span>
+          <div class="card-sources">
+            <a href="https://www.anitrendz.com/news/2026/08/05/crunchyroll-manga-adds-bocchi-the-rock-tougen-anki-prison-school-more-manga-in-this-august" target="_blank">Anime Trending (Anitrendz)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年08月06日 · 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

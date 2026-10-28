@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/08/25</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年08月25日（星期二）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">外交/經濟制裁</span>
+        <h3 class="card-title">美國財政部長貝森特宣布對伊朗發動新一輪制裁，啟動「經濟D-Day行動」</h3>
+        <p class="card-summary">美國財政部長貝森特週一宣布針對伊朗及其「協助者」祭出新一輪經濟制裁，目標鎖定石油、航運、加密貨幣、黃金與航空等所有收入來源，川普政府稱此舉為對伊朗經濟的「D-Day」。制裁鎖定涉及阿聯、香港、中國、新加坡、瑞士等地協助伊朗石油運輸與資金流向伊斯蘭革命衛隊的網絡。伊朗新任安全首長雷扎伊誓言將以「地震式」手段報復，並警告波斯灣國家若配合制裁將被視為敵人。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/24 晚間（台灣時間）</span>
+          <div class="card-sources">
+            <a href="https://www.npr.org/2026/08/24/g-s1-139743/treasury-secretary-scott-bessent-to-unveil-new-economic-sanctions-on-iran" target="_blank">NPR</a>
+            <a href="https://www.cnn.com/2026/08/24/world/live-news/iran-war-trump" target="_blank">CNN</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">以色列空襲加薩帳篷造成傷亡，巴勒斯坦死亡人數持續攀升</h3>
+        <p class="card-summary">以色列軍機週一清晨空襲加薩中部代爾拜拉赫近阿克薩醫院一處收容流離失所者的帳篷，造成至少一人死亡、多人受傷；以色列軍方則聲稱是針對兩名「武裝分子」的鎖定攻擊。根據巴勒斯坦衛生部統計，自2025年10月停火協議生效以來已有1288名巴勒斯坦人死亡。加薩民眾抱怨停火名存實亡，以色列國防部長卡茨則因邊境出現風箏而警告可能進一步升高攻勢。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/24 晚間</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/2026/8/24/israeli-strike-on-gaza-shelter-extends-casualty-list" target="_blank">Al Jazeera</a>
+            <a href="https://www.democracynow.org/2026/8/24/headlines/israel_continues_attacks_on_gaza_with_children_among_the_dead_and_wounded" target="_blank">Democracy Now!</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">人道危機</span>
+        <h3 class="card-title">聯合國人道事務主管在安理會嚴詞批評國際社會漠視蘇丹戰爭</h3>
+        <p class="card-summary">聯合國人道事務助理秘書長弗萊徹週一向安理會簡報時痛批國際社會未能援助蘇丹，指出蘇丹逾三分之二人口、超過5100萬人急需救命援助，「世人送去的卻是無人機、武器與傭兵」。今年上半年蘇丹已有約1400名平民喪生，其中逾1100人死於無人機攻擊；美方代表布魯斯呼籲安理會擴大對蘇丹全境的武器禁運，俄羅斯則反對可能影響蘇丹政府軍的新措施。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/24 晚間</span>
+          <div class="card-sources">
+            <a href="https://news.un.org/en/story/2026/08/1168188" target="_blank">UN News</a>
+            <a href="https://www.thenationalnews.com/news/us/2026/08/24/sudan-war-un/" target="_blank">The National</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">天災</span>
+        <h3 class="card-title">台灣東南部海域規模5.8地震 多縣市有感</h3>
+        <p class="card-summary">中央氣象署地震測報中心表示，25日下午3時台灣東南部海域發生規模5.8地震，震央位於台東縣政府東南東方48公里海域，最大震度為綠島4級。因當地測站少，第一時間誤判規模達6.6，導致除桃園、基隆外全台各地響起國家級警報。氣象署提醒未來一週仍須防範規模5至5.5餘震，高雄捷運、輕軌一度停駛，台鐵部分路段列車慢行。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25 下午3時</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/ahel/202608250228.aspx" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">沙德爾颱風轉弱為中度颱風 氣象署估明天下午至晚間發布海警</h3>
+        <p class="card-summary">中央氣象署表示，中南部豪雨今日下午將逐漸緩和，明日轉為局部短暫雨。原本一度增強為強烈颱風的沙德爾，因海洋熱含量不足、路徑環境不利發展，25日上午已減弱為中度颱風，強度預期持續減弱。氣象署預計明（26）日下半天發布海上颱風警報，週四下半天至週五（27、28日）最接近台灣，是否發布陸警仍待觀察。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25 中午</span>
+          <div class="card-sources">
+            <a href="https://newtalk.tw/news/view/2026-08-25/1055514" target="_blank">Newtalk新聞</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">民生／水情</span>
+        <h3 class="card-title">連日豪雨灌飽曾文水庫 25日清晨滿庫開閘洩洪</h3>
+        <p class="card-summary">受豪雨影響，曾文水庫水位於25日清晨5時達滿庫水位標高230公尺，南區水資源分署於上午6時開啟溢洪道放水，8時起放水量調整為每秒950立方公尺，同時進行下游河道淤泥沖淤作業，增加水庫滯洪空間以因應颱風沙德爾可能帶來的降雨。分署提醒民眾放水期間切勿進入河床及河道活動。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25 中午</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/aloc/202608250115.aspx" target="_blank">中央社</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">卓榮泰赴屏東勘災 回應「電話勘災」爭議：欣然接受動用二備金</h3>
+        <p class="card-summary">行政院長卓榮泰25日赴屏東縣南州鄉視察苦瓜農損，回應先前因立院刪減預算而只能用電話了解災情、引發在野黨批評的爭議。卓榮泰表示，中央二備金及災損金並未遭刪除，只是延宕351天，若在野立委認為可動用二備金因應勘災經費，行政院「欣然接受」。總統賴清德24日晚間也已增列台南、高雄、屏東等地勘災行程。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25 上午</span>
+          <div class="card-sources">
+            <a href="https://newtalk.tw/news/view/2026-08-25/1055509" target="_blank">Newtalk新聞</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">社會</span>
+        <h3 class="card-title">台北指南宮凌霄寶殿深夜大火 所幸無人傷亡</h3>
+        <p class="card-summary">位於台北市文山區的指南宮凌霄寶殿24日晚間8時48分傳出大火，消防局獲報後立即派員搶救，火勢延燒至25日凌晨12時9分才通報撲滅，所幸無人傷亡。指南宮歷史可追溯至1890年建廟，是北台灣重要宗教與政治人物參拜場所，台北市長蔣萬安已允諾專案協助廟方復原重建。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/24 晚間8:48起火，08/25 凌晨撲滅</span>
+          <div class="card-sources">
+            <a href="https://newtalk.tw/news/view/2026-08-25/1055444" target="_blank">Newtalk新聞</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">收購動態</span>
+          <h3 class="card-title">Hugging Face傳出以130億美元估值洽談被收購</h3>
+          <p class="card-summary">據Business Insider報導，開源AI社群平台Hugging Face近期已收到多方收購邀約，估值上看130億美元，目前已與銀行接洽評估報價，但尚未達成任何協議。執行長Clem Delangue先前曾表示公司對社群負有長期責任，外界對其是否真心考慮出售仍存疑。此消息也緊接在稍早Hugging Face遭OpenAI測試中模型入侵事件之後。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/24 晚間</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">產品動態</span>
+          <h3 class="card-title">OpenAI全力打造全民可用的AI代理人，能否真正普及仍待觀察</h3>
+          <p class="card-summary">TechCrunch深度報導指出，OpenAI正將旗下ChatGPT Work（基於Codex技術）推向非工程背景的一般白領使用者，讓AI代理人能自主處理信箱、行事曆、簡報等多步驟任務。但內部數據顯示，公司內部員工採用率高達98%，一般企業用戶卻僅17%，個人訂閱戶更不到1%，顯示要讓一般大眾採用仍面臨介面設計與信任門檻等挑戰。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/24 晚間</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-tag">產品爭議</span>
+          <h3 class="card-title">個人AI助理新創Instinct爆隱私與資安疑慮</h3>
+          <p class="card-summary">目前仍處私測階段的AI個人助理新創Instinct因功能強大備受矚目，但其服務條款被爆出取得使用者資料「永久且不可撤銷」的授權，且曾出現使用者要求刪除信箱資料卻未執行、以及未經同意代為寄出郵件等爭議事件，引發資安圈對其安全模型與信任機制的質疑。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/25 凌晨</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+        <div class="card">
+          <span class="card-tag">市場動態</span>
+          <h3 class="card-title">報告指出Anthropic旗艦模型Fable 5企業採用率落後於較便宜的Opus 5</h3>
+          <p class="card-summary">英國《金融時報》最新報導（經24/7 Wall St.轉述）指出，根據Ramp企業支出數據分析，Anthropic最強大且最昂貴的Fable 5模型上市兩個多月後，企業支出佔比僅停滯在約11%，反而是價格較低的Opus 5在推出後不久便已超越其支出規模。此現象為Anthropic籌備估值上看2兆美元的IPO增添變數，凸顯企業客戶正轉向「夠用就好」的較便宜模型，可能影響其2028年營收目標的達成。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/08/24 晚間</span>
+            <div class="card-sources">
+              <a href="https://247wallst.com/investing/2026/08/24/anthropic-is-chasing-a-2-trillion-ipo-its-most-powerful-ai-model-is-raising-a-big-red-flag/" target="_blank">24/7 Wall St.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,652.86</div>
+        <div class="index-change down">▼ -0.28%</div>
+        <div class="index-date">8/24 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">53,417.16</div>
+        <div class="index-change up">▲ +0.26%</div>
+        <div class="index-date">8/24 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">25,980.19</div>
+        <div class="index-change down">▼ -0.76%</div>
+        <div class="index-date">8/24 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">45,169.46</div>
+        <div class="index-change up">▲ +0.91%</div>
+        <div class="index-date">8/25 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$85.19</div>
+        <div class="index-change down">▼ -2.15%</div>
+        <div class="index-date">8/24 收盤</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">台股</span>
+        <h3 class="card-title">台股開低走高收復45000點，台積電尾盤急拉收2400元貢獻指數200點</h3>
+        <p class="card-summary">台股25日開盤重挫逾400點，盤中最低跌破月線來到44210點，之後台積電、聯電、記憶體族群回神拉抬，終場加權指數收45169.46點，上漲407.14點、漲幅0.91%，成交值萎縮至新台幣6960.54億元。台積電最後一盤爆逾2,997張買單急拉，收在2400元，貢獻大盤指數約200點。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25 下午</span>
+          <div class="card-sources">
+            <a href="https://newtalk.tw/news/view/2026-08-25/1055458" target="_blank">Newtalk新聞</a>
+            <a href="https://money.udn.com/money/story/5612/9712951?from=edn_newest_index" target="_blank">經濟日報</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美股</span>
+        <h3 class="card-title">那斯達克因伊朗制裁與晶片股重挫走跌，輝達七連跌創2022年來最長跌勢</h3>
+        <p class="card-summary">美股24日（週一）表現分歧，道瓊小漲0.26%收53417.16點，但S&amp;P 500下跌0.28%收7652.86點，那斯達克重挫0.76%收25980.19點。記憶體晶片股SanDisk、美光等因輝達傳將調漲部分AI伺服器售價而重挫，輝達股價連七個交易日下跌，創2022年以來最長跌勢。財政部長貝森特同時宣布代號「經濟D-Day」的新一輪對伊朗制裁行動。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/24 美東收盤</span>
+          <div class="card-sources">
+            <a href="https://finance.yahoo.com/markets/stocks/articles/stock-market-today-aug-24-134834490.html" target="_blank">Yahoo Finance</a>
+            <a href="https://www.cnbc.com/2026/08/23/stock-market-today-live-updates.html" target="_blank">CNBC</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">原油</span>
+        <h3 class="card-title">美國祭出對伊朗新制裁「經濟D-Day」，WTI原油應聲下跌逾2%</h3>
+        <p class="card-summary">美國財政部長貝森特24日宣布對伊朗實施新一輪制裁，稱此為「史上最大規模的金融攻勢」，市場原預期油價將因供應風險上揚，但WTI原油期貨反而因獲利了結賣壓下跌逾2%，收在約85.19美元/桶附近，布蘭特原油同步下跌約1.4%至93美元左右。伊朗則警告若華府持續施壓，可能封鎖波斯灣部分航道。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/24</span>
+          <div class="card-sources">
+            <a href="https://www.fxstreet.com/news/wti-oil-retreats-toward-85-ahead-of-us-economic-offensive-against-iran-202608241217" target="_blank">FXStreet</a>
+            <a href="https://www.cnbc.com/amp/2026/08/24/oil-price-today-wti-brent-us-sanctions-iran.html" target="_blank">CNBC</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">個股</span>
+        <h3 class="card-title">外媒看好台積電擴大美國投資，稱現在是絕佳買入時機</h3>
+        <p class="card-summary">外媒報導指出，台積電近期在第二季財報中宣布將追加1000億美元投資擴建美國亞利桑那州生產設施，顯示晶片生產需求依然旺盛且尚未被滿足，外媒因此認為現階段是投資台積電股票的絕佳時機。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25</span>
+          <div class="card-sources">
+            <a href="https://news.tvbs.com.tw/world/4012363" target="_blank">TVBS新聞</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">8/25（二）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 100%</div>
+          <div class="weather-note">陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/26（三）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 70%</div>
+          <div class="weather-note">短暫陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/27（四）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">29°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 99%</div>
+          <div class="weather-note">雨勢明顯，慎防雷擊</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/28（五）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">34°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 67%</div>
+          <div class="weather-note">局部短暫降雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/29（六）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">33°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 59%</div>
+          <div class="weather-note">多雲午後有雨機會</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/30（日）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 65%</div>
+          <div class="weather-note">局部短暫降雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/31（一）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 65%</div>
+          <div class="weather-note">短暫陣雨</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖） — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">8/25（二）</div>
+          <div class="weather-icon">🌬️</div>
+          <div class="weather-temps"><span class="temp-high">27°</span> / <span class="temp-low">25°</span></div>
+          <div class="weather-rain">🌧 100%</div>
+          <div class="weather-note">東風5級，慎防強陣風及降雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/26（三）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">30°</span> / <span class="temp-low">27°</span></div>
+          <div class="weather-rain">🌧 25%</div>
+          <div class="weather-note">西南風3級，多雲轉晴</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/27（四）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">32°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 81%</div>
+          <div class="weather-note">西南風4級，強陣雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/28（五）</div>
+          <div class="weather-icon">🌬️</div>
+          <div class="weather-temps"><span class="temp-high">28°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 100%</div>
+          <div class="weather-note">西南風6級，慎防強陣風</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/29（六）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">東北風4級，局部雷暴</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/30（日）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">26°</span></div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">東北風5級，局部短暫降雨</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">8/31（一）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps"><span class="temp-high">31°</span> / <span class="temp-low">24°</span></div>
+          <div class="weather-rain">🌧 58%</div>
+          <div class="weather-note">東北風6級，慎防強陣風及雷雨</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">展覽活動</span>
+        <h3 class="card-title">Gamescom 開幕直播今晚登場，FF7 Revelation、戰爭機器：E-Day 等大作將亮相</h3>
+        <p class="card-summary">由 Geoff Keighley 主持的 Gamescom Opening Night Live 2026 於今日晚間8點CEST（台灣時間約8/26凌晨2點）登場，將帶來兩小時的遊戲預告片。已確認登場作品包括《巫師3：往日之歌》、《Final Fantasy VII Revelation》、《戰爭機器：E-Day》、《Ananta》、《湮滅之潮》、《地鐵2039》等八款作品的最新消息或世界首發預告。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25 晚間</span>
+          <div class="card-sources">
+            <a href="https://gameinformer.com/2026/08/24/how-to-watch-gamescom-opening-night-live-2026" target="_blank">Game Informer</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">《刺客教條》創作者新作《1666: Amsterdam》今日搶先體驗上線</h3>
+        <p class="card-summary">由《刺客教條》系列創作者 Patrice Désilets 打造的暗黑第三人稱敘事冒險遊戲《1666: Amsterdam》於今日在 PC（Steam、Epic Games Store）推出搶先體驗版，售價29.99美元，內容涵蓋約15小時的第一部劇情。玩家將扮演擁有巫術能力的收藏家Noa，於阿姆斯特丹揭開隱藏在人類外表下的惡魔「原型」之謎。Xbox與PS5版預計2027年推出。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25 傍晚</span>
+          <div class="card-sources">
+            <a href="https://www.gematsu.com/2026/08/1666-amsterdam-launches-in-early-access-on-august-25" target="_blank">Gematsu</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">經典射擊遊戲重製版《Apidya' Special》今日於PC與各主機平台推出</h3>
+        <p class="card-summary">睽違33年，Amiga經典橫向射擊遊戲《Apidya》重製版《Apidya' Special》於今日在PC、PlayStation 5、Xbox Series X|S及Nintendo Switch同步發售，由原開發團隊操刀，並新增雙人合作模式，第二位玩家可操控具備獨立武器與能力的蜜蜂夥伴。Switch與PS5另提供實體限定版與特別版。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25</span>
+          <div class="card-sources">
+            <a href="https://www.timeextension.com/news/2026/06/just-handcrafted-pixels-and-passion-amiga-euro-shmup-remake-apidya-special-flies-onto-pc-and-consoles-this-august" target="_blank">Time Extension</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">續作</span>
+        <h3 class="card-title">《東京卍復仇者：三王亂世篇》公開最新預告與視覺圖，確定10月2日首播</h3>
+        <p class="card-summary">LIDEN FILMS製作的《東京卍復仇者》全新篇章「三王亂世篇」釋出第4彈預告與新關鍵視覺圖，確認2026年10月2日透過Disney+／Hulu首播。新增聲優陣容包含松岡禎丞、水中雅章等人，片頭曲由JO1演唱「IGNITE」，片尾曲則為go!go!vanillas的「Trickster」。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25 上午</span>
+          <div class="card-sources">
+            <a href="https://www.fandompost.com/2026/08/24/tokyo-revengers-war-of-the-three-titans-anime-reveals-new-trailer-visual/" target="_blank">The Fandom Post</a>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新番首播</span>
+        <h3 class="card-title">原創動畫《Tetsuryo! meet with 鐵道娘》確定10月8日首播，HIDIVE獨家上線</h3>
+        <p class="card-summary">以「鐵道娘」角色為基礎的原創電視動畫《Tetsuryo! meet with Tetsudou Musume》在Anime NYC公開最新進度，確認將於2026年10月8日開播。該作將由串流平台HIDIVE在美國、加拿大及英國、愛爾蘭、澳洲、紐西蘭等地區獨家播出，納入2026年秋季新番陣容。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/08/25 下午</span>
+          <div class="card-sources">
+            <a href="https://www.fandompost.com/2026/08/25/tetsuryo-meet-with-tetsudou-musume-original-anime-sets-premiere-date/" target="_blank">The Fandom Post</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年08月25日 · 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

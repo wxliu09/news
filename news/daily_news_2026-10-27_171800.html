@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/10/27</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年10月27日（星期二）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">歐洲政治</span>
+        <h3 class="card-title">塞爾維亞學生名單贏得國會選舉，武契奇政權失去執政地位</h3>
+        <p class="card-summary">半島電視台報導，由學生主導的「學生名單」在塞爾維亞提前國會大選中得票約52.5%，預估獲250席中的140席，可單獨過半。領袖斯爾丹諾維奇被視為最可能的總理人選，但尚未正式提名。武契奇已於9月27日辭去總統職務，總統選舉須在12月27日前舉行。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26 下午</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/26/serbia-after-vucic-who-will-be-pm-and-when-will-a-government-be-formed" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">中東局勢</span>
+        <h3 class="card-title">沙烏地、巴基斯坦、土耳其代表赴德黑蘭會談，試圖降低美伊與葉門緊張</h3>
+        <p class="card-summary">《麥加聯合防禦協定》三個簽署國的部長與資深安全官員10月26日在德黑蘭會見伊朗總統。此行正值外界擔憂美國可能再度攻擊伊朗，美伊仍在荷莫茲海峽航運、海上封鎖及核計畫上僵持。會談也預期涉及青塞派對沙烏地的攻擊，但分析人士對能否取得持久突破持保留態度。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26 下午</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/26/mecca-defence-alliance-members-in-tehran-to-defuse-iran-us-yemen-tensions" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">非洲軍事</span>
+        <h3 class="card-title">阿爾及利亞總統下令派兵進駐尼日</h3>
+        <p class="card-summary">阿爾及利亞總統特本10月26日下令向鄰國尼日派遣部隊，國會兩院已於前一天通過。若付諸實行，將是阿爾及利亞自1973年以來首次境外軍事部署。兵力與時程尚未公布，有參議員稱部隊將保護經濟基礎設施，無意參戰。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26 下午</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/26/algerias-president-orders-troop-deployment-to-neighbouring-niger" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">俄烏戰爭</span>
+        <h3 class="card-title">聯合國調查：俄羅斯攻擊烏克蘭能源設施構成戰爭罪</h3>
+        <p class="card-summary">聯合國烏克蘭獨立調查委員會報告指出，俄羅斯攻擊烏克蘭能源基礎設施、以嚴寒作為武器，構成戰爭罪。報告聚焦2025至2026年寒冬，數百萬人長時間斷電、斷暖。另據報導，澤倫斯基表示與俄美的和談將重啟。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26 下午</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/26/russian-attacks-on-ukraines-energy-infrastructure-a-war-crime-un" target="_blank">Al Jazeera</a><a href="https://www.aljazeera.com/video/newsfeed/2026/10/26/zelenskyy-says-peace-talks-with-russia-us-to-restart" target="_blank">Al Jazeera 影片</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">人道／中東</span>
+        <h3 class="card-title">聯合國調查委員會：以色列在約旦河西岸犯下危害人類罪</h3>
+        <p class="card-summary">聯合國巴勒斯坦被占領土獨立調查委員會表示，自2023年10月至2026年9月，以色列在西岸犯下包括滅絕、酷刑與強暴在內的危害人類罪。以色列駐日內瓦代表團駁斥為不實資訊。報告發布於以色列大選前一天。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26 下午</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/26/israel-committing-crimes-against-humanity-in-occupied-west-bank-un" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">全球經濟</span>
+        <h3 class="card-title">盧拉連任後巴西市場劇震，雷亞爾重貶、股市熔斷</h3>
+        <p class="card-summary">盧拉贏得連任後，巴西雷亞爾兌美元現貨約貶12%，Bovespa指數期貨一度重挫近15%，交易所在指數跌10%後暫停交易30分鐘。投資人擔憂財政挑戰，公共債務已超過GDP的82%。右翼候選人博索納羅尚未認輸。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26 下午</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/economy/2026/10/26/brazils-real-sinks-after-lulas-re-election-victory" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美國政治</span>
+        <h3 class="card-title">前FBI局長科米遭第三度起訴</h3>
+        <p class="card-summary">前FBI局長科米面臨第三組刑事指控，包含兩項涉嫌非法散布「國防相關資訊」的罪名。科米否認不法，稱此案為政治報復。先前2025年的起訴案已遭駁回。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/27 上午</span>
+          <div class="card-sources"><a href="https://www.aljazeera.com/news/2026/10/26/former-fbi-director-james-comey-hit-with-third-set-of-charges-under-trump" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">體育</span>
+        <h3 class="card-title">味全龍6比0擊敗中信兄弟奪中職總冠軍，總統道賀</h3>
+        <p class="card-summary">味全龍在總冠軍賽第6戰以6比0擊敗中信兄弟，奪下隊史第6冠。梅賽鍶8局無失分，獲選台灣大賽MVP。總統賴清德在Threads發文道賀，並肯定中信兄弟從0勝3敗連拿2勝的韌性。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26 下午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aspt/202610260198.aspx" target="_blank">中央社</a><a href="https://www.cna.com.tw/news/aspt/202610260191.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">蔣萬安競總成立，主辦單位稱逾5萬人到場</h3>
+        <p class="card-summary">台北市長蔣萬安競選總部26日下午在敦化國中成立，主辦單位估計人潮超過5萬人。韓國瑜、盧秀燕及多位縣市長與參選人到場站台。蔣萬安表示將推動AI園區。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26 下午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aloc/202610260196.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">政治</span>
+        <h3 class="card-title">蔡英文赴台東助選陳瑩，國民黨吳秀華關心颱風農損</h3>
+        <p class="card-summary">前總統蔡英文到台東為民進黨縣長參選人陳瑩助講。國民黨參選人吳秀華則前往東海岸關心颱風薔琵造成的臍橙、鳳梨釋迦落果等農損，表示將協助農漁民申請救助並追蹤進度。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26 下午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aipl/202610260197.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">教育</span>
+        <h3 class="card-title">教育部：台灣高等研究學院無延宕，將提前啟動試辦</h3>
+        <p class="card-summary">針對TAAS可能延後一年招生的傳聞，教育部表示規劃依序進行、並無延宕，並將提前啟動試辦。TAAS由台、清、交、成4校聯合招生，透過「特殊選才」管道招收具科學潛質的高中生。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26 下午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/ahel/202610260194.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">央行：外資四個月淨賣超543億美元，為新台幣貶值主因</h3>
+        <p class="card-summary">央行27日表示，外資近四個月淨賣超543億美元，是新台幣貶值的主要推手，並警示AI投資遇瓶頸時融資風險可能放大市場波動。新台幣27日收盤升值5.6分，收32.452元。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/27 下午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202610270124.aspx" target="_blank">中央社</a><a href="https://www.cna.com.tw/news/afe/202610270156.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">民生</span>
+        <h3 class="card-title">10月消費者信心：購屋信心下滑，耐久財消費信心創逾17年新低</h3>
+        <p class="card-summary">最新調查顯示，10月購屋信心下滑，耐久財消費信心降至逾17年來新低。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/27 上午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202610270074.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">東北季風增水氣，宜蘭今晚至28日雨勢較大</h3>
+        <p class="card-summary">東北季風帶來較多水氣，宜蘭今晚到28日將有較明顯降雨。此前颱風薔琵已造成全台多處災情。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/27 上午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/ahel/202610270018.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">聖露西亞總理27日訪台，賴清德以軍禮歡迎</h3>
+        <p class="card-summary">聖露西亞總理27日抵台進行國事訪問，總統賴清德安排軍禮歡迎。另國安單位示警北京正進行多面向影響力作戰。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/27 上午</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aipl/202610260219.aspx" target="_blank">中央社</a><a href="https://www.cna.com.tw/news/aipl/202610270170.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">產品發布</span>
+        <h3 class="card-title">OpenAI 推出 GPT-6.1 Terra，主打更快、更省的 AI agent</h3>
+        <p class="card-summary">SiliconANGLE 報導，OpenAI 發布 GPT-6.1 Terra，定位為效能更好、價格約為一半的 agent 模型；另有社群彙整稱其價格約每百萬 token 1 美元。細節請見原始報導。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26</span>
+          <div class="card-sources"><a href="https://siliconangle.com/2026/10/26/openai-launches-gpt-6-1-terra-for-faster-better-performing-ai-agents-at-half-the-price" target="_blank">SiliconANGLE</a></div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">IPO</span>
+        <h3 class="card-title">Anthropic 正式遞交 IPO 文件，擬於 Nasdaq 上市（代號 ANT）</h3>
+        <p class="card-summary">Anthropic 向 SEC 公開 S-1 申請文件，CNBC、CNN、NPR、Axios 等多家媒體報導。文件顯示截至 6 月的上半年營收約 162.9 億美元，淨損約 807 億美元，主要來自會計認列費用。市場預期可能創下 IPO 紀錄。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/26</span>
+          <div class="card-sources"><a href="https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html" target="_blank">CNBC</a><a href="https://www.cnn.com/2026/10/26/tech/anthropic-files-ipo" target="_blank">CNN</a><a href="https://www.nbcnews.com/business/markets/anthropic-releases-ipo-filing-ahead-highly-anticipated-stock-debut-rcna605676" target="_blank">NBC News</a></div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&P 500</div>
+        <div class="index-value">7,676.77</div>
+        <div class="index-change up">▲ +0.70%</div>
+        <div class="index-date">10/26 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">52,361.58</div>
+        <div class="index-change up">▲ +0.28%</div>
+        <div class="index-date">10/26 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">26,169.38</div>
+        <div class="index-change up">▲ +0.82%</div>
+        <div class="index-date">10/26 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">46,096.23</div>
+        <div class="index-change up">▲ +0.12%</div>
+        <div class="index-date">10/27 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$100.60</div>
+        <div class="index-change down">▼ -2%</div>
+        <div class="index-date">10/26 收盤</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">美股</span>
+        <h3 class="card-title">Anthropic 遞交 IPO 文件激勵 AI 股，Nasdaq 漲 0.82%</h3>
+        <p class="card-summary">費城半導體指數單日上漲 2.82%，帶動美股三大指數收高。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/27 上午</span>
+          <div class="card-sources"><a href="https://hdfcsky.com/news/nasdaq-jumps-0-82percent-as-anthropic-ipo-filing-revives-ai-trade-lifting-us-stocks-october-27-2026" target="_blank">HDFC Sky</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美股個股</span>
+        <h3 class="card-title">Meta 擬透過股票發行募資最多 950 億美元，股價跌 1.90%</h3>
+        <p class="card-summary">Meta 表示計畫以增資發行股票籌資最多 950 億美元，以支應 AI 投資，股價下跌 1.90%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/27 上午</span>
+          <div class="card-sources"><a href="https://hdfcsky.com/news/nasdaq-jumps-0-82percent-as-anthropic-ipo-filing-revives-ai-trade-lifting-us-stocks-october-27-2026" target="_blank">HDFC Sky</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">原油／總經</span>
+        <h3 class="card-title">WTI 回落至 100.60 美元，市場聚焦 10/28 聯準會會議</h3>
+        <p class="card-summary">沙烏地官員訪問德黑蘭以緩和區域緊張，油價自近六個月高點回落，WTI 跌約 2%。期貨市場約 90% 機率預期聯準會於 10/28 維持利率不變。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/27 上午</span>
+          <div class="card-sources"><a href="https://hdfcsky.com/news/nasdaq-jumps-0-82percent-as-anthropic-ipo-filing-revives-ai-trade-lifting-us-stocks-october-27-2026" target="_blank">HDFC Sky</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">台股</span>
+        <h3 class="card-title">台股盤中震盪逾 900 點，收漲 54.8 點守住 4.6 萬點</h3>
+        <p class="card-summary">加權指數收 46,096.23 點，盤中高 46,585.45、低 45,676.67，尾盤由台積電（收 2,400 元，+15）拉抬收紅。投信買超約 236 億元，外資賣超約 81 億元。上漲 783 家、下跌 1,024 家。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/27 下午</span>
+          <div class="card-sources"><a href="https://newtalk.tw/news/view/2026-10-27/1067720" target="_blank">新頭殼</a><a href="https://udn.com/news/story/7251/9839701" target="_blank">聯合新聞網</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">台股個股</span>
+        <h3 class="card-title">南亞科、緯穎領漲：記憶體與 AI 伺服器題材延續</h3>
+        <p class="card-summary">南亞科早盤一度大漲逾 8%；緯穎獲美系外資將目標價上調至 4,000 元，盤中漲約 5.7%；台達電盤中下跌約 2.88%。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/10/27 上午</span>
+          <div class="card-sources"><a href="https://www.storm.mg/article/11175972" target="_blank">風傳媒</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">10/27（二）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/28（三）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 50%</div>
+          <div class="weather-note">趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/29（四）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/30（五）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/31（六）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">26°</span> / <span class="temp-low">20°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/1（日）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">27°</span> / <span class="temp-low">21°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/2（一）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">27°</span> / <span class="temp-low">21°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">趨勢估計</div>
+        </div>
+      </div>
+    </div>
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖）— 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">10/27（二）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">21°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">偏北風5~6級　趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/28（三）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">20°</span> / <span class="temp-low">16°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">偏北風6級　趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/29（四）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps"><span class="temp-high">20°</span> / <span class="temp-low">16°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">偏北風6級　趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/30（五）</div>
+          <div class="weather-icon">☁️</div>
+          <div class="weather-temps"><span class="temp-high">21°</span> / <span class="temp-low">16°</span></div>
+          <div class="weather-rain">🌧 30%</div>
+          <div class="weather-note">東北風5~6級　趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">10/31（六）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">22°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">東北風5級　趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/1（日）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps"><span class="temp-high">22°</span> / <span class="temp-low">18°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">偏東風5級　趨勢估計</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/2（一）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps"><span class="temp-high">23°</span> / <span class="temp-low">18°</span></div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">偏東風4~5級　趨勢估計</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card"><span class="card-tag">近期無重大更新</span><h3 class="card-title">近 24 小時內無可驗證的遊戲消息</h3><p class="card-summary">搜尋未找到發布時間可確認晚於截止時間（2026/10/26 17:12）的報導，依規則不以舊聞充數。</p></div>
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+      <div class="card"><span class="card-tag">近期無重大更新</span><h3 class="card-title">近 24 小時內無可驗證的動漫消息</h3><p class="card-summary">搜尋未找到發布時間可確認晚於截止時間（2026/10/26 17:12）的報導，依規則不以舊聞充數。</p></div>
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年10月27日 · 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

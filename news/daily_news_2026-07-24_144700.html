@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/07/24</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年07月24日（星期五）· 蒐集範圍：近 24 小時</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <!-- ========== 國際新聞 ========== -->
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">美伊戰爭升溫：川普揚言發動「大規模攻擊」，美軍完成第13晚空襲</h3>
+        <p class="card-summary">美國總統川普表示正在考慮對伊朗發動「大規模攻擊」，稱伊朗「尚未受到足夠的打擊」，且已接近下令的決定。美軍7月24日完成連續第13個夜晚對伊朗的空襲，多座城市包括霍拉馬巴德、亞斯克、阿瓦士及班達爾阿巴斯傳出爆炸聲。伊朗外長阿拉格希反批美國「無腦侵略」無助於談判，拒絕讓步，雙方對峙態勢嚴峻。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24 凌晨至上午</span>
+          <div class="card-sources">
+            <a href="https://www.aljazeera.com/news/liveblog/2026/7/24/iran-war-live-trump-weighs-massive-attack-on-iran" target="_blank">Al Jazeera</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">戰爭衝突</span>
+        <h3 class="card-title">美軍首度在伊朗戰場動用B-1戰略轟炸機，打擊革命衛隊目標</h3>
+        <p class="card-summary">據美國官員透露，美軍於7月22日首度在本輪伊朗戰事中動用B-1遠程戰略轟炸機，攻擊伊斯蘭革命衛隊（IRGC）目標，此消息於7月23日公開確認。B-1可攜帶多達24枚2000磅炸彈或數十枚巡弋飛彈，分析人士指出此舉標誌著美軍打擊能力的重大升級。伊朗革命衛隊同日聲稱對科威特及約旦境內美軍目標發動反擊，包括摧毀通訊塔，美伊交火範圍進一步擴大。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/23</span>
+          <div class="card-sources">
+            <a href="https://www.axios.com/2026/07/23/b-1-bomber-iran-war" target="_blank">Axios</a>
+            <a href="https://www.justsecurity.org/149109/early-edition-july-23-2026/" target="_blank">Just Security</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">魯比奧與中國外長王毅在馬尼拉東協會議場外會談，確認習近平九月訪美</h3>
+        <p class="card-summary">美國國務卿魯比奧與中國外長王毅7月22日在東協外長會議期間於馬尼拉進行約90分鐘會晤，主要討論中國國家主席習近平預計2026年9月訪問華府的安排，消息於7月23日廣泛報導。王毅強調美方須「尊重中國核心利益、有效管控分歧」；魯比奧表示兩國存在「重大差異」，但仍致力穩定關係。南海主權爭端亦在議題之列，中方稱會談「務實、積極、建設性」。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/23</span>
+          <div class="card-sources">
+            <a href="https://www.scmp.com/news/china/diplomacy/article/3361473/wang-and-rubio-discuss-xis-planned-us-visit-south-china-sea-clash-asean" target="_blank">South China Morning Post</a>
+            <a href="https://asia.nikkei.com/politics/international-relations/us-china-tensions/rubio-discusses-chinese-president-s-us-visit-in-meeting-with-wang-yi" target="_blank">Nikkei Asia</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">歐盟大使達成第21輪對俄制裁協議，凍結石油價格上限並擴大金融制裁</h3>
+        <p class="card-summary">歐盟大使7月23日就第21輪對俄羅斯制裁方案達成協議，制裁範圍涵蓋94家金融機構、莫斯科證券交易所、「影子船隊」船舶及多個加密貨幣平台，並將俄羅斯石油價格上限凍結於每桶44.10美元再延一年。為換取希臘支持，方案設有可自動續期的一年豁免條款，允許歐盟企業繼續將俄羅斯液化天然氣轉口至第三國。這是歐盟自俄烏戰爭以來持續升級對俄集體制裁的最新一輪行動。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/23</span>
+          <div class="card-sources">
+            <a href="https://www.reuters.com/business/finance/eu-ambassadors-agree-21st-sanctions-package-against-russia-eu-diplomats-say-2026-07-23/" target="_blank">Reuters</a>
+            <a href="https://www.france24.com/en/europe/20260723-eu-ambassadors-agree-21st-sanctions-package-against-russia" target="_blank">France 24</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">經濟</span>
+        <h3 class="card-title">伊朗衝突推高全球油價，布蘭特原油每桶漲至97美元</h3>
+        <p class="card-summary">受美伊衝突持續升溫影響，國際原油基準布蘭特原油7月23日漲至每桶97美元，較前一週上漲約13美元。霍爾木茲海峽軍事對峙嚴重威脅全球能源供應，伊朗掌控的該水道過去每日承載全球逾五分之一的石油運輸量。油價急漲已對全球能源市場造成顯著壓力，市場人士警告若衝突進一步升級，油價恐突破每桶百美元。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/23</span>
+          <div class="card-sources">
+            <a href="https://www.nytimes.com/2026/07/23/business/iran-crude-oil-gas-stock-prices.html" target="_blank">New York Times</a>
+            <a href="https://www.justsecurity.org/149109/early-edition-july-23-2026/" target="_blank">Just Security</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 台灣新聞 ========== -->
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">氣象</span>
+        <h3 class="card-title">紅霞颱風增強逼近，海警發布、今晚至明日最接近台灣</h3>
+        <p class="card-summary">中央氣象署已針對紅霞颱風發布海上颱風警報。颱風中心7月24日上午位於鵝鑾鼻東南方約470公里海面，以時速26公里向西北西方向移動，中心氣壓995百帕。今晚至7月25日最接近台灣，花東及恆春半島防局部豪大雨，南部有大雨；北部因焚風效應可能出現高溫，沿海並有長浪及3公尺以上浪高。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24 上午</span>
+          <div class="card-sources">
+            <a href="https://applealmond.com/posts/320471" target="_blank">蘋果仁</a>
+            <a href="https://www.storm.mg/lifestyle/11150901" target="_blank">風傳媒</a>
+            <a href="https://www.nownews.com/news/6859306" target="_blank">NOWnews</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">軍事／外交</span>
+        <h3 class="card-title">中國連兩日在台海實彈軍演，外交部嚴正譴責</h3>
+        <p class="card-summary">中國漳州海事局於7月23日發布航行警告，宣布7月23至24日在台灣海峽福建東山島外海一帶實施實彈射擊演練，並設立12小時禁航區。台灣外交部於7月24日發表聲明，嚴正譴責中方行動，呼籲北京理性剋制、立即停止軍事挑釁。陸委會表示，國防部及海巡署已全程監控演習動態。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/23–07/24</span>
+          <div class="card-sources">
+            <a href="https://news.nextapple.com/politics/20260724/E03A910F89CD3379C2A9FDC557B39788" target="_blank">壹蘋新聞網</a>
+            <a href="https://www.chinatimes.com/newspapers/20260724000516-260118" target="_blank">中國時報</a>
+            <a href="https://newtalk.tw/news/view/2026-07-23/1048984" target="_blank">Newtalk</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">交通建設</span>
+        <h3 class="card-title">行政院正式核定高鐵延伸宜蘭計畫，11年後南港至宜蘭僅需28分鐘</h3>
+        <p class="card-summary">行政院長卓榮泰於7月23日下午正式核定高鐵南港延伸宜蘭計畫，全線長60.6公里，總經費約3521.75億元，預計核定後11年完工通車。完工後南港至宜蘭僅需約28分鐘，將與台鐵宜蘭站共構設站，實現無縫轉乘。計畫仍面臨環評訴願尚在進行等爭議，宜蘭縣府表示將加速配套措施到位。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/23 下午</span>
+          <div class="card-sources">
+            <a href="https://www.cna.com.tw/news/aipl/202607230169.aspx" target="_blank">中央社 CNA</a>
+            <a href="https://udn.com/news/story/7314/9646071" target="_blank">聯合新聞網</a>
+            <a href="https://news.ltn.com.tw/news/life/paper/1763805" target="_blank">自由時報</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">民生／零售</span>
+        <h3 class="card-title">全聯與台灣高鐵跨界合作，7月24日起高鐵站設快閃店</h3>
+        <p class="card-summary">全聯福利中心與台灣高鐵自2026年7月24日起展開跨界合作，推出「美味堂」聯名熱便當等四大合作項目，並首度於高鐵站設立全聯快閃店。此為兩家企業首次大規模聯名合作，主打便利旅客購物與餐飲需求。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24</span>
+          <div class="card-sources">
+            <a href="https://www.ettoday.net/news/news-list-2026-07-24-0.htm" target="_blank">ETtoday</a>
+            <a href="https://news.ltn.com.tw/news/life/breakingnews/5515797" target="_blank">自由時報</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== AI 資訊 ========== -->
+  <section class="tab-panel" id="tab-ai">
+
+    <!-- AI 頁籤內部子頁籤列 -->
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+
+    <!-- 子頁面：AI 產業動態（一般 AI 新聞） -->
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">重大融資</span>
+          <h3 class="card-title">AI 推理晶片新創 Etched 完成 3 億美元 C 輪融資，估值衝上 103 億美元</h3>
+          <p class="card-summary">由三位哈佛輟學生創辦的 AI 晶片公司 Etched 宣布完成 3 億美元 C 輪融資，估值達 103 億美元，較七個月前翻倍。本輪由 Sequoia 領投，Andreessen Horowitz、SK Hynix、Jane Street、Peter Thiel、Andrej Karpathy 等參與，創下 Sequoia 領投 C 輪史上最高估值紀錄。Etched 研發全新 AI 推理晶片架構，聲稱無需 GPU 即可大幅提升推理效率並降低成本。公司目前已有 10 億美元訂單，並運營一座 2 百萬瓦資料中心。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/23 下午</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/07/23/ai-chip-startup-etched-defies-skeptics-hits-10-3b-valuation-from-big-name-investors/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">政策／IP 爭議</span>
+          <h3 class="card-title">美國財政部威脅制裁 Moonshot AI，白宮指控 Kimi K3 蒸餾 Anthropic Fable 模型</h3>
+          <p class="card-summary">白宮聲稱中國 AI 公司 Moonshot AI 的旗艦模型 Kimi K3 透過蒸餾（distillation）Anthropic 的 Fable 模型技術而獲得高性能，美國財政部因此發出制裁警告。此事件引發全球 AI 知識產權保護討論，亦使中美 AI 技術競爭再度升溫。Anthropic 的 Fable 模型因出口管制曾暫停部分存取，是否遭非法蒸餾尚待調查確認。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/23 下午</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/07/22/treasury-threatens-sanctions-after-white-house-claims-moonshot-distilled-anthropics-fable/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">研究／分析</span>
+          <h3 class="card-title">AI 專家反駁白宮說法：Kimi K3 優異表現並非靠蒸餾 Anthropic Fable 所得</h3>
+          <p class="card-summary">多名 AI 研究人員對美國政府關於 Kimi K3 蒸餾 Anthropic Fable 的指控提出質疑，認為 Kimi K3 的高性能有合理的獨立研發解釋，並非透過不當手段取得。專家指出蒸餾主張缺乏技術層面的充分證據，目前政策層面的指控已超越技術社群共識。此爭議凸顯評估中國 AI 模型能力來源的複雜性。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/24 上午</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/07/23/experts-say-exploiting-anthropics-fable-isnt-how-kimi-k3-got-so-good/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">重大投資</span>
+          <h3 class="card-title">Alphabet 上調 2026 年 AI 資本支出至 2,050 億美元，Google Cloud 季度成長 82%</h3>
+          <p class="card-summary">Google 母公司 Alphabet 公布亮眼財報，Google Cloud 業務單季年增率高達 82%，遠超市場預期。受強勁 AI 需求帶動，Alphabet 宣布將 2026 年資本支出預測上調至最高 2,050 億美元。執行長表示 AI 需求持續超越現有供應，公司將持續加碼基礎設施投資。此消息推動市場對 AI 基礎設施相關股票的信心，但亦引發對獲利侵蝕的疑慮。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/23 下午</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/07/22/google-justifies-its-massive-ai-spending-with-a-booming-cloud-business/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-tag">重大投資</span>
+          <h3 class="card-title">OpenAI AI 基礎設施支出計畫膨脹至 2030 年前累計 7,500 億美元</h3>
+          <p class="card-summary">OpenAI 最新揭露顯示，其至 2030 年的 AI 基礎設施建設總支出預計將達 7,500 億美元，較先前預估增加約 25%。龐大的算力投資計畫持續凸顯 AI 軍備競賽下的成本壓力，也讓外界更加關注 OpenAI 的獲利模式與永續性。此消息在與 Alphabet 財報同期公布後，進一步強化市場對整體 AI 產業資本密集度的討論。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/23 下午</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/07/22/openais-ai-spending-spree-has-ballooned-to-750b/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 子頁面：Anthropic Claude 專欄 -->
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+      <div class="cards-grid">
+
+        <div class="card">
+          <span class="card-tag">功能更新</span>
+          <h3 class="card-title">Claude 語音模式重大升級：開放 Opus/Sonnet/Haiku 三模型選擇，支援跨應用程式整合操作</h3>
+          <p class="card-summary">Anthropic 宣布 Claude Voice Mode 重大更新，用戶現可在 Opus、Sonnet、Haiku 三個模型間切換，語音模式預設沿用文字對話最後使用的模型。新版語音模式新增跨應用整合能力，可直接操作 Gmail、Google Calendar、Slack、Canva、Notion 等第三方應用，執行安排會議、草擬郵件、建立文件等任務，此功能為 OpenAI 語音模式目前所不具備。語音模式同時支援英文、法文、德文、印地文等 10 種語言，免費用戶限用 Haiku 及單一應用程式連接，付費訂閱者可解鎖全模型及多應用功能。</p>
+          <div class="card-footer">
+            <span class="card-time">⏱ 2026/07/23 下午</span>
+            <div class="card-sources">
+              <a href="https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/" target="_blank">TechCrunch</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== 股票市場 ========== -->
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,408.30</div>
+        <div class="index-change down">▼ -1.21%</div>
+        <div class="index-date">7/23 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">51,711.65</div>
+        <div class="index-change down">▼ -0.97%</div>
+        <div class="index-date">7/23 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">25,137.69</div>
+        <div class="index-change down">▼ -2.15%</div>
+        <div class="index-date">7/23 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">43,654.84</div>
+        <div class="index-change down">▼ -2.67%</div>
+        <div class="index-date">7/24 收盤</div>
+      </div>
+
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$91.62</div>
+        <div class="index-change down">▼ -0.62%</div>
+        <div class="index-date">7/24 最新</div>
+      </div>
+
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">市場動態</span>
+        <h3 class="card-title">Alphabet、Tesla財報失望，科技股拋售衝擊美股，Nasdaq重挫2.15%</h3>
+        <p class="card-summary">7月23日美股全線下挫，Nasdaq跌2.15%、S&P 500跌1.21%、道瓊跌0.97%。Alphabet上調2026年AI資本支出預測至最高2,050億美元，引發市場對獲利侵蝕的疑慮，股價跌逾7%；Tesla因Q2獲利遜於預期、現金流轉負且大幅提高AI及機器人支出，股價重挫約13.3%。兩大科技巨頭合計蒸發數千億美元市值，帶動科技股全面走跌。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24 上午</span>
+          <div class="card-sources">
+            <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-23-2026" target="_blank">TheStreet</a>
+            <a href="https://www.cnbc.com/2026/07/23/tesla-tsla-alphabet-googl-stock-today.html" target="_blank">CNBC</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">台股</span>
+        <h3 class="card-title">台股重挫1196點收43,654點，跌破季線失守44,000點關卡</h3>
+        <p class="card-summary">7月24日台股受美股科技股重挫拖累，開低走低，盤中最大跌幅達1,208點，終場以43,654.84點收盤，下跌1,195.97點（-2.67%），跌破季線43,964點及44,000點整數關卡。台積電收盤2,350元、跌55元（-2.29%），單日成交金額高達7,924億元，顯示恐慌性賣壓明顯。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24 下午</span>
+          <div class="card-sources">
+            <a href="https://udn.com/news/story/7251/9648667" target="_blank">聯合新聞網</a>
+            <a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E4%B8%AD-%E9%9C%87%E7%9B%AA%E6%8C%AB%E9%80%BE%E5%8D%83%E9%BB%9E-%E8%B7%8C%E7%A0%B4%E5%AD%A3%E7%B7%9A%E5%A4%B1%E5%AE%8844000%E9%BB%9E-033338179.html" target="_blank">Yahoo股市</a>
+            <a href="https://newtalk.tw/news/view/2026-07-24/1049055" target="_blank">Newtalk</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">大宗商品</span>
+        <h3 class="card-title">胡賽武裝攻擊沙烏地油輪，川普威脅轟炸伊朗，WTI油價單日暴漲逾6%</h3>
+        <p class="card-summary">7月23日，葉門胡賽武裝宣稱攻擊兩艘沙烏地阿拉伯油輪，美國總統川普同時威脅將轟炸伊朗基礎設施，地緣政治風險急升推升WTI原油單日暴漲約6.37%至92.36美元/桶，布蘭特原油更一度突破每桶100美元至100.60美元。油價飆升重燃通膨疑慮，對Fed降息預期造成壓力，並加劇美股及亞股賣壓。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24 上午</span>
+          <div class="card-sources">
+            <a href="https://eciks.org/15566-sp-500-falls-oil-surge-middle-east" target="_blank">eciks.org</a>
+            <a href="https://www.washingtonpost.com/business/2026/07/23/wall-street-dow-nasdaq-stocks/70df2dda-86d3-11f1-9cec-0fb26676f07e_story.html" target="_blank">Washington Post</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 天氣預報 ========== -->
+  <section class="tab-panel" id="tab-weather">
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+
+        <div class="weather-card">
+          <div class="weather-date">7/24（五）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">35°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 35%</div>
+          <div class="weather-note">颱風紅霞外圍環流，山區短暫陣雨，市區多雲時晴</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/25（六）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">36°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 65%</div>
+          <div class="weather-note">颱風紅霞最接近台灣，幾場強陣雨，留意豪雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/26（日）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps">
+            <span class="temp-high">36°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 55%</div>
+          <div class="weather-note">颱風後高溫悶熱，幾場雷暴，午後對流旺盛</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/27（一）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">36°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">短時陣雨，各地高溫偏高，午後雷陣雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/28（二）</div>
+          <div class="weather-icon">⛈️</div>
+          <div class="weather-temps">
+            <span class="temp-high">36°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note">陣雨和雷暴，高溫炎熱，注意熱傷害</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/29（三）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">35°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 25%</div>
+          <div class="weather-note">局部晴朗，天氣逐漸改善，午後仍有短暫陣雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/30（四）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">32°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 35%</div>
+          <div class="weather-note">少量降雨，多雲，高溫略降</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖） — 未來 7 天預報</div>
+      <div class="weather-grid">
+
+        <div class="weather-card">
+          <div class="weather-date">7/24（五）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">31°</span> / <span class="temp-low">27°</span>
+          </div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">颱風紅霞外圍風雨，偏南風4–5級，海上風浪較大</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/25（六）</div>
+          <div class="weather-icon">🌧️</div>
+          <div class="weather-temps">
+            <span class="temp-high">29°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 60%</div>
+          <div class="weather-note">颱風最接近期間，風力增強，有陣雨或大雨，留意海上警報</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/26（日）</div>
+          <div class="weather-icon">⛅</div>
+          <div class="weather-temps">
+            <span class="temp-high">30°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">天氣逐漸回穩，多雲時陰，仍有局部陣雨</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/27（一）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">31°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 25%</div>
+          <div class="weather-note">多雲偶有短暫陣雨，偏南風3–4級，海況轉佳</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/28（二）</div>
+          <div class="weather-icon">🌦️</div>
+          <div class="weather-temps">
+            <span class="temp-high">31°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 35%</div>
+          <div class="weather-note">局部午後陣雨，高溫炎熱</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/29（三）</div>
+          <div class="weather-icon">🌤️</div>
+          <div class="weather-temps">
+            <span class="temp-high">32°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 20%</div>
+          <div class="weather-note">晴時多雲，天氣穩定，偏南風2–3級</div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-date">7/30（四）</div>
+          <div class="weather-icon">☀️</div>
+          <div class="weather-temps">
+            <span class="temp-high">32°</span> / <span class="temp-low">26°</span>
+          </div>
+          <div class="weather-rain">🌧 15%</div>
+          <div class="weather-note">大致晴朗，舒適，風力減弱</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+      ⚠️ 颱風紅霞（Hongxia）警報：氣象署已發布海上颱風警報，7/24 深夜至 7/25 最接近台灣，東部沿海、東南部防豪雨，馬祖防強風大浪。
+    </div>
+  </section>
+
+  <!-- ========== 遊戲情報 ========== -->
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">產業新聞</span>
+        <h3 class="card-title">Amazon 將 Luna 雲端遊戲整合至 Prime Video，Prime 會員免費暢玩</h3>
+        <p class="card-summary">Amazon 宣布將旗下 Luna 雲端遊戲服務整合進 Prime Video 應用程式，美國與英國 Fire TV 用戶即日起可在串流平台上直接遊玩《霍格華茲的傳承》、《EA Sports FC 26》、《Indiana Jones and the Great Circle》等遊戲。Prime 會員無需額外付費，透過新增的「遊戲」分頁即可一鍵啟動遊戲。Amazon 表示此舉效仿 Netflix 策略，將遊戲融入娛樂生態系，並計劃未來幾個月內拓展至更多裝置與國家。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/23 晚間（台北）</span>
+          <div class="card-sources">
+            <a href="https://techcrunch.com/2026/07/23/amazon-is-bringing-games-to-prime-video/" target="_blank">TechCrunch</a>
+            <a href="https://variety.com/2026/gaming/news/amazon-prime-video-games-app-1236818545/" target="_blank">Variety</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">《Halo: Campaign Evolved》早期存取正式開啟，7 月 28 日完整上市</h3>
+        <p class="card-summary">虛幻引擎 5 重製的《Halo: Campaign Evolved》於 7 月 23 日正式開放豪華版與收藏版玩家搶先體驗。本作提供全面翻新的視覺效果、音效及配音，並加入全新三關原創劇情《Operation: METEORITE》。遊戲登陸 Xbox Series X|S、PlayStation 5 及 PC（Steam），Game Pass 會員亦可免費遊玩，完整上市日期為 7 月 28 日。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/23 深夜（台北）</span>
+          <div class="card-sources">
+            <a href="https://news.xbox.com/en-us/2026/07/23/halo-campaign-evolved-early-access-launch-xbox/" target="_blank">Xbox Wire</a>
+            <a href="https://www.pcgamer.com/games/halo/campaign-evolved-release-date-launch-times-early-access/" target="_blank">PC Gamer</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">展覽活動</span>
+        <h3 class="card-title">SDCC 2026：《MARVEL Tōkon: Fighting Souls》公開測試今日展開、DLC 角色「鳳凰宇宙射線」公布</h3>
+        <p class="card-summary">Arc System Works 在聖地牙哥漫畫展（SDCC 2026）宣布，《MARVEL Tōkon: Fighting Souls》公開測試於 7 月 24 至 26 日在 PS5 與 PC 免費開放，並追加綠色哥布林為可試玩角色，共計 16 名。同時公布首位第一年 DLC 角色為「鳳凰宇宙射線（Phoenix Cyclops）」，靈感來自《復仇者聯盟 vs X戰警》鳳凰五傳說弧線。完整遊戲預定 8 月 6 日正式上市。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24 凌晨（台北）</span>
+          <div class="card-sources">
+            <a href="https://blog.playstation.com/2026/07/23/phoenix-cyclops-revealed-as-marvel-tokon-fighting-souls-first-year-1-dlc-character/" target="_blank">PlayStation Blog</a>
+            <a href="https://www.pcgamer.com/games/fighting/marvel-tokon-fighting-souls-beta-dates/" target="_blank">PC Gamer</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">新作發售</span>
+        <h3 class="card-title">《Forever Skies Deluxe Edition》今日在 Xbox、PS5、PC 正式上市</h3>
+        <p class="card-summary">末日生存遊戲《Forever Skies》豪華版今日（7 月 24 日）在 Xbox、PS5 及 PC（Steam）正式上市。玩家將在生態浩劫後的地球廢墟中，乘坐高科技飛船穿越雲層求生，支援單人或最多 4 人合作。豪華版含原聲帶、飛船外觀皮膚、裝飾飾品及限定紀念海報等附加內容。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24</span>
+          <div class="card-sources">
+            <a href="https://www.purexbox.com/features/these-20plus-games-are-coming-to-xbox-next-week-july-20-24" target="_blank">Pure Xbox</a>
+            <a href="https://store.steampowered.com/bundle/52538/Forever_Skies_Deluxe_Edition/" target="_blank">Steam</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">重大更新</span>
+        <h3 class="card-title">《Helldivers 2》x《Warhammer 40,000》傳奇 Warbond 完整揭露確定於 7 月 30 日登場</h3>
+        <p class="card-summary">Arrowhead Game Studios 宣布，《Helldivers 2》與《Warhammer 40,000》聯名傳奇 Warbond 將於 7 月 30 日進行完整內容揭露，官方要求玩家「標記日曆」。預計聯名內容包含閃電手槍、閃電卡賓槍、鏈鋸劍及太空陸戰隊主題護甲，定價預計約 1,500 超級積分（為一般 Warbond 兩倍以上）。此為遊戲繼《Killzone》及《Halo》之後的第三款主要跨作品合作，Warbond 正式推出日期尚未確認。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/23 晚間（台北）</span>
+          <div class="card-sources">
+            <a href="https://www.gamesradar.com/games/third-person-shooter/the-helldivers-2-and-warhammer-40k-crossover-is-getting-a-full-reveal-on-july-30-update-your-calendar-accordingly/" target="_blank">GamesRadar+</a>
+            <a href="https://www.altchar.com/game-news/helldivers-2-sets-warhammer-40000-warbond-reveal-for-july-30-supply-frv-coming-permanently-in-october-aH1DY1o1ZtrE" target="_blank">AltChar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 日本動漫 ========== -->
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+
+      <div class="card">
+        <span class="card-tag">重大公告</span>
+        <h3 class="card-title">新高達動畫《Mobile Suit Gundam RG XARX-ZERO》於 SDCC 正式發表，神山健治擔任導演</h3>
+        <p class="card-summary">萬代南夢宮影像於美國聖地牙哥國際漫展（SDCC 2026）正式宣布全新高達系列動畫《Mobile Suit Gundam RG XARX-ZERO》，由《攻殼機動隊：Stand Alone Complex》導演神山健治執導，動畫製作由 SOLA ANIMATION 負責，預計 2027 年播出。官方同步揭曉「RG Project」全新媒體企劃，涵蓋動畫及遊戲《GUNDAM ROGUE ORBIT》，兩部作品共享同一宇宙觀，前後相差約 100 年，為系列開創全新宇宙的重啟計畫，引發全球高達迷高度關注。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24 凌晨（SDCC 面板於台灣時間 7/24 01:30 揭曉）</span>
+          <div class="card-sources">
+            <a href="https://www.animenewsnetwork.com/press-release/2026-07-23/gundam-enters-a-new-era-under-kenji-kamiyama-with-mobile-suit-gundam-rg-xarx-zero-anime-and-rg-/.239919" target="_blank">Anime News Network</a>
+            <a href="https://www.comicsbeat.com/sdcc-26-gundam-showcase-panel/" target="_blank">Comics Beat</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag">劇場版首映</span>
+        <h3 class="card-title">《映畫ちいかわ 人魚の島のひみつ》今日日本公映，首日排場場次打破鬼滅之刃紀錄</h3>
+        <p class="card-summary">改編自 Nagano 人氣漫畫的首部《ちいかわ》劇場版動畫《映畫ちいかわ 人魚の島のひみつ》於 7 月 24 日（週五）在日本全國戲院正式公映，並同步推出 IMAX 版本。開幕首日，東京池袋 Toho Cinemas 單館即排出多達 41 場次，打破《鬼滅之刃：無限列車》所創下的單日放映場次紀錄，引發日本社群媒體廣泛熱議。本片由亀井幹太導演、Cygames Pictures 製作、東寶負責全國發行，日本網路社群預測票房有望挑戰 100 億日圓大關。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/07/24（公映首日）</span>
+          <div class="card-sources">
+            <a href="https://www.cbr.com/demon-slayer-infinity-castle-record-break-chiikawa/" target="_blank">CBR</a>
+            <a href="https://us.oricon-group.com/news/7873/" target="_blank">ORICON NEWS</a>
+            <a href="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=38049" target="_blank">Anime News Network</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年07月24日 14:47 · 蒐集範圍：近 24 小時</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>

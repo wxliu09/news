@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 目錄</title>
+  <script>
+    // 與日報共用主題偏好（dailyNews.theme），在載入樣式前套用以免閃爍
+    try {
+      if (localStorage.getItem('dailyNews.theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    } catch (e) { /* 無法讀取時維持預設深色 */ }
+  </script>
+  <link rel="stylesheet" href="assets/dashboard.css">
+  <style>
+    :root { color-scheme: dark; }
+    [data-theme="light"] { color-scheme: light; }
+
+    .home-main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 48px 16px 24px;
+    }
+    .picker-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow-card);
+    }
+    .picker-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      margin-bottom: 10px;
+    }
+    .picker-select {
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--color-input-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      color: var(--color-text);
+      font: inherit;
+      font-size: 1rem;
+      padding: 12px 40px 12px 14px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .picker-select:hover { border-color: var(--color-accent); }
+    .picker-select:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    .picker-select option,
+    .picker-select optgroup {
+      background: var(--color-surface);
+      color: var(--color-text);
+    }
+    .latest-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 10px;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      font-weight: 600;
+      text-decoration: none;
+      transition: filter 0.2s, transform 0.2s;
+    }
+    [data-theme="light"] .latest-btn { color: #fff; }
+    .latest-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+    .latest-btn:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+    .picker-meta {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+    a.icon-btn { text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle" id="subtitle">歷史日報目錄</div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" title="切換主題">🌙</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="home-main">
+  <div class="picker-card">
+    <label class="picker-label" for="dateSelect">選擇日期</label>
+    <select class="picker-select" id="dateSelect">
+      <option value="" selected disabled>— 請選擇日期 —</option>
+    </select>
+    <a class="latest-btn" id="latestBtn" href="#">開啟最新一期 →</a>
+    <div class="picker-meta" id="meta"></div>
+  </div>
+</main>
+
+<footer>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+</footer>
+
+<!-- NEWS_DATA:BEGIN（由 build_index.py 依 news/ 自動產生，請勿手動編輯） -->
+<script id="news-data" type="application/json">
+[
+{"file": "news/daily_news_2026-10-27_171800.html", "date": "2026-10-27", "time": "17:18", "weekday": "二"},
+{"file": "news/daily_news_2026-10-22_171800.html", "date": "2026-10-22", "time": "17:18", "weekday": "四"},
+{"file": "news/daily_news_2026-10-21_171336.html", "date": "2026-10-21", "time": "17:13", "weekday": "三"},
+{"file": "news/daily_news_2026-10-20_171456.html", "date": "2026-10-20", "time": "17:14", "weekday": "二"},
+{"file": "news/daily_news_2026-10-19_171354.html", "date": "2026-10-19", "time": "17:13", "weekday": "一"},
+{"file": "news/daily_news_2026-10-16_171440.html", "date": "2026-10-16", "time": "17:14", "weekday": "五"},
+{"file": "news/daily_news_2026-10-15_171500.html", "date": "2026-10-15", "time": "17:15", "weekday": "四"},
+{"file": "news/daily_news_2026-10-14_171437.html", "date": "2026-10-14", "time": "17:14", "weekday": "三"},
+{"file": "news/daily_news_2026-10-13_171451.html", "date": "2026-10-13", "time": "17:14", "weekday": "二"},
+{"file": "news/daily_news_2026-10-12_171349.html", "date": "2026-10-12", "time": "17:13", "weekday": "一"},
+{"file": "news/daily_news_2026-10-07_171431.html", "date": "2026-10-07", "time": "17:14", "weekday": "三"},
+{"file": "news/daily_news_2026-10-02_171400.html", "date": "2026-10-02", "time": "17:14", "weekday": "五"},
+{"file": "news/daily_news_2026-10-01_171412.html", "date": "2026-10-01", "time": "17:14", "weekday": "四"},
+{"file": "news/daily_news_2026-09-30_171446.html", "date": "2026-09-30", "time": "17:14", "weekday": "三"},
+{"file": "news/daily_news_2026-09-29_171900.html", "date": "2026-09-29", "time": "17:19", "weekday": "二"},
+{"file": "news/daily_news_2026-09-23_171400.html", "date": "2026-09-23", "time": "17:14", "weekday": "三"},
+{"file": "news/daily_news_2026-09-22_171801.html", "date": "2026-09-22", "time": "17:18", "weekday": "二"},
+{"file": "news/daily_news_2026-09-21_172242.html", "date": "2026-09-21", "time": "17:22", "weekday": "一"},
+{"file": "news/daily_news_2026-09-18_172136.html", "date": "2026-09-18", "time": "17:21", "weekday": "五"},
+{"file": "news/daily_news_2026-09-16_171800.html", "date": "2026-09-16", "time": "17:18", "weekday": "三"},
+{"file": "news/daily_news_2026-09-15_171700.html", "date": "2026-09-15", "time": "17:17", "weekday": "二"},
+{"file": "news/daily_news_2026-09-14_171743.html", "date": "2026-09-14", "time": "17:17", "weekday": "一"},
+{"file": "news/daily_news_2026-09-11_171700.html", "date": "2026-09-11", "time": "17:17", "weekday": "五"},
+{"file": "news/daily_news_2026-09-10_171745.html", "date": "2026-09-10", "time": "17:17", "weekday": "四"},
+{"file": "news/daily_news_2026-09-09_171800.html", "date": "2026-09-09", "time": "17:18", "weekday": "三"},
+{"file": "news/daily_news_2026-09-08_181732.html", "date": "2026-09-08", "time": "18:17", "weekday": "二"},
+{"file": "news/daily_news_2026-09-07_171800.html", "date": "2026-09-07", "time": "17:18", "weekday": "一"},
+{"file": "news/daily_news_2026-09-04_172207.html", "date": "2026-09-04", "time": "17:22", "weekday": "五"},
+{"file": "news/daily_news_2026-09-03_172210.html", "date": "2026-09-03", "time": "17:22", "weekday": "四"},
+{"file": "news/daily_news_2026-09-02_172525.html", "date": "2026-09-02", "time": "17:25", "weekday": "三"},
+{"file": "news/daily_news_2026-09-01_172213.html", "date": "2026-09-01", "time": "17:22", "weekday": "二"},
+{"file": "news/daily_news_2026-08-31_172357.html", "date": "2026-08-31", "time": "17:23", "weekday": "一"},
+{"file": "news/daily_news_2026-08-29_172345.html", "date": "2026-08-29", "time": "17:23", "weekday": "六"},
+{"file": "news/daily_news_2026-08-28_172614.html", "date": "2026-08-28", "time": "17:26", "weekday": "五"},
+{"file": "news/daily_news_2026-08-27_172544.html", "date": "2026-08-27", "time": "17:25", "weekday": "四"},
+{"file": "news/daily_news_2026-08-25_171700.html", "date": "2026-08-25", "time": "17:17", "weekday": "二"},
+{"file": "news/daily_news_2026-08-24_172125.html", "date": "2026-08-24", "time": "17:21", "weekday": "一"},
+{"file": "news/daily_news_2026-08-21_172300.html", "date": "2026-08-21", "time": "17:23", "weekday": "五"},
+{"file": "news/daily_news_2026-08-20_172155.html", "date": "2026-08-20", "time": "17:21", "weekday": "四"},
+{"file": "news/daily_news_2026-08-19_171700.html", "date": "2026-08-19", "time": "17:17", "weekday": "三"},
+{"file": "news/daily_news_2026-08-18_172514.html", "date": "2026-08-18", "time": "17:25", "weekday": "二"},
+{"file": "news/daily_news_2026-08-17_172329.html", "date": "2026-08-17", "time": "17:23", "weekday": "一"},
+{"file": "news/daily_news_2026-08-14_150247.html", "date": "2026-08-14", "time": "15:02", "weekday": "五"},
+{"file": "news/daily_news_2026-08-13_145755.html", "date": "2026-08-13", "time": "14:57", "weekday": "四"},
+{"file": "news/daily_news_2026-08-11_150121.html", "date": "2026-08-11", "time": "15:01", "weekday": "二"},
+{"file": "news/daily_news_2026-08-10_161248.html", "date": "2026-08-10", "time": "16:12", "weekday": "一"},
+{"file": "news/daily_news_2026-08-07_150238.html", "date": "2026-08-07", "time": "15:02", "weekday": "五"},
+{"file": "news/daily_news_2026-08-06_145747.html", "date": "2026-08-06", "time": "14:57", "weekday": "四"},
+{"file": "news/daily_news_2026-08-05_150144.html", "date": "2026-08-05", "time": "15:01", "weekday": "三"},
+{"file": "news/daily_news_2026-08-04_150439.html", "date": "2026-08-04", "time": "15:04", "weekday": "二"},
+{"file": "news/daily_news_2026-08-03_150611.html", "date": "2026-08-03", "time": "15:06", "weekday": "一"},
+{"file": "news/daily_news_2026-07-31_150239.html", "date": "2026-07-31", "time": "15:02", "weekday": "五"},
+{"file": "news/daily_news_2026-07-30_145836.html", "date": "2026-07-30", "time": "14:58", "weekday": "四"},
+{"file": "news/daily_news_2026-07-29_150048.html", "date": "2026-07-29", "time": "15:00", "weekday": "三"},
+{"file": "news/daily_news_2026-07-28_150219.html", "date": "2026-07-28", "time": "15:02", "weekday": "二"},
+{"file": "news/daily_news_2026-07-27_150730.html", "date": "2026-07-27", "time": "15:07", "weekday": "一"},
+{"file": "news/daily_news_2026-07-24_144700.html", "date": "2026-07-24", "time": "14:47", "weekday": "五"},
+{"file": "news/daily_news_2026-07-22_145535.html", "date": "2026-07-22", "time": "14:55", "weekday": "三"},
+{"file": "news/daily_news_2026-07-21_144831.html", "date": "2026-07-21", "time": "14:48", "weekday": "二"},
+{"file": "news/daily_news_2026-07-20_144845.html", "date": "2026-07-20", "time": "14:48", "weekday": "一"},
+{"file": "news/daily_news_2026-07-17_144758.html", "date": "2026-07-17", "time": "14:47", "weekday": "五"},
+{"file": "news/daily_news_2026-07-16_145719.html", "date": "2026-07-16", "time": "14:57", "weekday": "四"},
+{"file": "news/daily_news_2026-07-15_145529.html", "date": "2026-07-15", "time": "14:55", "weekday": "三"},
+{"file": "news/daily_news_2026-07-14_144808.html", "date": "2026-07-14", "time": "14:48", "weekday": "二"},
+{"file": "news/daily_news_2026-07-13_144832.html", "date": "2026-07-13", "time": "14:48", "weekday": "一"},
+{"file": "news/daily_news_2026-07-10_144802.html", "date": "2026-07-10", "time": "14:48", "weekday": "五"},
+{"file": "news/daily_news_2026-07-09_150511.html", "date": "2026-07-09", "time": "15:05", "weekday": "四"},
+{"file": "news/daily_news_2026-07-08_145437.html", "date": "2026-07-08", "time": "14:54", "weekday": "三"},
+{"file": "news/daily_news_2026-07-03_145308.html", "date": "2026-07-03", "time": "14:53", "weekday": "五"},
+{"file": "news/daily_news_2026-07-01_145253.html", "date": "2026-07-01", "time": "14:52", "weekday": "三"},
+{"file": "news/daily_news_2026-06-30_135800.html", "date": "2026-06-30", "time": "13:58", "weekday": "二"},
+{"file": "news/daily_news_2026-06-29_135800.html", "date": "2026-06-29", "time": "13:58", "weekday": "一"},
+{"file": "news/daily_news_2026-06-26_135810.html", "date": "2026-06-26", "time": "13:58", "weekday": "五"},
+{"file": "news/daily_news_2026-06-25_140253.html", "date": "2026-06-25", "time": "14:02", "weekday": "四"},
+{"file": "news/daily_news_2026-06-24_140229.html", "date": "2026-06-24", "time": "14:02", "weekday": "三"},
+{"file": "news/daily_news_2026-06-23_135827.html", "date": "2026-06-23", "time": "13:58", "weekday": "二"},
+{"file": "news/daily_news_2026-06-22_140236.html", "date": "2026-06-22", "time": "14:02", "weekday": "一"},
+{"file": "news/daily_news_2026-06-18_135755.html", "date": "2026-06-18", "time": "13:57", "weekday": "四"},
+{"file": "news/daily_news_2026-06-17_140245.html", "date": "2026-06-17", "time": "14:02", "weekday": "三"},
+{"file": "news/daily_news_2026-06-15_140445.html", "date": "2026-06-15", "time": "14:04", "weekday": "一"},
+{"file": "news/daily_news_2026-06-11_140306.html", "date": "2026-06-11", "time": "14:03", "weekday": "四"},
+{"file": "news/daily_news_2026-06-10_135800.html", "date": "2026-06-10", "time": "13:58", "weekday": "三"},
+{"file": "news/daily_news_2026-06-09_134137.html", "date": "2026-06-09", "time": "13:41", "weekday": "二"},
+{"file": "news/daily_news_2026-06-04_140234.html", "date": "2026-06-04", "time": "14:02", "weekday": "四"},
+{"file": "news/daily_news_2026-06-03_135800.html", "date": "2026-06-03", "time": "13:58", "weekday": "三"},
+{"file": "news/daily_news_2026-06-02_135758.html", "date": "2026-06-02", "time": "13:57", "weekday": "二"},
+{"file": "news/daily_news_2026-06-01_140236.html", "date": "2026-06-01", "time": "14:02", "weekday": "一"},
+{"file": "news/daily_news_2026-05-29_135700.html", "date": "2026-05-29", "time": "13:57", "weekday": "五"},
+{"file": "news/daily_news_2026-05-28_135800.html", "date": "2026-05-28", "time": "13:58", "weekday": "四"},
+{"file": "news/daily_news_2026-05-27_140252.html", "date": "2026-05-27", "time": "14:02", "weekday": "三"},
+{"file": "news/daily_news_2026-05-26_135800.html", "date": "2026-05-26", "time": "13:58", "weekday": "二"},
+{"file": "news/daily_news_2026-05-25_135700.html", "date": "2026-05-25", "time": "13:57", "weekday": "一"},
+{"file": "news/daily_news_2026-05-22_140328.html", "date": "2026-05-22", "time": "14:03", "weekday": "五"},
+{"file": "news/daily_news_2026-05-21_135800.html", "date": "2026-05-21", "time": "13:58", "weekday": "四"},
+{"file": "news/daily_news_2026-05-19_135809.html", "date": "2026-05-19", "time": "13:58", "weekday": "二"},
+{"file": "news/daily_news_2026-05-18_135753.html", "date": "2026-05-18", "time": "13:57", "weekday": "一"},
+{"file": "news/daily_news_2026-05-15_142451.html", "date": "2026-05-15", "time": "14:24", "weekday": "五"},
+{"file": "news/daily_news_2026-05-14_135800.html", "date": "2026-05-14", "time": "13:58", "weekday": "四"},
+{"file": "news/daily_news_2026-05-13_135813.html", "date": "2026-05-13", "time": "13:58", "weekday": "三"},
+{"file": "news/daily_news_2026-05-12_135756.html", "date": "2026-05-12", "time": "13:57", "weekday": "二"},
+{"file": "news/daily_news_2026-05-11_140229.html", "date": "2026-05-11", "time": "14:02", "weekday": "一"},
+{"file": "news/daily_news_2026-05-08_135806.html", "date": "2026-05-08", "time": "13:58", "weekday": "五"},
+{"file": "news/daily_news_2026-05-07_135806.html", "date": "2026-05-07", "time": "13:58", "weekday": "四"},
+{"file": "news/daily_news_2026-05-06_135841.html", "date": "2026-05-06", "time": "13:58", "weekday": "三"},
+{"file": "news/daily_news_2026-05-05_140344.html", "date": "2026-05-05", "time": "14:03", "weekday": "二"},
+{"file": "news/daily_news_2026-05-04_135810.html", "date": "2026-05-04", "time": "13:58", "weekday": "一"},
+{"file": "news/daily_news_2026-04-30_055700.html", "date": "2026-04-30", "time": "05:57", "weekday": "四"},
+{"file": "news/daily_news_2026-04-29_165100.html", "date": "2026-04-29", "time": "16:51", "weekday": "三"},
+{"file": "news/daily_news_2026-04-28_135807.html", "date": "2026-04-28", "time": "13:58", "weekday": "二"},
+{"file": "news/daily_news_2026-04-27_092348.html", "date": "2026-04-27", "time": "09:23", "weekday": "一"},
+{"file": "news/daily_news_2026-04-24_055700.html", "date": "2026-04-24", "time": "05:57", "weekday": "五"},
+{"file": "news/daily_news_2026-04-23_060208.html", "date": "2026-04-23", "time": "06:02", "weekday": "四"},
+{"file": "news/daily_news_2026-04-22_140246.html", "date": "2026-04-22", "time": "14:02", "weekday": "三"},
+{"file": "news/daily_news_2026-04-21_053558.html", "date": "2026-04-21", "time": "05:35", "weekday": "二"},
+{"file": "news/daily_news_2026-04-20_090829.html", "date": "2026-04-20", "time": "09:08", "weekday": "一"},
+{"file": "news/daily_news_2026-04-17_140113.html", "date": "2026-04-17", "time": "14:01", "weekday": "五"},
+{"file": "news/daily_news_2026-04-16_135800.html", "date": "2026-04-16", "time": "13:58", "weekday": "四"},
+{"file": "news/daily_news_2026-04-15_135700.html", "date": "2026-04-15", "time": "13:57", "weekday": "三"},
+{"file": "news/daily_news_2026-04-14_135700.html", "date": "2026-04-14", "time": "13:57", "weekday": "二"},
+{"file": "news/daily_news_2026-04-13_135730.html", "date": "2026-04-13", "time": "13:57", "weekday": "一"},
+{"file": "news/daily_news_2026-04-13_092306.html", "date": "2026-04-13", "time": "09:23", "weekday": "一"},
+{"file": "news/daily_news_2026-04-13_084249.html", "date": "2026-04-13", "time": "08:42", "weekday": "一"},
+{"file": "news/daily_news_2026-04-11_180045.html", "date": "2026-04-11", "time": "18:00", "weekday": "六"},
+{"file": "news/daily_news_2026-04-10_151507.html", "date": "2026-04-10", "time": "15:15", "weekday": "五"}
+]
+</script>
+<!-- NEWS_DATA:END -->
+
+<script>
+(function () {
+  'use strict';
+
+  var select    = document.getElementById('dateSelect');
+  var latestBtn = document.getElementById('latestBtn');
+  var meta      = document.getElementById('meta');
+  var subtitle  = document.getElementById('subtitle');
+  var themeBtn  = document.getElementById('themeToggle');
+
+  // ---- 主題（與日報共用 dailyNews.theme）----
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    themeBtn.textContent = theme === 'light' ? '☀️' : '🌙';
+    themeBtn.title = theme === 'light' ? '切換為深色主題' : '切換為淺色主題';
+    try { localStorage.setItem('dailyNews.theme', theme); } catch (e) { /* 忽略 */ }
+  }
+  themeBtn.addEventListener('click', function () {
+    var current = document.documentElement.getAttribute('data-theme') || 'dark';
+    applyTheme(current === 'light' ? 'dark' : 'light');
+  });
+  applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+
+  // ---- 日報清單：[{file, date: "YYYY-MM-DD", time: "HH:MM", weekday}]，新到舊 ----
+  var entries = [];
+  try { entries = JSON.parse(document.getElementById('news-data').textContent) || []; } catch (e) { entries = []; }
+
+  function fmtDate(e) { return e.date.replace(/-/g, '/') + '（' + e.weekday + '）'; }
+
+  if (!entries.length) {
+    select.disabled = true;
+    latestBtn.style.display = 'none';
+    meta.textContent = '目前還沒有日報。';
+    return;
+  }
+
+  var perDay = {};
+  entries.forEach(function (e) { perDay[e.date] = (perDay[e.date] || 0) + 1; });
+
+  var groups = {};
+  entries.forEach(function (e) {
+    var ym = e.date.slice(0, 7);
+    if (!groups[ym]) {
+      groups[ym] = document.createElement('optgroup');
+      groups[ym].label = ym.slice(0, 4) + ' 年 ' + parseInt(ym.slice(5), 10) + ' 月';
+      select.appendChild(groups[ym]);
+    }
+    var opt = document.createElement('option');
+    opt.value = e.file;
+    opt.textContent = fmtDate(e) + (perDay[e.date] > 1 ? ' ' + e.time : '');
+    groups[ym].appendChild(opt);
+  });
+
+  // 選了就跳轉
+  select.addEventListener('change', function () {
+    if (select.value) window.location.href = select.value;
+  });
+  // 從日報按「上一頁」回來時，選單重設為提示文字，才能再選同一天
+  window.addEventListener('pageshow', function () { select.selectedIndex = 0; });
+
+  var latest = entries[0];
+  var oldest = entries[entries.length - 1];
+  latestBtn.href = latest.file;
+  latestBtn.textContent = '開啟最新一期 · ' + fmtDate(latest) + ' →';
+  subtitle.textContent = '歷史日報目錄 · 最新 ' + fmtDate(latest);
+  meta.textContent = '共 ' + entries.length + ' 期 · ' +
+    oldest.date.replace(/-/g, '/') + ' – ' + latest.date.replace(/-/g, '/');
+})();
+</script>
+</body>
+</html>
