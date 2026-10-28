@@ -41,7 +41,9 @@ python3 "{workspace}/preflight.py"
 | `cutoff_basis` | cutoff 的計算依據（寫進回覆） |
 | `days_covered` | 這份日報的資料涵蓋幾天（平常 1，前面有漏跑時最多 4） |
 | `range_text` | 蒐集範圍文字，如「10/27（二）00:00 – 10/28（三）08:10」 |
+| `dates_en`、`dates_zh` | 蒐集範圍內每一天的自然日期寫法，搜尋用（如「October 27, 2026 / October 28, 2026」「10月27日 / 10月28日」） |
 | `tw_expected_session`、`us_expected_session` | 台股、美股預期資料日（已排除週末，未排除國定假日） |
+| `tw_session_zh`、`tw_session_en`、`us_session_en` | 上面兩個交易日的自然日期寫法，搜尋用 |
 | `title_date`、`date_zh` | 填入 HTML 的日期字串 |
 | `output_file` | HTML 存檔的完整路徑 |
 | `page_url` | 這份日報在 GitHub Pages 上的網址 |
@@ -74,7 +76,14 @@ python3 "{workspace}/preflight.py"
 7. 範圍內沒有符合的消息 → items 回傳 []，絕不以舊聞充數。
 
 【做法】
-- 用 WebSearch 以不同關鍵字至少搜尋 2–3 次；需要確認發布時間時，可用 WebFetch 開原文。WebFetch 被封鎖（EGRESS_BLOCKED）就改用 WebSearch，不要用 Bash 繞過。
+1. 先開列表頁：用 WebFetch 打開附加段列出的列表頁（每則都標有日期或時間），挑出 cutoff 之後的消息。打不開或內容明顯過舊就跳過，不要因此判定「沒有消息」。
+2. 再用 WebSearch 補足，至少 3 次、每次換關鍵字（WebSearch 若有 mode 參數，用 "extended"）：
+   - 日期用自然寫法：英文 {dates_en}；中文 {dates_zh}。
+   - 不要用「today」，也不要用 2026-10-28 這種 ISO 日期（實測會搜到大量舊聞、分類頁與垃圾站）。
+   - 加上來源名稱、地區或事件關鍵字，例如「Reuters Israel election October 27, 2026」。
+3. 判斷發布時間可以用：列表頁上的日期／時間、網址裡的日期（如 /2026/10/27/、/news/2026-10-27/、202610270123）、標題裡的日期、原文頁面。只確定到「日」也可以。
+4. 目標每類 4–8 則。宣告沒有消息之前，至少要打開 2 個列表頁並搜尋 3 次；items 為空時，在 note 列出試過的列表頁與關鍵字。
+- WebFetch 被封鎖（EGRESS_BLOCKED）就改用 WebSearch，不要用 Bash 繞過。
 - 同一事件只保留一則，多個來源合併在 sources。
 - tag、title、summary 一律用繁體中文（外電也要翻譯）；不捏造、不推測。
 - 只回傳下列 JSON：純文字，不要 code block，不要其他說明。
@@ -90,7 +99,7 @@ python3 "{workspace}/preflight.py"
       "sources": [{"name": "來源名稱", "url": "https://..."}]
     }
   ],
-  "note": "items 為空時填「近期無重大更新」，否則省略"
+  "note": "items 為空時填「近期無重大更新」並列出試過的列表頁與關鍵字，否則省略"
 }
 ```
 
@@ -98,13 +107,15 @@ python3 "{workspace}/preflight.py"
 
 **國際新聞**
 ```text
-搜尋關鍵字範例：world news today {today}、international breaking news {today}
-優先來源：Reuters、AP、NPR、CNN、Al Jazeera
+列表頁：中央社國際 https://www.cna.com.tw/list/aopl.aspx（每則有時間）
+搜尋範例：world news {dates_en}、Reuters {dates_en}、AP news {dates_en}，再依列表頁看到的大事件（地區、選舉、衝突等）加關鍵字搜尋
+優先來源：中央社、Reuters、AP、NPR、CNN、Al Jazeera
 ```
 
 **台灣新聞**
 ```text
-搜尋關鍵字範例：台灣新聞 今天 {today}、Taiwan news today {today}
+列表頁：中央社政治 https://www.cna.com.tw/list/aipl.aspx、中央社社會 https://www.cna.com.tw/list/asoc.aspx、中央社即時 https://www.cna.com.tw/list/aall.aspx（每則有時間；即時列表偶爾是幾小時前的快取，最新消息靠搜尋補）
+搜尋範例：台灣 新聞 {dates_zh}、中央社 {dates_zh}、Focus Taiwan {dates_en}
 優先來源：中央社、聯合新聞網、自由時報、TVBS
 台股盤勢新聞照常收錄，主 Agent 會用來交叉驗證台股收盤。
 ```
@@ -112,8 +123,8 @@ python3 "{workspace}/preflight.py"
 **AI 資訊**
 ```text
 分兩組蒐集，兩組都套用時間規則：
-① 一般 AI 產業 → 放 items。關鍵字：AI news today {today}、artificial intelligence latest {today}。優先 TechCrunch、The Verge、CNBC。
-② Anthropic / Claude → 放 claude_items。關鍵字：Anthropic Claude news {today}、Anthropic Claude update {today}。優先 Anthropic 官網 News、Anthropic Blog、Claude release notes、TechCrunch。
+① 一般 AI 產業 → 放 items。關鍵字：AI news {dates_en}、OpenAI / Google / Meta AI {dates_en}。優先 TechCrunch、The Verge、CNBC。
+② Anthropic / Claude → 放 claude_items。關鍵字：Anthropic {dates_en}、Claude Anthropic announcement {dates_en}。優先 Anthropic 官網 News、Anthropic Blog、Claude release notes、TechCrunch。
 Anthropic / Claude 的消息只放 claude_items，不要兩邊重複。
 JSON 多一個欄位 "claude_items"，格式同 items；沒有消息就回傳 []。
 ```
@@ -124,7 +135,7 @@ JSON 多一個欄位 "claude_items"，格式同 items；沒有消息就回傳 []
 
 【台股加權指數】取 {tw_expected_session} 的收盤（已依執行時間確認該日已收盤，一定有收盤數據）。
 - 只有確認當天休市（國定假日、颱風假）才改取前一個交易日，data_date 照實標示。
-- 依序搜尋直到拿到當日數值：「台股 {tw_expected_session} 收盤 點數 漲跌」→「台股加權指數 收盤 {tw_expected_session}」→「TAIEX close {tw_expected_session}」。
+- 依序搜尋直到拿到當日數值：「台股 {tw_session_zh} 收盤 點數 漲跌」→「台股加權指數 {tw_session_zh} 收盤」→「TAIEX close {tw_session_en}」。
   不要只搜「台股 + 日期」，容易抓到盤中報價或前一日的收盤新聞。
 - 交叉驗證（2026-06-23 曾把前一日的歷史高點 47,741.51 誤標為當日收盤）：
   a. 確認報導本身是 {tw_expected_session} 當天的，不是前一天的新聞。
@@ -134,7 +145,7 @@ JSON 多一個欄位 "claude_items"，格式同 items；沒有消息就回傳 []
 【美股三大指數】S&P 500、Dow Jones、Nasdaq，取美國交易日 {us_expected_session} 的收盤。
 - 美股收盤是台灣時間 04:00（夏令）／05:00（冬令）；本任務執行時，該交易日早已收盤，下一個交易日還沒開盤。
 - {us_expected_session} 若是美國假日，改取再前一個交易日。
-- 依序搜尋：「S&P 500 Dow Nasdaq close {us_expected_session}」→「stock market recap {us_expected_session}」→「NYSE Nasdaq close {us_expected_session}」。
+- 依序搜尋：「S&P 500 Dow Nasdaq close {us_session_en}」→「stock market today {us_session_en} recap」→「Wall Street close {us_session_en}」。
 - 全部失敗：value 填「資料取得中」、data_date 填 {us_expected_session}、status 填「待更新」。
 
 【WTI 原油】取最新一筆可得價格；若是盤中價，status 填「盤中」。
@@ -165,19 +176,23 @@ JSON 多一個欄位 forecast：
 
 **遊戲情報**
 ```text
-搜尋關鍵字範例：gaming news today {today}、video game news {today}
-優先來源：IGN、GameSpot、PC Gamer、Insider Gaming
+列表頁：Gematsu https://www.gematsu.com/（每則有時間）、巴哈姆特 GNN https://gnn.gamer.com.tw/（每則有日期，遊戲與動漫混排）
+搜尋範例：video game news {dates_en}、IGN {dates_en}、遊戲 新聞 {dates_zh}
+優先來源：IGN、GameSpot、Gematsu、PC Gamer、巴哈姆特 GNN
 ```
 
 **日本動漫**
 ```text
-搜尋關鍵字範例：anime news today {today}、日本動漫 最新 {today}
+列表頁：巴哈姆特 GNN 動漫 https://gnn.gamer.com.tw/index.php?k=5（每則有日期）
+搜尋範例：Anime News Network {dates_en}、anime announced {dates_en}、動畫 {dates_zh}（ANN 網址含日期，如 /news/2026-10-27/，可直接用來判斷）
+ANN 的列表頁用 WebFetch 常抓到舊快取或失敗，不要拿它判斷「沒有新消息」。
 優先來源：Anime News Network、Crunchyroll、巴哈姆特
 ```
 
 ## 4. 驗證結果
 
 1. **解析**：某個 Subagent 失敗或 JSON 解析失敗，該頁籤視為「蒐集失敗」，其他頁籤照常進行。
+   **覆蓋檢查**：國際、台灣、遊戲、動漫任一類少於 2 則，幾乎一定是蒐集失敗而不是真的沒新聞（這幾類每天都有大量消息）。用同一份 brief 再啟動一次該類 Subagent（可同時重跑多類），prompt 最後加上「上一輪只找到 N 則：請把附加段的列表頁全部打開，並至少搜尋 5 次」。重跑後仍不足就照實呈現。
 2. **時間二次過濾**（天氣、index_data 除外）：逐筆檢查 `published_at`。格式不標準（如「2026/10/27 下午」）先自行轉成標準格式，連日期都無法判斷才丟棄。
    - 有時間：早於 `cutoff` → 丟棄。
    - 只有日期：日期早於 `cutoff` 那一天 → 丟棄；同一天或之後 → 保留。

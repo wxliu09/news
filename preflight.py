@@ -28,6 +28,8 @@ US_CLOSE_HOUR = 5                   # 美股收盤（取冬令較晚者）
 MAX_DAYS = 4                        # 漏跑時單次最多回推 4 天
 SITE_URL = "https://wxliu09.github.io/news/"   # GitHub Pages 網址
 WEEKDAY = "一二三四五六日"
+MONTH_EN = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"]
 FNAME_RE = re.compile(r"^daily_news_(\d{4}-\d{2}-\d{2})_(\d{6})\.html$")
 
 
@@ -49,6 +51,16 @@ def fmt(dt):
 
 def md(dt):
     return f"{dt.month}/{dt.day}（{WEEKDAY[dt.weekday()]}）"
+
+
+def en(d):
+    """搜尋用英文日期，例如 October 27, 2026"""
+    return f"{MONTH_EN[d.month - 1]} {d.day}, {d.year}"
+
+
+def zh(d):
+    """搜尋用中文日期，例如 10月27日"""
+    return f"{d.month}月{d.day}日"
 
 
 def main():
@@ -109,6 +121,9 @@ def main():
     tw_session = last_weekday(today if (now.hour, now.minute) >= TW_CLOSE else today - timedelta(days=1))
     us_session = last_weekday(today - timedelta(days=1 if now.hour >= US_CLOSE_HOUR else 2))
 
+    # 搜尋用的自然日期寫法（實測 ISO 格式與 "today" 會搜到大量舊聞與垃圾站）
+    span = [start_day + timedelta(days=i) for i in range(days_covered + 1)]
+
     out_dir.mkdir(parents=True, exist_ok=True)
     output_file = out_dir / f"daily_news_{now:%Y-%m-%d_%H%M%S}.html"
 
@@ -122,8 +137,13 @@ def main():
         "cutoff_basis": basis,
         "days_covered": days_covered,
         "range_text": range_text,
+        "dates_en": " / ".join(en(d) for d in span),
+        "dates_zh": " / ".join(zh(d) for d in span),
         "tw_expected_session": f"{tw_session:%Y-%m-%d}",
         "us_expected_session": f"{us_session:%Y-%m-%d}",
+        "tw_session_zh": zh(tw_session),
+        "tw_session_en": en(tw_session),
+        "us_session_en": en(us_session),
         "title_date": f"{today:%Y/%m/%d}",
         "date_zh": f"{today.year}年{today.month:02d}月{today.day:02d}日",
         "output_file": str(output_file),
