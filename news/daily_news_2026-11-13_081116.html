@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日情報儀表板 — 2026/11/13</title>
+  <link rel="stylesheet" href="../assets/dashboard.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-title">📰 每日情報儀表板</div>
+        <div class="header-subtitle">2026年11月13日（星期五）· 蒐集範圍：11/12（四）00:00 – 11/13（五）08:11</div>
+      </div>
+      <div class="header-actions">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="搜尋關鍵字（按 / 快速聚焦）">
+          <button class="clear-btn" id="searchClear" title="清除">✕</button>
+        </div>
+        <button class="icon-btn" id="themeToggle"   title="切換主題">🌙</button>
+        <button class="icon-btn" id="compactToggle" title="緊湊模式">📏</button>
+        <button class="icon-btn" id="fontToggle"    title="放大字體">🔠</button>
+        <button class="icon-btn" id="printBtn"      title="列印 / 匯出 PDF">🖨️</button>
+      </div>
+    </div>
+
+    <nav class="tab-bar">
+      <button class="tab-btn active" data-tab="intl">🌍 國際新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="tw">🇹🇼 台灣新聞<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="ai">🤖 AI 資訊<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="stock">📈 股票市場<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="weather">🌤️ 天氣預報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="game">🎮 遊戲情報<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="anime">📺 日本動漫<span class="tab-badge">0</span></button>
+      <button class="tab-btn"        data-tab="fav">⭐ 我的收藏<span class="tab-badge">0</span></button>
+    </nav>
+
+    <div class="stats-bar">
+      <span class="stat-item">總計 <strong id="statTotal">0</strong> 則</span>
+      <span class="stat-item">顯示中 <strong id="statVisible">0</strong> 則</span>
+      <span class="stat-item">收藏 <strong id="statFav">0</strong> 則</span>
+      <span class="stat-item">最後更新 <strong id="statUpdated">—</strong></span>
+    </div>
+  </div>
+</header>
+
+<main class="content">
+
+  <section class="tab-panel active" id="tab-intl">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">科技政商</span>
+        <h3 class="card-title">黃仁勳辭去輝達執行長並退出董事會，財務長克瑞斯任臨時執行長</h3>
+        <p class="card-summary">輝達董事會宣布黃仁勳辭去總裁、執行長及董事職務即刻生效，起因為婚外情及涉與疑似中國間諜往來的調查風波。財務長克瑞斯兼任臨時執行長，哈維·瓊斯出任首任董事長，並啟動永久執行長遴選。輝達股價重挫，市值跌破4兆美元；輝達預定11/17公布財報。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12 23:01</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aopl/202611120383.aspx" target="_blank">中央社</a><a href="https://www.aljazeera.com/news/2026/11/12/ai-titan-jensen-huang-out-as-nvidia-ceo" target="_blank">Al Jazeera</a><a href="https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition" target="_blank">NVIDIA 新聞稿</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">科技政商</span>
+        <h3 class="card-title">黃仁勳去職後美國會續追輝達晶片流向，傳白宮討論撤換商務部長</h3>
+        <p class="card-summary">中央社報導，美議員稱黃仁勳同意赴國會作證，紐時揭他已聘律師；美國會將持續追查輝達晶片流向及白宮是否知情。另有報導稱白宮討論撤換商務部長盧特尼克，美司法部多項調查恐牽連輝達。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/13 07:59</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aopl/202611130024.aspx" target="_blank">中央社</a><a href="https://www.cna.com.tw/news/aopl/202611130017.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">中東衝突</span>
+        <h3 class="card-title">沙烏地能源設施遇襲、荷莫茲海峽受阻，國際油價大漲</h3>
+        <p class="card-summary">沙烏地能源基礎設施遇襲，荷莫茲海峽航運受阻。路透報導，布倫特原油期貨上漲3.06美元（3.3%），收在每桶95.82美元；WTI收在88.74美元，上漲2.6%。胡塞武裝稱襲擊沙國東西輸油管泵站等設施，伊朗稱有4艘油輪遭爆炸擊中，部分說法尚未獲證實。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/13 05:13</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202611130013.aspx" target="_blank">中央社</a><a href="https://finance.yahoo.com/energy/articles/oil-falls-over-1-easing-045152522.html" target="_blank">Yahoo Finance（路透）</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">間諜案</span>
+        <h3 class="card-title">英國逮捕涉為俄羅斯蒐集情報的駐北約美軍軍官</h3>
+        <p class="card-summary">英國反恐警方與美國FBI在格洛斯特郡逮捕一名41歲美軍資深軍官，指其涉違反英國國家安全法，向俄羅斯傳遞情報。英國國防大臣警告將嚴懲間諜行為，英國政府並宣布投入4億7千萬英鎊升級軍事基地安保。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/video/news/4357381" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">俄烏戰爭</span>
+        <h3 class="card-title">俄烏阿布達比會談結束，原則同意交換戰俘</h3>
+        <p class="card-summary">路透報導，俄烏在阿布達比的會談於週三結束，雙方原則同意交換戰俘，具體人數預計週四公布，但未有更廣泛的突破。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://www.justsecurity.org/164226/early-edition-november-12-2026/" target="_blank">Just Security（彙整路透）</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">社會事件</span>
+        <h3 class="card-title">阿聯卡車失控翻覆釀14死30傷；華府健身房槍擊1死4傷</h3>
+        <p class="card-summary">中央社報導，阿聯一輛卡車失控翻覆並波及多車，造成14人死亡、30人受傷。另華府一間健身房發生槍擊案，造成1死4傷，警方追查動機；美聯社稱嫌犯為一名醫師，與大樓管理方就頂樓住宅黴菌問題有糾紛。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/13 02:47</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aopl/202611130007.aspx" target="_blank">中央社</a><a href="https://www.cna.com.tw/news/aopl/202611130006.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">歐洲政治</span>
+        <h3 class="card-title">西班牙住房危機大罷工，引爆大選前朝野與勞資激辯</h3>
+        <p class="card-summary">中央社報導，西班牙因住房危機發生大罷工，在大選前引發朝野與勞資雙方激烈辯論。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/13 07:26</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aopl/202611130021.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="tab-tw">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">台股盤勢</span>
+        <h3 class="card-title">台股重挫1165點收43091.87點　台積電跌55元</h3>
+        <p class="card-summary">11月12日台股加權指數收盤下跌1165.28點、跌幅2.63%，收43091.87點，成交金額約1兆132.93億元，結束三連漲。盤中一度翻紅後，因輝達執行長黃仁勳的醜聞與調查傳聞翻黑。台積電收2340元，跌55元，南電、景碩跌停。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202611120160.aspx" target="_blank">中央社</a><a href="https://focustaiwan.tw/business/202611120007" target="_blank">Focus Taiwan</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">科技產業</span>
+        <h3 class="card-title">黃仁勳辭輝達執行長並退出董事會　財務長克瑞斯任臨時CEO</h3>
+        <p class="card-summary">輝達11月12日宣布黃仁勳辭去執行長並退出董事會，由財務長克瑞斯擔任臨時執行長，並啟動永久執行長遴選。美股輝達收盤跌4.34%，美超微大跌11.30%。美專家認為不影響台積電。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12 22:01</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202611120368.aspx" target="_blank">中央社</a><a href="https://www.cna.com.tw/news/afe/202611130019.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">國安政治</span>
+        <h3 class="card-title">黃樂疑為中國間諜　移民署廢止入境許可並管制入境</h3>
+        <p class="card-summary">中國籍女商人黃樂與黃仁勳的婚外情引發關注，報導稱她疑為中國間諜，過去曾多次持香港護照來台。移民署已配合國安單位掌握其來台情形，並依法廢止入境許可、實施入境管制。行政院發言人李慧芝表示案件涉及跨國合作調查，不便多說。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12 15:48</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aipl/202611120222.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">選舉政治</span>
+        <h3 class="card-title">11/28「廢除非核家園」公投與九合一大選公辦政見會登場</h3>
+        <p class="card-summary">中央社整理11月28日「廢除非核家園」公投案的通過門檻與投票方式，正反方也各自表態。九合一選舉公辦政見會的日期、發言順序與辦理方式同日公布，各黨候選人持續掃街拉抬選情。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12 16:05</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aipl/202611120231.aspx" target="_blank">中央社</a><a href="https://www.cna.com.tw/news/aipl/202611125002.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">外交</span>
+        <h3 class="card-title">APEC領袖會議將於深圳舉行　賴清德請施振榮代表出席</h3>
+        <p class="card-summary">賴清德總統11月12日拜會宏碁創辦人施振榮，請他在APEC領袖會議（11月18至19日於深圳）傳達台灣AI合作意願。外交部長林佳龍表示不放棄參與國際機會。另外，外交部指巴紐突然驅逐台灣外交人員係受中國施壓。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12 19:04</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aipl/202611120325.aspx" target="_blank">中央社</a><a href="https://focustaiwan.tw/society/202611120001" target="_blank">Focus Taiwan</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">國際關係</span>
+        <h3 class="card-title">G7外長關切台海　外交部：維護現狀是國際共識</h3>
+        <p class="card-summary">G7外長聲明關切台海情勢，外交部11月12日表示，維持台海現狀是國際共識。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12 20:11</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/aipl/202611120342.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">能源政策</span>
+        <h3 class="card-title">藍白擬限制中火燃煤機組117年全退場　台電工會抗議</h3>
+        <p class="card-summary">國民黨與民眾黨提出空污法修法，擬限制台中火力發電廠燃煤機組於2028年全數退場，台電工會強烈抗議。經濟部長呼籲應考量新燃氣機組上線進度。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12 19:08</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202611120327.aspx" target="_blank">中央社</a><a href="https://www.cna.com.tw/news/afe/202611120317.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">公共衛生</span>
+        <h3 class="card-title">台東學生接種流感疫苗　錯打莫德納COVID-19疫苗</h3>
+        <p class="card-summary">台東有學生接種流感疫苗時誤打COVID-19疫苗，疾管署表示不致有害，並要求徹查。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12 21:01</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/ahel/202611120356.aspx" target="_blank">中央社</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="tab-ai">
+    <div class="inner-tab-bar">
+      <button class="inner-tab-btn active" data-inner-tab="ai-general">🤖 AI 產業動態<span class="inner-tab-badge">0</span></button>
+      <button class="inner-tab-btn"        data-inner-tab="ai-claude">🟣 Anthropic Claude<span class="inner-tab-badge">0</span></button>
+    </div>
+    <div class="inner-tab-panel active" id="inner-tab-ai-general">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">企業人事</span>
+        <h3 class="card-title">黃仁勳離開輝達執行長職位，財務長 Colette Kress 出任臨時執行長</h3>
+        <p class="card-summary">輝達宣布黃仁勳辭任執行長，由財務長 Colette Kress 擔任臨時執行長，董事會將尋找正式人選。報導指離職與個人行為爭議有關，輝達股價早盤一度重挫逾 13%。黃仁勳同意向國會說明相關情況，TechCrunch 另報導川普提議由蘋果董事長庫克接任。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://www.cnbc.com/2026/11/12/nvidia-jensen-huang-ceo-live-updates.html" target="_blank">CNBC</a><a href="https://techcrunch.com/2026/11/12/jensen-huang-is-out-at-nvidia-who-is-colette-kress-his-interim-replacement/" target="_blank">TechCrunch</a><a href="https://www.aljazeera.com/news/2026/11/12/why-did-nvidia-ceo-jensen-huang-resign-and-who-is-colette-kress" target="_blank">Al Jazeera</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">法律訴訟</span>
+        <h3 class="card-title">倡議團體在舊金山提告，要求暫停 Anthropic、Google、Meta、OpenAI 與 SpaceX 的前沿 AI 開發</h3>
+        <p class="card-summary">四個非營利組織（Irreplaceable Education Fund、Public Citizen、Heat Initiative、Alliance for Secure AI）向舊金山高等法院起訴，要求禁制令，暫停開發比現有前沿系統更強的 AI 模型。訴狀引用已記錄的 AI 相關網路攻擊事件，主張存在災難性風險。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/11/12/advocacy-groups-sue-ai-giants-to-freeze-new-models-warning-of-catastrophic-risks/" target="_blank">BNN Bloomberg</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產品發布</span>
+        <h3 class="card-title">Google 搜尋升級，主打更好地回答複雜問題</h3>
+        <p class="card-summary">TechCrunch 報導 Google 推出最新搜尋升級，目標是針對複雜問題提供更好的答案。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://techcrunch.com/2026/11/12/googles-latest-search-upgrade-promises-better-answers-to-your-most-complicated-questions/" target="_blank">TechCrunch</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產品發布</span>
+        <h3 class="card-title">Meta 的 Muse 助理可付費代撥電話給美國商家</h3>
+        <p class="card-summary">TechCrunch 報導 Muse 現在可替用戶致電美國商家，但需付費使用。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/" target="_blank">TechCrunch</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產品發布</span>
+        <h3 class="card-title">OpenAI 推出 ChatGPT 企業版測試：企業可認領驗證檔案、追蹤 ChatGPT 提及並部署商務代理</h3>
+        <p class="card-summary">AI Weekly 彙整指出，OpenAI 推出 Businesses in ChatGPT 測試版，讓企業可認領經驗證的檔案、追蹤在 ChatGPT 中被提及的情況，並部署 Business Agents。此為彙整型來源，未經原始來源驗證。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://aiweekly.co/ai-news-today/edition/2026-11-12" target="_blank">AI Weekly</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">資安</span>
+        <h3 class="card-title">United Airlines 禁止 AI 代理訂機票，理由為資安風險</h3>
+        <p class="card-summary">TechCrunch 報導，聯合航空封鎖 AI 代理人代為訂票，理由是資安疑慮。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks/" target="_blank">TechCrunch</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">資安</span>
+        <h3 class="card-title">Fireworks AI 遭網路攻擊，駭客得以存取 Notion 客戶的聊天紀錄</h3>
+        <p class="card-summary">TechCrunch 報導，針對 AI 推論服務商 Fireworks AI 的攻擊，使駭客取得 Notion 客戶的聊天逐字稿。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts/" target="_blank">TechCrunch</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">投資</span>
+        <h3 class="card-title">Nebius 規劃 400 億美元支出；Norwest 設立 40 億美元新 AI 基金</h3>
+        <p class="card-summary">TechCrunch 報導 AI 新雲（neocloud）業者 Nebius 計畫投入 400 億美元。創投 Norwest 另募集 40 億美元新基金，更深入投資 AI。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/" target="_blank">TechCrunch（Nebius）</a><a href="https://techcrunch.com/2026/11/12/norwest-pushes-deeper-into-ai-with-new-4b-fund/" target="_blank">TechCrunch（Norwest）</a></div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="inner-tab-panel" id="inner-tab-ai-claude">
+      <div class="claude-spotlight">
+        <div class="claude-header">
+          <div class="claude-logo">🟣</div>
+          <div class="claude-header-text">
+            <div class="claude-brand">Anthropic Claude</div>
+            <div class="claude-tagline">Claude 系列最新動態 · 模型發布 · 功能更新 · 研究進展 · API 變更</div>
+          </div>
+        </div>
+      </div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">產品發布</span>
+        <h3 class="card-title">Anthropic 推出 Claude for Manufacturing 外掛，內含 17 項製造業技能</h3>
+        <p class="card-summary">Anthropic 向 Team 與 Enterprise 客戶推出 Claude for Manufacturing，涵蓋報價、品質調查、生產報告、維修診斷、採購與設計等 17 項技能，並提供 Autodesk Fusion、Infor、Microsoft 365、Oracle NetSuite 四個連接器。產出文件須經人工審核才會對外送出，外掛本身不寫入系統紀錄。Anthropic 預定 11 月 17 日舉辦相關網路研討會。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://www.unite.ai/anthropic-launches-claude-for-manufacturing-with-17-workflow-skills/" target="_blank">Unite.AI</a><a href="https://tech.yahoo.com/ai/claude/articles/anthropic-launches-claude-manufacturing-170944639.html" target="_blank">Yahoo Tech</a><a href="https://claude.com/solutions/manufacturing" target="_blank">Claude 製造業頁面</a></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="tab-stock">
+    <div class="section-title">主要指數</div>
+    <div class="index-grid">
+      <div class="index-card">
+        <div class="index-name">S&amp;P 500</div>
+        <div class="index-value">7,592.40</div>
+        <div class="index-change down">▼ -0.35%</div>
+        <div class="index-date">11/12 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Dow Jones</div>
+        <div class="index-value">52,297.09</div>
+        <div class="index-change down">▼ -0.36%</div>
+        <div class="index-date">11/12 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">Nasdaq</div>
+        <div class="index-value">25,366.09</div>
+        <div class="index-change down">▼ -0.39%</div>
+        <div class="index-date">11/12 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">台股加權指數</div>
+        <div class="index-value">43,091.87</div>
+        <div class="index-change down">▼ -2.63%</div>
+        <div class="index-date">11/12 收盤</div>
+      </div>
+      <div class="index-card">
+        <div class="index-name">WTI 原油</div>
+        <div class="index-value">$88.74</div>
+        <div class="index-change up">▲ +2.6%</div>
+        <div class="index-date">11/12 收盤</div>
+      </div>
+    </div>
+
+    <div class="section-title">市場要聞</div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">台股</span>
+        <h3 class="card-title">台股重挫1,165點收43,091.87點，電子股領跌</h3>
+        <p class="card-summary">台股11月12日收盤下跌1,165.28點、跌幅2.63%，收43,091.87點，盤中震盪逾1,500點，成交金額約1兆133億元。台積電收2,340元、下跌55元，電子類股跌3.07%。媒體多歸因於輝達執行長黃仁勳相關消息，加上前一日大漲1,545點後的獲利了結；外資賣超約6.8億元，投信買超約123.9億元。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://www.cna.com.tw/news/afe/202611120159.aspx" target="_blank">中央社</a><a href="https://udn.com/news/story/7251/9874197" target="_blank">聯合新聞網</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">美股</span>
+        <h3 class="card-title">黃仁勳請辭，輝達早盤重挫後收跌4.3%，美股三大指數收跌約0.4%</h3>
+        <p class="card-summary">輝達執行長黃仁勳宣布辭職，輝達開盤一度大跌約14%，終場收166.19美元、下跌4.34%，財務長Colette Kress出任代理執行長。AMD、Broadcom分別上漲約5.9%與5.5%，抵銷部分跌勢。標普500收7,592.40點，道瓊收52,297.09點，那斯達克收25,366.09點。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-211731317.html" target="_blank">Yahoo Finance</a><a href="https://www.cnbc.com/2026/11/12/nvidia-nvda-jensen-huang-second-affair.html" target="_blank">CNBC</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">原油與利率</span>
+        <h3 class="card-title">川普稱不需與伊朗達成協議，油價上揚、美10年期殖利率升至5.12%</h3>
+        <p class="card-summary">川普表示不需要與伊朗達成協議後，油價走高，布蘭特原油上漲3.3%至95.82美元，能源股走強。美國10年期公債殖利率升至5.12%，前一次交易日為4.98%。美國10月成屋銷售創逾16年來最慢步調。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://www.sfntoday.com/2026/11/12/wall-street-shakes-with-swings-for-nvidia-and-oil-prices-but-recovers-most-of-its-early-losses/" target="_blank">AP（sfntoday轉載）</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="tab-weather">
+    <div class="weather-section">
+      <div class="weather-city-title">🏙️ 台北市 — 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">11/13（五）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">趨勢參考</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/14（六）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">趨勢參考</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/15（日）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">25°</span> / <span class="temp-low">19°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">趨勢參考</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/16（一）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">18°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">趨勢參考</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/17（二）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">18°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">趨勢參考</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/18（三）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">18°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">趨勢參考</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/19（四）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">24°</span> / <span class="temp-low">18°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">趨勢參考</div>
+        </div>
+      </div>
+    </div>
+    <div class="weather-section">
+      <div class="weather-city-title">🏝️ 連江縣（馬祖）— 未來 7 天預報</div>
+      <div class="weather-grid">
+        <div class="weather-card">
+          <div class="weather-date">11/13（五）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">21°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">偏北風 5-6 級（趨勢參考）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/14（六）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">21°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">偏北風 5-6 級（趨勢參考）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/15（日）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">21°</span> / <span class="temp-low">17°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">偏北風 5-6 級（趨勢參考）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/16（一）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">20°</span> / <span class="temp-low">16°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">偏北風 5-6 級（趨勢參考）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/17（二）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">20°</span> / <span class="temp-low">16°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">偏北風 5-6 級（趨勢參考）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/18（三）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">20°</span> / <span class="temp-low">16°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">偏北風 5-6 級（趨勢參考）</div>
+        </div>
+        <div class="weather-card">
+          <div class="weather-date">11/19（四）</div>
+          <div class="weather-icon">🌥️</div>
+          <div class="weather-temps"><span class="temp-high">20°</span> / <span class="temp-low">16°</span></div>
+          <div class="weather-rain">🌧 40%</div>
+          <div class="weather-note">偏北風 5-6 級（趨勢參考）</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-disclaimer">
+      ⚠️ 天氣預報為趨勢性資訊，精確數值請以
+      <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a> 為準。
+    </div>
+  </section>
+
+  <section class="tab-panel" id="tab-game">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">新作發表</span>
+        <h3 class="card-title">《Wolfenstein 3》正式公開</h3>
+        <p class="card-summary">Gematsu 報導《Wolfenstein 3》正式發表。列表頁僅顯示標題，詳細內容請見原文。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/13 08:07</span>
+          <div class="card-sources"><a href="https://www.gematsu.com/2026/11/wolfenstein-3-announced" target="_blank">Gematsu</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">DLC／更新</span>
+        <h3 class="card-title">《DOOM: The Dark Ages》DLC「Revelations」的「Slaughter Mode」更新 11 月 16 日推出</h3>
+        <p class="card-summary">《DOOM: The Dark Ages》DLC「Revelations」將於 11 月 16 日加入「Slaughter Mode」更新。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/13 04:25</span>
+          <div class="card-sources"><a href="https://www.gematsu.com/2026/11/doom-the-dark-ages-dlc-revelations-slaughter-mode-update-launches-november-16" target="_blank">Gematsu</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">新作情報</span>
+        <h3 class="card-title">《勇者鬥惡龍怪物仙境：The Withered World》公開前期冒險內容</h3>
+        <p class="card-summary">《Dragon Quest Monsters: The Withered World》釋出遊戲前期冒險的細節介紹。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/13 06:00</span>
+          <div class="card-sources"><a href="https://www.gematsu.com/2026/11/dragon-quest-monsters-the-withered-world-details-early-adventure" target="_blank">Gematsu</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">重大更新</span>
+        <h3 class="card-title">《Halo: Campaign Evolved》宣布推出「Firefight」更新</h3>
+        <p class="card-summary">Gematsu 報導《Halo: Campaign Evolved》將推出「Firefight」更新。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/13 01:26</span>
+          <div class="card-sources"><a href="https://www.gematsu.com/2026/11/halo-campaign-evolved-firefight-update-announced" target="_blank">Gematsu</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">影片</span>
+        <h3 class="card-title">《Fable》Xbox 25 週年「Quest」遊玩影片公開</h3>
+        <p class="card-summary">配合 Xbox 25 週年，《Fable》公開「Quest」實機遊玩影片。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/13 03:51</span>
+          <div class="card-sources"><a href="https://www.gematsu.com/2026/11/fable-xbox-25th-anniversary-quest-gameplay" target="_blank">Gematsu</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">活動</span>
+        <h3 class="card-title">PC Gaming Show 2026「Most Wanted」訂於 12 月 3 日</h3>
+        <p class="card-summary">PC Gaming Show 2026 的「Most Wanted」場次確定在 12 月 3 日舉行。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/13 00:23</span>
+          <div class="card-sources"><a href="https://www.gematsu.com/2026/11/pc-gaming-show-2026-most-wanted-set-for-december-3" target="_blank">Gematsu</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">產業</span>
+        <h3 class="card-title">id Software 確認正開發新作</h3>
+        <p class="card-summary">Xbox 確認 id Software 在《DOOM: The Dark Ages》及其資料片之後，正在開發下一款遊戲。據報導專案仍處早期階段，短期內不太可能公開預告片。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://videogameschronicle.com/news/id-software-confirms-its-working-on-a-new-game-after-layoffs" target="_blank">Video Games Chronicle</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">發售日調整</span>
+        <h3 class="card-title">《羅曼史沙加3 Destinies United》發售日提前至 2027 年 2 月 4 日</h3>
+        <p class="card-summary">Gematsu 報導《Romancing SaGa 3: Destinies United》發售日期提前到 2027 年 2 月 4 日。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12 15:08</span>
+          <div class="card-sources"><a href="https://www.gematsu.com/2026/11/romancing-saga-3-destinies-united-release-date-moved-up-to-february-4-2027" target="_blank">Gematsu</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">活動</span>
+        <h3 class="card-title">The Game Awards 2026 將於 Disney+ 直播</h3>
+        <p class="card-summary">Disney+ 宣布 The Game Awards 將於 12 月 10 日在平台上直播。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://gamingtrend.com/news/the-game-awards-2026-lands-on-disney/" target="_blank">Gamingtrend</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tab-panel" id="tab-anime">
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-tag">新番情報</span>
+        <h3 class="card-title">《鍋に弾丸を受けながら》公開前導PV，確定2027年1月播出</h3>
+        <p class="card-summary">電視動畫《鍋に弾丸を受けながら》公開前導PV並確定2027年1月起播出，由日本電視台、讀賣電視台、BS日テレ、AT-X播映，製作為J.C.STAFF。主角淳太郎（ジュンタロー）由內田秀與水中雅章雙人配音。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://www.pashplus.jp/anime/502858/" target="_blank">PASH! PLUS</a></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="card-tag">活動</span>
+        <h3 class="card-title">Crunchyroll 公布 Anime Frontier 2026 首映場次</h3>
+        <p class="card-summary">Crunchyroll 宣布將重返12月4日至6日在德州沃斯堡舉行的 Anime Frontier 2026，帶來多場首映。12月4日放映《魔法騎士雷阿思》(2026)前三集，12月6日舉辦《Fate Rewinder》《黑岩目大小姐的魅力對我無效 第二季》《香格里拉·開拓異境 第三季》首映活動。</p>
+        <div class="card-footer">
+          <span class="card-time">⏱ 2026/11/12</span>
+          <div class="card-sources"><a href="https://animetv-jp.net/crunchyroll-announces-anime-premieres-for-anime-frontier-2026/" target="_blank">animetv-jp</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 我的收藏 ========== -->
+  <section class="tab-panel" id="tab-fav">
+    <div class="cards-grid" id="favGrid"></div>
+    <div class="no-result" id="favEmpty">
+      目前尚未收藏任何項目，點擊卡片右上角的 ☆ 即可加入收藏。
+    </div>
+  </section>
+
+</main>
+
+<button class="back-top" id="backTop" title="回到頂端">↑</button>
+
+<footer>
+  <div>資料蒐集時間：2026年11月13日 · 蒐集範圍：11/12（四）00:00 – 11/13（五）08:11</div>
+  <div>本儀表板由 AI 自動蒐集整理，內容僅供參考，請以各原始來源為準。</div>
+  <div>天氣數據僅供趨勢參考，正確資訊請查閱 <a href="https://www.cwa.gov.tw" target="_blank">中央氣象署官網</a>。</div>
+</footer>
+
+<script src="../assets/dashboard.js"></script>
+</body>
+</html>
